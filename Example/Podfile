@@ -2,12 +2,10 @@ use_frameworks!
 
 platform :ios, '11.0'
 
-target 'WebimWidget_Example' do
-  pod 'WebimWidget', :path => '../'
-  pod 'WebimClientLibrary', :git => 
-'https://github.com/webim/webim-client-sdk-ios.git', :tag => '3.39.0'
+target 'WebimMobileWidget_Example' do
+  pod 'WebimMobileWidget', :path => '../'
 
-  target 'WebimWidget_Tests' do
+  target 'WebimMobileWidget_Tests' do
     inherit! :search_paths
 
     
@@ -16,9 +14,11 @@ end
 
 post_install do |installer_representation|
     installer_representation.pods_project.targets.each do |target|
-        if target.name == "WebimWidget"
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+        end
+        if target.name == "WebimMobileWidget"
             target.build_configurations.each do |config|
-                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
                 config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
             end
         end

@@ -17,14 +17,11 @@
 		BE435EF8297FD00C00B946A9 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE435D81297FD00B00B946A9 /* Tests.swift */; };
 		BE435EF9297FD00C00B946A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE435D82297FD00B00B946A9 /* Info.plist */; };
 		BE435EFA297FD00C00B946A9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BE435D83297FD00B00B946A9 /* Podfile */; };
-		BE435EFB297FD00C00B946A9 /* WebimWidget.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = BE435D84297FD00B00B946A9 /* WebimWidget.xcworkspace */; };
-		BE435EFC297FD00C00B946A9 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = BE435D85297FD00B00B946A9 /* Podfile.lock */; };
 		BE435EFD297FD00C00B946A9 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE435D8C297FD00B00B946A9 /* Package.swift */; };
 		BE435FAC297FD00C00B946A9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BE435EEE297FD00C00B946A9 /* LICENSE */; };
-		BE435FAD297FD00C00B946A9 /* WebimWidget.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BE435EEF297FD00C00B946A9 /* WebimWidget.podspec */; };
-		BE435FAE297FD00C00B946A9 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = BE435EF0297FD00C00B946A9 /* Package.resolved */; };
+		BE435FAD297FD00C00B946A9 /* WebimMobileWidget.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BE435EEF297FD00C00B946A9 /* WebimMobileWidget.podspec */; };
 		BEF1892F29ACAA81008A8ED5 /* WMConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF187D029ACAA80008A8ED5 /* WMConfigs.swift */; };
-		BEF1893029ACAA81008A8ED5 /* WebimWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BEF187D129ACAA80008A8ED5 /* WebimWidget.h */; };
+		BEF1893029ACAA81008A8ED5 /* WebimMobileWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BEF187D129ACAA80008A8ED5 /* WebimMobileWidget.h */; };
 		BEF1893129ACAA81008A8ED5 /* SpinningIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF187D429ACAA80008A8ED5 /* SpinningIndicator.swift */; };
 		BEF1893229ACAA81008A8ED5 /* TypingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF187D529ACAA80008A8ED5 /* TypingIndicator.swift */; };
 		BEF1893329ACAA81008A8ED5 /* WMFixedContentSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF187D629ACAA80008A8ED5 /* WMFixedContentSizeView.swift */; };
@@ -206,23 +203,6 @@
 		BEF189E329ACAA82008A8ED5 /* WMQuoteViewConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1892E29ACAA81008A8ED5 /* WMQuoteViewConfigBuilder.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BE435D88297FD00B00B946A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE435D7D297FD00B00B946A9 /* WebimWidget.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 607FACD01AFB9204008FA782;
-			remoteInfo = WebimWidget_Example;
-		};
-		BE435D8A297FD00B00B946A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE435D7D297FD00B00B946A9 /* WebimWidget.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 607FACE51AFB9204008FA782;
-			remoteInfo = WebimWidget_Tests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		BE435D70297FD00B00B946A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE435D71297FD00B00B946A9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -232,19 +212,15 @@
 		BE435D78297FD00B00B946A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE435D7B297FD00B00B946A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE435D7C297FD00B00B946A9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BE435D7D297FD00B00B946A9 /* WebimWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = WebimWidget.xcodeproj; sourceTree = "<group>"; };
 		BE435D81297FD00B00B946A9 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		BE435D82297FD00B00B946A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE435D83297FD00B00B946A9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		BE435D84297FD00B00B946A9 /* WebimWidget.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = WebimWidget.xcworkspace; sourceTree = "<group>"; };
-		BE435D85297FD00B00B946A9 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		BE435D8C297FD00B00B946A9 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		BE435EEE297FD00C00B946A9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		BE435EEF297FD00C00B946A9 /* WebimWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebimWidget.podspec; sourceTree = "<group>"; };
-		BE435EF0297FD00C00B946A9 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Package.resolved; sourceTree = "<group>"; };
+		BE435EEF297FD00C00B946A9 /* WebimMobileWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebimMobileWidget.podspec; sourceTree = "<group>"; };
 		BEB26A1529547455003F19C7 /* WebimWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebimWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF187D029ACAA80008A8ED5 /* WMConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMConfigs.swift; sourceTree = "<group>"; };
-		BEF187D129ACAA80008A8ED5 /* WebimWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebimWidget.h; sourceTree = "<group>"; };
+		BEF187D129ACAA80008A8ED5 /* WebimMobileWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebimMobileWidget.h; sourceTree = "<group>"; };
 		BEF187D429ACAA80008A8ED5 /* SpinningIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningIndicator.swift; sourceTree = "<group>"; };
 		BEF187D529ACAA80008A8ED5 /* TypingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingIndicator.swift; sourceTree = "<group>"; };
 		BEF187D629ACAA80008A8ED5 /* WMFixedContentSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFixedContentSizeView.swift; sourceTree = "<group>"; };
@@ -475,11 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				BE435D73297FD00B00B946A9 /* WebimWidget */,
-				BE435D7D297FD00B00B946A9 /* WebimWidget.xcodeproj */,
 				BE435D80297FD00B00B946A9 /* Tests */,
 				BE435D83297FD00B00B946A9 /* Podfile */,
-				BE435D84297FD00B00B946A9 /* WebimWidget.xcworkspace */,
-				BE435D85297FD00B00B946A9 /* Podfile.lock */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -504,15 +477,6 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		BE435D7E297FD00B00B946A9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BE435D89297FD00B00B946A9 /* WebimWidget_Example.app */,
-				BE435D8B297FD00B00B946A9 /* WebimWidget_Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		BE435D80297FD00B00B946A9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,10 +493,9 @@
 				BEF187CE29ACAA80008A8ED5 /* Sources */,
 				BE435D71297FD00B00B946A9 /* Cartfile */,
 				BE435EEE297FD00C00B946A9 /* LICENSE */,
-				BE435EF0297FD00C00B946A9 /* Package.resolved */,
 				BE435D8C297FD00B00B946A9 /* Package.swift */,
 				BE435D70297FD00B00B946A9 /* README.md */,
-				BE435EEF297FD00C00B946A9 /* WebimWidget.podspec */,
+				BE435EEF297FD00C00B946A9 /* WebimMobileWidget.podspec */,
 				BEB26A1629547455003F19C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -548,23 +511,23 @@
 		BEF187CE29ACAA80008A8ED5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BEF187CF29ACAA80008A8ED5 /* WebimWidget */,
+				BEF187CF29ACAA80008A8ED5 /* WebimMobileWidget */,
 				BEF1891D29ACAA81008A8ED5 /* Builders */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		BEF187CF29ACAA80008A8ED5 /* WebimWidget */ = {
+		BEF187CF29ACAA80008A8ED5 /* WebimMobileWidget */ = {
 			isa = PBXGroup;
 			children = (
 				BEF187D029ACAA80008A8ED5 /* WMConfigs.swift */,
-				BEF187D129ACAA80008A8ED5 /* WebimWidget.h */,
+				BEF187D129ACAA80008A8ED5 /* WebimMobileWidget.h */,
 				BEF187D229ACAA80008A8ED5 /* SDK Files */,
 				BEF1885529ACAA80008A8ED5 /* WMSessionConfig.swift */,
 				BEF1885629ACAA80008A8ED5 /* Assets */,
 				BEF1891829ACAA81008A8ED5 /* Localization */,
 			);
-			path = WebimWidget;
+			path = WebimMobileWidget;
 			sourceTree = "<group>";
 		};
 		BEF187D229ACAA80008A8ED5 /* SDK Files */ = {
@@ -1300,7 +1263,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEF1893029ACAA81008A8ED5 /* WebimWidget.h in Headers */,
+				BEF1893029ACAA81008A8ED5 /* WebimMobileWidget.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,35 +1316,12 @@
 			mainGroup = BEB26A0B29547455003F19C7;
 			productRefGroup = BEB26A1629547455003F19C7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BE435D7E297FD00B00B946A9 /* Products */;
-					ProjectRef = BE435D7D297FD00B00B946A9 /* WebimWidget.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BEB26A1429547455003F19C7 /* WebimWidget */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BE435D89297FD00B00B946A9 /* WebimWidget_Example.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = WebimWidget_Example.app;
-			remoteRef = BE435D88297FD00B00B946A9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BE435D8B297FD00B00B946A9 /* WebimWidget_Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = WebimWidget_Tests.xctest;
-			remoteRef = BE435D8A297FD00B00B946A9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BEB26A1329547455003F19C7 /* Resources */ = {
@@ -1408,8 +1348,6 @@
 				BEF1899629ACAA81008A8ED5 /* WMFileViewController.xib in Resources */,
 				BEF1899529ACAA81008A8ED5 /* WMFileViewController.strings in Resources */,
 				BEF189C929ACAA81008A8ED5 /* WMThanksAlertView.xib in Resources */,
-				BE435FAE297FD00C00B946A9 /* Package.resolved in Resources */,
-				BE435EFB297FD00C00B946A9 /* WebimWidget.xcworkspace in Resources */,
 				BEF189A129ACAA81008A8ED5 /* WMNilTableViewCell.strings in Resources */,
 				BEF189D029ACAA81008A8ED5 /* ChatTitleView.xib in Resources */,
 				BEF189A329ACAA81008A8ED5 /* WMVisitorImageCell.strings in Resources */,
@@ -1418,7 +1356,6 @@
 				BEF189B929ACAA81008A8ED5 /* WMOperatorQuoteFileCell.strings in Resources */,
 				BEF189B829ACAA81008A8ED5 /* WMOperatorImageCell.xib in Resources */,
 				BEF1899B29ACAA81008A8ED5 /* SurveyCommentViewController.xib in Resources */,
-				BE435EFC297FD00C00B946A9 /* Podfile.lock in Resources */,
 				BEF189C129ACAA81008A8ED5 /* WMToolbarView.strings in Resources */,
 				BE435EF7297FD00C00B946A9 /* InfoPlist.strings in Resources */,
 				BEF189AD29ACAA81008A8ED5 /* WMVisitorQuoteFileCell.xib in Resources */,
@@ -1432,7 +1369,7 @@
 				BEF189CF29ACAA81008A8ED5 /* ChatTitleView.strings in Resources */,
 				BEF189B329ACAA81008A8ED5 /* WMOperatorFileCell.xib in Resources */,
 				BEF189AF29ACAA81008A8ED5 /* WMVisitorQuoteMessageCell.xib in Resources */,
-				BE435FAD297FD00C00B946A9 /* WebimWidget.podspec in Resources */,
+				BE435FAD297FD00C00B946A9 /* WebimMobileWidget.podspec in Resources */,
 				BEF189C229ACAA81008A8ED5 /* WMQuoteView.strings in Resources */,
 				BEF189B529ACAA81008A8ED5 /* WMOperatorMessageCell.xib in Resources */,
 				BEF189A429ACAA81008A8ED5 /* WMVisitorImageCell.xib in Resources */,

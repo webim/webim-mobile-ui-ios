@@ -26,13 +26,11 @@
 
 import Cosmos
 import Foundation
-import WebimWidget
+import WebimMobileWidget
 
 class ExternalWidgetBuilder {
-    func buildDefaultWidget(accontName: String, location: String) -> UIViewController {
-        let sessionConfig = WMSessionConfig(
-            accountName: accontName,
-            location: location)
+    func buildDefaultWidget(accountName: String, location: String) -> UIViewController {
+        let sessionConfig = buildSessionConfig(accountName: accountName, location: location)
         let chatControllerConfig = chatViewControllerConfig()
         let imageControllerConfig = imageViewControllerConfig()
         let fileControllerConfig = fileViewControllerConfig()
@@ -44,6 +42,16 @@ class ExternalWidgetBuilder {
             .set(fileViewControllerConfig: fileControllerConfig)
             .build()
         return widget
+    }
+    
+    private func buildSessionConfig(accountName: String, location: String) -> WMSessionConfig {
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        let sessionConfig = WMSessionConfigBuilder()
+            .set(appVersion: appVersion)
+            .set(accountName: accountName)
+            .set(location: location)
+            .build()
+        return sessionConfig
     }
     
     private func buildVisitorCellsConfig() -> WMCellsConfig {
