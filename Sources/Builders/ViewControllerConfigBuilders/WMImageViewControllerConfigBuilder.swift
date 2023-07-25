@@ -25,6 +25,7 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  Image view controller config.

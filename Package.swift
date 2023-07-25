@@ -14,9 +14,8 @@ let package = Package(
         .package(url: "https://github.com/webim/webim-client-sdk-ios.git", exact: "3.39.3"),
         .package(url: "https://github.com/kean/Nuke.git", from: "8.0.0"),
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "20.0.0"),
-        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0")
-
-
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0"),
+        .package(url: "https://github.com/Flipboard/FLAnimatedImage.git", from: "1.0.17")
     ],
     targets: [
         .target(
@@ -25,7 +24,8 @@ let package = Package(
                 .product(name: "WebimMobileSDK", package: "webim-client-sdk-ios"),
                 .product(name: "Nuke", package: "Nuke"),
                 .product(name: "Cosmos", package: "Cosmos"),
-                .product(name: "SnapKit", package: "SnapKit")
+                .product(name: "SnapKit", package: "SnapKit"),
+                .product(name: "FLAnimatedImage", package: "FLAnimatedImage")
             ],
             path: "Sources")
     ]

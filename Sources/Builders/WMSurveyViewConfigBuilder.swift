@@ -26,6 +26,7 @@
 
 import Foundation
 import Cosmos
+import UIKit
 
 /**
  Survey View config.

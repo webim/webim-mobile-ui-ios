@@ -562,7 +562,6 @@ class ChatViewController: UIViewController {
             mimeType: mimeType.value,
             completionHandler: self
         )
-        scrollToBottom(animated: true)
     }
     
     private func sendFile(file: Data, fileURL: URL?) {

@@ -25,6 +25,7 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  Navigationv bar config.
