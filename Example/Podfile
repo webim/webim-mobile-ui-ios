@@ -7,8 +7,6 @@ target 'WebimMobileWidget_Example' do
 
   target 'WebimMobileWidget_Tests' do
     inherit! :search_paths
-
-    
   end
 end
 

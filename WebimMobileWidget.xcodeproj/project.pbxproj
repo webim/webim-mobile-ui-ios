@@ -1,0 +1,2242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 53;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE435EF1297FD00C00B946A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE435D70297FD00B00B946A9 /* README.md */; };
+		BE435EF2297FD00C00B946A9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = BE435D71297FD00B00B946A9 /* Cartfile */; };
+		BE435EFD297FD00C00B946A9 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE435D8C297FD00B00B946A9 /* Package.swift */; };
+		BE435FAC297FD00C00B946A9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BE435EEE297FD00C00B946A9 /* LICENSE */; };
+		BE435FAD297FD00C00B946A9 /* WebimMobileWidget.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BE435EEF297FD00C00B946A9 /* WebimMobileWidget.podspec */; };
+		CCD849F32A73E45F005CDE5A /* WMToolbarConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848972A73E45F005CDE5A /* WMToolbarConfigBuilder.swift */; };
+		CCD849F42A73E45F005CDE5A /* WMWidgetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848982A73E45F005CDE5A /* WMWidgetBuilder.swift */; };
+		CCD849F52A73E45F005CDE5A /* WMViewControllerConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8489A2A73E45F005CDE5A /* WMViewControllerConfigBuilder.swift */; };
+		CCD849F62A73E45F005CDE5A /* WMImageViewControllerConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8489B2A73E45F005CDE5A /* WMImageViewControllerConfigBuilder.swift */; };
+		CCD849F72A73E45F005CDE5A /* WMFileViewControllerConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8489C2A73E45F005CDE5A /* WMFileViewControllerConfigBuilder.swift */; };
+		CCD849F82A73E45F005CDE5A /* WMChatViewControllerConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8489D2A73E45F005CDE5A /* WMChatViewControllerConfigBuilder.swift */; };
+		CCD849F92A73E45F005CDE5A /* WMImageNavigationBarConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8489F2A73E45F005CDE5A /* WMImageNavigationBarConfigBuilder.swift */; };
+		CCD849FA2A73E45F005CDE5A /* WMNavigationBarConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A02A73E45F005CDE5A /* WMNavigationBarConfigBuilder.swift */; };
+		CCD849FB2A73E45F005CDE5A /* WMChatNavigationBarConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A12A73E45F005CDE5A /* WMChatNavigationBarConfigBuilder.swift */; };
+		CCD849FC2A73E45F005CDE5A /* WMFileNavigationBarConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A22A73E45F005CDE5A /* WMFileNavigationBarConfigBuilder.swift */; };
+		CCD849FD2A73E45F005CDE5A /* WMPopupActionControllerConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A32A73E45F005CDE5A /* WMPopupActionControllerConfigBuilder.swift */; };
+		CCD849FE2A73E45F005CDE5A /* WMNetworkErrorViewConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A42A73E45F005CDE5A /* WMNetworkErrorViewConfigBuilder.swift */; };
+		CCD849FF2A73E45F005CDE5A /* WMCellConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A52A73E45F005CDE5A /* WMCellConfigBuilder.swift */; };
+		CCD84A002A73E45F005CDE5A /* WMSurveyViewConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A62A73E45F005CDE5A /* WMSurveyViewConfigBuilder.swift */; };
+		CCD84A012A73E45F005CDE5A /* WMQuoteViewConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A72A73E45F005CDE5A /* WMQuoteViewConfigBuilder.swift */; };
+		CCD84A022A73E45F005CDE5A /* WMConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848A82A73E45F005CDE5A /* WMConfigs.swift */; };
+		CCD84A032A73E45F005CDE5A /* SpinningIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848AB2A73E45F005CDE5A /* SpinningIndicator.swift */; };
+		CCD84A042A73E45F005CDE5A /* TypingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848AC2A73E45F005CDE5A /* TypingIndicator.swift */; };
+		CCD84A052A73E45F005CDE5A /* WMFixedContentSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848AD2A73E45F005CDE5A /* WMFixedContentSizeView.swift */; };
+		CCD84A062A73E45F005CDE5A /* CustomUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848AE2A73E45F005CDE5A /* CustomUIImage.swift */; };
+		CCD84A072A73E45F005CDE5A /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848AF2A73E45F005CDE5A /* CustomUIButton.swift */; };
+		CCD84A082A73E45F005CDE5A /* CircleProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B02A73E45F005CDE5A /* CircleProgressIndicator.swift */; };
+		CCD84A092A73E45F005CDE5A /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B22A73E45F005CDE5A /* StringConstants.swift */; };
+		CCD84A0A2A73E45F005CDE5A /* ColourConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B32A73E45F005CDE5A /* ColourConstants.swift */; };
+		CCD84A0B2A73E45F005CDE5A /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B42A73E45F005CDE5A /* ImageConstants.swift */; };
+		CCD84A0C2A73E45F005CDE5A /* NavigationBarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B62A73E45F005CDE5A /* NavigationBarUpdater.swift */; };
+		CCD84A0D2A73E45F005CDE5A /* MessageCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B72A73E45F005CDE5A /* MessageCounter.swift */; };
+		CCD84A0E2A73E45F005CDE5A /* WMDownloadFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B82A73E45F005CDE5A /* WMDownloadFileManager.swift */; };
+		CCD84A0F2A73E45F005CDE5A /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B92A73E45F005CDE5A /* AlertController.swift */; };
+		CCD84A102A73E45F005CDE5A /* WebimLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */; };
+		CCD84A112A73E45F005CDE5A /* WebimServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */; };
+		CCD84A132A73E45F005CDE5A /* ScrollQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */; };
+		CCD84A142A73E45F005CDE5A /* WebimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BE2A73E45F005CDE5A /* WebimService.swift */; };
+		CCD84A152A73E45F005CDE5A /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BF2A73E45F005CDE5A /* FilePicker.swift */; };
+		CCD84A162A73E45F005CDE5A /* WebimServerSideSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C02A73E45F005CDE5A /* WebimServerSideSettingsManager.swift */; };
+		CCD84A172A73E45F005CDE5A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C22A73E45F005CDE5A /* UIView.swift */; };
+		CCD84A182A73E45F005CDE5A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C32A73E45F005CDE5A /* UIStackView.swift */; };
+		CCD84A192A73E45F005CDE5A /* CollectionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C42A73E45F005CDE5A /* CollectionUtils.swift */; };
+		CCD84A1A2A73E45F005CDE5A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C52A73E45F005CDE5A /* Message.swift */; };
+		CCD84A1B2A73E45F005CDE5A /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C62A73E45F005CDE5A /* URL+extension.swift */; };
+		CCD84A1C2A73E45F005CDE5A /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C72A73E45F005CDE5A /* UITableView.swift */; };
+		CCD84A1D2A73E45F005CDE5A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C82A73E45F005CDE5A /* UITextField.swift */; };
+		CCD84A1E2A73E45F005CDE5A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C92A73E45F005CDE5A /* String.swift */; };
+		CCD84A1F2A73E45F005CDE5A /* NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848CA2A73E45F005CDE5A /* NSRange.swift */; };
+		CCD84A202A73E45F005CDE5A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848CB2A73E45F005CDE5A /* UIButton.swift */; };
+		CCD84A212A73E45F005CDE5A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848CC2A73E45F005CDE5A /* UIImage.swift */; };
+		CCD84A222A73E45F005CDE5A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848CD2A73E45F005CDE5A /* UIViewController.swift */; };
+		CCD84A232A73E45F005CDE5A /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848CE2A73E45F005CDE5A /* NotificationCenter+Extensions.swift */; };
+		CCD84A242A73E45F005CDE5A /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848CF2A73E45F005CDE5A /* UITextView.swift */; };
+		CCD84A252A73E45F005CDE5A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D02A73E45F005CDE5A /* UINavigationController.swift */; };
+		CCD84A262A73E45F005CDE5A /* UIActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D12A73E45F005CDE5A /* UIActivityType.swift */; };
+		CCD84A272A73E45F005CDE5A /* WMDocumentDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D32A73E45F005CDE5A /* WMDocumentDownloadManager.swift */; };
+		CCD84A282A73E45F005CDE5A /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D42A73E45F005CDE5A /* MimeType.swift */; };
+		CCD84A292A73E45F005CDE5A /* WMTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D52A73E45F005CDE5A /* WMTestManager.swift */; };
+		CCD84A2A2A73E45F005CDE5A /* WMInterfaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D62A73E45F005CDE5A /* WMInterfaceData.swift */; };
+		CCD84A2B2A73E45F005CDE5A /* WMWeakReferenseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D72A73E45F005CDE5A /* WMWeakReferenseContainer.swift */; };
+		CCD84A2C2A73E45F005CDE5A /* WMFileDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D82A73E45F005CDE5A /* WMFileDownloadManager.swift */; };
+		CCD84A2D2A73E45F005CDE5A /* WidgetAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848D92A73E45F005CDE5A /* WidgetAppDelegate.swift */; };
+		CCD84A2E2A73E45F005CDE5A /* WMSaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848DC2A73E45F005CDE5A /* WMSaveView.swift */; };
+		CCD84A2F2A73E45F005CDE5A /* WMLogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848DE2A73E45F005CDE5A /* WMLogsViewController.swift */; };
+		CCD84A302A73E45F005CDE5A /* WMFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E02A73E45F005CDE5A /* WMFileViewController.swift */; };
+		CCD84A312A73E45F005CDE5A /* SurveyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E22A73E45F005CDE5A /* SurveyTableViewCell.swift */; };
+		CCD84A322A73E45F005CDE5A /* SurveyCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E32A73E45F005CDE5A /* SurveyCommentViewController.swift */; };
+		CCD84A332A73E45F005CDE5A /* SurveyRadioButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E42A73E45F005CDE5A /* SurveyRadioButtonViewController.swift */; };
+		CCD84A342A73E45F005CDE5A /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E52A73E45F005CDE5A /* TextViewWithPlaceholder.swift */; };
+		CCD84A352A73E45F005CDE5A /* WMSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E62A73E45F005CDE5A /* WMSurveyViewController.swift */; };
+		CCD84A362A73E45F005CDE5A /* RateStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848E72A73E45F005CDE5A /* RateStarsViewController.swift */; };
+		CCD84A372A73E45F005CDE5A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848EA2A73E45F005CDE5A /* ChatViewController.swift */; };
+		CCD84A382A73E45F005CDE5A /* WMFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848EC2A73E45F005CDE5A /* WMFileTableViewCell.swift */; };
+		CCD84A392A73E45F005CDE5A /* WMQuoteFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848ED2A73E45F005CDE5A /* WMQuoteFileCell.swift */; };
+		CCD84A3A2A73E45F005CDE5A /* WMImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848EE2A73E45F005CDE5A /* WMImageTableViewCell.swift */; };
+		CCD84A3B2A73E45F005CDE5A /* WMBotButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848F02A73E45F005CDE5A /* WMBotButtonsTableViewCell.swift */; };
+		CCD84A3C2A73E45F005CDE5A /* WMQuoteMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848F12A73E45F005CDE5A /* WMQuoteMessageCell.swift */; };
+		CCD84A3D2A73E45F005CDE5A /* WMNilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848F32A73E45F005CDE5A /* WMNilTableViewCell.swift */; };
+		CCD84A3E2A73E45F005CDE5A /* WMVisitorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848F62A73E45F005CDE5A /* WMVisitorImageCell.swift */; };
+		CCD84A3F2A73E45F005CDE5A /* WMVisitorFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848F82A73E45F005CDE5A /* WMVisitorFileCell.swift */; };
+		CCD84A402A73E45F005CDE5A /* WMVisitorMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848FA2A73E45F005CDE5A /* WMVisitorMessageCell.swift */; };
+		CCD84A412A73E45F005CDE5A /* WMVisitorQuoteImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848FC2A73E45F005CDE5A /* WMVisitorQuoteImageCell.swift */; };
+		CCD84A422A73E45F005CDE5A /* WMVisitorQuoteMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848FD2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.swift */; };
+		CCD84A432A73E45F005CDE5A /* WMVisitorQuoteFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848FE2A73E45F005CDE5A /* WMVisitorQuoteFileCell.swift */; };
+		CCD84A442A73E45F005CDE5A /* WMQuoteImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848FF2A73E45F005CDE5A /* WMQuoteImageCell.swift */; };
+		CCD84A452A73E45F005CDE5A /* WMInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849012A73E45F005CDE5A /* WMInfoCell.swift */; };
+		CCD84A462A73E45F005CDE5A /* WMMessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849022A73E45F005CDE5A /* WMMessageTableCell.swift */; };
+		CCD84A472A73E45F005CDE5A /* WMOperatorFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849052A73E45F005CDE5A /* WMOperatorFileCell.swift */; };
+		CCD84A482A73E45F005CDE5A /* WMOperatorMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849072A73E45F005CDE5A /* WMOperatorMessageCell.swift */; };
+		CCD84A492A73E45F005CDE5A /* WMOperatorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849092A73E45F005CDE5A /* WMOperatorImageCell.swift */; };
+		CCD84A4A2A73E45F005CDE5A /* WMOperatorQuoteFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8490B2A73E45F005CDE5A /* WMOperatorQuoteFileCell.swift */; };
+		CCD84A4B2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8490C2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.swift */; };
+		CCD84A4C2A73E45F005CDE5A /* WMOperatorQuoteImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8490D2A73E45F005CDE5A /* WMOperatorQuoteImageCell.swift */; };
+		CCD84A4D2A73E45F005CDE5A /* ChatViewController+Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8490E2A73E45F005CDE5A /* ChatViewController+Listener.swift */; };
+		CCD84A4E2A73E45F005CDE5A /* ChatViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8490F2A73E45F005CDE5A /* ChatViewController+Setup.swift */; };
+		CCD84A4F2A73E45F005CDE5A /* ChatViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849102A73E45F005CDE5A /* ChatViewController+UITableView.swift */; };
+		CCD84A502A73E45F005CDE5A /* ChatViewController+WMDialogPopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849112A73E45F005CDE5A /* ChatViewController+WMDialogPopoverDelegate.swift */; };
+		CCD84A512A73E45F005CDE5A /* ChatViewController+WMDialogCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849122A73E45F005CDE5A /* ChatViewController+WMDialogCellDelegate.swift */; };
+		CCD84A522A73E45F005CDE5A /* ChatViewController+Surveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849132A73E45F005CDE5A /* ChatViewController+Surveys.swift */; };
+		CCD84A532A73E45F005CDE5A /* ChatViewController+CompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849142A73E45F005CDE5A /* ChatViewController+CompletionHandler.swift */; };
+		CCD84A542A73E45F005CDE5A /* WMToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849172A73E45F005CDE5A /* WMToolbarView.swift */; };
+		CCD84A552A73E45F005CDE5A /* WMToolbarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849182A73E45F005CDE5A /* WMToolbarBackgroundView.swift */; };
+		CCD84A562A73E45F005CDE5A /* WMNewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849192A73E45F005CDE5A /* WMNewMessageView.swift */; };
+		CCD84A572A73E45F005CDE5A /* WMQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8491A2A73E45F005CDE5A /* WMQuoteView.swift */; };
+		CCD84A582A73E45F005CDE5A /* WMThanksAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8491C2A73E45F005CDE5A /* WMThanksAlertView.swift */; };
+		CCD84A592A73E45F005CDE5A /* ChatTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8491E2A73E45F005CDE5A /* ChatTestView.swift */; };
+		CCD84A5A2A73E45F005CDE5A /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8491F2A73E45F005CDE5A /* ConnectionErrorView.swift */; };
+		CCD84A5B2A73E45F005CDE5A /* ScrollButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849212A73E45F005CDE5A /* ScrollButtonView.swift */; };
+		CCD84A5C2A73E45F005CDE5A /* ChatTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849232A73E45F005CDE5A /* ChatTitleView.swift */; };
+		CCD84A5D2A73E45F005CDE5A /* WMImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849252A73E45F005CDE5A /* WMImageViewController.swift */; };
+		CCD84A5E2A73E45F005CDE5A /* PopupActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849272A73E45F005CDE5A /* PopupActionsViewController.swift */; };
+		CCD84A5F2A73E45F005CDE5A /* PopupActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD849282A73E45F005CDE5A /* PopupActionsTableViewCell.swift */; };
+		CCD84A602A73E45F005CDE5A /* WMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8492A2A73E45F005CDE5A /* WMProtocols.swift */; };
+		CCD84A612A73E45F005CDE5A /* WebimMobileWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = CCD8492B2A73E45F005CDE5A /* WebimMobileWidget.h */; };
+		CCD84A622A73E45F005CDE5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8492D2A73E45F005CDE5A /* Localizable.strings */; };
+		CCD84A632A73E45F005CDE5A /* WMSaveView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849342A73E45F005CDE5A /* WMSaveView.strings */; };
+		CCD84A642A73E45F005CDE5A /* WMSaveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849362A73E45F005CDE5A /* WMSaveView.xib */; };
+		CCD84A652A73E45F005CDE5A /* WMLogsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8493A2A73E45F005CDE5A /* WMLogsViewController.strings */; };
+		CCD84A662A73E45F005CDE5A /* WMLogsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD8493C2A73E45F005CDE5A /* WMLogsViewController.xib */; };
+		CCD84A672A73E45F005CDE5A /* WMFileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849402A73E45F005CDE5A /* WMFileViewController.strings */; };
+		CCD84A682A73E45F005CDE5A /* WMFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849422A73E45F005CDE5A /* WMFileViewController.xib */; };
+		CCD84A692A73E45F005CDE5A /* RateStarsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849462A73E45F005CDE5A /* RateStarsViewController.strings */; };
+		CCD84A6A2A73E45F005CDE5A /* SurveyRadioButtonViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849482A73E45F005CDE5A /* SurveyRadioButtonViewController.strings */; };
+		CCD84A6B2A73E45F005CDE5A /* SurveyTableViewCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8494A2A73E45F005CDE5A /* SurveyTableViewCell.strings */; };
+		CCD84A6C2A73E45F005CDE5A /* SurveyCommentViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8494C2A73E45F005CDE5A /* SurveyCommentViewController.strings */; };
+		CCD84A6D2A73E45F005CDE5A /* SurveyCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD8494E2A73E45F005CDE5A /* SurveyCommentViewController.xib */; };
+		CCD84A6E2A73E45F005CDE5A /* RateStarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849502A73E45F005CDE5A /* RateStarsViewController.xib */; };
+		CCD84A6F2A73E45F005CDE5A /* SurveyRadioButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849522A73E45F005CDE5A /* SurveyRadioButtonViewController.xib */; };
+		CCD84A702A73E45F005CDE5A /* SurveyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849542A73E45F005CDE5A /* SurveyTableViewCell.xib */; };
+		CCD84A712A73E45F005CDE5A /* WMBotButtonsTableViewCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8495E2A73E45F005CDE5A /* WMBotButtonsTableViewCell.strings */; };
+		CCD84A722A73E45F005CDE5A /* WMBotButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849602A73E45F005CDE5A /* WMBotButtonsTableViewCell.xib */; };
+		CCD84A732A73E45F005CDE5A /* WMNilTableViewCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849642A73E45F005CDE5A /* WMNilTableViewCell.strings */; };
+		CCD84A742A73E45F005CDE5A /* WMNilTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849662A73E45F005CDE5A /* WMNilTableViewCell.xib */; };
+		CCD84A752A73E45F005CDE5A /* WMVisitorImageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8496B2A73E45F005CDE5A /* WMVisitorImageCell.strings */; };
+		CCD84A762A73E45F005CDE5A /* WMVisitorImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD8496D2A73E45F005CDE5A /* WMVisitorImageCell.xib */; };
+		CCD84A772A73E45F005CDE5A /* WMVisitorFileCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849712A73E45F005CDE5A /* WMVisitorFileCell.strings */; };
+		CCD84A782A73E45F005CDE5A /* WMVisitorFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849732A73E45F005CDE5A /* WMVisitorFileCell.xib */; };
+		CCD84A792A73E45F005CDE5A /* WMVisitorMessageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849772A73E45F005CDE5A /* WMVisitorMessageCell.strings */; };
+		CCD84A7A2A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849792A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings */; };
+		CCD84A7B2A73E45F005CDE5A /* WMVisitorMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD8497B2A73E45F005CDE5A /* WMVisitorMessageCell.xib */; };
+		CCD84A7C2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8497F2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.strings */; };
+		CCD84A7D2A73E45F005CDE5A /* WMVisitorQuoteImageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849812A73E45F005CDE5A /* WMVisitorQuoteImageCell.strings */; };
+		CCD84A7E2A73E45F005CDE5A /* WMVisitorQuoteFileCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849832A73E45F005CDE5A /* WMVisitorQuoteFileCell.strings */; };
+		CCD84A7F2A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849852A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib */; };
+		CCD84A802A73E45F005CDE5A /* WMVisitorQuoteImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849872A73E45F005CDE5A /* WMVisitorQuoteImageCell.xib */; };
+		CCD84A812A73E45F005CDE5A /* WMVisitorQuoteMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849892A73E45F005CDE5A /* WMVisitorQuoteMessageCell.xib */; };
+		CCD84A822A73E45F005CDE5A /* WMInfoCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8498F2A73E45F005CDE5A /* WMInfoCell.strings */; };
+		CCD84A832A73E45F005CDE5A /* WMInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849912A73E45F005CDE5A /* WMInfoCell.xib */; };
+		CCD84A842A73E45F005CDE5A /* WMOperatorFileCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849962A73E45F005CDE5A /* WMOperatorFileCell.strings */; };
+		CCD84A852A73E45F005CDE5A /* WMOperatorFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849982A73E45F005CDE5A /* WMOperatorFileCell.xib */; };
+		CCD84A862A73E45F005CDE5A /* WMOperatorMessageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD8499C2A73E45F005CDE5A /* WMOperatorMessageCell.strings */; };
+		CCD84A872A73E45F005CDE5A /* WMOperatorMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD8499E2A73E45F005CDE5A /* WMOperatorMessageCell.xib */; };
+		CCD84A882A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849A02A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings */; };
+		CCD84A892A73E45F005CDE5A /* WMOperatorImageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849A42A73E45F005CDE5A /* WMOperatorImageCell.strings */; };
+		CCD84A8A2A73E45F005CDE5A /* WMOperatorImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849A62A73E45F005CDE5A /* WMOperatorImageCell.xib */; };
+		CCD84A8B2A73E45F005CDE5A /* WMOperatorQuoteFileCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849AA2A73E45F005CDE5A /* WMOperatorQuoteFileCell.strings */; };
+		CCD84A8C2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849AC2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.strings */; };
+		CCD84A8D2A73E45F005CDE5A /* WMOperatorQuoteImageCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849AE2A73E45F005CDE5A /* WMOperatorQuoteImageCell.strings */; };
+		CCD84A8E2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849B02A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib */; };
+		CCD84A8F2A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849B22A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib */; };
+		CCD84A902A73E45F005CDE5A /* WMOperatorQuoteImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849B42A73E45F005CDE5A /* WMOperatorQuoteImageCell.xib */; };
+		CCD84A912A73E45F005CDE5A /* ChatViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849B92A73E45F005CDE5A /* ChatViewController.strings */; };
+		CCD84A922A73E45F005CDE5A /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849BB2A73E45F005CDE5A /* ChatViewController.xib */; };
+		CCD84A932A73E45F005CDE5A /* WMToolbarView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849C02A73E45F005CDE5A /* WMToolbarView.strings */; };
+		CCD84A942A73E45F005CDE5A /* WMQuoteView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849C22A73E45F005CDE5A /* WMQuoteView.strings */; };
+		CCD84A952A73E45F005CDE5A /* WMNewMessageView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849C42A73E45F005CDE5A /* WMNewMessageView.strings */; };
+		CCD84A962A73E45F005CDE5A /* WMToolbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849C62A73E45F005CDE5A /* WMToolbarView.xib */; };
+		CCD84A972A73E45F005CDE5A /* WMNewMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849C82A73E45F005CDE5A /* WMNewMessageView.xib */; };
+		CCD84A982A73E45F005CDE5A /* WMQuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849CA2A73E45F005CDE5A /* WMQuoteView.xib */; };
+		CCD84A992A73E45F005CDE5A /* ConnectionErrorView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849CF2A73E45F005CDE5A /* ConnectionErrorView.strings */; };
+		CCD84A9A2A73E45F005CDE5A /* WMThanksAlertView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849D22A73E45F005CDE5A /* WMThanksAlertView.strings */; };
+		CCD84A9B2A73E45F005CDE5A /* WMThanksAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849D42A73E45F005CDE5A /* WMThanksAlertView.xib */; };
+		CCD84A9C2A73E45F005CDE5A /* ChatTestView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849D82A73E45F005CDE5A /* ChatTestView.strings */; };
+		CCD84A9D2A73E45F005CDE5A /* ChatTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849DA2A73E45F005CDE5A /* ChatTestView.xib */; };
+		CCD84A9E2A73E45F005CDE5A /* ConnectionErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849DD2A73E45F005CDE5A /* ConnectionErrorView.xib */; };
+		CCD84A9F2A73E45F005CDE5A /* ScrollButtonView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849E12A73E45F005CDE5A /* ScrollButtonView.strings */; };
+		CCD84AA02A73E45F005CDE5A /* ScrollButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849E32A73E45F005CDE5A /* ScrollButtonView.xib */; };
+		CCD84AA12A73E45F005CDE5A /* ChatTitleView.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849E72A73E45F005CDE5A /* ChatTitleView.strings */; };
+		CCD84AA22A73E45F005CDE5A /* ChatTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849E92A73E45F005CDE5A /* ChatTitleView.xib */; };
+		CCD84AA32A73E45F005CDE5A /* WMImageViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCD849ED2A73E45F005CDE5A /* WMImageViewController.strings */; };
+		CCD84AA42A73E45F005CDE5A /* WMImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD849EF2A73E45F005CDE5A /* WMImageViewController.xib */; };
+		CCD84AA52A73E45F005CDE5A /* WidgetImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD849F22A73E45F005CDE5A /* WidgetImages.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BE435D70297FD00B00B946A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BE435D71297FD00B00B946A9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		BE435D8C297FD00B00B946A9 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		BE435EEE297FD00C00B946A9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BE435EEF297FD00C00B946A9 /* WebimMobileWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebimMobileWidget.podspec; sourceTree = "<group>"; };
+		BEB26A1529547455003F19C7 /* WebimMobileWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebimMobileWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD848972A73E45F005CDE5A /* WMToolbarConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMToolbarConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848982A73E45F005CDE5A /* WMWidgetBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMWidgetBuilder.swift; sourceTree = "<group>"; };
+		CCD8489A2A73E45F005CDE5A /* WMViewControllerConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMViewControllerConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD8489B2A73E45F005CDE5A /* WMImageViewControllerConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMImageViewControllerConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD8489C2A73E45F005CDE5A /* WMFileViewControllerConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFileViewControllerConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD8489D2A73E45F005CDE5A /* WMChatViewControllerConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMChatViewControllerConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD8489F2A73E45F005CDE5A /* WMImageNavigationBarConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMImageNavigationBarConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A02A73E45F005CDE5A /* WMNavigationBarConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNavigationBarConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A12A73E45F005CDE5A /* WMChatNavigationBarConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMChatNavigationBarConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A22A73E45F005CDE5A /* WMFileNavigationBarConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFileNavigationBarConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A32A73E45F005CDE5A /* WMPopupActionControllerConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMPopupActionControllerConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A42A73E45F005CDE5A /* WMNetworkErrorViewConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNetworkErrorViewConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A52A73E45F005CDE5A /* WMCellConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMCellConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A62A73E45F005CDE5A /* WMSurveyViewConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMSurveyViewConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A72A73E45F005CDE5A /* WMQuoteViewConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMQuoteViewConfigBuilder.swift; sourceTree = "<group>"; };
+		CCD848A82A73E45F005CDE5A /* WMConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMConfigs.swift; sourceTree = "<group>"; };
+		CCD848AB2A73E45F005CDE5A /* SpinningIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningIndicator.swift; sourceTree = "<group>"; };
+		CCD848AC2A73E45F005CDE5A /* TypingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingIndicator.swift; sourceTree = "<group>"; };
+		CCD848AD2A73E45F005CDE5A /* WMFixedContentSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFixedContentSizeView.swift; sourceTree = "<group>"; };
+		CCD848AE2A73E45F005CDE5A /* CustomUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIImage.swift; sourceTree = "<group>"; };
+		CCD848AF2A73E45F005CDE5A /* CustomUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		CCD848B02A73E45F005CDE5A /* CircleProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressIndicator.swift; sourceTree = "<group>"; };
+		CCD848B22A73E45F005CDE5A /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		CCD848B32A73E45F005CDE5A /* ColourConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourConstants.swift; sourceTree = "<group>"; };
+		CCD848B42A73E45F005CDE5A /* ImageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		CCD848B62A73E45F005CDE5A /* NavigationBarUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarUpdater.swift; sourceTree = "<group>"; };
+		CCD848B72A73E45F005CDE5A /* MessageCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCounter.swift; sourceTree = "<group>"; };
+		CCD848B82A73E45F005CDE5A /* WMDownloadFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMDownloadFileManager.swift; sourceTree = "<group>"; };
+		CCD848B92A73E45F005CDE5A /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimLogManager.swift; sourceTree = "<group>"; };
+		CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimServiceController.swift; sourceTree = "<group>"; };
+		CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollQueueManager.swift; sourceTree = "<group>"; };
+		CCD848BE2A73E45F005CDE5A /* WebimService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimService.swift; sourceTree = "<group>"; };
+		CCD848BF2A73E45F005CDE5A /* FilePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePicker.swift; sourceTree = "<group>"; };
+		CCD848C02A73E45F005CDE5A /* WebimServerSideSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimServerSideSettingsManager.swift; sourceTree = "<group>"; };
+		CCD848C22A73E45F005CDE5A /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CCD848C32A73E45F005CDE5A /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		CCD848C42A73E45F005CDE5A /* CollectionUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionUtils.swift; sourceTree = "<group>"; };
+		CCD848C52A73E45F005CDE5A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CCD848C62A73E45F005CDE5A /* URL+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
+		CCD848C72A73E45F005CDE5A /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		CCD848C82A73E45F005CDE5A /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		CCD848C92A73E45F005CDE5A /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		CCD848CA2A73E45F005CDE5A /* NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRange.swift; sourceTree = "<group>"; };
+		CCD848CB2A73E45F005CDE5A /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		CCD848CC2A73E45F005CDE5A /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		CCD848CD2A73E45F005CDE5A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		CCD848CE2A73E45F005CDE5A /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
+		CCD848CF2A73E45F005CDE5A /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		CCD848D02A73E45F005CDE5A /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		CCD848D12A73E45F005CDE5A /* UIActivityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityType.swift; sourceTree = "<group>"; };
+		CCD848D32A73E45F005CDE5A /* WMDocumentDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMDocumentDownloadManager.swift; sourceTree = "<group>"; };
+		CCD848D42A73E45F005CDE5A /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		CCD848D52A73E45F005CDE5A /* WMTestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMTestManager.swift; sourceTree = "<group>"; };
+		CCD848D62A73E45F005CDE5A /* WMInterfaceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMInterfaceData.swift; sourceTree = "<group>"; };
+		CCD848D72A73E45F005CDE5A /* WMWeakReferenseContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMWeakReferenseContainer.swift; sourceTree = "<group>"; };
+		CCD848D82A73E45F005CDE5A /* WMFileDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFileDownloadManager.swift; sourceTree = "<group>"; };
+		CCD848D92A73E45F005CDE5A /* WidgetAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetAppDelegate.swift; sourceTree = "<group>"; };
+		CCD848DC2A73E45F005CDE5A /* WMSaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMSaveView.swift; sourceTree = "<group>"; };
+		CCD848DE2A73E45F005CDE5A /* WMLogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMLogsViewController.swift; sourceTree = "<group>"; };
+		CCD848E02A73E45F005CDE5A /* WMFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFileViewController.swift; sourceTree = "<group>"; };
+		CCD848E22A73E45F005CDE5A /* SurveyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTableViewCell.swift; sourceTree = "<group>"; };
+		CCD848E32A73E45F005CDE5A /* SurveyCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCommentViewController.swift; sourceTree = "<group>"; };
+		CCD848E42A73E45F005CDE5A /* SurveyRadioButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyRadioButtonViewController.swift; sourceTree = "<group>"; };
+		CCD848E52A73E45F005CDE5A /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
+		CCD848E62A73E45F005CDE5A /* WMSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMSurveyViewController.swift; sourceTree = "<group>"; };
+		CCD848E72A73E45F005CDE5A /* RateStarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateStarsViewController.swift; sourceTree = "<group>"; };
+		CCD848EA2A73E45F005CDE5A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CCD848EC2A73E45F005CDE5A /* WMFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMFileTableViewCell.swift; sourceTree = "<group>"; };
+		CCD848ED2A73E45F005CDE5A /* WMQuoteFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMQuoteFileCell.swift; sourceTree = "<group>"; };
+		CCD848EE2A73E45F005CDE5A /* WMImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMImageTableViewCell.swift; sourceTree = "<group>"; };
+		CCD848F02A73E45F005CDE5A /* WMBotButtonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMBotButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		CCD848F12A73E45F005CDE5A /* WMQuoteMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMQuoteMessageCell.swift; sourceTree = "<group>"; };
+		CCD848F32A73E45F005CDE5A /* WMNilTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNilTableViewCell.swift; sourceTree = "<group>"; };
+		CCD848F62A73E45F005CDE5A /* WMVisitorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVisitorImageCell.swift; sourceTree = "<group>"; };
+		CCD848F82A73E45F005CDE5A /* WMVisitorFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVisitorFileCell.swift; sourceTree = "<group>"; };
+		CCD848FA2A73E45F005CDE5A /* WMVisitorMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVisitorMessageCell.swift; sourceTree = "<group>"; };
+		CCD848FC2A73E45F005CDE5A /* WMVisitorQuoteImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVisitorQuoteImageCell.swift; sourceTree = "<group>"; };
+		CCD848FD2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVisitorQuoteMessageCell.swift; sourceTree = "<group>"; };
+		CCD848FE2A73E45F005CDE5A /* WMVisitorQuoteFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVisitorQuoteFileCell.swift; sourceTree = "<group>"; };
+		CCD848FF2A73E45F005CDE5A /* WMQuoteImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMQuoteImageCell.swift; sourceTree = "<group>"; };
+		CCD849012A73E45F005CDE5A /* WMInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMInfoCell.swift; sourceTree = "<group>"; };
+		CCD849022A73E45F005CDE5A /* WMMessageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMMessageTableCell.swift; sourceTree = "<group>"; };
+		CCD849052A73E45F005CDE5A /* WMOperatorFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMOperatorFileCell.swift; sourceTree = "<group>"; };
+		CCD849072A73E45F005CDE5A /* WMOperatorMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMOperatorMessageCell.swift; sourceTree = "<group>"; };
+		CCD849092A73E45F005CDE5A /* WMOperatorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMOperatorImageCell.swift; sourceTree = "<group>"; };
+		CCD8490B2A73E45F005CDE5A /* WMOperatorQuoteFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMOperatorQuoteFileCell.swift; sourceTree = "<group>"; };
+		CCD8490C2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMOperatorQuoteMessageCell.swift; sourceTree = "<group>"; };
+		CCD8490D2A73E45F005CDE5A /* WMOperatorQuoteImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMOperatorQuoteImageCell.swift; sourceTree = "<group>"; };
+		CCD8490E2A73E45F005CDE5A /* ChatViewController+Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Listener.swift"; sourceTree = "<group>"; };
+		CCD8490F2A73E45F005CDE5A /* ChatViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Setup.swift"; sourceTree = "<group>"; };
+		CCD849102A73E45F005CDE5A /* ChatViewController+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+UITableView.swift"; sourceTree = "<group>"; };
+		CCD849112A73E45F005CDE5A /* ChatViewController+WMDialogPopoverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+WMDialogPopoverDelegate.swift"; sourceTree = "<group>"; };
+		CCD849122A73E45F005CDE5A /* ChatViewController+WMDialogCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+WMDialogCellDelegate.swift"; sourceTree = "<group>"; };
+		CCD849132A73E45F005CDE5A /* ChatViewController+Surveys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+Surveys.swift"; sourceTree = "<group>"; };
+		CCD849142A73E45F005CDE5A /* ChatViewController+CompletionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController+CompletionHandler.swift"; sourceTree = "<group>"; };
+		CCD849172A73E45F005CDE5A /* WMToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMToolbarView.swift; sourceTree = "<group>"; };
+		CCD849182A73E45F005CDE5A /* WMToolbarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMToolbarBackgroundView.swift; sourceTree = "<group>"; };
+		CCD849192A73E45F005CDE5A /* WMNewMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNewMessageView.swift; sourceTree = "<group>"; };
+		CCD8491A2A73E45F005CDE5A /* WMQuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMQuoteView.swift; sourceTree = "<group>"; };
+		CCD8491C2A73E45F005CDE5A /* WMThanksAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMThanksAlertView.swift; sourceTree = "<group>"; };
+		CCD8491E2A73E45F005CDE5A /* ChatTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTestView.swift; sourceTree = "<group>"; };
+		CCD8491F2A73E45F005CDE5A /* ConnectionErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
+		CCD849212A73E45F005CDE5A /* ScrollButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollButtonView.swift; sourceTree = "<group>"; };
+		CCD849232A73E45F005CDE5A /* ChatTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTitleView.swift; sourceTree = "<group>"; };
+		CCD849252A73E45F005CDE5A /* WMImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMImageViewController.swift; sourceTree = "<group>"; };
+		CCD849272A73E45F005CDE5A /* PopupActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupActionsViewController.swift; sourceTree = "<group>"; };
+		CCD849282A73E45F005CDE5A /* PopupActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupActionsTableViewCell.swift; sourceTree = "<group>"; };
+		CCD8492A2A73E45F005CDE5A /* WMProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMProtocols.swift; sourceTree = "<group>"; };
+		CCD8492B2A73E45F005CDE5A /* WebimMobileWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebimMobileWidget.h; sourceTree = "<group>"; };
+		CCD8492E2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CCD8492F2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CCD849302A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CCD849352A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMSaveView.strings; sourceTree = "<group>"; };
+		CCD849372A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMSaveView.xib; sourceTree = "<group>"; };
+		CCD849382A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMSaveView.strings; sourceTree = "<group>"; };
+		CCD8493B2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMLogsViewController.strings; sourceTree = "<group>"; };
+		CCD8493D2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMLogsViewController.xib; sourceTree = "<group>"; };
+		CCD8493E2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMLogsViewController.strings; sourceTree = "<group>"; };
+		CCD849412A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMFileViewController.strings; sourceTree = "<group>"; };
+		CCD849432A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMFileViewController.xib; sourceTree = "<group>"; };
+		CCD849442A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMFileViewController.strings; sourceTree = "<group>"; };
+		CCD849472A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RateStarsViewController.strings; sourceTree = "<group>"; };
+		CCD849492A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SurveyRadioButtonViewController.strings; sourceTree = "<group>"; };
+		CCD8494B2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SurveyTableViewCell.strings; sourceTree = "<group>"; };
+		CCD8494D2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SurveyCommentViewController.strings; sourceTree = "<group>"; };
+		CCD8494F2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SurveyCommentViewController.xib; sourceTree = "<group>"; };
+		CCD849512A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RateStarsViewController.xib; sourceTree = "<group>"; };
+		CCD849532A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SurveyRadioButtonViewController.xib; sourceTree = "<group>"; };
+		CCD849552A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SurveyTableViewCell.xib; sourceTree = "<group>"; };
+		CCD849562A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RateStarsViewController.strings; sourceTree = "<group>"; };
+		CCD849572A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SurveyRadioButtonViewController.strings; sourceTree = "<group>"; };
+		CCD849582A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SurveyTableViewCell.strings; sourceTree = "<group>"; };
+		CCD849592A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SurveyCommentViewController.strings; sourceTree = "<group>"; };
+		CCD8495F2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMBotButtonsTableViewCell.strings; sourceTree = "<group>"; };
+		CCD849612A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMBotButtonsTableViewCell.xib; sourceTree = "<group>"; };
+		CCD849622A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMBotButtonsTableViewCell.strings; sourceTree = "<group>"; };
+		CCD849652A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMNilTableViewCell.strings; sourceTree = "<group>"; };
+		CCD849672A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMNilTableViewCell.xib; sourceTree = "<group>"; };
+		CCD849682A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMNilTableViewCell.strings; sourceTree = "<group>"; };
+		CCD8496C2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMVisitorImageCell.strings; sourceTree = "<group>"; };
+		CCD8496E2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMVisitorImageCell.xib; sourceTree = "<group>"; };
+		CCD8496F2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorImageCell.strings; sourceTree = "<group>"; };
+		CCD849722A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMVisitorFileCell.strings; sourceTree = "<group>"; };
+		CCD849742A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMVisitorFileCell.xib; sourceTree = "<group>"; };
+		CCD849752A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorFileCell.strings; sourceTree = "<group>"; };
+		CCD849782A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMVisitorMessageCell.strings; sourceTree = "<group>"; };
+		CCD8497A2A73E45F005CDE5A /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/WMVisitorMessageTableViewCell.strings"; sourceTree = "<group>"; };
+		CCD8497C2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMVisitorMessageCell.xib; sourceTree = "<group>"; };
+		CCD8497D2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorMessageCell.strings; sourceTree = "<group>"; };
+		CCD849802A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMVisitorQuoteMessageCell.strings; sourceTree = "<group>"; };
+		CCD849822A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMVisitorQuoteImageCell.strings; sourceTree = "<group>"; };
+		CCD849842A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMVisitorQuoteFileCell.strings; sourceTree = "<group>"; };
+		CCD849862A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMVisitorQuoteFileCell.xib; sourceTree = "<group>"; };
+		CCD849882A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMVisitorQuoteImageCell.xib; sourceTree = "<group>"; };
+		CCD8498A2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMVisitorQuoteMessageCell.xib; sourceTree = "<group>"; };
+		CCD8498B2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorQuoteMessageCell.strings; sourceTree = "<group>"; };
+		CCD8498C2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorQuoteImageCell.strings; sourceTree = "<group>"; };
+		CCD8498D2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorQuoteFileCell.strings; sourceTree = "<group>"; };
+		CCD849902A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMInfoCell.strings; sourceTree = "<group>"; };
+		CCD849922A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMInfoCell.xib; sourceTree = "<group>"; };
+		CCD849932A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMInfoCell.strings; sourceTree = "<group>"; };
+		CCD849972A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMOperatorFileCell.strings; sourceTree = "<group>"; };
+		CCD849992A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMOperatorFileCell.xib; sourceTree = "<group>"; };
+		CCD8499A2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMOperatorFileCell.strings; sourceTree = "<group>"; };
+		CCD8499D2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMOperatorMessageCell.strings; sourceTree = "<group>"; };
+		CCD8499F2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMOperatorMessageCell.xib; sourceTree = "<group>"; };
+		CCD849A12A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMVisitorMessageTableViewCell.strings; sourceTree = "<group>"; };
+		CCD849A22A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMOperatorMessageCell.strings; sourceTree = "<group>"; };
+		CCD849A52A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMOperatorImageCell.strings; sourceTree = "<group>"; };
+		CCD849A72A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMOperatorImageCell.xib; sourceTree = "<group>"; };
+		CCD849A82A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMOperatorImageCell.strings; sourceTree = "<group>"; };
+		CCD849AB2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMOperatorQuoteFileCell.strings; sourceTree = "<group>"; };
+		CCD849AD2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMOperatorQuoteMessageCell.strings; sourceTree = "<group>"; };
+		CCD849AF2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMOperatorQuoteImageCell.strings; sourceTree = "<group>"; };
+		CCD849B12A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMOperatorQuoteMessageCell.xib; sourceTree = "<group>"; };
+		CCD849B32A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMOperatorQuoteFileCell.xib; sourceTree = "<group>"; };
+		CCD849B52A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMOperatorQuoteImageCell.xib; sourceTree = "<group>"; };
+		CCD849B62A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMOperatorQuoteFileCell.strings; sourceTree = "<group>"; };
+		CCD849B72A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMOperatorQuoteMessageCell.strings; sourceTree = "<group>"; };
+		CCD849B82A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMOperatorQuoteImageCell.strings; sourceTree = "<group>"; };
+		CCD849BA2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChatViewController.strings; sourceTree = "<group>"; };
+		CCD849BC2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatViewController.xib; sourceTree = "<group>"; };
+		CCD849BD2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChatViewController.strings; sourceTree = "<group>"; };
+		CCD849C12A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMToolbarView.strings; sourceTree = "<group>"; };
+		CCD849C32A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMQuoteView.strings; sourceTree = "<group>"; };
+		CCD849C52A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMNewMessageView.strings; sourceTree = "<group>"; };
+		CCD849C72A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMToolbarView.xib; sourceTree = "<group>"; };
+		CCD849C92A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMNewMessageView.xib; sourceTree = "<group>"; };
+		CCD849CB2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMQuoteView.xib; sourceTree = "<group>"; };
+		CCD849CC2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMToolbarView.strings; sourceTree = "<group>"; };
+		CCD849CD2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMQuoteView.strings; sourceTree = "<group>"; };
+		CCD849CE2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMNewMessageView.strings; sourceTree = "<group>"; };
+		CCD849D02A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ConnectionErrorView.strings; sourceTree = "<group>"; };
+		CCD849D32A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMThanksAlertView.strings; sourceTree = "<group>"; };
+		CCD849D52A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMThanksAlertView.xib; sourceTree = "<group>"; };
+		CCD849D62A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMThanksAlertView.strings; sourceTree = "<group>"; };
+		CCD849D92A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChatTestView.strings; sourceTree = "<group>"; };
+		CCD849DB2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatTestView.xib; sourceTree = "<group>"; };
+		CCD849DC2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChatTestView.strings; sourceTree = "<group>"; };
+		CCD849DE2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ConnectionErrorView.xib; sourceTree = "<group>"; };
+		CCD849DF2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ConnectionErrorView.strings; sourceTree = "<group>"; };
+		CCD849E22A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ScrollButtonView.strings; sourceTree = "<group>"; };
+		CCD849E42A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ScrollButtonView.xib; sourceTree = "<group>"; };
+		CCD849E52A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ScrollButtonView.strings; sourceTree = "<group>"; };
+		CCD849E82A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChatTitleView.strings; sourceTree = "<group>"; };
+		CCD849EA2A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatTitleView.xib; sourceTree = "<group>"; };
+		CCD849EB2A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChatTitleView.strings; sourceTree = "<group>"; };
+		CCD849EE2A73E45F005CDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WMImageViewController.strings; sourceTree = "<group>"; };
+		CCD849F02A73E45F005CDE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WMImageViewController.xib; sourceTree = "<group>"; };
+		CCD849F12A73E45F005CDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WMImageViewController.strings; sourceTree = "<group>"; };
+		CCD849F22A73E45F005CDE5A /* WidgetImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WidgetImages.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEB26A1229547455003F19C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEB26A0B29547455003F19C7 = {
+			isa = PBXGroup;
+			children = (
+				CCD848942A73E45F005CDE5A /* WebimMobileWidget */,
+				BE435D71297FD00B00B946A9 /* Cartfile */,
+				BE435EEE297FD00C00B946A9 /* LICENSE */,
+				BE435D8C297FD00B00B946A9 /* Package.swift */,
+				BE435D70297FD00B00B946A9 /* README.md */,
+				BE435EEF297FD00C00B946A9 /* WebimMobileWidget.podspec */,
+				BEB26A1629547455003F19C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEB26A1629547455003F19C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEB26A1529547455003F19C7 /* WebimMobileWidget.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCD848942A73E45F005CDE5A /* WebimMobileWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848952A73E45F005CDE5A /* Classes */,
+				CCD849312A73E45F005CDE5A /* Assets */,
+			);
+			name = WebimMobileWidget;
+			path = Sources/WebimMobileWidget;
+			sourceTree = "<group>";
+		};
+		CCD848952A73E45F005CDE5A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848962A73E45F005CDE5A /* Builders */,
+				CCD848A82A73E45F005CDE5A /* WMConfigs.swift */,
+				CCD848A92A73E45F005CDE5A /* SDK Files */,
+				CCD8492B2A73E45F005CDE5A /* WebimMobileWidget.h */,
+				CCD8492C2A73E45F005CDE5A /* Localization */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CCD848962A73E45F005CDE5A /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848972A73E45F005CDE5A /* WMToolbarConfigBuilder.swift */,
+				CCD848982A73E45F005CDE5A /* WMWidgetBuilder.swift */,
+				CCD848992A73E45F005CDE5A /* ViewControllerConfigBuilders */,
+				CCD8489E2A73E45F005CDE5A /* NavigationBuilders */,
+				CCD848A32A73E45F005CDE5A /* WMPopupActionControllerConfigBuilder.swift */,
+				CCD848A42A73E45F005CDE5A /* WMNetworkErrorViewConfigBuilder.swift */,
+				CCD848A52A73E45F005CDE5A /* WMCellConfigBuilder.swift */,
+				CCD848A62A73E45F005CDE5A /* WMSurveyViewConfigBuilder.swift */,
+				CCD848A72A73E45F005CDE5A /* WMQuoteViewConfigBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		CCD848992A73E45F005CDE5A /* ViewControllerConfigBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8489A2A73E45F005CDE5A /* WMViewControllerConfigBuilder.swift */,
+				CCD8489B2A73E45F005CDE5A /* WMImageViewControllerConfigBuilder.swift */,
+				CCD8489C2A73E45F005CDE5A /* WMFileViewControllerConfigBuilder.swift */,
+				CCD8489D2A73E45F005CDE5A /* WMChatViewControllerConfigBuilder.swift */,
+			);
+			path = ViewControllerConfigBuilders;
+			sourceTree = "<group>";
+		};
+		CCD8489E2A73E45F005CDE5A /* NavigationBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8489F2A73E45F005CDE5A /* WMImageNavigationBarConfigBuilder.swift */,
+				CCD848A02A73E45F005CDE5A /* WMNavigationBarConfigBuilder.swift */,
+				CCD848A12A73E45F005CDE5A /* WMChatNavigationBarConfigBuilder.swift */,
+				CCD848A22A73E45F005CDE5A /* WMFileNavigationBarConfigBuilder.swift */,
+			);
+			path = NavigationBuilders;
+			sourceTree = "<group>";
+		};
+		CCD848A92A73E45F005CDE5A /* SDK Files */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848AA2A73E45F005CDE5A /* GeneralViews */,
+				CCD848B12A73E45F005CDE5A /* AppearanceSettings */,
+				CCD848B52A73E45F005CDE5A /* Models */,
+				CCD848C12A73E45F005CDE5A /* Extensions */,
+				CCD848D22A73E45F005CDE5A /* Utilities */,
+				CCD848D92A73E45F005CDE5A /* WidgetAppDelegate.swift */,
+				CCD848DA2A73E45F005CDE5A /* ViewControllers */,
+				CCD849292A73E45F005CDE5A /* Protocols */,
+			);
+			path = "SDK Files";
+			sourceTree = "<group>";
+		};
+		CCD848AA2A73E45F005CDE5A /* GeneralViews */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848AB2A73E45F005CDE5A /* SpinningIndicator.swift */,
+				CCD848AC2A73E45F005CDE5A /* TypingIndicator.swift */,
+				CCD848AD2A73E45F005CDE5A /* WMFixedContentSizeView.swift */,
+				CCD848AE2A73E45F005CDE5A /* CustomUIImage.swift */,
+				CCD848AF2A73E45F005CDE5A /* CustomUIButton.swift */,
+				CCD848B02A73E45F005CDE5A /* CircleProgressIndicator.swift */,
+			);
+			path = GeneralViews;
+			sourceTree = "<group>";
+		};
+		CCD848B12A73E45F005CDE5A /* AppearanceSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848B22A73E45F005CDE5A /* StringConstants.swift */,
+				CCD848B32A73E45F005CDE5A /* ColourConstants.swift */,
+				CCD848B42A73E45F005CDE5A /* ImageConstants.swift */,
+			);
+			path = AppearanceSettings;
+			sourceTree = "<group>";
+		};
+		CCD848B52A73E45F005CDE5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848B62A73E45F005CDE5A /* NavigationBarUpdater.swift */,
+				CCD848B72A73E45F005CDE5A /* MessageCounter.swift */,
+				CCD848B82A73E45F005CDE5A /* WMDownloadFileManager.swift */,
+				CCD848B92A73E45F005CDE5A /* AlertController.swift */,
+				CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */,
+				CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */,
+				CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */,
+				CCD848BE2A73E45F005CDE5A /* WebimService.swift */,
+				CCD848BF2A73E45F005CDE5A /* FilePicker.swift */,
+				CCD848C02A73E45F005CDE5A /* WebimServerSideSettingsManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCD848C12A73E45F005CDE5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848C22A73E45F005CDE5A /* UIView.swift */,
+				CCD848C32A73E45F005CDE5A /* UIStackView.swift */,
+				CCD848C42A73E45F005CDE5A /* CollectionUtils.swift */,
+				CCD848C52A73E45F005CDE5A /* Message.swift */,
+				CCD848C62A73E45F005CDE5A /* URL+extension.swift */,
+				CCD848C72A73E45F005CDE5A /* UITableView.swift */,
+				CCD848C82A73E45F005CDE5A /* UITextField.swift */,
+				CCD848C92A73E45F005CDE5A /* String.swift */,
+				CCD848CA2A73E45F005CDE5A /* NSRange.swift */,
+				CCD848CB2A73E45F005CDE5A /* UIButton.swift */,
+				CCD848CC2A73E45F005CDE5A /* UIImage.swift */,
+				CCD848CD2A73E45F005CDE5A /* UIViewController.swift */,
+				CCD848CE2A73E45F005CDE5A /* NotificationCenter+Extensions.swift */,
+				CCD848CF2A73E45F005CDE5A /* UITextView.swift */,
+				CCD848D02A73E45F005CDE5A /* UINavigationController.swift */,
+				CCD848D12A73E45F005CDE5A /* UIActivityType.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCD848D22A73E45F005CDE5A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848D32A73E45F005CDE5A /* WMDocumentDownloadManager.swift */,
+				CCD848D42A73E45F005CDE5A /* MimeType.swift */,
+				CCD848D52A73E45F005CDE5A /* WMTestManager.swift */,
+				CCD848D62A73E45F005CDE5A /* WMInterfaceData.swift */,
+				CCD848D72A73E45F005CDE5A /* WMWeakReferenseContainer.swift */,
+				CCD848D82A73E45F005CDE5A /* WMFileDownloadManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CCD848DA2A73E45F005CDE5A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848DB2A73E45F005CDE5A /* WMSaveView */,
+				CCD848DD2A73E45F005CDE5A /* WMLogsViewController */,
+				CCD848DF2A73E45F005CDE5A /* WMFileViewController */,
+				CCD848E12A73E45F005CDE5A /* Surveys */,
+				CCD848E82A73E45F005CDE5A /* ChatViewController */,
+				CCD849242A73E45F005CDE5A /* WMImageViewController */,
+				CCD849262A73E45F005CDE5A /* PopupActionsViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CCD848DB2A73E45F005CDE5A /* WMSaveView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848DC2A73E45F005CDE5A /* WMSaveView.swift */,
+			);
+			path = WMSaveView;
+			sourceTree = "<group>";
+		};
+		CCD848DD2A73E45F005CDE5A /* WMLogsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848DE2A73E45F005CDE5A /* WMLogsViewController.swift */,
+			);
+			path = WMLogsViewController;
+			sourceTree = "<group>";
+		};
+		CCD848DF2A73E45F005CDE5A /* WMFileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848E02A73E45F005CDE5A /* WMFileViewController.swift */,
+			);
+			path = WMFileViewController;
+			sourceTree = "<group>";
+		};
+		CCD848E12A73E45F005CDE5A /* Surveys */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848E22A73E45F005CDE5A /* SurveyTableViewCell.swift */,
+				CCD848E32A73E45F005CDE5A /* SurveyCommentViewController.swift */,
+				CCD848E42A73E45F005CDE5A /* SurveyRadioButtonViewController.swift */,
+				CCD848E52A73E45F005CDE5A /* TextViewWithPlaceholder.swift */,
+				CCD848E62A73E45F005CDE5A /* WMSurveyViewController.swift */,
+				CCD848E72A73E45F005CDE5A /* RateStarsViewController.swift */,
+			);
+			path = Surveys;
+			sourceTree = "<group>";
+		};
+		CCD848E82A73E45F005CDE5A /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848E92A73E45F005CDE5A /* ChatViewController */,
+				CCD849152A73E45F005CDE5A /* Views */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		CCD848E92A73E45F005CDE5A /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848EA2A73E45F005CDE5A /* ChatViewController.swift */,
+				CCD848EB2A73E45F005CDE5A /* Cells */,
+				CCD8490E2A73E45F005CDE5A /* ChatViewController+Listener.swift */,
+				CCD8490F2A73E45F005CDE5A /* ChatViewController+Setup.swift */,
+				CCD849102A73E45F005CDE5A /* ChatViewController+UITableView.swift */,
+				CCD849112A73E45F005CDE5A /* ChatViewController+WMDialogPopoverDelegate.swift */,
+				CCD849122A73E45F005CDE5A /* ChatViewController+WMDialogCellDelegate.swift */,
+				CCD849132A73E45F005CDE5A /* ChatViewController+Surveys.swift */,
+				CCD849142A73E45F005CDE5A /* ChatViewController+CompletionHandler.swift */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		CCD848EB2A73E45F005CDE5A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848EC2A73E45F005CDE5A /* WMFileTableViewCell.swift */,
+				CCD848ED2A73E45F005CDE5A /* WMQuoteFileCell.swift */,
+				CCD848EE2A73E45F005CDE5A /* WMImageTableViewCell.swift */,
+				CCD848EF2A73E45F005CDE5A /* WMBotButtonsTableViewCell */,
+				CCD848F12A73E45F005CDE5A /* WMQuoteMessageCell.swift */,
+				CCD848F22A73E45F005CDE5A /* WMNilTableViewCell */,
+				CCD848F42A73E45F005CDE5A /* Visitor */,
+				CCD848FF2A73E45F005CDE5A /* WMQuoteImageCell.swift */,
+				CCD849002A73E45F005CDE5A /* WMInfoCell */,
+				CCD849022A73E45F005CDE5A /* WMMessageTableCell.swift */,
+				CCD849032A73E45F005CDE5A /* Operator */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CCD848EF2A73E45F005CDE5A /* WMBotButtonsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848F02A73E45F005CDE5A /* WMBotButtonsTableViewCell.swift */,
+			);
+			path = WMBotButtonsTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD848F22A73E45F005CDE5A /* WMNilTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848F32A73E45F005CDE5A /* WMNilTableViewCell.swift */,
+			);
+			path = WMNilTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD848F42A73E45F005CDE5A /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848F52A73E45F005CDE5A /* WMVisitorImageCell */,
+				CCD848F72A73E45F005CDE5A /* WMVisitorFileCell */,
+				CCD848F92A73E45F005CDE5A /* WMVisitorMessageTableViewCell */,
+				CCD848FB2A73E45F005CDE5A /* WMVisitorQuoteMessageTableViewCell */,
+			);
+			path = Visitor;
+			sourceTree = "<group>";
+		};
+		CCD848F52A73E45F005CDE5A /* WMVisitorImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848F62A73E45F005CDE5A /* WMVisitorImageCell.swift */,
+			);
+			path = WMVisitorImageCell;
+			sourceTree = "<group>";
+		};
+		CCD848F72A73E45F005CDE5A /* WMVisitorFileCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848F82A73E45F005CDE5A /* WMVisitorFileCell.swift */,
+			);
+			path = WMVisitorFileCell;
+			sourceTree = "<group>";
+		};
+		CCD848F92A73E45F005CDE5A /* WMVisitorMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848FA2A73E45F005CDE5A /* WMVisitorMessageCell.swift */,
+			);
+			path = WMVisitorMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD848FB2A73E45F005CDE5A /* WMVisitorQuoteMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD848FC2A73E45F005CDE5A /* WMVisitorQuoteImageCell.swift */,
+				CCD848FD2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.swift */,
+				CCD848FE2A73E45F005CDE5A /* WMVisitorQuoteFileCell.swift */,
+			);
+			path = WMVisitorQuoteMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849002A73E45F005CDE5A /* WMInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849012A73E45F005CDE5A /* WMInfoCell.swift */,
+			);
+			path = WMInfoCell;
+			sourceTree = "<group>";
+		};
+		CCD849032A73E45F005CDE5A /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849042A73E45F005CDE5A /* WMOperatorFileMessageTableViewCell */,
+				CCD849062A73E45F005CDE5A /* WMOperatorMessageTableViewCell */,
+				CCD849082A73E45F005CDE5A /* WMOperatorImageMessageTableViewCell */,
+				CCD8490A2A73E45F005CDE5A /* WMOperatorQuoteMessageTableViewCell */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		CCD849042A73E45F005CDE5A /* WMOperatorFileMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849052A73E45F005CDE5A /* WMOperatorFileCell.swift */,
+			);
+			path = WMOperatorFileMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849062A73E45F005CDE5A /* WMOperatorMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849072A73E45F005CDE5A /* WMOperatorMessageCell.swift */,
+			);
+			path = WMOperatorMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849082A73E45F005CDE5A /* WMOperatorImageMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849092A73E45F005CDE5A /* WMOperatorImageCell.swift */,
+			);
+			path = WMOperatorImageMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD8490A2A73E45F005CDE5A /* WMOperatorQuoteMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8490B2A73E45F005CDE5A /* WMOperatorQuoteFileCell.swift */,
+				CCD8490C2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.swift */,
+				CCD8490D2A73E45F005CDE5A /* WMOperatorQuoteImageCell.swift */,
+			);
+			path = WMOperatorQuoteMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849152A73E45F005CDE5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849162A73E45F005CDE5A /* WMToolbarView */,
+				CCD8491B2A73E45F005CDE5A /* WMThanksAlertView */,
+				CCD8491D2A73E45F005CDE5A /* ChatTestView */,
+				CCD8491F2A73E45F005CDE5A /* ConnectionErrorView.swift */,
+				CCD849202A73E45F005CDE5A /* ScrollButton */,
+				CCD849222A73E45F005CDE5A /* ChatTitleView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCD849162A73E45F005CDE5A /* WMToolbarView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849172A73E45F005CDE5A /* WMToolbarView.swift */,
+				CCD849182A73E45F005CDE5A /* WMToolbarBackgroundView.swift */,
+				CCD849192A73E45F005CDE5A /* WMNewMessageView.swift */,
+				CCD8491A2A73E45F005CDE5A /* WMQuoteView.swift */,
+			);
+			path = WMToolbarView;
+			sourceTree = "<group>";
+		};
+		CCD8491B2A73E45F005CDE5A /* WMThanksAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8491C2A73E45F005CDE5A /* WMThanksAlertView.swift */,
+			);
+			path = WMThanksAlertView;
+			sourceTree = "<group>";
+		};
+		CCD8491D2A73E45F005CDE5A /* ChatTestView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8491E2A73E45F005CDE5A /* ChatTestView.swift */,
+			);
+			path = ChatTestView;
+			sourceTree = "<group>";
+		};
+		CCD849202A73E45F005CDE5A /* ScrollButton */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849212A73E45F005CDE5A /* ScrollButtonView.swift */,
+			);
+			path = ScrollButton;
+			sourceTree = "<group>";
+		};
+		CCD849222A73E45F005CDE5A /* ChatTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849232A73E45F005CDE5A /* ChatTitleView.swift */,
+			);
+			path = ChatTitleView;
+			sourceTree = "<group>";
+		};
+		CCD849242A73E45F005CDE5A /* WMImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849252A73E45F005CDE5A /* WMImageViewController.swift */,
+			);
+			path = WMImageViewController;
+			sourceTree = "<group>";
+		};
+		CCD849262A73E45F005CDE5A /* PopupActionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849272A73E45F005CDE5A /* PopupActionsViewController.swift */,
+				CCD849282A73E45F005CDE5A /* PopupActionsTableViewCell.swift */,
+			);
+			path = PopupActionsViewController;
+			sourceTree = "<group>";
+		};
+		CCD849292A73E45F005CDE5A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8492A2A73E45F005CDE5A /* WMProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CCD8492C2A73E45F005CDE5A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8492D2A73E45F005CDE5A /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		CCD849312A73E45F005CDE5A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849322A73E45F005CDE5A /* XibFiles */,
+				CCD849F22A73E45F005CDE5A /* WidgetImages.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CCD849322A73E45F005CDE5A /* XibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849332A73E45F005CDE5A /* WMSaveView */,
+				CCD849392A73E45F005CDE5A /* WMLogsViewController */,
+				CCD8493F2A73E45F005CDE5A /* WMFileViewController */,
+				CCD849452A73E45F005CDE5A /* Surveys */,
+				CCD8495A2A73E45F005CDE5A /* ChatViewController */,
+				CCD849EC2A73E45F005CDE5A /* WMImageViewController */,
+			);
+			path = XibFiles;
+			sourceTree = "<group>";
+		};
+		CCD849332A73E45F005CDE5A /* WMSaveView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849342A73E45F005CDE5A /* WMSaveView.strings */,
+				CCD849362A73E45F005CDE5A /* WMSaveView.xib */,
+			);
+			path = WMSaveView;
+			sourceTree = "<group>";
+		};
+		CCD849392A73E45F005CDE5A /* WMLogsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8493A2A73E45F005CDE5A /* WMLogsViewController.strings */,
+				CCD8493C2A73E45F005CDE5A /* WMLogsViewController.xib */,
+			);
+			path = WMLogsViewController;
+			sourceTree = "<group>";
+		};
+		CCD8493F2A73E45F005CDE5A /* WMFileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849402A73E45F005CDE5A /* WMFileViewController.strings */,
+				CCD849422A73E45F005CDE5A /* WMFileViewController.xib */,
+			);
+			path = WMFileViewController;
+			sourceTree = "<group>";
+		};
+		CCD849452A73E45F005CDE5A /* Surveys */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849462A73E45F005CDE5A /* RateStarsViewController.strings */,
+				CCD849482A73E45F005CDE5A /* SurveyRadioButtonViewController.strings */,
+				CCD8494A2A73E45F005CDE5A /* SurveyTableViewCell.strings */,
+				CCD8494C2A73E45F005CDE5A /* SurveyCommentViewController.strings */,
+				CCD8494E2A73E45F005CDE5A /* SurveyCommentViewController.xib */,
+				CCD849502A73E45F005CDE5A /* RateStarsViewController.xib */,
+				CCD849522A73E45F005CDE5A /* SurveyRadioButtonViewController.xib */,
+				CCD849542A73E45F005CDE5A /* SurveyTableViewCell.xib */,
+			);
+			path = Surveys;
+			sourceTree = "<group>";
+		};
+		CCD8495A2A73E45F005CDE5A /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8495B2A73E45F005CDE5A /* ChatViewController */,
+				CCD849BE2A73E45F005CDE5A /* Views */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		CCD8495B2A73E45F005CDE5A /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8495C2A73E45F005CDE5A /* Cells */,
+				CCD849B92A73E45F005CDE5A /* ChatViewController.strings */,
+				CCD849BB2A73E45F005CDE5A /* ChatViewController.xib */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		CCD8495C2A73E45F005CDE5A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8495D2A73E45F005CDE5A /* WMBotButtonsTableViewCell */,
+				CCD849632A73E45F005CDE5A /* WMNilTableViewCell */,
+				CCD849692A73E45F005CDE5A /* Visitor */,
+				CCD8498E2A73E45F005CDE5A /* WMInfoCell */,
+				CCD849942A73E45F005CDE5A /* Operator */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CCD8495D2A73E45F005CDE5A /* WMBotButtonsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8495E2A73E45F005CDE5A /* WMBotButtonsTableViewCell.strings */,
+				CCD849602A73E45F005CDE5A /* WMBotButtonsTableViewCell.xib */,
+			);
+			path = WMBotButtonsTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849632A73E45F005CDE5A /* WMNilTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849642A73E45F005CDE5A /* WMNilTableViewCell.strings */,
+				CCD849662A73E45F005CDE5A /* WMNilTableViewCell.xib */,
+			);
+			path = WMNilTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849692A73E45F005CDE5A /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8496A2A73E45F005CDE5A /* WMVisitorImageCell */,
+				CCD849702A73E45F005CDE5A /* WMVisitorFileCell */,
+				CCD849762A73E45F005CDE5A /* WMVisitorMessageTableViewCell */,
+				CCD8497E2A73E45F005CDE5A /* WMVisitorQuoteMessageTableViewCell */,
+			);
+			path = Visitor;
+			sourceTree = "<group>";
+		};
+		CCD8496A2A73E45F005CDE5A /* WMVisitorImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8496B2A73E45F005CDE5A /* WMVisitorImageCell.strings */,
+				CCD8496D2A73E45F005CDE5A /* WMVisitorImageCell.xib */,
+			);
+			path = WMVisitorImageCell;
+			sourceTree = "<group>";
+		};
+		CCD849702A73E45F005CDE5A /* WMVisitorFileCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849712A73E45F005CDE5A /* WMVisitorFileCell.strings */,
+				CCD849732A73E45F005CDE5A /* WMVisitorFileCell.xib */,
+			);
+			path = WMVisitorFileCell;
+			sourceTree = "<group>";
+		};
+		CCD849762A73E45F005CDE5A /* WMVisitorMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849772A73E45F005CDE5A /* WMVisitorMessageCell.strings */,
+				CCD849792A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings */,
+				CCD8497B2A73E45F005CDE5A /* WMVisitorMessageCell.xib */,
+			);
+			path = WMVisitorMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD8497E2A73E45F005CDE5A /* WMVisitorQuoteMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8497F2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.strings */,
+				CCD849812A73E45F005CDE5A /* WMVisitorQuoteImageCell.strings */,
+				CCD849832A73E45F005CDE5A /* WMVisitorQuoteFileCell.strings */,
+				CCD849852A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib */,
+				CCD849872A73E45F005CDE5A /* WMVisitorQuoteImageCell.xib */,
+				CCD849892A73E45F005CDE5A /* WMVisitorQuoteMessageCell.xib */,
+			);
+			path = WMVisitorQuoteMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD8498E2A73E45F005CDE5A /* WMInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8498F2A73E45F005CDE5A /* WMInfoCell.strings */,
+				CCD849912A73E45F005CDE5A /* WMInfoCell.xib */,
+			);
+			path = WMInfoCell;
+			sourceTree = "<group>";
+		};
+		CCD849942A73E45F005CDE5A /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849952A73E45F005CDE5A /* WMOperatorFileMessageTableViewCell */,
+				CCD8499B2A73E45F005CDE5A /* WMOperatorMessageTableViewCell */,
+				CCD849A32A73E45F005CDE5A /* WMOperatorImageMessageTableViewCell */,
+				CCD849A92A73E45F005CDE5A /* WMOperatorQuoteMessageTableViewCell */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		CCD849952A73E45F005CDE5A /* WMOperatorFileMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849962A73E45F005CDE5A /* WMOperatorFileCell.strings */,
+				CCD849982A73E45F005CDE5A /* WMOperatorFileCell.xib */,
+			);
+			path = WMOperatorFileMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD8499B2A73E45F005CDE5A /* WMOperatorMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8499C2A73E45F005CDE5A /* WMOperatorMessageCell.strings */,
+				CCD8499E2A73E45F005CDE5A /* WMOperatorMessageCell.xib */,
+				CCD849A02A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings */,
+			);
+			path = WMOperatorMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849A32A73E45F005CDE5A /* WMOperatorImageMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849A42A73E45F005CDE5A /* WMOperatorImageCell.strings */,
+				CCD849A62A73E45F005CDE5A /* WMOperatorImageCell.xib */,
+			);
+			path = WMOperatorImageMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849A92A73E45F005CDE5A /* WMOperatorQuoteMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849AA2A73E45F005CDE5A /* WMOperatorQuoteFileCell.strings */,
+				CCD849AC2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.strings */,
+				CCD849AE2A73E45F005CDE5A /* WMOperatorQuoteImageCell.strings */,
+				CCD849B02A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib */,
+				CCD849B22A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib */,
+				CCD849B42A73E45F005CDE5A /* WMOperatorQuoteImageCell.xib */,
+			);
+			path = WMOperatorQuoteMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		CCD849BE2A73E45F005CDE5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849BF2A73E45F005CDE5A /* WMToolbarView */,
+				CCD849CF2A73E45F005CDE5A /* ConnectionErrorView.strings */,
+				CCD849D12A73E45F005CDE5A /* WMThanksAlertView */,
+				CCD849D72A73E45F005CDE5A /* ChatTestView */,
+				CCD849DD2A73E45F005CDE5A /* ConnectionErrorView.xib */,
+				CCD849E02A73E45F005CDE5A /* ScrollButton */,
+				CCD849E62A73E45F005CDE5A /* ChatTitleView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCD849BF2A73E45F005CDE5A /* WMToolbarView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849C02A73E45F005CDE5A /* WMToolbarView.strings */,
+				CCD849C22A73E45F005CDE5A /* WMQuoteView.strings */,
+				CCD849C42A73E45F005CDE5A /* WMNewMessageView.strings */,
+				CCD849C62A73E45F005CDE5A /* WMToolbarView.xib */,
+				CCD849C82A73E45F005CDE5A /* WMNewMessageView.xib */,
+				CCD849CA2A73E45F005CDE5A /* WMQuoteView.xib */,
+			);
+			path = WMToolbarView;
+			sourceTree = "<group>";
+		};
+		CCD849D12A73E45F005CDE5A /* WMThanksAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849D22A73E45F005CDE5A /* WMThanksAlertView.strings */,
+				CCD849D42A73E45F005CDE5A /* WMThanksAlertView.xib */,
+			);
+			path = WMThanksAlertView;
+			sourceTree = "<group>";
+		};
+		CCD849D72A73E45F005CDE5A /* ChatTestView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849D82A73E45F005CDE5A /* ChatTestView.strings */,
+				CCD849DA2A73E45F005CDE5A /* ChatTestView.xib */,
+			);
+			path = ChatTestView;
+			sourceTree = "<group>";
+		};
+		CCD849E02A73E45F005CDE5A /* ScrollButton */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849E12A73E45F005CDE5A /* ScrollButtonView.strings */,
+				CCD849E32A73E45F005CDE5A /* ScrollButtonView.xib */,
+			);
+			path = ScrollButton;
+			sourceTree = "<group>";
+		};
+		CCD849E62A73E45F005CDE5A /* ChatTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849E72A73E45F005CDE5A /* ChatTitleView.strings */,
+				CCD849E92A73E45F005CDE5A /* ChatTitleView.xib */,
+			);
+			path = ChatTitleView;
+			sourceTree = "<group>";
+		};
+		CCD849EC2A73E45F005CDE5A /* WMImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD849ED2A73E45F005CDE5A /* WMImageViewController.strings */,
+				CCD849EF2A73E45F005CDE5A /* WMImageViewController.xib */,
+			);
+			path = WMImageViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BEB26A1029547455003F19C7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD84A612A73E45F005CDE5A /* WebimMobileWidget.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BEB26A1429547455003F19C7 /* WebimMobileWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEB26A1C29547455003F19C7 /* Build configuration list for PBXNativeTarget "WebimMobileWidget" */;
+			buildPhases = (
+				BEB26A1029547455003F19C7 /* Headers */,
+				BEB26A1129547455003F19C7 /* Sources */,
+				BEB26A1229547455003F19C7 /* Frameworks */,
+				BEB26A1329547455003F19C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebimMobileWidget;
+			productName = WebimWidget;
+			productReference = BEB26A1529547455003F19C7 /* WebimMobileWidget.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEB26A0C29547455003F19C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					BEB26A1429547455003F19C7 = {
+						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
+					};
+				};
+			};
+			buildConfigurationList = BEB26A0F29547455003F19C7 /* Build configuration list for PBXProject "WebimMobileWidget" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+				"ru-RU",
+			);
+			mainGroup = BEB26A0B29547455003F19C7;
+			productRefGroup = BEB26A1629547455003F19C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEB26A1429547455003F19C7 /* WebimMobileWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEB26A1329547455003F19C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD84A972A73E45F005CDE5A /* WMNewMessageView.xib in Resources */,
+				CCD84A7C2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.strings in Resources */,
+				CCD84A7F2A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib in Resources */,
+				CCD84A922A73E45F005CDE5A /* ChatViewController.xib in Resources */,
+				CCD84A842A73E45F005CDE5A /* WMOperatorFileCell.strings in Resources */,
+				CCD84A832A73E45F005CDE5A /* WMInfoCell.xib in Resources */,
+				CCD84A8E2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib in Resources */,
+				CCD84A9C2A73E45F005CDE5A /* ChatTestView.strings in Resources */,
+				CCD84A8F2A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib in Resources */,
+				CCD84A682A73E45F005CDE5A /* WMFileViewController.xib in Resources */,
+				CCD84A6B2A73E45F005CDE5A /* SurveyTableViewCell.strings in Resources */,
+				CCD84A712A73E45F005CDE5A /* WMBotButtonsTableViewCell.strings in Resources */,
+				CCD84A792A73E45F005CDE5A /* WMVisitorMessageCell.strings in Resources */,
+				CCD84A902A73E45F005CDE5A /* WMOperatorQuoteImageCell.xib in Resources */,
+				CCD84A692A73E45F005CDE5A /* RateStarsViewController.strings in Resources */,
+				CCD84A852A73E45F005CDE5A /* WMOperatorFileCell.xib in Resources */,
+				CCD84A872A73E45F005CDE5A /* WMOperatorMessageCell.xib in Resources */,
+				CCD84AA52A73E45F005CDE5A /* WidgetImages.xcassets in Resources */,
+				CCD84A992A73E45F005CDE5A /* ConnectionErrorView.strings in Resources */,
+				CCD84A7D2A73E45F005CDE5A /* WMVisitorQuoteImageCell.strings in Resources */,
+				CCD84A6C2A73E45F005CDE5A /* SurveyCommentViewController.strings in Resources */,
+				CCD84A6E2A73E45F005CDE5A /* RateStarsViewController.xib in Resources */,
+				CCD84A772A73E45F005CDE5A /* WMVisitorFileCell.strings in Resources */,
+				CCD84A762A73E45F005CDE5A /* WMVisitorImageCell.xib in Resources */,
+				CCD84A7B2A73E45F005CDE5A /* WMVisitorMessageCell.xib in Resources */,
+				CCD84AA42A73E45F005CDE5A /* WMImageViewController.xib in Resources */,
+				CCD84A8C2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.strings in Resources */,
+				CCD84A892A73E45F005CDE5A /* WMOperatorImageCell.strings in Resources */,
+				CCD84A862A73E45F005CDE5A /* WMOperatorMessageCell.strings in Resources */,
+				CCD84A812A73E45F005CDE5A /* WMVisitorQuoteMessageCell.xib in Resources */,
+				CCD84A702A73E45F005CDE5A /* SurveyTableViewCell.xib in Resources */,
+				CCD84A9E2A73E45F005CDE5A /* ConnectionErrorView.xib in Resources */,
+				CCD84A632A73E45F005CDE5A /* WMSaveView.strings in Resources */,
+				CCD84A782A73E45F005CDE5A /* WMVisitorFileCell.xib in Resources */,
+				CCD84A982A73E45F005CDE5A /* WMQuoteView.xib in Resources */,
+				CCD84A952A73E45F005CDE5A /* WMNewMessageView.strings in Resources */,
+				CCD84A732A73E45F005CDE5A /* WMNilTableViewCell.strings in Resources */,
+				CCD84A9D2A73E45F005CDE5A /* ChatTestView.xib in Resources */,
+				CCD84A7E2A73E45F005CDE5A /* WMVisitorQuoteFileCell.strings in Resources */,
+				CCD84AA32A73E45F005CDE5A /* WMImageViewController.strings in Resources */,
+				CCD84A912A73E45F005CDE5A /* ChatViewController.strings in Resources */,
+				CCD84A752A73E45F005CDE5A /* WMVisitorImageCell.strings in Resources */,
+				CCD84A882A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings in Resources */,
+				CCD84A6A2A73E45F005CDE5A /* SurveyRadioButtonViewController.strings in Resources */,
+				BE435EF2297FD00C00B946A9 /* Cartfile in Resources */,
+				CCD84A622A73E45F005CDE5A /* Localizable.strings in Resources */,
+				BE435FAD297FD00C00B946A9 /* WebimMobileWidget.podspec in Resources */,
+				CCD84A672A73E45F005CDE5A /* WMFileViewController.strings in Resources */,
+				CCD84A662A73E45F005CDE5A /* WMLogsViewController.xib in Resources */,
+				CCD84A942A73E45F005CDE5A /* WMQuoteView.strings in Resources */,
+				CCD84A6D2A73E45F005CDE5A /* SurveyCommentViewController.xib in Resources */,
+				CCD84A8B2A73E45F005CDE5A /* WMOperatorQuoteFileCell.strings in Resources */,
+				CCD84A962A73E45F005CDE5A /* WMToolbarView.xib in Resources */,
+				CCD84A822A73E45F005CDE5A /* WMInfoCell.strings in Resources */,
+				CCD84A9F2A73E45F005CDE5A /* ScrollButtonView.strings in Resources */,
+				CCD84A9B2A73E45F005CDE5A /* WMThanksAlertView.xib in Resources */,
+				CCD84A742A73E45F005CDE5A /* WMNilTableViewCell.xib in Resources */,
+				CCD84AA02A73E45F005CDE5A /* ScrollButtonView.xib in Resources */,
+				CCD84A642A73E45F005CDE5A /* WMSaveView.xib in Resources */,
+				BE435FAC297FD00C00B946A9 /* LICENSE in Resources */,
+				CCD84AA12A73E45F005CDE5A /* ChatTitleView.strings in Resources */,
+				CCD84A932A73E45F005CDE5A /* WMToolbarView.strings in Resources */,
+				BE435EF1297FD00C00B946A9 /* README.md in Resources */,
+				CCD84A722A73E45F005CDE5A /* WMBotButtonsTableViewCell.xib in Resources */,
+				CCD84A9A2A73E45F005CDE5A /* WMThanksAlertView.strings in Resources */,
+				CCD84AA22A73E45F005CDE5A /* ChatTitleView.xib in Resources */,
+				CCD84A8A2A73E45F005CDE5A /* WMOperatorImageCell.xib in Resources */,
+				CCD84A8D2A73E45F005CDE5A /* WMOperatorQuoteImageCell.strings in Resources */,
+				CCD84A652A73E45F005CDE5A /* WMLogsViewController.strings in Resources */,
+				CCD84A802A73E45F005CDE5A /* WMVisitorQuoteImageCell.xib in Resources */,
+				CCD84A6F2A73E45F005CDE5A /* SurveyRadioButtonViewController.xib in Resources */,
+				CCD84A7A2A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEB26A1129547455003F19C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD84A352A73E45F005CDE5A /* WMSurveyViewController.swift in Sources */,
+				CCD84A342A73E45F005CDE5A /* TextViewWithPlaceholder.swift in Sources */,
+				CCD84A112A73E45F005CDE5A /* WebimServiceController.swift in Sources */,
+				CCD84A462A73E45F005CDE5A /* WMMessageTableCell.swift in Sources */,
+				CCD84A5D2A73E45F005CDE5A /* WMImageViewController.swift in Sources */,
+				CCD84A3A2A73E45F005CDE5A /* WMImageTableViewCell.swift in Sources */,
+				CCD84A522A73E45F005CDE5A /* ChatViewController+Surveys.swift in Sources */,
+				CCD84A0D2A73E45F005CDE5A /* MessageCounter.swift in Sources */,
+				CCD84A1F2A73E45F005CDE5A /* NSRange.swift in Sources */,
+				CCD84A132A73E45F005CDE5A /* ScrollQueueManager.swift in Sources */,
+				CCD84A242A73E45F005CDE5A /* UITextView.swift in Sources */,
+				CCD84A582A73E45F005CDE5A /* WMThanksAlertView.swift in Sources */,
+				CCD84A312A73E45F005CDE5A /* SurveyTableViewCell.swift in Sources */,
+				CCD84A1D2A73E45F005CDE5A /* UITextField.swift in Sources */,
+				CCD84A042A73E45F005CDE5A /* TypingIndicator.swift in Sources */,
+				CCD84A392A73E45F005CDE5A /* WMQuoteFileCell.swift in Sources */,
+				CCD84A362A73E45F005CDE5A /* RateStarsViewController.swift in Sources */,
+				CCD84A3D2A73E45F005CDE5A /* WMNilTableViewCell.swift in Sources */,
+				CCD84A492A73E45F005CDE5A /* WMOperatorImageCell.swift in Sources */,
+				CCD84A2E2A73E45F005CDE5A /* WMSaveView.swift in Sources */,
+				CCD84A3E2A73E45F005CDE5A /* WMVisitorImageCell.swift in Sources */,
+				CCD84A472A73E45F005CDE5A /* WMOperatorFileCell.swift in Sources */,
+				CCD84A0E2A73E45F005CDE5A /* WMDownloadFileManager.swift in Sources */,
+				CCD84A3C2A73E45F005CDE5A /* WMQuoteMessageCell.swift in Sources */,
+				CCD84A022A73E45F005CDE5A /* WMConfigs.swift in Sources */,
+				CCD84A592A73E45F005CDE5A /* ChatTestView.swift in Sources */,
+				CCD84A442A73E45F005CDE5A /* WMQuoteImageCell.swift in Sources */,
+				CCD84A602A73E45F005CDE5A /* WMProtocols.swift in Sources */,
+				CCD84A572A73E45F005CDE5A /* WMQuoteView.swift in Sources */,
+				CCD84A212A73E45F005CDE5A /* UIImage.swift in Sources */,
+				CCD84A1C2A73E45F005CDE5A /* UITableView.swift in Sources */,
+				CCD84A3F2A73E45F005CDE5A /* WMVisitorFileCell.swift in Sources */,
+				CCD849FD2A73E45F005CDE5A /* WMPopupActionControllerConfigBuilder.swift in Sources */,
+				CCD84A4E2A73E45F005CDE5A /* ChatViewController+Setup.swift in Sources */,
+				CCD84A382A73E45F005CDE5A /* WMFileTableViewCell.swift in Sources */,
+				CCD84A322A73E45F005CDE5A /* SurveyCommentViewController.swift in Sources */,
+				CCD84A5E2A73E45F005CDE5A /* PopupActionsViewController.swift in Sources */,
+				CCD84A142A73E45F005CDE5A /* WebimService.swift in Sources */,
+				CCD84A272A73E45F005CDE5A /* WMDocumentDownloadManager.swift in Sources */,
+				CCD84A512A73E45F005CDE5A /* ChatViewController+WMDialogCellDelegate.swift in Sources */,
+				CCD84A422A73E45F005CDE5A /* WMVisitorQuoteMessageCell.swift in Sources */,
+				CCD84A2A2A73E45F005CDE5A /* WMInterfaceData.swift in Sources */,
+				CCD84A502A73E45F005CDE5A /* ChatViewController+WMDialogPopoverDelegate.swift in Sources */,
+				CCD84A4B2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.swift in Sources */,
+				CCD84A152A73E45F005CDE5A /* FilePicker.swift in Sources */,
+				CCD84A5C2A73E45F005CDE5A /* ChatTitleView.swift in Sources */,
+				CCD84A5B2A73E45F005CDE5A /* ScrollButtonView.swift in Sources */,
+				CCD84A1E2A73E45F005CDE5A /* String.swift in Sources */,
+				CCD84A532A73E45F005CDE5A /* ChatViewController+CompletionHandler.swift in Sources */,
+				CCD849F72A73E45F005CDE5A /* WMFileViewControllerConfigBuilder.swift in Sources */,
+				CCD849F62A73E45F005CDE5A /* WMImageViewControllerConfigBuilder.swift in Sources */,
+				CCD84A232A73E45F005CDE5A /* NotificationCenter+Extensions.swift in Sources */,
+				CCD84A202A73E45F005CDE5A /* UIButton.swift in Sources */,
+				CCD84A542A73E45F005CDE5A /* WMToolbarView.swift in Sources */,
+				CCD84A012A73E45F005CDE5A /* WMQuoteViewConfigBuilder.swift in Sources */,
+				CCD84A072A73E45F005CDE5A /* CustomUIButton.swift in Sources */,
+				CCD84A0B2A73E45F005CDE5A /* ImageConstants.swift in Sources */,
+				CCD84A032A73E45F005CDE5A /* SpinningIndicator.swift in Sources */,
+				CCD849FF2A73E45F005CDE5A /* WMCellConfigBuilder.swift in Sources */,
+				CCD84A402A73E45F005CDE5A /* WMVisitorMessageCell.swift in Sources */,
+				BE435EFD297FD00C00B946A9 /* Package.swift in Sources */,
+				CCD84A4D2A73E45F005CDE5A /* ChatViewController+Listener.swift in Sources */,
+				CCD849F92A73E45F005CDE5A /* WMImageNavigationBarConfigBuilder.swift in Sources */,
+				CCD84A1A2A73E45F005CDE5A /* Message.swift in Sources */,
+				CCD849F42A73E45F005CDE5A /* WMWidgetBuilder.swift in Sources */,
+				CCD84A5A2A73E45F005CDE5A /* ConnectionErrorView.swift in Sources */,
+				CCD84A452A73E45F005CDE5A /* WMInfoCell.swift in Sources */,
+				CCD849FA2A73E45F005CDE5A /* WMNavigationBarConfigBuilder.swift in Sources */,
+				CCD84A432A73E45F005CDE5A /* WMVisitorQuoteFileCell.swift in Sources */,
+				CCD84A372A73E45F005CDE5A /* ChatViewController.swift in Sources */,
+				CCD84A222A73E45F005CDE5A /* UIViewController.swift in Sources */,
+				CCD84A192A73E45F005CDE5A /* CollectionUtils.swift in Sources */,
+				CCD84A0F2A73E45F005CDE5A /* AlertController.swift in Sources */,
+				CCD84A482A73E45F005CDE5A /* WMOperatorMessageCell.swift in Sources */,
+				CCD84A062A73E45F005CDE5A /* CustomUIImage.swift in Sources */,
+				CCD849FC2A73E45F005CDE5A /* WMFileNavigationBarConfigBuilder.swift in Sources */,
+				CCD84A332A73E45F005CDE5A /* SurveyRadioButtonViewController.swift in Sources */,
+				CCD84A082A73E45F005CDE5A /* CircleProgressIndicator.swift in Sources */,
+				CCD84A562A73E45F005CDE5A /* WMNewMessageView.swift in Sources */,
+				CCD84A552A73E45F005CDE5A /* WMToolbarBackgroundView.swift in Sources */,
+				CCD84A4C2A73E45F005CDE5A /* WMOperatorQuoteImageCell.swift in Sources */,
+				CCD84A2D2A73E45F005CDE5A /* WidgetAppDelegate.swift in Sources */,
+				CCD849F52A73E45F005CDE5A /* WMViewControllerConfigBuilder.swift in Sources */,
+				CCD84A282A73E45F005CDE5A /* MimeType.swift in Sources */,
+				CCD849FE2A73E45F005CDE5A /* WMNetworkErrorViewConfigBuilder.swift in Sources */,
+				CCD84A3B2A73E45F005CDE5A /* WMBotButtonsTableViewCell.swift in Sources */,
+				CCD84A5F2A73E45F005CDE5A /* PopupActionsTableViewCell.swift in Sources */,
+				CCD84A302A73E45F005CDE5A /* WMFileViewController.swift in Sources */,
+				CCD84A102A73E45F005CDE5A /* WebimLogManager.swift in Sources */,
+				CCD84A412A73E45F005CDE5A /* WMVisitorQuoteImageCell.swift in Sources */,
+				CCD84A0C2A73E45F005CDE5A /* NavigationBarUpdater.swift in Sources */,
+				CCD84A2F2A73E45F005CDE5A /* WMLogsViewController.swift in Sources */,
+				CCD84A262A73E45F005CDE5A /* UIActivityType.swift in Sources */,
+				CCD84A002A73E45F005CDE5A /* WMSurveyViewConfigBuilder.swift in Sources */,
+				CCD84A2B2A73E45F005CDE5A /* WMWeakReferenseContainer.swift in Sources */,
+				CCD84A052A73E45F005CDE5A /* WMFixedContentSizeView.swift in Sources */,
+				CCD84A1B2A73E45F005CDE5A /* URL+extension.swift in Sources */,
+				CCD84A4A2A73E45F005CDE5A /* WMOperatorQuoteFileCell.swift in Sources */,
+				CCD84A092A73E45F005CDE5A /* StringConstants.swift in Sources */,
+				CCD84A172A73E45F005CDE5A /* UIView.swift in Sources */,
+				CCD84A252A73E45F005CDE5A /* UINavigationController.swift in Sources */,
+				CCD849FB2A73E45F005CDE5A /* WMChatNavigationBarConfigBuilder.swift in Sources */,
+				CCD84A0A2A73E45F005CDE5A /* ColourConstants.swift in Sources */,
+				CCD84A162A73E45F005CDE5A /* WebimServerSideSettingsManager.swift in Sources */,
+				CCD84A2C2A73E45F005CDE5A /* WMFileDownloadManager.swift in Sources */,
+				CCD849F32A73E45F005CDE5A /* WMToolbarConfigBuilder.swift in Sources */,
+				CCD84A4F2A73E45F005CDE5A /* ChatViewController+UITableView.swift in Sources */,
+				CCD84A292A73E45F005CDE5A /* WMTestManager.swift in Sources */,
+				CCD84A182A73E45F005CDE5A /* UIStackView.swift in Sources */,
+				CCD849F82A73E45F005CDE5A /* WMChatViewControllerConfigBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CCD8492D2A73E45F005CDE5A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8492E2A73E45F005CDE5A /* en */,
+				CCD8492F2A73E45F005CDE5A /* Base */,
+				CCD849302A73E45F005CDE5A /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CCD849342A73E45F005CDE5A /* WMSaveView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849352A73E45F005CDE5A /* en */,
+				CCD849382A73E45F005CDE5A /* ru */,
+			);
+			name = WMSaveView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849362A73E45F005CDE5A /* WMSaveView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849372A73E45F005CDE5A /* Base */,
+			);
+			name = WMSaveView.xib;
+			sourceTree = "<group>";
+		};
+		CCD8493A2A73E45F005CDE5A /* WMLogsViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8493B2A73E45F005CDE5A /* en */,
+				CCD8493E2A73E45F005CDE5A /* ru */,
+			);
+			name = WMLogsViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD8493C2A73E45F005CDE5A /* WMLogsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8493D2A73E45F005CDE5A /* Base */,
+			);
+			name = WMLogsViewController.xib;
+			sourceTree = "<group>";
+		};
+		CCD849402A73E45F005CDE5A /* WMFileViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849412A73E45F005CDE5A /* en */,
+				CCD849442A73E45F005CDE5A /* ru */,
+			);
+			name = WMFileViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD849422A73E45F005CDE5A /* WMFileViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849432A73E45F005CDE5A /* Base */,
+			);
+			name = WMFileViewController.xib;
+			sourceTree = "<group>";
+		};
+		CCD849462A73E45F005CDE5A /* RateStarsViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849472A73E45F005CDE5A /* en */,
+				CCD849562A73E45F005CDE5A /* ru */,
+			);
+			name = RateStarsViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD849482A73E45F005CDE5A /* SurveyRadioButtonViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849492A73E45F005CDE5A /* en */,
+				CCD849572A73E45F005CDE5A /* ru */,
+			);
+			name = SurveyRadioButtonViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD8494A2A73E45F005CDE5A /* SurveyTableViewCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8494B2A73E45F005CDE5A /* en */,
+				CCD849582A73E45F005CDE5A /* ru */,
+			);
+			name = SurveyTableViewCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD8494C2A73E45F005CDE5A /* SurveyCommentViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8494D2A73E45F005CDE5A /* en */,
+				CCD849592A73E45F005CDE5A /* ru */,
+			);
+			name = SurveyCommentViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD8494E2A73E45F005CDE5A /* SurveyCommentViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8494F2A73E45F005CDE5A /* Base */,
+			);
+			name = SurveyCommentViewController.xib;
+			sourceTree = "<group>";
+		};
+		CCD849502A73E45F005CDE5A /* RateStarsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849512A73E45F005CDE5A /* Base */,
+			);
+			name = RateStarsViewController.xib;
+			sourceTree = "<group>";
+		};
+		CCD849522A73E45F005CDE5A /* SurveyRadioButtonViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849532A73E45F005CDE5A /* Base */,
+			);
+			name = SurveyRadioButtonViewController.xib;
+			sourceTree = "<group>";
+		};
+		CCD849542A73E45F005CDE5A /* SurveyTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849552A73E45F005CDE5A /* Base */,
+			);
+			name = SurveyTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD8495E2A73E45F005CDE5A /* WMBotButtonsTableViewCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8495F2A73E45F005CDE5A /* en */,
+				CCD849622A73E45F005CDE5A /* ru */,
+			);
+			name = WMBotButtonsTableViewCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849602A73E45F005CDE5A /* WMBotButtonsTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849612A73E45F005CDE5A /* Base */,
+			);
+			name = WMBotButtonsTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849642A73E45F005CDE5A /* WMNilTableViewCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849652A73E45F005CDE5A /* en */,
+				CCD849682A73E45F005CDE5A /* ru */,
+			);
+			name = WMNilTableViewCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849662A73E45F005CDE5A /* WMNilTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849672A73E45F005CDE5A /* Base */,
+			);
+			name = WMNilTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD8496B2A73E45F005CDE5A /* WMVisitorImageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8496C2A73E45F005CDE5A /* en */,
+				CCD8496F2A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorImageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD8496D2A73E45F005CDE5A /* WMVisitorImageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8496E2A73E45F005CDE5A /* Base */,
+			);
+			name = WMVisitorImageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849712A73E45F005CDE5A /* WMVisitorFileCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849722A73E45F005CDE5A /* en */,
+				CCD849752A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorFileCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849732A73E45F005CDE5A /* WMVisitorFileCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849742A73E45F005CDE5A /* Base */,
+			);
+			name = WMVisitorFileCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849772A73E45F005CDE5A /* WMVisitorMessageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849782A73E45F005CDE5A /* en */,
+				CCD8497D2A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorMessageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849792A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8497A2A73E45F005CDE5A /* ru-RU */,
+			);
+			name = WMVisitorMessageTableViewCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD8497B2A73E45F005CDE5A /* WMVisitorMessageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8497C2A73E45F005CDE5A /* Base */,
+			);
+			name = WMVisitorMessageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD8497F2A73E45F005CDE5A /* WMVisitorQuoteMessageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849802A73E45F005CDE5A /* en */,
+				CCD8498B2A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorQuoteMessageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849812A73E45F005CDE5A /* WMVisitorQuoteImageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849822A73E45F005CDE5A /* en */,
+				CCD8498C2A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorQuoteImageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849832A73E45F005CDE5A /* WMVisitorQuoteFileCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849842A73E45F005CDE5A /* en */,
+				CCD8498D2A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorQuoteFileCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849852A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849862A73E45F005CDE5A /* Base */,
+			);
+			name = WMVisitorQuoteFileCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849872A73E45F005CDE5A /* WMVisitorQuoteImageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849882A73E45F005CDE5A /* Base */,
+			);
+			name = WMVisitorQuoteImageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849892A73E45F005CDE5A /* WMVisitorQuoteMessageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8498A2A73E45F005CDE5A /* Base */,
+			);
+			name = WMVisitorQuoteMessageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD8498F2A73E45F005CDE5A /* WMInfoCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849902A73E45F005CDE5A /* en */,
+				CCD849932A73E45F005CDE5A /* ru */,
+			);
+			name = WMInfoCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849912A73E45F005CDE5A /* WMInfoCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849922A73E45F005CDE5A /* Base */,
+			);
+			name = WMInfoCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849962A73E45F005CDE5A /* WMOperatorFileCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849972A73E45F005CDE5A /* en */,
+				CCD8499A2A73E45F005CDE5A /* ru */,
+			);
+			name = WMOperatorFileCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849982A73E45F005CDE5A /* WMOperatorFileCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849992A73E45F005CDE5A /* Base */,
+			);
+			name = WMOperatorFileCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD8499C2A73E45F005CDE5A /* WMOperatorMessageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8499D2A73E45F005CDE5A /* en */,
+				CCD849A22A73E45F005CDE5A /* ru */,
+			);
+			name = WMOperatorMessageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD8499E2A73E45F005CDE5A /* WMOperatorMessageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD8499F2A73E45F005CDE5A /* Base */,
+			);
+			name = WMOperatorMessageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849A02A73E45F005CDE5A /* WMVisitorMessageTableViewCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849A12A73E45F005CDE5A /* ru */,
+			);
+			name = WMVisitorMessageTableViewCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849A42A73E45F005CDE5A /* WMOperatorImageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849A52A73E45F005CDE5A /* en */,
+				CCD849A82A73E45F005CDE5A /* ru */,
+			);
+			name = WMOperatorImageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849A62A73E45F005CDE5A /* WMOperatorImageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849A72A73E45F005CDE5A /* Base */,
+			);
+			name = WMOperatorImageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849AA2A73E45F005CDE5A /* WMOperatorQuoteFileCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849AB2A73E45F005CDE5A /* en */,
+				CCD849B62A73E45F005CDE5A /* ru */,
+			);
+			name = WMOperatorQuoteFileCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849AC2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849AD2A73E45F005CDE5A /* en */,
+				CCD849B72A73E45F005CDE5A /* ru */,
+			);
+			name = WMOperatorQuoteMessageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849AE2A73E45F005CDE5A /* WMOperatorQuoteImageCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849AF2A73E45F005CDE5A /* en */,
+				CCD849B82A73E45F005CDE5A /* ru */,
+			);
+			name = WMOperatorQuoteImageCell.strings;
+			sourceTree = "<group>";
+		};
+		CCD849B02A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849B12A73E45F005CDE5A /* Base */,
+			);
+			name = WMOperatorQuoteMessageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849B22A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849B32A73E45F005CDE5A /* Base */,
+			);
+			name = WMOperatorQuoteFileCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849B42A73E45F005CDE5A /* WMOperatorQuoteImageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849B52A73E45F005CDE5A /* Base */,
+			);
+			name = WMOperatorQuoteImageCell.xib;
+			sourceTree = "<group>";
+		};
+		CCD849B92A73E45F005CDE5A /* ChatViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849BA2A73E45F005CDE5A /* en */,
+				CCD849BD2A73E45F005CDE5A /* ru */,
+			);
+			name = ChatViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD849BB2A73E45F005CDE5A /* ChatViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849BC2A73E45F005CDE5A /* Base */,
+			);
+			name = ChatViewController.xib;
+			sourceTree = "<group>";
+		};
+		CCD849C02A73E45F005CDE5A /* WMToolbarView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849C12A73E45F005CDE5A /* en */,
+				CCD849CC2A73E45F005CDE5A /* ru */,
+			);
+			name = WMToolbarView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849C22A73E45F005CDE5A /* WMQuoteView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849C32A73E45F005CDE5A /* en */,
+				CCD849CD2A73E45F005CDE5A /* ru */,
+			);
+			name = WMQuoteView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849C42A73E45F005CDE5A /* WMNewMessageView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849C52A73E45F005CDE5A /* en */,
+				CCD849CE2A73E45F005CDE5A /* ru */,
+			);
+			name = WMNewMessageView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849C62A73E45F005CDE5A /* WMToolbarView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849C72A73E45F005CDE5A /* Base */,
+			);
+			name = WMToolbarView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849C82A73E45F005CDE5A /* WMNewMessageView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849C92A73E45F005CDE5A /* Base */,
+			);
+			name = WMNewMessageView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849CA2A73E45F005CDE5A /* WMQuoteView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849CB2A73E45F005CDE5A /* Base */,
+			);
+			name = WMQuoteView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849CF2A73E45F005CDE5A /* ConnectionErrorView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849D02A73E45F005CDE5A /* en */,
+				CCD849DF2A73E45F005CDE5A /* ru */,
+			);
+			name = ConnectionErrorView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849D22A73E45F005CDE5A /* WMThanksAlertView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849D32A73E45F005CDE5A /* en */,
+				CCD849D62A73E45F005CDE5A /* ru */,
+			);
+			name = WMThanksAlertView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849D42A73E45F005CDE5A /* WMThanksAlertView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849D52A73E45F005CDE5A /* Base */,
+			);
+			name = WMThanksAlertView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849D82A73E45F005CDE5A /* ChatTestView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849D92A73E45F005CDE5A /* en */,
+				CCD849DC2A73E45F005CDE5A /* ru */,
+			);
+			name = ChatTestView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849DA2A73E45F005CDE5A /* ChatTestView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849DB2A73E45F005CDE5A /* Base */,
+			);
+			name = ChatTestView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849DD2A73E45F005CDE5A /* ConnectionErrorView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849DE2A73E45F005CDE5A /* Base */,
+			);
+			name = ConnectionErrorView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849E12A73E45F005CDE5A /* ScrollButtonView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849E22A73E45F005CDE5A /* en */,
+				CCD849E52A73E45F005CDE5A /* ru */,
+			);
+			name = ScrollButtonView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849E32A73E45F005CDE5A /* ScrollButtonView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849E42A73E45F005CDE5A /* Base */,
+			);
+			name = ScrollButtonView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849E72A73E45F005CDE5A /* ChatTitleView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849E82A73E45F005CDE5A /* en */,
+				CCD849EB2A73E45F005CDE5A /* ru */,
+			);
+			name = ChatTitleView.strings;
+			sourceTree = "<group>";
+		};
+		CCD849E92A73E45F005CDE5A /* ChatTitleView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849EA2A73E45F005CDE5A /* Base */,
+			);
+			name = ChatTitleView.xib;
+			sourceTree = "<group>";
+		};
+		CCD849ED2A73E45F005CDE5A /* WMImageViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849EE2A73E45F005CDE5A /* en */,
+				CCD849F12A73E45F005CDE5A /* ru */,
+			);
+			name = WMImageViewController.strings;
+			sourceTree = "<group>";
+		};
+		CCD849EF2A73E45F005CDE5A /* WMImageViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD849F02A73E45F005CDE5A /* Base */,
+			);
+			name = WMImageViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEB26A1A29547455003F19C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEB26A1B29547455003F19C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BEB26A1D29547455003F19C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.webim.WebimWidget;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEB26A1E29547455003F19C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.webim.WebimWidget;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEB26A0F29547455003F19C7 /* Build configuration list for PBXProject "WebimMobileWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEB26A1A29547455003F19C7 /* Debug */,
+				BEB26A1B29547455003F19C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEB26A1C29547455003F19C7 /* Build configuration list for PBXNativeTarget "WebimMobileWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEB26A1D29547455003F19C7 /* Debug */,
+				BEB26A1E29547455003F19C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEB26A0C29547455003F19C7 /* Project object */;
+}

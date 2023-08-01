@@ -15,7 +15,8 @@ let package = Package(
         .package(url: "https://github.com/kean/Nuke.git", from: "8.0.0"),
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "20.0.0"),
         .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0"),
-        .package(url: "https://github.com/Flipboard/FLAnimatedImage.git", from: "1.0.17")
+        .package(url: "https://github.com/Flipboard/FLAnimatedImage.git", from: "1.0.17"),
+        .package(url: "https://github.com/webim/webim-mobile-keyboard-ios.git", exact: "1.0.1")
     ],
     targets: [
         .target(
@@ -25,7 +26,8 @@ let package = Package(
                 .product(name: "Nuke", package: "Nuke"),
                 .product(name: "Cosmos", package: "Cosmos"),
                 .product(name: "SnapKit", package: "SnapKit"),
-                .product(name: "FLAnimatedImage", package: "FLAnimatedImage")
+                .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
+                .product(name: "WebimKeyboard", package: "webim-mobile-keyboard-ios")
             ],
             path: "Sources")
     ]

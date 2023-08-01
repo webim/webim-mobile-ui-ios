@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SurveyRadioButtonViewController" customModule="WebimMobileWidget" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SurveyRadioButtonViewController" customModule="WebimMobileWidget">
             <connections>
                 <outlet property="descriptionLabel" destination="5Im-WM-AWK" id="sXC-YD-d1x"/>
                 <outlet property="grayViewHeightConstraint" destination="cZw-hs-wCZ" id="taF-mj-i9M"/>
@@ -99,7 +99,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-654.375" y="218.66197183098592"/>
         </view>
-        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AP4-gs-o69" customClass="WMFixedWidthView" customModule="WebimMobileWidget" customModuleProvider="target">
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AP4-gs-o69" customClass="WMFixedWidthView" customModule="WebimMobileWidget">
             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEu-WE-ety">
