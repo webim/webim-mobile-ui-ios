@@ -107,6 +107,11 @@ extension ChatViewController: WMDialogCellDelegate {
         cellWithSelection = cell
     }
     
+    func reloadCell(_ cell: UITableViewCell) {
+        guard let indexPath = chatTableView.indexPath(for: cell) else { return }
+        chatTableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
     private func findMessage(withID id: String) -> Message? {
         for message in chatMessages {
             if message.getID() == id {

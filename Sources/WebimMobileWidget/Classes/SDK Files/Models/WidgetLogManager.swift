@@ -1,5 +1,5 @@
 //
-//  WebimLogManager.swift
+//  WidgetLogManager.swift
 //  WebimClientLibrary_Example
 //
 //  Created by Аслан Кутумбаев on 16.06.2022.
@@ -27,19 +27,19 @@
 import Foundation
 import WebimMobileSDK
 
-public protocol WebimLogManagerObserver {
+public protocol WidgetLogManagerObserver {
     func didGetNewLog(log: String)
 }
 
-public protocol WebimLogManagerSubject {
-    func add(observer: WebimLogManagerObserver)
-    func remove(observer: WebimLogManagerObserver)
+public protocol WidgetLogManagerSubject {
+    func add(observer: WidgetLogManagerObserver)
+    func remove(observer: WidgetLogManagerObserver)
     func notify(with log: String)
 }
 
-public class WebimLogManager: WebimLogManagerSubject {
+public class WidgetLogManager: WidgetLogManagerSubject {
 
-    public static let shared = WebimLogManager()
+    public static let shared = WidgetLogManager()
 
     var observerCollection = NSMutableSet()
 
@@ -54,23 +54,23 @@ public class WebimLogManager: WebimLogManagerSubject {
         return logs
     }
 
-    public func add(observer: WebimLogManagerObserver) {
+    public func add(observer: WidgetLogManagerObserver) {
         observerCollection.add(observer)
     }
 
-    public func remove(observer: WebimLogManagerObserver) {
+    public func remove(observer: WidgetLogManagerObserver) {
         observerCollection.remove(observer)
     }
 
     public func notify(with log: String) {
         observerCollection.forEach { observer in
-            guard let observer = observer as? WebimLogManagerObserver else { return }
+            guard let observer = observer as? WidgetLogManagerObserver else { return }
             observer.didGetNewLog(log: log)
         }
     }
 }
 
-extension WebimLogManager: WebimLogger {
+extension WidgetLogManager: WebimLogger {
     public func log(entry: String) {
         print(entry)
         notify(with: entry)

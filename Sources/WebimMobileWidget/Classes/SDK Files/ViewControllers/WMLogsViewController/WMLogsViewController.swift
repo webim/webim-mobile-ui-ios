@@ -55,7 +55,7 @@ class WMLogsViewController: UIViewController {
     }
 
     private func setupTextView() {
-        let logs = WebimLogManager.shared.getLogs()
+        let logs = WidgetLogManager.shared.getLogs()
         logs.forEach { log in
             addLog(log)
         }
@@ -80,7 +80,7 @@ class WMLogsViewController: UIViewController {
     }
 }
 
-extension WMLogsViewController: WebimLogManagerObserver {
+extension WMLogsViewController: WidgetLogManagerObserver {
     func didGetNewLog(log: String) {
         addLog(log)
         print(log)

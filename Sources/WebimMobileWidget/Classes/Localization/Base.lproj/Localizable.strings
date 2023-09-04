@@ -99,7 +99,7 @@
 //ChatViewController+CompletionHandler.swift
 "File type is not supported" = "File type is not supported";
 //ChatViewController+CompletionHandler.swift
-"Find sending unknown error" = "Find sending unknown error";
+"File sending unknown error" = "File sending unknown error";
 //UIAlertHandler.swift
 "Go to Settings" = "Go to Settings";
 //WMStartViewController.xib

@@ -134,9 +134,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        WebimServiceController.shared.notFatalErrorHandler = self
-        WebimServiceController.shared.departmentListHandlerDelegate = self
-        WebimServiceController.shared.fatalErrorHandlerDelegate = self
+
         updateOperatorInfo(operator: WebimServiceController.currentSession.getCurrentOperator(),
                            state: WebimServiceController.currentSession.sessionState())
         navigationBarUpdater.set(canUpdate: true)
@@ -162,6 +160,13 @@ class ChatViewController: UIViewController {
             alreadyRatedOperators, forKey: keychainKeyRatedOperators)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if navigationController == nil {
+            WebimServiceController.shared.stopSession()
+        }
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         DispatchQueue.main.async {
@@ -171,7 +176,6 @@ class ChatViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        WebimServiceController.shared.stopSession()
     }
     
     // MARK: - Methods
@@ -620,6 +624,11 @@ class ChatViewController: UIViewController {
         WebimServiceController.currentSession.set(chatStateListener: self)
         WebimServiceController.currentSession.set(surveyListener: self)
         WebimServiceController.currentSession.set(unreadByVisitorMessageCountChangeListener: messageCounter)
+        
+        WebimServiceController.shared.notFatalErrorHandler = self
+        WebimServiceController.shared.departmentListHandlerDelegate = self
+        WebimServiceController.shared.fatalErrorHandlerDelegate = self
+        
         DispatchQueue.main.async {
             WebimServiceController.currentSession.getLastMessages { [weak self] messages in
                 self?.chatMessages.insert(contentsOf: messages, at: 0)

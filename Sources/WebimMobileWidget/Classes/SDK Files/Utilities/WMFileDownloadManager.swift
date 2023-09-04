@@ -28,7 +28,7 @@ import UIKit
 import Nuke
 
 protocol WMFileDownloadProgressListener: AnyObject {
-    func progressChanged(url: URL, progress: Float, image: UIImage?)
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?)
 }
 
 typealias DownloadListenerContainer = WMWeakReferenseContainer<WMFileDownloadProgressListener>
@@ -38,6 +38,7 @@ class WMFileDownloadManager: NSObject {
     public static var shared = WMFileDownloadManager()
     private var progressDictionary = [URL: Float]()
     private var listeners = [URL: Set<DownloadListenerContainer>]()
+    private var damagedImageMessageSet = Set<String>()
     
     static func dropListeners() {
         WidgetAppDelegate.shared.checkMainThread()
@@ -57,12 +58,12 @@ class WMFileDownloadManager: NSObject {
         listeners[url] = listeners[url]?.filter { $0.getValue() != nil && $0.getValue() !== listener }
     }
     
-    func sendProgressChangedEventFor(url: URL, progress: Float, image: UIImage?) {
+    func sendProgressChangedEventFor(url: URL, progress: Float, image: UIImage?, error: Error?) {
         for listenerContainer in listeners[url] ?? [] {
-            listenerContainer.getValue()?.progressChanged(url: url, progress: progress, image: image)
+            listenerContainer.getValue()?.progressChanged(url: url, progress: progress, image: image, error: error)
         }
-        if image != nil {
-            // remove all listeners when image is downloaded
+        if image != nil || error != nil {
+            // remove all listeners when image is downloaded or error received.
             listeners[url] = nil
         } else {
             // filter released listeners
@@ -74,11 +75,11 @@ class WMFileDownloadManager: NSObject {
         WidgetAppDelegate.shared.checkMainThread()
         let request = ImageRequest(url: url)
         if let imageContainer = ImageCache.shared[request] {
-            progressListener.progressChanged(url: url, progress: 1, image: imageContainer)
+            progressListener.progressChanged(url: url, progress: 1, image: imageContainer, error: nil)
         } else {
             self.addProgressListener(url: url, listener: progressListener)
 
-            progressListener.progressChanged(url: url, progress: progressDictionary[url] ?? 0, image: nil)
+            progressListener.progressChanged(url: url, progress: progressDictionary[url] ?? 0, image: nil, error: nil)
 
             Nuke.ImagePipeline.shared.loadImage(
                 with: url,
@@ -89,13 +90,26 @@ class WMFileDownloadManager: NSObject {
                     }
                     WidgetAppDelegate.shared.checkMainThread()
                     self.progressDictionary[url] = progress
-                    self.sendProgressChangedEventFor(url: url, progress: progress, image: nil)
+                    self.sendProgressChangedEventFor(url: url, progress: progress, image: nil, error: nil)
                 },
-                completion: { _ in
+                completion: { result in
                     WidgetAppDelegate.shared.checkMainThread()
-                    self.sendProgressChangedEventFor(url: url, progress: 1, image: ImageCache.shared[request])
+                    do {
+                        let _ = try result.get()
+                        self.sendProgressChangedEventFor(url: url, progress: 1, image: ImageCache.shared[request], error: nil)
+                    } catch {
+                        self.sendProgressChangedEventFor(url: url, progress: 0, image: ImageCache.shared[request], error: error)
+                    }
                 }
             )
         }
+    }
+    
+    func addDamagedImageMessage(id: String) {
+        damagedImageMessageSet.insert(id)
+    }
+    
+    func isImageMessageDamaged(id: String) -> Bool {
+        damagedImageMessageSet.contains(id)
     }
 }

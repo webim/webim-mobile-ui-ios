@@ -129,7 +129,6 @@ extension ChatViewController {
 
         titleView.snp.makeConstraints { make in
             make.width.equalTo(200)
-            make.height.equalTo(80)
         }
 
         let gestureRecognizer = UITapGestureRecognizer(

@@ -104,8 +104,13 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
         self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? self.imagePreview.image, url: self.url)
     }
     
-    func progressChanged(url: URL, progress: Float, image: UIImage?) {
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
         if url != self.url { return }
+        guard error == nil else {
+            WMFileDownloadManager.shared.addDamagedImageMessage(id: message.getID())
+            delegate?.reloadCell(self)
+            return
+        }
         guard let image = image else {
             handleProgress(progress)
             return

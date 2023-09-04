@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354AA4808BAC7022415733CD /* Pods_WebimMobileWidget_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9597AB5F9D5052F3866119 /* Pods_WebimMobileWidget_Example.framework */; };
+		25F3E648E21684C420630F46 /* Pods_WebimMobileWidget_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09363C627A39E42CCA1BF44B /* Pods_WebimMobileWidget_Tests.framework */; };
+		5C11EA8BA87166A175124A1F /* Pods_WebimMobileWidget_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C703A8BF7501AE65EFE32CD /* Pods_WebimMobileWidget_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -16,7 +17,6 @@
 		BEF1E21929C056AC0066400D /* ExternalWidgetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E21829C056AC0066400D /* ExternalWidgetBuilder.swift */; };
 		BEF1E21B29C057310066400D /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E21A29C057310066400D /* ColorConstants.swift */; };
 		BEF1E21E29C059390066400D /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E21D29C059390066400D /* ImageConstants.swift */; };
-		C14B07F6E4476880D48EF711 /* Pods_WebimMobileWidget_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF3C81289F16FD71467039 /* Pods_WebimMobileWidget_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09363C627A39E42CCA1BF44B /* Pods_WebimMobileWidget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimMobileWidget_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E70578ACEB1C9EFBF0B04A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1B81BABEFB839C8A48D2DADB /* Pods-WebimMobileWidget_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Example.release.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example.release.xcconfig"; sourceTree = "<group>"; };
-		201A48AA8CE35E0D1147FEAB /* Pods-WebimMobileWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Example.debug.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		103CC0C18D67BAEC767BCD19 /* Pods-WebimMobileWidget_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Example.release.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1C703A8BF7501AE65EFE32CD /* Pods_WebimMobileWidget_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimMobileWidget_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA10AED122783288ADFA90F /* WebimMobileWidget.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebimMobileWidget.podspec; path = ../WebimMobileWidget.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* WebimMobileWidget_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebimMobileWidget_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,16 +44,15 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		78FE657BCD6A76A0A19CFAD4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		9DFEC462F5914B239E587317 /* Pods-WebimMobileWidget_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Tests.release.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Tests/Pods-WebimMobileWidget_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B23A7ABD3A969E6F80619B34 /* Pods-WebimMobileWidget_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Tests/Pods-WebimMobileWidget_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		86FCAF6822D73733999EA99E /* Pods-WebimMobileWidget_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Tests/Pods-WebimMobileWidget_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D7FDB619EEC5140EE4722A6 /* Pods-WebimMobileWidget_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Tests.release.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Tests/Pods-WebimMobileWidget_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BE1D5BB7297AA82800247BAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE1D5BBA297AA82800247BAB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEF1E21829C056AC0066400D /* ExternalWidgetBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalWidgetBuilder.swift; sourceTree = "<group>"; };
 		BEF1E21A29C057310066400D /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		BEF1E21D29C059390066400D /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		C0C82B7D058DFDC840C3F70F /* Pods-WebimMobileWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimMobileWidget_Example.debug.xcconfig"; path = "Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CC80F9722A04F4DC0031E7E1 /* WebimMobileWidget_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebimMobileWidget_Example.entitlements; sourceTree = "<group>"; };
-		FECF3C81289F16FD71467039 /* Pods_WebimMobileWidget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimMobileWidget_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF9597AB5F9D5052F3866119 /* Pods_WebimMobileWidget_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimMobileWidget_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354AA4808BAC7022415733CD /* Pods_WebimMobileWidget_Example.framework in Frameworks */,
+				5C11EA8BA87166A175124A1F /* Pods_WebimMobileWidget_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,13 +68,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C14B07F6E4476880D48EF711 /* Pods_WebimMobileWidget_Tests.framework in Frameworks */,
+				25F3E648E21684C420630F46 /* Pods_WebimMobileWidget_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A40E9DBDB5CBB090F3442ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C703A8BF7501AE65EFE32CD /* Pods_WebimMobileWidget_Example.framework */,
+				09363C627A39E42CCA1BF44B /* Pods_WebimMobileWidget_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +93,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				E193A2E3D245201E4EFC8D0B /* Pods */,
-				9DEF00E537ED612BC3C2A0C0 /* Frameworks */,
+				3A40E9DBDB5CBB090F3442ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,15 +156,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		9DEF00E537ED612BC3C2A0C0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF9597AB5F9D5052F3866119 /* Pods_WebimMobileWidget_Example.framework */,
-				FECF3C81289F16FD71467039 /* Pods_WebimMobileWidget_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		BE1D5BB5297AA82800247BAB /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +176,10 @@
 		E193A2E3D245201E4EFC8D0B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				201A48AA8CE35E0D1147FEAB /* Pods-WebimMobileWidget_Example.debug.xcconfig */,
-				1B81BABEFB839C8A48D2DADB /* Pods-WebimMobileWidget_Example.release.xcconfig */,
-				B23A7ABD3A969E6F80619B34 /* Pods-WebimMobileWidget_Tests.debug.xcconfig */,
-				9DFEC462F5914B239E587317 /* Pods-WebimMobileWidget_Tests.release.xcconfig */,
+				C0C82B7D058DFDC840C3F70F /* Pods-WebimMobileWidget_Example.debug.xcconfig */,
+				103CC0C18D67BAEC767BCD19 /* Pods-WebimMobileWidget_Example.release.xcconfig */,
+				86FCAF6822D73733999EA99E /* Pods-WebimMobileWidget_Tests.debug.xcconfig */,
+				8D7FDB619EEC5140EE4722A6 /* Pods-WebimMobileWidget_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -191,11 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WebimMobileWidget_Example" */;
 			buildPhases = (
-				B3919B709FD8572FE833908E /* [CP] Check Pods Manifest.lock */,
+				8C51491D5E3D606E8A987BAA /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				3C5ABAA31E4E028A697F87D7 /* [CP] Embed Pods Frameworks */,
+				F26306C8C735710BEDB9BE44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WebimMobileWidget_Tests" */;
 			buildPhases = (
-				2DC8D51C6D198CCE24043696 /* [CP] Check Pods Manifest.lock */,
+				3E9D8D764369D7B7C3FE3034 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -287,7 +287,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2DC8D51C6D198CCE24043696 /* [CP] Check Pods Manifest.lock */ = {
+		3E9D8D764369D7B7C3FE3034 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,24 +309,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3C5ABAA31E4E028A697F87D7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3919B709FD8572FE833908E /* [CP] Check Pods Manifest.lock */ = {
+		8C51491D5E3D606E8A987BAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,6 +329,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F26306C8C735710BEDB9BE44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebimMobileWidget_Example/Pods-WebimMobileWidget_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,7 +503,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 201A48AA8CE35E0D1147FEAB /* Pods-WebimMobileWidget_Example.debug.xcconfig */;
+			baseConfigurationReference = C0C82B7D058DFDC840C3F70F /* Pods-WebimMobileWidget_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WebimMobileWidget_Example.entitlements;
@@ -530,7 +530,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B81BABEFB839C8A48D2DADB /* Pods-WebimMobileWidget_Example.release.xcconfig */;
+			baseConfigurationReference = 103CC0C18D67BAEC767BCD19 /* Pods-WebimMobileWidget_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WebimMobileWidget_Example.entitlements;
@@ -557,7 +557,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B23A7ABD3A969E6F80619B34 /* Pods-WebimMobileWidget_Tests.debug.xcconfig */;
+			baseConfigurationReference = 86FCAF6822D73733999EA99E /* Pods-WebimMobileWidget_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 574GE9X9L7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -584,7 +584,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DFEC462F5914B239E587317 /* Pods-WebimMobileWidget_Tests.release.xcconfig */;
+			baseConfigurationReference = 8D7FDB619EEC5140EE4722A6 /* Pods-WebimMobileWidget_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 574GE9X9L7;
 				FRAMEWORK_SEARCH_PATHS = (

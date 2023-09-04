@@ -93,7 +93,8 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
         let sendStatus = message.getSendStatus() == .sent
         
         if sendStatus {
-            if let fileURL = WMDownloadFileManager.shared.urlFromFileInfo(fileInfo) {
+            if attachment?.getState() != .error,
+                let fileURL = WMDownloadFileManager.shared.urlFromFileInfo(fileInfo) {
                 self.documentDownloadTask = WMDocumentDownloadTask.documentDownloadTaskFor(url: fileURL, fileSize: fileSize, delegate: self)
             }
             self.isForOperator = false
@@ -117,6 +118,11 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
         self.fileDescription?.textColor = fileDescriptionColor
         self.downloadStatusLabel?.text = ""
         
+        if WMFileDownloadManager.shared.isImageMessageDamaged(id: message.getID()) {
+            errorMessageSetup()
+            return
+        }
+        
         switch attachment?.getState() {
         case .ready:
             resetFileStatus()
@@ -130,17 +136,7 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
             self.fileStatus.isUserInteractionEnabled = false
             break
         case .error:
-            self.fileDescription?.text = message.getData()?.getAttachment()?.getErrorMessage()
-            self.fileImageColor = wmCoral
-            self.fileNameColor = wmCoral
-            self.fileName?.textColor = fileNameColor
-            self.fileDescription?.lineBreakMode = .byWordWrapping
-            self.fileDescription?.font = UIFont.systemFont(ofSize: 11)
-            self.fileStatus.setBackgroundImage(
-                errorFileImage,
-                for: .normal
-            )
-            self.fileStatus.isUserInteractionEnabled = false
+            errorMessageSetup()
             break
         default:
             break
@@ -159,7 +155,7 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
         
         if let subtitleAttributes = config?.subtitleAttributes {
             fileDescription?.attributedText = NSAttributedString(
-                string: fileName?.text ?? "",
+                string: fileDescription?.text ?? "",
                 attributes: subtitleAttributes
             )
         }
@@ -244,5 +240,19 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
             self.messageView?.addGestureRecognizer(tapGesture)
         }
         return setup
+    }
+    
+    private func errorMessageSetup() {
+        self.fileDescription?.text = message.getData()?.getAttachment()?.getErrorMessage() ?? "File sending unknown error".localized
+        self.fileImageColor = wmCoral
+        self.fileNameColor = wmCoral
+        self.fileName?.textColor = fileNameColor
+        self.fileDescription?.lineBreakMode = .byWordWrapping
+        self.fileDescription?.font = UIFont.systemFont(ofSize: 11)
+        self.fileStatus.setBackgroundImage(
+            errorFileImage,
+            for: .normal
+        )
+        self.fileStatus.isUserInteractionEnabled = false
     }
 }

@@ -57,8 +57,12 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
         }
     }
     
-    func progressChanged(url: URL, progress: Float, image: UIImage?) {
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
         if url != self.url {
+            return
+        }
+        guard error == nil else {
+            WMFileDownloadManager.shared.addDamagedImageMessage(id: message.getID())
             return
         }
         if let image = image {

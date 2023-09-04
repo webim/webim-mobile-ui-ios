@@ -152,6 +152,7 @@ final class WebimService {
         do {
             try messageTracker?.destroy()
             try webimSession?.destroy()
+            webimSession = nil
         } catch let error as AccessError {
             switch error {
             case .invalidSession:

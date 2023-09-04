@@ -229,7 +229,11 @@ class WMQuoteView: UIView, URLSessionDelegate {
 }
 
 extension WMQuoteView: WMFileDownloadProgressListener {
-    func progressChanged(url: URL, progress: Float, image: UIImage?) {
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
+        guard error == nil else {
+            quoteImageView.image = fileDownloadButtonImage
+            return
+        }
         quoteImageView.image = image ?? .loadImageFromWidget(named: "placeholder")
     }
 }

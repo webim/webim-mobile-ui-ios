@@ -43,6 +43,7 @@
 		CCD84A0F2A73E45F005CDE5A /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B92A73E45F005CDE5A /* AlertController.swift */; };
 		CCD84A102A73E45F005CDE5A /* WebimLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */; };
 		CCD84A112A73E45F005CDE5A /* WebimServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */; };
+		CCD84A122A73E45F005CDE5A /* KeyboardNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BC2A73E45F005CDE5A /* KeyboardNotificationManager.swift */; };
 		CCD84A132A73E45F005CDE5A /* ScrollQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */; };
 		CCD84A142A73E45F005CDE5A /* WebimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BE2A73E45F005CDE5A /* WebimService.swift */; };
 		CCD84A152A73E45F005CDE5A /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BF2A73E45F005CDE5A /* FilePicker.swift */; };
@@ -230,6 +231,7 @@
 		CCD848B92A73E45F005CDE5A /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimLogManager.swift; sourceTree = "<group>"; };
 		CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimServiceController.swift; sourceTree = "<group>"; };
+		CCD848BC2A73E45F005CDE5A /* KeyboardNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationManager.swift; sourceTree = "<group>"; };
 		CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollQueueManager.swift; sourceTree = "<group>"; };
 		CCD848BE2A73E45F005CDE5A /* WebimService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimService.swift; sourceTree = "<group>"; };
 		CCD848BF2A73E45F005CDE5A /* FilePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePicker.swift; sourceTree = "<group>"; };
@@ -552,6 +554,7 @@
 				CCD848B92A73E45F005CDE5A /* AlertController.swift */,
 				CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */,
 				CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */,
+				CCD848BC2A73E45F005CDE5A /* KeyboardNotificationManager.swift */,
 				CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */,
 				CCD848BE2A73E45F005CDE5A /* WebimService.swift */,
 				CCD848BF2A73E45F005CDE5A /* FilePicker.swift */,
@@ -1371,6 +1374,7 @@
 				CCD84A3C2A73E45F005CDE5A /* WMQuoteMessageCell.swift in Sources */,
 				CCD84A022A73E45F005CDE5A /* WMConfigs.swift in Sources */,
 				CCD84A592A73E45F005CDE5A /* ChatTestView.swift in Sources */,
+				CCD84A122A73E45F005CDE5A /* KeyboardNotificationManager.swift in Sources */,
 				CCD84A442A73E45F005CDE5A /* WMQuoteImageCell.swift in Sources */,
 				CCD84A602A73E45F005CDE5A /* WMProtocols.swift in Sources */,
 				CCD84A572A73E45F005CDE5A /* WMQuoteView.swift in Sources */,

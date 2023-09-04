@@ -18,7 +18,7 @@ pod WebimMobileWidget
 ### Carthage
 Add following line to your **Cartfile**:
 ```
-github "webim/webim-mobile-ui-ios" ~> 1.0.3
+github "webim/webim-mobile-ui-ios" ~> 1.1.0
 ```
 
 

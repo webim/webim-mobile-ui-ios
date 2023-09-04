@@ -37,6 +37,7 @@ protocol WMDialogCellDelegate: AnyObject {
     func cellChangeTextViewSelection(_ cell: WMMessageTableCell)
     func canReloadRow() -> Bool
     func isCellVisible(_ cell: WMMessageTableCell) -> Bool
+    func reloadCell(_ cell: UITableViewCell)
 }
 
 class WMMessageTableCell: UITableViewCell, UITextViewDelegate {

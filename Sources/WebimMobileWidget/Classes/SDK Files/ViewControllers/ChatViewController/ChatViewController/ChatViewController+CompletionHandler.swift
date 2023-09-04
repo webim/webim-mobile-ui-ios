@@ -44,14 +44,14 @@ extension ChatViewController: SendFileCompletionHandler,
     // SendFileCompletionHandler
     func onFailure(messageID: String, error: SendFileError) {
         DispatchQueue.main.async {
-            var message = "Find sending unknown error".localized
+            var message = "File sending unknown error".localized
             switch error {
             case .fileSizeExceeded:
                 message = "File is too large.".localized
             case .fileTypeNotAllowed:
                 message = "File type is not supported".localized
             case .unknown:
-                message = "Find sending unknown error".localized
+                message = "File sending unknown error".localized
             case .uploadedFileNotFound:
                 message = "Sending files in body is not supported".localized
             case .unauthorized:
@@ -60,6 +60,8 @@ extension ChatViewController: SendFileCompletionHandler,
                 message = "MaxFilesCountExceeded".localized
             case .fileSizeTooSmall:
                 message = "File is too small".localized
+            case .uploadCanceled:
+                message = "File upload request canceled".localized
             }
             
             self.alertOnFailure(

@@ -99,7 +99,7 @@ extension ChatViewController: MessageListener {
     
     func changed(message oldVersion: Message,
                  to newVersion: Message) {
-        let isScrollRequired = oldVersion.getText() != newVersion.getText()
+        let isScrollRequired = oldVersion.getText() != newVersion.getText() && !newVersion.isFile()
         scrollQueueManager.perform(kind: .scrollTableView(animated: true)) { [weak self] in
             guard let self = self else { return }
             guard let index = self.chatMessages

@@ -250,10 +250,12 @@ open class FilePicker: NSObject {
     // MARK: - Private methods
     private func pickerControllerImage(_ controller: UIImagePickerController, didSelect images: [ImageToSend] = []) {
         self.delegate?.didSelect(images: images)
+        controller.dismiss(animated: true)
     }
     
     private func pickerControllerDocument(_ controller: UIDocumentPickerViewController, didSelect files: [FileToSend] = []) {
         self.delegate?.didSelect(files: files)
+        controller.dismiss(animated: true)
     }
     
     private func requesetCameraPermission() {
@@ -348,8 +350,7 @@ extension FilePicker: UIImagePickerControllerDelegate {
             return self.pickerControllerImage(picker, didSelect: [ImageToSend(image: image, url: nil)])
         }
         
-        self.pickerControllerImage(picker, didSelect: [ImageToSend(image: image, url: imageURL)]
-        )
+        self.pickerControllerImage(picker, didSelect: [ImageToSend(image: image, url: imageURL)])
     }
 }
 
@@ -372,6 +373,9 @@ extension FilePicker: PHPickerViewControllerDelegate {
                     self?.delegate?.didSelect(images: images)
                 }
             }
+        }
+        DispatchQueue.main.async {
+            picker.dismiss(animated: true)
         }
     }
 }

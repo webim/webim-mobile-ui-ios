@@ -165,7 +165,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             if let attachment = message.getData()?.getAttachment() {
-                isImage = MimeType.isImage(contentType: attachment.getFileInfo().getContentType() ?? "")
+                isImage = MimeType.isImage(contentType: attachment.getFileInfo().getContentType() ?? "") && !WMFileDownloadManager.shared.isImageMessageDamaged(id: message.getID())
                 isFile = !isImage
             }
         }
