@@ -130,8 +130,8 @@ class WMQuoteView: UIView, URLSessionDelegate {
         }
         self.quoteImageView.accessibilityIdentifier = url.absoluteString
         let request = ImageRequest(url: url)
-        if let imageContainer = ImageCache.shared[request] {
-            self.quoteImageView.image = imageContainer
+        if let imageContainer = ImageCache.shared[ImageCacheKey(request: request)] {
+            self.quoteImageView.image = imageContainer.image
         } else {
             WMFileDownloadManager.shared.subscribeForImage(url: url, progressListener: self)
         }
@@ -229,11 +229,11 @@ class WMQuoteView: UIView, URLSessionDelegate {
 }
 
 extension WMQuoteView: WMFileDownloadProgressListener {
-    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
+    func progressChanged(url: URL, progress: Float, image: Nuke.ImageContainer?, error: Error?) {
         guard error == nil else {
             quoteImageView.image = fileDownloadButtonImage
             return
         }
-        quoteImageView.image = image ?? .loadImageFromWidget(named: "placeholder")
+        quoteImageView.image = image?.image ?? .loadImageFromWidget(named: "placeholder")
     }
 }

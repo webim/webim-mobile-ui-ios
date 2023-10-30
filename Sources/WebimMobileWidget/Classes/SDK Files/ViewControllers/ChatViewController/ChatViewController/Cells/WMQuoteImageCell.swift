@@ -26,6 +26,7 @@
 
 import UIKit
 import WebimMobileSDK
+import Nuke
 
 class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     
@@ -36,7 +37,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     
     @IBOutlet var quoteImage: UIImageView!
     var url: URL?
-    var animatedImage: UIImage?
+    var animatedImage: ImageContainer?
 
     override func setMessage(message: Message) {
         super.setMessage(message: message)
@@ -57,7 +58,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
         }
     }
     
-    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
+    func progressChanged(url: URL, progress: Float, image: ImageContainer?, error: Error?) {
         if url != self.url {
             return
         }
@@ -66,7 +67,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
             return
         }
         if let image = image {
-            self.quoteImage.image = image
+            self.quoteImage.image = image.image
             self.animatedImage = image
         } else {
             self.quoteImage.image = placeholderImage
@@ -74,7 +75,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     }
     
     @objc func imageViewTapped() {
-        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? self.quoteImage.image, url: self.url)
+        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? (self.quoteImage.image != nil  ? ImageContainer(image: self.quoteImage.image!) : nil), url: self.url)
     }
 
     override func initialSetup() -> Bool {

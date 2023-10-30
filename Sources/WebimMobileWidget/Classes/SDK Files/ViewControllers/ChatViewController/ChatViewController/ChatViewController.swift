@@ -129,7 +129,7 @@ class ChatViewController: UIViewController {
         adjustConfig()
         
         // Nuke animated images
-        ImagePipeline.Configuration.isAnimatedImageDataEnabled = true
+        // ImagePipeline.Configuration._isAnimatedImageDataEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -654,19 +654,19 @@ class ChatViewController: UIViewController {
         imageDownloadIndicator.isHidden = true
         imageDownloadIndicator.translatesAutoresizingMaskIntoConstraints = false
 
-        let loadingOptions = ImageLoadingOptions(placeholder: UIImage(),transition: .fadeIn(duration: 0.5))
-        let defaultRequestOptions = ImageRequestOptions()
+        //let loadingOptions = ImageLoadingOptions(placeholder: UIImage(),transition: .fadeIn(duration: 0.5))
+        let defaultRequestOptions = ImageRequest.Options()
         let imageRequest = ImageRequest(
             url: avatarURL,
-            processors: [ImageProcessor.Circle()],
+            processors: [ImageProcessors.Circle()],
             priority: .normal,
             options: defaultRequestOptions
         )
 
-        Nuke.loadImage(
+        ImagePipeline.shared.loadImage(
             with: imageRequest,
-            options: loadingOptions,
-            into: self.titleViewOperatorAvatarImageView,
+            //options: loadingOptions,
+            //into: self.titleViewOperatorAvatarImageView,
             progress: { _, completed, total in
                 DispatchQueue.global(qos: .userInteractive).async {
                     let progress = Float(completed) / Float(total)

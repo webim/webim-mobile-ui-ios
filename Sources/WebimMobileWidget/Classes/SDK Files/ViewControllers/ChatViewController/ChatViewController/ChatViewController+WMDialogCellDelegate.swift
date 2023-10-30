@@ -35,7 +35,7 @@ extension ChatViewController: WMDialogCellDelegate {
         showPopover(cell: cell, message: message, cellHeight: cell.frame.height)
     }
 
-    func imageViewTapped(message: Message, image: UIImage?, url: URL?) {
+    func imageViewTapped(message: Message, image: ImageContainer?, url: URL?) {
         guard let url = url else { return }
         
         let vc = WMImageViewController.loadViewControllerFromXib()
