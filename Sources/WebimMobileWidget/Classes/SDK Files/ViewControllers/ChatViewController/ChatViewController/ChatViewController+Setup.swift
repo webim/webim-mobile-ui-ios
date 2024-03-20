@@ -126,17 +126,11 @@ extension ChatViewController {
     }
     
     func setupTitleView() {
-
+        
         titleView.snp.makeConstraints { make in
             make.width.equalTo(200)
         }
-
-        let gestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(titleViewTapAction)
-        )
-
-        titleView.addGestureRecognizer(gestureRecognizer)
+    
         navigationItem.titleView = titleView
     }
     
@@ -144,7 +138,7 @@ extension ChatViewController {
         // RightBarButtonItem
         titleViewOperatorAvatarImageView.image = UIImage()
         
-        let customViewForOperatorAvatar = createUIView()
+        let customViewForOperatorAvatar = createUIButton(type: .custom)
         customViewForOperatorAvatar.addSubview(titleViewOperatorAvatarImageView)
         
         titleViewOperatorAvatarImageView.snp.remakeConstraints { (make) -> Void in
@@ -155,12 +149,15 @@ extension ChatViewController {
                 .inset(2)
         }
         
+        customViewForOperatorAvatar.addTarget(self, action: #selector(titleViewTapAction), for: .touchUpInside)
+        
+        
         let customRightBarButtonItem = UIBarButtonItem(
             customView: customViewForOperatorAvatar
         )
         
         navigationItem.rightBarButtonItem = customRightBarButtonItem
-        navigationItem.rightBarButtonItem?.action = #selector(titleViewTapAction)
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     func configureNetworkErrorView() {
@@ -217,7 +214,7 @@ extension ChatViewController {
     }
 
     func setupServerSideSettingsManager() {
-        webimServerSideSettingsManager.getServerSideSettings()
+        webimServerSideSettingsManager.getServerSideSettings(self)
     }
 
     func setupAlreadyRatedOperators() {
@@ -227,4 +224,25 @@ extension ChatViewController {
         }
         alreadyRatedOperators = alreadyRatedOperatorsDictionary
     }
+}
+
+
+extension ChatViewController: ServerSideSettingsCompletionHandler {
+    func onFailure() {
+    }
+    
+    func onSuccess(webimServerSideSettings: WebimServerSideSettings) {
+        webimServerSideSettingsManager.onSuccess(webimServerSideSettings: webimServerSideSettings)
+        if webimServerSideSettingsManager.isRateOperatorEnabled() && webimServerSideSettingsManager.showRateOperatorButton() {
+            let gestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(titleViewTapAction)
+            )
+            
+            navigationItem.titleView?.addGestureRecognizer(gestureRecognizer)
+            
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+    }
+    
 }

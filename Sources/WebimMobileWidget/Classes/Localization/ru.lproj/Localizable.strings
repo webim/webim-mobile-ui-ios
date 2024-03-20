@@ -1,7 +1,3 @@
-//WMSettingsViewController.swift,WMSettingsViewController.xib
-"* Account name can't be empty." = "* Название аккаунта не может быть пустым";
-//WMSettingsViewController.swift,WMSettingsViewController.xib
-"* Location can't be empty." = "* Размещение не может быть пустым";
 //ScrollButtonView.xib
 "0" = "0";
 //WMOperatorFileCell.xib,WMVisitorFileCell.xib
@@ -28,12 +24,6 @@
 "<this text will be replaced>" = "<this text will be replaced>";
 //UIAlertHandler.swift
 "Account" = "Аккаунт";
-//WMSettingsViewController.swift
-"Account name has invalid characters" = "Название аккаунта содержит недопустимые символы.";
-//WMSettingsViewController.xib
-"Account name text field" = "Текстовое поле названия учетной записи";
-//WMSettingsViewController.xib
-"Account name*" = "Название аккаунта*";
 //WebimService.swift
 "AccountBlocked" = "Учетная запись, с помощью которой была произведена попытка начать сессию, заблокирован. Пожалуйста, обратитесь в службу поддержки \"Webim\" или используйте другую учетную запись.";
 //ChatTestView.swift
@@ -102,12 +92,6 @@
 "File sending unknown error" = "Неизвестная ошибка при отправке файла";
 //UIAlertHandler.swift
 "Go to Settings" = "Перейти в настройки";
-//WMStartViewController.xib
-"Greeting title" = "Приветственное заглавие";
-//WMStartViewController.xib
-"Greeting words" = "Приветственные слова";
-//WMSettingsViewController.xib
-"If you are registered in Webim service you can use your own account name and location." = "Если Вы зарегистрированы в сервисе Webim, тогда можете использовать собственное название аккаунта и размещение.";
 //WMQuoteImageCell.swift,WMQuoteView.swift
 "Image" = "Изображение";
 //ChatViewController+Surveys.swift
@@ -124,12 +108,6 @@
 "LoadFileErrorText" = "Попробуйте загрузить другой файл";
 //WMFileViewController.swift,WMFileViewController.xib
 "Loading File..." = "Загружаем файл...";
-//WMSettingsViewController.swift
-"Location has invalid characters" = "Размещение содержит недопустимые символы";
-//WMSettingsViewController.xib
-"Location text field" = "Текстовое поле размещения";
-//WMSettingsViewController.xib
-"Location*" = "Размещение*";
 //ChatViewController+CompletionHandler.swift
 "MaxFilesCountExceeded" = "Превышено максимальное число отправляемых файлов для сообщения";
 //ChatViewController+CompletionHandler.swift
@@ -176,10 +154,6 @@
 "P.OM" = "%@ написал сообщение: %@.";
 //AdditionalKeys.swift
 "P.RO" = "Оцените оператора.";
-//WMSettingsViewController.xib
-"Page title" = "Название экрана чата";
-//WMSettingsViewController.xib
-"Page title text field" = "Текстовое поле названия экрана чата";
 //FilePicker.swift
 "Photo Library" = "Фотогалерея";
 //FilePicker.swift
@@ -196,8 +170,6 @@
 "Response cannot be created for this request" = "Ответ не может быть создан для данного запроса";
 //ChatTestView.xib
 "Run autotest" = "Run autotest";
-//WMSettingsViewController.xib
-"Save" = "Сохранить";
 //UIAlertHandler.swift
 "Save error" = "Ошибка сохранения";
 //UIAlertHandler.swift
@@ -208,8 +180,6 @@
 "SaveFileErrorMessage" = "Нет доступа к сохранению файлов на устройстве. Предоставьте доступ в настройках приложения.";
 //UIAlertHandler.swift
 "Saved!" = "Сохранено!";
-//WMSettingsViewController.xib
-"Saves current settings and shows start screen." = "Сохраняет текущие настройки и возвращает к начальной странице.";
 //RateStarsViewController.xib,SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib
 "Send" = "Отправить";
 //ChatViewController+UITableView.swift
@@ -226,12 +196,6 @@
 "Session creation failed" = "Неудачная попытка создания сессии";
 //FilePicker.swift,WMStartViewController.xib
 "Settings" = "Настройки";
-//WMStartViewController.xib
-"Shows settings." = "Показывает настройки.";
-//WMStartViewController.xib
-"Start chat" = "Начать чат";
-//WMStartViewController.xib
-"Starts chat." = "Начинает чат.";
 //ChatViewController+Surveys.swift
 "Survey disabled" = "Опрос отключен";
 //WMThanksAlertView.xib
@@ -244,20 +208,14 @@
 "There is no current agent to rate" = "Нет оператора для выставления оценки";
 //ChatViewController+Surveys.swift
 "This agent not in the current chat" = "Этот оператор не находится в данном чате";
-//WMStartViewController.xib
-"To start a chat tap on the button below.\n\nOperator can answer to your chat at:\nhttps://demo.webim.ru/\nLogin: o@webim.ru\nPassword: password\n\nThis app source code can be found at:\nhttps://github.com/webim/webim-client-sdk-ios" = "Для того, чтобы начать чат, нажмите на кнопку ниже.";
 //ChatViewController+Surveys.swift
 "Unknown error" = "Неизвестная ошибка";
 //WMFileTableViewCell.swift
 "Uploading file" = "Отправка файла";
-//WMSettingsViewController.xib
-"User data json (optional)" = "User data json (optional)";
 //ChatViewController+Setup.swift,ChatViewController.swift
-"Webim chat" = "Webim чат";
+"Webim SDK App" = "Webim SDK App";
 //FilePicker.swift
 "Webim needs permission to access your camera so you can send photos to chat." = "Чтобы Вы могли отправить фото в чат, Webim требуется доступ к камере.";
-//WMStartViewController.xib
-"Welcome to the WebimClientLibrary app!" = "Добро пожаловать в приложение Webim Chat!";
 //ChatViewController+CompletionHandler.swift
 "Wrong button ID in request" = "Неправильный ID кнопки в запросе";
 //ChatViewController+CompletionHandler.swift
@@ -272,16 +230,8 @@
 "comment" = "комментарий";
 //WMMessageTableCell.swift
 "edited" = "изменено";
-//WMSettingsViewController.xib
-"iOS app" = "iOS app";
-//WMSettingsViewController.xib
-"mobile" = "mobile";
 //ChatViewController+Listener.swift
 "typing" = "печатает";
-//WMSettingsViewController.xib
-"wmtest" = "wmtest";
-//WMSettingsViewController.xib
-"{\"id\":\"123\",\"name\":\"test12\",\"crc\":\"567\"}" = "{\"id\":\"123\",\"name\":\"test12\",\"crc\":\"567\"}";
 //LaunchScreen.storyboard,LaunchScreenController.storyboard
 "© 2022 Webim.ru Inc. All rights reserved." = "© 2022 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift

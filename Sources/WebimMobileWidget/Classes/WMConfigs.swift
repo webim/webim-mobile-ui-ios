@@ -57,6 +57,8 @@ public class WMChatViewControllerConfig: WMViewControllerConfig {
     var quoteViewConfig: WMHelperInputViewConfig?
     var editBarConfig: WMHelperInputViewConfig?
     var surveyViewConfig: WMSurveyViewConfig?
+    var infoCellConfig: WMAbstractCellConfig?
+    var emptyChatTitle: String?
 }
 
 public class WMImageViewControllerConfig: WMViewControllerConfig {
@@ -136,6 +138,7 @@ public class WMPopupActionCellConfig: WMAbstractCellConfig {
 // MARK: ToolbarConfigs
 public class WMToolbarConfig {
     var sendButtonImage: UIImage?
+    var inactiveSendButtonImage: UIImage?
     var addAttachmentImage: UIImage?
     var placeholderText: String?
     var textViewFont: UIFont?
@@ -144,6 +147,8 @@ public class WMToolbarConfig {
     var filledTextViewStrokeColor: UIColor?
     var textViewCornerRadius: CGFloat?
     var textViewMaxHeight: CGFloat?
+    var toolbarBackgroundColor: UIColor?
+    var inputViewColor: UIColor?
 }
 
 // MARK: WMNetworkErrorViewConfig
@@ -175,6 +180,7 @@ public class WMSurveyViewConfig {
     var buttonTitle: NSAttributedString?
     var buttonColor: UIColor?
     var buttonCornerRadius: CGFloat?
+    var changeRateEnabled: Bool?
 }
 
 // MARK: NavigationBarConfigs

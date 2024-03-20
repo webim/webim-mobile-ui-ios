@@ -77,7 +77,7 @@ final class WebimService {
         // !!!secretString MUST NOT be used in real application!!!
         let secretString = "64f7099e123231123123123121"
         var properties = [String: String]()
-
+        
         properties["id"] = "test_id"
         properties["display_name"] = "test_name"
         
@@ -93,10 +93,10 @@ final class WebimService {
         
         let jsonData = try! JSONSerialization.data(withJSONObject: properties, options: [])
         let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!
-
+        
         return jsonString
     }
-
+    
     // MARK: - Methods
     func createSession() {
         
@@ -144,7 +144,7 @@ final class WebimService {
         } catch {
             self.printError(error: error, message: "Webim session starting/resuming")
         }
-       
+        
         startChat()
     }
     
@@ -172,7 +172,7 @@ final class WebimService {
     func set(unreadByVisitorMessageCountChangeListener listener: UnreadByVisitorMessageCountChangeListener) {
         webimSession?.getStream().set(unreadByVisitorMessageCountChangeListener: listener)
     }
-
+    
     func set(sessionBuilder: SessionBuilder?) {
         self.sessionBuilder = sessionBuilder
     }
@@ -206,7 +206,7 @@ final class WebimService {
             }
             
             if shouldShowDepartmentSelection(),
-                let departments = messageStream?.getDepartmentList() {
+               let departments = messageStream?.getDepartmentList() {
                 departmentListHandlerDelegate?.showDepartmentsList(
                     departments,
                     action: { [weak self] departmentKey in
@@ -238,14 +238,14 @@ final class WebimService {
             self.printError(error: error, message: "Search")
         }
     }
-
+    
     func getServerSideSettings(completionHandler: ServerSideSettingsCompletionHandler?) {
         do {
             if messageStream == nil {
                 setMessageStream()
             }
             try messageStream?.getServerSideSettings(completionHandler: completionHandler)
-
+            
         } catch {
             self.printError(error: error, message: "Getting Server side settings")
         }
@@ -277,7 +277,7 @@ final class WebimService {
         }
         
         if shouldShowDepartmentSelection(),
-            let departments = messageStream?.getDepartmentList() {
+           let departments = messageStream?.getDepartmentList() {
             departmentListHandlerDelegate?.showDepartmentsList(
                 departments,
                 action: { [weak self] departmentKey in
@@ -303,6 +303,60 @@ final class WebimService {
         }
     }
     
+    func send(files: [FileToSend],
+              completionHandler: SendFileCompletionHandler
+    ) {
+        if messageStream == nil {
+            setMessageStream()
+        }
+        
+        if shouldShowDepartmentSelection(),
+           let departments = messageStream?.getDepartmentList() {
+            departmentListHandlerDelegate?.showDepartmentsList(
+                departments,
+                action: { [weak self] departmentKey in
+                    self?.startChat(
+                        departmentKey: departmentKey,
+                        message: nil
+                    )
+                    self?.sendFiles(files: files,
+                                    completionHandler: completionHandler
+                    )
+                }
+            )
+        } else {
+            self.sendFiles(files: files,
+                           completionHandler: completionHandler
+            )
+        }
+    }
+    
+    func send(images: [ImageToSend],
+              completionHandler: SendFileCompletionHandler
+    ) {
+        if messageStream == nil {
+            setMessageStream()
+        }
+        
+        if shouldShowDepartmentSelection(),
+           let departments = messageStream?.getDepartmentList() {
+            departmentListHandlerDelegate?.showDepartmentsList(
+                departments,
+                action: { [weak self] departmentKey in
+                    self?.startChat(
+                        departmentKey: departmentKey,
+                        message: nil
+                    )
+                    self?.sendImages(images: images,
+                                     completionHandler: completionHandler
+                    )
+                }
+            )
+        } else {
+            self.sendImages(images: images, completionHandler: completionHandler)
+        }
+    }
+    
     func reply(
         message: String,
         repliedMessage: Message,
@@ -314,7 +368,7 @@ final class WebimService {
             }
             
             if shouldShowDepartmentSelection(),
-                let departments = messageStream?.getDepartmentList() {
+               let departments = messageStream?.getDepartmentList() {
                 departmentListHandlerDelegate?.showDepartmentsList(
                     departments,
                     action: { [weak self] departmentKey in
@@ -346,7 +400,7 @@ final class WebimService {
         }
         
         if shouldShowDepartmentSelection(),
-            let departments = messageStream?.getDepartmentList() {
+           let departments = messageStream?.getDepartmentList() {
             departmentListHandlerDelegate?.showDepartmentsList(
                 departments,
                 action: { [weak self] departmentKey in
@@ -379,7 +433,7 @@ final class WebimService {
         }
         
         if shouldShowDepartmentSelection(),
-            let departments = messageStream?.getDepartmentList() {
+           let departments = messageStream?.getDepartmentList() {
             departmentListHandlerDelegate?.showDepartmentsList(
                 departments,
                 action: { [weak self] departmentKey in
@@ -437,7 +491,7 @@ final class WebimService {
         }
         
         return ((chatState == .chatting)
-            || (chatState == .closedByOperator))
+                || (chatState == .closedByOperator))
     }
     
     func closeChat() {
@@ -609,7 +663,7 @@ final class WebimService {
         }
         
         if shouldShowDepartmentSelection(),
-            let departments = messageStream?.getDepartmentList() {
+           let departments = messageStream?.getDepartmentList() {
             departmentListHandlerDelegate?.showDepartmentsList(
                 departments,
                 action: { [weak self] departmentKey in
@@ -630,7 +684,7 @@ final class WebimService {
             )
         }
     }
-
+    
     
     func startChat(
         departmentKey: String? = nil,
@@ -708,6 +762,87 @@ final class WebimService {
         }
     }
     
+    func sendFiles(
+        files: [FileToSend],
+        completionHandler: SendFileCompletionHandler
+    ) {
+        for file in files {
+            guard let fileToSend = file.file else { return }
+            let fileURL = file.url ?? URL(fileURLWithPath: "document.pdf")
+            let fileName = fileURL.lastPathComponent
+            do {
+                _ = try messageStream?.send(
+                    file: fileToSend,
+                    filename: fileName,
+                    mimeType: MimeType(url: fileURL).value,
+                    completionHandler: completionHandler
+                )  // Returned message ID ignored.
+            } catch {
+                self.printError(error: error, message: "Send file")
+            }
+        }
+    }
+    
+    func sendImages(
+        images: [ImageToSend],
+        completionHandler: SendFileCompletionHandler
+    ) {
+        for image in images {
+            guard let imageToSend = image.image else { return }
+            var imageData = Data()
+            let imageURL = image.url
+            var imageName = String()
+            var mimeType = MimeType()
+            
+            if let imageURL = imageURL {
+                mimeType = MimeType(url: imageURL as URL)
+                imageName = imageURL.lastPathComponent
+                
+                let imageExtension = imageURL.pathExtension.lowercased()
+                
+                switch imageExtension {
+                case "jpg", "jpeg":
+                    guard let unwrappedData = imageToSend.jpegData(compressionQuality: 1.0)
+                    else { return }
+                    imageData = unwrappedData
+                    
+                case "heic", "heif":
+                    guard let unwrappedData = imageToSend.jpegData(compressionQuality: 0.5)
+                    else { return }
+                    imageData = unwrappedData
+                    
+                    var components = imageName.components(separatedBy: ".")
+                    if components.count > 1 {
+                        components.removeLast()
+                        imageName = components.joined(separator: ".")
+                    }
+                    imageName += ".jpeg"
+                    
+                default:
+                    guard let unwrappedData = imageToSend.pngData()
+                    else { return }
+                    imageData = unwrappedData
+                }
+            } else {
+                guard let unwrappedData = imageToSend.jpegData(compressionQuality: 1.0)
+                else { return }
+                imageData = unwrappedData
+                imageName = "photo.jpeg"
+            }
+            do {
+                _ = try messageStream?.send(
+                    file: imageData,
+                    filename: imageName,
+                    mimeType: mimeType.value,
+                    completionHandler: completionHandler
+                )  // Returned message ID ignored.
+            } catch {
+                self.printError(error: error, message: "Send file")
+            }
+        }
+        
+    }
+    
     private func editMessage(
         message: Message,
         text: String,
@@ -757,7 +892,7 @@ final class WebimService {
     func shouldShowDepartmentSelection() -> Bool {
         return messageStream?.getVisitSessionState() == .departmentSelection || messageStream?.getVisitSessionState() == .idleAfterChat
     }
-
+    
     func departmentList() -> [Department]? {
         return messageStream?.getDepartmentList()
     }

@@ -65,6 +65,23 @@ public class WMToolbarConfigBuilder {
         toolbar.sendButtonImage = sendButtonImage
         return self
     }
+    
+    /**
+     Sets inactive send button image.
+     - parameter sendButtonImage:
+     Send button image.
+     - returns:
+     `WMToolbarConfigBuilder` object with send button image set.
+     - author:
+     Aslan Kutumbaev
+     - copyright:
+     2023 Webim
+     */
+    public func set(inactiveSendButtonImage: UIImage) -> WMToolbarConfigBuilder {
+        toolbar.inactiveSendButtonImage = inactiveSendButtonImage
+        return self
+    }
+    
 
     /**
      Sets attachment image.
@@ -191,6 +208,38 @@ public class WMToolbarConfigBuilder {
      */
     public func set(textViewMaxHeight: CGFloat) -> WMToolbarConfigBuilder {
         toolbar.textViewMaxHeight = textViewMaxHeight
+        return self
+    }
+    
+    /**
+     Sets  toolbar background color.
+     - parameter toolbarBackgroundColor:
+     Text view max height.
+     - returns:
+     `WMToolbarConfigBuilder` object with toolbar background color set.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024Webim
+     */
+    public func set(toolbarBackgroundColor: UIColor) -> WMToolbarConfigBuilder {
+        toolbar.toolbarBackgroundColor = toolbarBackgroundColor
+        return self
+    }
+    
+    /**
+     Sets  input view color.
+     - parameter inputViewColor:
+     Text view max height.
+     - returns:
+     `WMToolbarConfigBuilder` object with  input view color set.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(inputViewColor: UIColor) -> WMToolbarConfigBuilder {
+        toolbar.inputViewColor = inputViewColor
         return self
     }
 }

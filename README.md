@@ -18,7 +18,7 @@ pod WebimMobileWidget
 ### Carthage
 Add following line to your **Cartfile**:
 ```
-github "webim/webim-mobile-ui-ios" ~> 1.1.0
+github "webim/webim-mobile-ui-ios" ~> 1.2.0
 ```
 
 
@@ -59,4 +59,4 @@ WMWidgetBuilder.set(fileViewControllerConfig:)
 
 ## License
 
-WebimMobileWidget is available under the MIT license. See the LICENSE file for more info.
+WebimWidget is available under the MIT license. See the LICENSE file for more info.

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMQuoteView" customModule="WebimMobileWidget"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNa-Qv-n9j" customClass="WMQuoteView" customModule="WebimMobileWidget">
             <rect key="frame" x="0.0" y="0.0" width="446" height="71"/>
@@ -68,12 +68,12 @@
                         <constraint firstItem="Qza-Tq-AE5" firstAttribute="top" secondItem="xqU-ru-bF2" secondAttribute="top" constant="5" id="GLV-vY-mai"/>
                         <constraint firstItem="15K-6m-0Mv" firstAttribute="leading" secondItem="xqU-ru-bF2" secondAttribute="leading" id="Gtz-ge-1hF"/>
                         <constraint firstAttribute="bottom" secondItem="kCi-JJ-Tcw" secondAttribute="bottom" constant="6" id="JiL-uV-3Hc"/>
-                        <constraint firstItem="Qza-Tq-AE5" firstAttribute="leading" secondItem="15K-6m-0Mv" secondAttribute="trailing" constant="8" id="Suy-av-TxT"/>
+                        <constraint firstItem="Qza-Tq-AE5" firstAttribute="leading" secondItem="15K-6m-0Mv" secondAttribute="trailing" priority="999" constant="8" id="Suy-av-TxT"/>
                         <constraint firstAttribute="bottom" secondItem="15K-6m-0Mv" secondAttribute="bottom" id="YIq-rG-aM5"/>
                         <constraint firstItem="5Iw-eP-l7u" firstAttribute="centerY" secondItem="xqU-ru-bF2" secondAttribute="centerY" id="gJs-WV-5CC"/>
                         <constraint firstAttribute="bottom" secondItem="Qza-Tq-AE5" secondAttribute="bottom" constant="5" id="jof-k0-M9o"/>
-                        <constraint firstItem="kCi-JJ-Tcw" firstAttribute="leading" secondItem="Qza-Tq-AE5" secondAttribute="trailing" constant="10" id="o4V-nq-B0R"/>
-                        <constraint firstItem="5Iw-eP-l7u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kCi-JJ-Tcw" secondAttribute="trailing" constant="10" id="oiF-Is-7Ph"/>
+                        <constraint firstItem="kCi-JJ-Tcw" firstAttribute="leading" secondItem="Qza-Tq-AE5" secondAttribute="trailing" priority="999" constant="10" id="o4V-nq-B0R"/>
+                        <constraint firstItem="5Iw-eP-l7u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kCi-JJ-Tcw" secondAttribute="trailing" priority="999" constant="10" id="oiF-Is-7Ph"/>
                     </constraints>
                 </view>
             </subviews>
@@ -89,11 +89,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="heightConstraint" destination="tIO-GV-6a2" id="Vye-Y5-1Zp"/>
+                <outlet property="leftImageConstraint" destination="Suy-av-TxT" id="X9W-w7-esH"/>
                 <outlet property="quoteAuthorName" destination="wPo-KV-SwB" id="GzI-oO-ggl"/>
                 <outlet property="quoteImageView" destination="Qza-Tq-AE5" id="tay-qC-swR"/>
                 <outlet property="quoteLine" destination="15K-6m-0Mv" id="Ctu-TL-e2q"/>
                 <outlet property="quoteMessageText" destination="VRM-Ju-Td6" id="AZh-UV-wcd"/>
                 <outlet property="quoteView" destination="xqU-ru-bF2" id="vaA-b5-f91"/>
+                <outlet property="rightImageConstraint" destination="o4V-nq-B0R" id="RRr-CM-e8h"/>
+                <outlet property="senderAndMessageView" destination="kCi-JJ-Tcw" id="MZe-es-jkK"/>
             </connections>
             <point key="canvasLocation" x="104" y="34"/>
         </view>

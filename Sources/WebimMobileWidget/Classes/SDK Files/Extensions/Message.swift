@@ -49,6 +49,10 @@ extension Message {
             || self.getType() == .fileFromOperator
     }
     
+    public func isInfoType() -> Bool {
+        return self.getType() == .info
+    }
+    
     public func canBeCopied() -> Bool {
         return self.getType() == .operatorMessage
             || self.getType() == .visitorMessage

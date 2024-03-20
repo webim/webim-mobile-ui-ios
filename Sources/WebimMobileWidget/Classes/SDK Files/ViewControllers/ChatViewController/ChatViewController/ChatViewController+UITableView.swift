@@ -34,8 +34,9 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.backgroundView = nil
             return 1
         } else {
+            let chatConfig = chatConfig as? WMChatViewControllerConfig
             tableView.emptyTableView(
-                message: "Send first message to start chat.".localized
+                message: chatConfig?.emptyChatTitle?.localized ?? "Send first message to start chat.".localized
             )
             return 0
         }
@@ -262,8 +263,10 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.config = operatorCellConfig?.textCellConfig
             }
         }
-        
-        if message.isSystemType() {
+
+        if message.isInfoType() {
+            cell.config = chatConfig?.infoCellConfig
+        } else if message.isSystemType() {
             cell.config = chatConfig?.botButtonsConfig
         }
     }

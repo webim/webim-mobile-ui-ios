@@ -1,7 +1,3 @@
-//WMSettingsViewController.swift,WMSettingsViewController.xib
-"* Account name can't be empty." = "* Account name can't be empty.";
-//WMSettingsViewController.swift,WMSettingsViewController.xib
-"* Location can't be empty." = "* Location can't be empty.";
 //ScrollButtonView.xib
 "0" = "0";
 //WMOperatorFileCell.xib,WMVisitorFileCell.xib
@@ -28,12 +24,6 @@
 "<this text will be replaced>" = "<this text will be replaced>";
 //UIAlertHandler.swift
 "Account" = "Account";
-//WMSettingsViewController.swift
-"Account name has invalid characters" = "Account name has invalid characters.";
-//WMSettingsViewController.xib
-"Account name text field" = "Account name text field";
-//WMSettingsViewController.xib
-"Account name*" = "Account name*";
 //WebimService.swift
 "AccountBlocked" = "Account that is used to create session is blocked. Please contact Webim support or use another one.";
 //ChatTestView.swift
@@ -102,12 +92,6 @@
 "File sending unknown error" = "File sending unknown error";
 //UIAlertHandler.swift
 "Go to Settings" = "Go to Settings";
-//WMStartViewController.xib
-"Greeting title" = "Greeting title";
-//WMStartViewController.xib
-"Greeting words" = "Greeting words";
-//WMSettingsViewController.xib
-"If you are registered in Webim service you can use your own account name and location." = "If you are registered in Webim service you can use your own account name and location.";
 //WMQuoteImageCell.swift,WMQuoteView.swift
 "Image" = "Image";
 //ChatViewController+Surveys.swift
@@ -124,12 +108,6 @@
 "LoadFileErrorText" = "Try upload another file";
 //WMFileViewController.swift,WMFileViewController.xib
 "Loading File..." = "Loading the file...";
-//WMSettingsViewController.swift
-"Location has invalid characters" = "Location has invalid characters.";
-//WMSettingsViewController.xib
-"Location text field" = "Location text field";
-//WMSettingsViewController.xib
-"Location*" = "Location*";
 //ChatViewController+CompletionHandler.swift
 "MaxFilesCountExceeded" = "Files count per message limit exceeded";
 //ChatViewController+CompletionHandler.swift
@@ -176,10 +154,6 @@
 "P.OM" = "%@ written a message: %@";
 //AdditionalKeys.swift
 "P.RO" = "Rate the agent.";
-//WMSettingsViewController.xib
-"Page title" = "Page title";
-//WMSettingsViewController.xib
-"Page title text field" = "Page title text field";
 //FilePicker.swift
 "Photo Library" = "Photo Library";
 //FilePicker.swift
@@ -196,8 +170,6 @@
 "Response cannot be created for this request" = "Response cannot be created for this request";
 //ChatTestView.xib
 "Run autotest" = "Run autotest";
-//WMSettingsViewController.xib
-"Save" = "Save";
 //UIAlertHandler.swift
 "Save error" = "Save error";
 //UIAlertHandler.swift
@@ -208,8 +180,6 @@
 "SaveFileErrorMessage" = "No access to save files on the device. Grant access in the application settings.";
 //UIAlertHandler.swift
 "Saved!" = "Saved!";
-//WMSettingsViewController.xib
-"Saves current settings and shows start screen." = "Saves current settings and shows start screen.";
 //RateStarsViewController.xib,SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib
 "Send" = "Send";
 //ChatViewController+UITableView.swift
@@ -226,12 +196,6 @@
 "Session creation failed" = "Session creation failed";
 //FilePicker.swift,WMStartViewController.xib
 "Settings" = "Settings";
-//WMStartViewController.xib
-"Shows settings." = "Shows settings.";
-//WMStartViewController.xib
-"Start chat" = "Start chat";
-//WMStartViewController.xib
-"Starts chat." = "Starts chat.";
 //ChatViewController+Surveys.swift
 "Survey disabled" = "Survey disabled";
 //WMThanksAlertView.xib
@@ -242,20 +206,14 @@
 "There is no current agent to rate" = "There is no agent to rate.";
 //ChatViewController+Surveys.swift
 "This agent not in the current chat" = "This agent not in the current chat";
-//WMStartViewController.xib
-"To start a chat tap on the button below.\n\nOperator can answer to your chat at:\nhttps://demo.webim.ru/\nLogin: o@webim.ru\nPassword: password\n\nThis app source code can be found at:\nhttps://github.com/webim/webim-client-sdk-ios" = "To start a chat tap on the button below.\n\nOperator can answer to your chat at:\nhttps://demo.webim.ru/\nLogin: o@webim.ru\nPassword: password\n\nThis app source code can be found at:\nhttps://github.com/webim/webim-client-sdk-ios";
 //ChatViewController+Surveys.swift
 "Unknown error" = "Unknown error";
 //WMFileTableViewCell.swift
 "Uploading file" = "Uploading file";
-//WMSettingsViewController.xib
-"User data json (optional)" = "User data json (optional)";
 //ChatViewController+Setup.swift,ChatViewController.swift
-"Webim chat" = "Webim chat";
+"Webim SDK App" = "Webim SDK App";
 //FilePicker.swift
 "Webim needs permission to access your camera so you can send photos to chat." = "Webim needs permission to access your camera so you can send photos to chat.";
-//WMStartViewController.xib
-"Welcome to the WebimClientLibrary app!" = "Welcome to the WebimClientLibrary app!";
 //ChatViewController+CompletionHandler.swift
 "Wrong button ID in request" = "Wrong button ID in request";
 //ChatViewController+CompletionHandler.swift
@@ -270,16 +228,8 @@
 "comment" = "comment";
 //WMMessageTableCell.swift
 "edited" = "edited";
-//WMSettingsViewController.xib
-"iOS app" = "iOS app";
-//WMSettingsViewController.xib
-"mobile" = "mobile";
 //ChatViewController+Listener.swift
 "typing" = "typing";
-//WMSettingsViewController.xib
-"wmtest" = "wmtest";
-//WMSettingsViewController.xib
-"{\"id\":\"123\",\"name\":\"test12\",\"crc\":\"567\"}" = "{\"id\":\"123\",\"name\":\"test12\",\"crc\":\"567\"}";
 //LaunchScreen.storyboard,LaunchScreenController.storyboard
 "© 2022 Webim.ru Inc. All rights reserved." = "© 2022 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift

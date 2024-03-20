@@ -73,7 +73,8 @@ class WMFileViewController: UIViewController, WKUIDelegate, WKNavigationDelegate
     @IBAction func saveFile(_ sender: Any) {
         guard let fileToSave = fileDestinationURL else { return }
         let ac = UIActivityViewController(activityItems: [fileToSave], applicationActivities: nil)
-        self.present(ac, animated: true)
+        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        self.present(ac, animated: true, completion: nil)
         ac.completionWithItemsHandler = { type, bool, _, error in
             if bool && (type == .saveToCameraRoll || type == .saveToFile) {
                 let saveView = WMSaveView.loadXibView()

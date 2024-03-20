@@ -35,6 +35,7 @@ class ScrollButtonView: UIView {
         unreadMessageCounterLabel.layer.cornerRadius = unreadMessageCounterLabel.bounds.width / 2
         unreadMessageCounterLabel.layer.borderWidth = 1
         unreadMessageCounterLabel.layer.borderColor = unreadMessagesBorderColour.cgColor
+        unreadMessageCounterLabel.layer.masksToBounds = true
     }
 
     func setScrollButtonBackgroundImage(_ image: UIImage?, state: UIControl.State) {

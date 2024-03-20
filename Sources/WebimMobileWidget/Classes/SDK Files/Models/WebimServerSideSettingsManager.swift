@@ -31,8 +31,8 @@ class WebimServerSideSettingsManager {
 
     private var webimServerSideSettings: WebimServerSideSettings?
 
-    func getServerSideSettings() {
-        WebimServiceController.currentSession.getServerSideSettings(completionHandler: self)
+    func getServerSideSettings(_ completionHandler: ServerSideSettingsCompletionHandler) {
+        WebimServiceController.currentSession.getServerSideSettings(completionHandler: completionHandler)
     }
 
     func isGlobalReplyEnabled() -> Bool {
@@ -47,6 +47,20 @@ class WebimServerSideSettingsManager {
             return false
         }
         return isMessageEditEnabled
+    }
+    
+    func isRateOperatorEnabled() -> Bool {
+        guard let isRateOperatorEnabled = webimServerSideSettings?.accountConfig.rateOperator else {
+            return true
+        }
+        return isRateOperatorEnabled
+    }
+    
+    func showRateOperatorButton() -> Bool {
+        guard let showRateOperatorButton = webimServerSideSettings?.accountConfig.showRateOperator else {
+            return true
+        }
+        return showRateOperatorButton
     }
 }
 

@@ -131,7 +131,7 @@ extension ChatViewController {
             vc.isSurvey = isSurvey
             vc.descriptionText = description
             vc.modalPresentationStyle = .overCurrentContext
-            vc.operatorRating = Double(WebimServiceController.shared.currentSession().getLastRatingOfOperatorWith(id: operatorId))
+            vc.currentRating = self.alreadyRatedOperators[operatorId] != true ? 0.0 : Double(WebimServiceController.shared.currentSession().getLastRatingOfOperatorWith(id: operatorId))
             self.present(vc, animated: true) {
                 UIView.animate(withDuration: 0.3) { [weak vc] in
                     vc?.view.backgroundColor = .black.withAlphaComponent(0.5)
@@ -204,7 +204,11 @@ extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCom
             guard let currentOperator = WebimServiceController.currentSession.getCurrentOperator() else {
                 return
             }
-            alreadyRatedOperators[currentOperator.getID()] = true
+            let sessionState = WebimServiceController.currentSession.sessionState()
+            
+            if sessionState != .closedByOperator && sessionState != .closedByVisitor {
+                alreadyRatedOperators[currentOperator.getID()] = true
+            }
             changed(operator: WebimServiceController.currentSession.getCurrentOperator(),
                     to: WebimServiceController.currentSession.getCurrentOperator())
         }
