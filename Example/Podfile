@@ -6,7 +6,7 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'WebimMobileWidget_Example' do
   pod 'WebimMobileWidget', :path => '../'
-  pod 'WebimKeyboard', :path => '../../webim-mobile-keyboard-ios'
+  pod 'WebimKeyboard'
 
   target 'WebimMobileWidget_Tests' do
     inherit! :search_paths
