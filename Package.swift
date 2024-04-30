@@ -14,12 +14,12 @@ let package = Package(
             targets: ["WebimMobileWidget"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/webim/webim-client-sdk-ios.git", exact: "3.41.4"),
+        .package(url: "https://github.com/webim/webim-client-sdk-ios.git", exact: "3.41.6"),
         .package(url: "https://github.com/kean/Nuke.git", from: "12.0.0"),
-        .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "20.0.0"),
-        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0"),
+        .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "25.0.1"),
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.7.1"),
         .package(url: "https://github.com/Flipboard/FLAnimatedImage.git", from: "1.0.17"),
-        .package(url: "https://github.com/webim/webim-mobile-keyboard-ios.git", exact: "1.0.2")
+        .package(url: "https://github.com/webim/webim-mobile-keyboard-ios.git", exact: "1.0.3")
     ],
     targets: [
         .target(
@@ -32,6 +32,8 @@ let package = Package(
                 .product(name: "FLAnimatedImage", package: "FLAnimatedImage"),
                 .product(name: "WebimKeyboard", package: "webim-mobile-keyboard-ios")
             ],
-            path: "Sources")
+            path: "Sources",
+            resources: [.copy("WebimMobileWidget/PrivacyInfo.xcprivacy")]
+        )
     ]
 )

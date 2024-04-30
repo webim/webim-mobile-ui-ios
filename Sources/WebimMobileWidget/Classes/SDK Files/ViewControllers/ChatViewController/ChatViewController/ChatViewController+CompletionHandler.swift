@@ -62,6 +62,8 @@ extension ChatViewController: SendFileCompletionHandler,
                 message = "File is too small".localized
             case .uploadCanceled:
                 message = "File upload request canceled".localized
+            case .maliciousFileDetected:
+                message = "File sending unknown error".localized
             }
             
             self.alertOnFailure(

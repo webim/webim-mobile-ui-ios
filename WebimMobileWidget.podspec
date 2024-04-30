@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/WebimMobileWidget/Classes/**/*.{swift,strings}'
   s.resources = 'Sources/WebimMobileWidget/Assets/**/*.{xib,strings}',
   'Sources/WebimMobileWidget/Assets/WidgetImages.xcassets'
-  s.dependency 'WebimMobileSDK', '~> 3.41.4'
-  s.dependency 'WebimKeyboard', '~> 1.0.2'
+  s.dependency 'WebimMobileSDK', '~> 3.41.6'
+  s.dependency 'WebimKeyboard', '~> 1.0.3'
   s.dependency 'Cosmos', '~> 19.0.3'
   s.dependency 'Nuke', '~> 10.7.1'
   s.dependency 'FLAnimatedImage', '~> 1.0'

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114450BF2BE19F47003C1427 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 114450BE2BE19F47003C1427 /* PrivacyInfo.xcprivacy */; };
 		BE435EF1297FD00C00B946A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE435D70297FD00B00B946A9 /* README.md */; };
 		BE435EF2297FD00C00B946A9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = BE435D71297FD00B00B946A9 /* Cartfile */; };
 		BE435EFD297FD00C00B946A9 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE435D8C297FD00B00B946A9 /* Package.swift */; };
@@ -160,6 +161,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114450BE2BE19F47003C1427 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		906C70FE2B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WMLogsViewController.strings; sourceTree = "<group>"; };
 		906C70FF2B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WMFileViewController.strings; sourceTree = "<group>"; };
 		906C71002B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SurveyCommentViewController.strings; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 		CCD848942A73E45F005CDE5A /* WebimMobileWidget */ = {
 			isa = PBXGroup;
 			children = (
+				114450BE2BE19F47003C1427 /* PrivacyInfo.xcprivacy */,
 				CCD848952A73E45F005CDE5A /* Classes */,
 				CCD849312A73E45F005CDE5A /* Assets */,
 			);
@@ -1400,6 +1403,7 @@
 				CCD84A972A73E45F005CDE5A /* WMNewMessageView.xib in Resources */,
 				CCD84A7F2A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib in Resources */,
 				CCD84A922A73E45F005CDE5A /* ChatViewController.xib in Resources */,
+				114450BF2BE19F47003C1427 /* PrivacyInfo.xcprivacy in Resources */,
 				CCD84A832A73E45F005CDE5A /* WMInfoCell.xib in Resources */,
 				CCD84A8E2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib in Resources */,
 				CCD84A8F2A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib in Resources */,
