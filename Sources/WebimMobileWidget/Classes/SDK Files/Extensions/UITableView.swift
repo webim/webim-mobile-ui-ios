@@ -45,6 +45,9 @@ extension UITableView {
     }
     
     func scrollToRowSafe(at indexPath: IndexPath, at scrollPosition: UITableView.ScrollPosition, animated: Bool) {
+        guard indexPath.count == 2 else {
+            return
+        }
         if  indexPath.section >= 0 &&
             indexPath.row >= 0 &&
             self.numberOfSections > indexPath.section &&
