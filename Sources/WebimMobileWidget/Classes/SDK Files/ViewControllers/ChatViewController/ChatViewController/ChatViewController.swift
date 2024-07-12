@@ -578,6 +578,7 @@ class ChatViewController: UIViewController {
                     self?.scrollToBottom = true
                     self?.requestMessages()
                 }
+                self?.becomeFirstResponder()
             }
         }
     }
