@@ -114,6 +114,22 @@ public class WMToolbarConfigBuilder {
         toolbar.placeholderText = placeholderText
         return self
     }
+    
+    /**
+     Sets Toolbar View placeholder text color.
+     - parameter placeholderColor:
+     Placeholder text.
+     - returns:
+     `WMToolbarConfigBuilder` object with placeholder text color set.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(placeholderColor: UIColor) -> WMToolbarConfigBuilder {
+        toolbar.placeholderColor = placeholderColor
+        return self
+    }
 
     /**
      Sets text view font.
@@ -144,6 +160,22 @@ public class WMToolbarConfigBuilder {
      */
     public func set(textViewStrokeWidth: CGFloat) -> WMToolbarConfigBuilder {
         toolbar.textViewStrokeWidth = textViewStrokeWidth
+        return self
+    }
+    
+    /**
+     Sets Toolbar View text color.
+     - parameter textViewColor:
+     Text color.
+     - returns:
+     `WMToolbarConfigBuilder` object with text color.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(textViewTextColor: UIColor) -> WMToolbarConfigBuilder {
+        toolbar.textViewTextColor = textViewTextColor
         return self
     }
 

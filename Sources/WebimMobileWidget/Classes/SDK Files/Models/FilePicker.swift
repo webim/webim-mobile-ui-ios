@@ -407,6 +407,7 @@ extension FilePicker: UIDocumentMenuDelegate, UIDocumentPickerDelegate {
     public func documentPickerWasCancelled(_ picker: UIDocumentPickerViewController) {
         print("view was cancelled")
         self.pickerControllerDocument(picker)
+        presentationController?.becomeFirstResponder()
     }
 }
 

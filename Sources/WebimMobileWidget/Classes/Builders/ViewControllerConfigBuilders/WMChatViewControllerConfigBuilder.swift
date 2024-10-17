@@ -41,6 +41,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     var openFromNotification: Bool?
     var requestMessagesCount: Int?
     var refreshControlAttributedTitle: NSAttributedString?
+    var refreshControlTintColor: UIColor?
     var visitorCellsConfig: WMCellsConfig?
     var operatorCellsConfig: WMCellsConfig?
     var botButtonsConfig: WMAbstractCellConfig?
@@ -68,6 +69,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
         chatConfig.openFromNotification = openFromNotification
         chatConfig.requestMessagesCount = requestMessagesCount
         chatConfig.refreshControlAttributedTitle = refreshControlAttributedTitle
+        chatConfig.refreshControlTintColor = refreshControlTintColor
         chatConfig.visitorCellsConfig = visitorCellsConfig
         chatConfig.operatorCellsConfig = operatorCellsConfig
         chatConfig.botButtonsConfig = botButtonsConfig
@@ -179,6 +181,22 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      */
     public func set(refreshControlAttributedTitle: NSAttributedString) -> Self {
         self.refreshControlAttributedTitle = refreshControlAttributedTitle
+        return self
+    }
+    
+    /**
+     Sets refresh control tint color.
+     - parameter refreshControlColor:
+     Title.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with refresh control tint color.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(refreshControlTintColor: UIColor) -> Self {
+        self.refreshControlTintColor = refreshControlTintColor
         return self
     }
 

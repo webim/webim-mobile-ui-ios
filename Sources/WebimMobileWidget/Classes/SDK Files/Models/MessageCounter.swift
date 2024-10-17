@@ -30,7 +30,7 @@ import WebimMobileSDK
 protocol MessageCounterDelegate: AnyObject {
     func changed(newMessageCount: Int)
     func updateLastMessageIndex(completionHandler: ((Int) -> ())?)
-    func updateLastReadMessageIndex(completionHandler: ((Int) -> ())?)
+    func updateLastReadMessageIndex(newValue: Int, completionHandler: ((Int) -> ())?)
 }
 
 class MessageCounter {
@@ -89,7 +89,7 @@ extension MessageCounter: UnreadByVisitorMessageCountChangeListener {
         delegate?.updateLastMessageIndex() { [weak self] index in
             self?.set(lastMessageIndex: index)
         }
-        delegate?.updateLastReadMessageIndex() { [weak self] index in
+        delegate?.updateLastReadMessageIndex(newValue: newValue) { [weak self] index in
             self?.set(lastReadMessageIndex: index)
         }
     }

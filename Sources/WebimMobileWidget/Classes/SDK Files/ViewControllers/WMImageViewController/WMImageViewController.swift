@@ -31,7 +31,7 @@ import FLAnimatedImage
 class WMImageViewController: UIViewController {
 
     // MARK: - Properties
-    var selectedImage: ImageContainer?
+    var selectedImage: UIImage?
     var selectedImageURL: URL?
     var config: WMViewControllerConfig?
 
@@ -59,8 +59,8 @@ class WMImageViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
 
         if let imageToLoad = selectedImage {
-            imageView.image = imageToLoad.image
-            if let gifData = imageToLoad.data {
+            imageView.image = imageToLoad
+            if let gifData = imageToLoad.animatedImageData {
                 imageView.animatedImage = FLAnimatedImage(gifData: gifData)
                 imageView.startAnimating()
             }
@@ -113,10 +113,10 @@ class WMImageViewController: UIViewController {
             let url = selectedImageURL else { return }
         let request = ImageRequest(url: url)
 
-        if let image = ImageCache.shared[ImageCacheKey(request: request)] {
+        if let image = ImageCache.shared[request] {
             self.selectedImage = image
             DispatchQueue.main.async {
-                self.imageView.image = image.image
+                self.imageView.image = image
             }
         } else {
             DispatchQueue.main.async {
@@ -130,7 +130,7 @@ class WMImageViewController: UIViewController {
                 }
                 
                 Nuke.ImagePipeline.shared.loadImage(
-                    with: ImageRequest(url: url),
+                    with: url,
                     progress: { _, completed, total in
                         DispatchQueue.global(qos: .userInteractive).async {
                             self.updateImageDownloadProgress(
@@ -141,8 +141,8 @@ class WMImageViewController: UIViewController {
                     },
                     completion: { _ in
                         DispatchQueue.main.async {
-                            self.selectedImage = ImageCache.shared[ImageCacheKey(request: request)]
-                            self.imageView.image = ImageCache.shared[ImageCacheKey(request: request)]?.image
+                            self.selectedImage = ImageCache.shared[request]
+                            self.imageView.image = ImageCache.shared[request]
                             self.imageDownloadIndicator.isHidden = true
                         }
                     }
@@ -156,7 +156,7 @@ class WMImageViewController: UIViewController {
         guard let imageToSave = selectedImage else { return }
         
         UIImageWriteToSavedPhotosAlbum(
-            imageToSave.image,
+            imageToSave,
             self,
             #selector(image(_:didFinishSavingWithError:contextInfo:)),
             nil

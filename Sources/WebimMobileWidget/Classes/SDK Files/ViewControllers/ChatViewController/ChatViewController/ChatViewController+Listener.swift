@@ -31,36 +31,43 @@ extension ChatViewController: MessageListener {
     
     // MARK: - Methods
     
-    func added(message newMessage: Message,
-               after previousMessage: Message?) {
+    func added(message newMessage: Message, after previousMessage: Message?) {
+        var inserted = false
+        if let previousMessage = previousMessage {
+            for (index, message) in self.chatMessages.enumerated() {
+                if previousMessage.isEqual(to: message) {
+                    self.chatMessages.insert(newMessage, at: index + 1)
+                    inserted = true
+                    break
+                }
+            }
+        }
+        
+        if !inserted {
+            self.chatMessages.append(newMessage)
+        }
+        
+        let currentId = newMessage.getID()
+        
         DispatchQueue.main.async {
-            var inserted = false
+            var snapshot = self.dataSource.snapshot()
+            if snapshot.numberOfSections == 0 {
+                snapshot.appendSections([0])
+            }
             
-            if let previousMessage = previousMessage {
-                for (index, message) in self.chatMessages.enumerated() {
-                    if previousMessage.isEqual(to: message) {
-                        self.chatMessages.insert(newMessage, at: index)
-                        inserted = true
-                        break
-                    }
-                }
+            if snapshot.itemIdentifiers.contains(currentId) {
+                snapshot.reloadItems([currentId])
+            } else {
+                snapshot.appendItems([currentId], toSection: 0)
             }
-
-            if !inserted {
-                self.chatMessages.append(newMessage)
+            
+            self.dataSource.apply(snapshot, animatingDifferences: false) {
+                guard newMessage.isVisitorType() || self.isLastCellVisible() else { return }
+                self.scrollToBottom(animated: true)
             }
-
-            self.reloadTableWithNewData()
-
-            self.scrollQueueManager.perform(kind: .scrollTableView(animated: true)) {
-                let scrollRequired = (!newMessage.isOperatorType() && !newMessage.isSystemType()) || self.isLastCellVisible()
-
-                guard !scrollRequired else {
-                    self.scrollToBottomInMainQueue(animated: true)
-                    return
-                }
-                let chatConfig = self.chatConfig as? WMChatViewControllerConfig
-                guard chatConfig?.showScrollButtonCounter != false else { return }
+            
+            if let chatConfig = self.chatConfig as? WMChatViewControllerConfig,
+               chatConfig.showScrollButtonCounter != false {
                 self.messageCounter.set(lastMessageIndex: self.chatMessages.count - 1)
             }
         }
@@ -68,24 +75,15 @@ extension ChatViewController: MessageListener {
     
     func removed(message: Message) {
         DispatchQueue.main.async {
-            var toUpdate = false
-            if message.getCurrentChatID() == self.selectedMessage?.getCurrentChatID() {
-                self.toolbarView.removeQuoteEditBar()
+            var snapshot = self.dataSource.snapshot()
+            
+            if let index = self.chatMessages.firstIndex(where: { $0.getID() == message.getID() }) {
+                self.chatMessages.remove(at: index)
             }
             
-            for (messageIndex, iteratedMessage) in self.chatMessages.enumerated() {
-                if iteratedMessage.getID() == message.getID() {
-                    self.chatMessages.remove(at: messageIndex)
-                    let indexPath = IndexPath(row: messageIndex, section: 0)
-                    toUpdate = true
-                    
-                    break
-                }
-            }
-            
-            if toUpdate {
-                self.reloadTableWithNewData()
-                self.messageCounter.set(lastMessageIndex: self.chatMessages.count - 1)
+            if snapshot.numberOfSections > 0 {
+                snapshot.deleteItems([message.getID()])
+                self.dataSource.apply(snapshot, animatingDifferences: true)
             }
         }
     }
@@ -97,40 +95,32 @@ extension ChatViewController: MessageListener {
         }
     }
     
-    func changed(message oldVersion: Message,
-                 to newVersion: Message) {
-        let isScrollRequired = oldVersion.getText() != newVersion.getText() && !newVersion.isFile()
-        scrollQueueManager.perform(kind: .scrollTableView(animated: true)) { [weak self] in
-            guard let self = self else { return }
-            guard let index = self.chatMessages
-                .firstIndex(where: {$0.getID() == oldVersion.getID()}) else { return }
+    func changed(message oldVersion: Message, to newVersion: Message) {
+        DispatchQueue.main.async {
+            let id = oldVersion.getID()
+            
+            guard let index = self.chatMessages.firstIndex(where: { $0.getID() == id }) else { return }
             
             self.chatMessages[index] = newVersion
             
-            let canPerformBatchUpdates = self.chatTableView.numberOfRows(inSection: 0) == self.messages().count
+            var snapshot = self.dataSource.snapshot()
             
-            if canPerformBatchUpdates {
-                self.chatTableView.performBatchUpdates {
-                    self.chatTableView.reloadRows(
-                        at: [IndexPath(row: index, section: 0)],
-                        with: .none
-                    )
-                } completion: { _ in
-                    guard isScrollRequired else { return }
-                    self.chatTableView.scrollToRowSafe(
-                        at: IndexPath(row: index, section: 0),
-                        at: .bottom,
-                        animated: true
-                    )
+            if snapshot.numberOfSections > 0 {
+                if snapshot.itemIdentifiers.contains(id) {
+                    snapshot.reloadItems([id])
+                } else {
+                    snapshot.appendItems([newVersion.getID()], toSection: 0)
                 }
-            } else {
-                self.chatTableView.reloadData()
-                guard isScrollRequired else { return }
-                self.chatTableView.scrollToRowSafe(
-                    at: IndexPath(row: index, section: 0),
-                    at: .bottom,
-                    animated: true
-                )
+                
+                self.dataSource.apply(snapshot, animatingDifferences: false) {
+                    guard let delayedScrollLink = self.delayedScrollLink,
+                          delayedScrollLink == id else {
+                        guard newVersion.isVisitorType() || self.isLastCellVisible() else { return }
+                        self.scrollToBottom(animated: true)
+                        return
+                    }
+                    self.scrollToDelayedLink(delayedScrollLink, animated: true)
+                }
             }
         }
     }

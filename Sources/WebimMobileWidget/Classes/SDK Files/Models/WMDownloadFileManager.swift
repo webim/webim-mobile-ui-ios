@@ -95,13 +95,13 @@ class WMDownloadFileManager {
     func imageForUrl(_ url: URL) -> UIImage? {
 
         let request = ImageRequest(url: url)
-        if let image = ImageCache.shared[ImageCacheKey(request: request)] {
-            return image.image
+        if let image = ImageCache.shared[request] {
+            return image
 
         } else {
 
             Nuke.ImagePipeline.shared.loadImage(
-                with: ImageRequest(url: url),
+                with: url,
                 progress: { _, completed, total in
                     
                     self.delegatesSet = self.delegatesSet.filter { $0.getValue() != nil }
@@ -120,7 +120,7 @@ class WMDownloadFileManager {
                         container.getValue()?.updateImageDownloadProgress(
                             url: url,
                             progress: 1,
-                            image: ImageCache.shared[ImageCacheKey(request: request)]?.image
+                            image: ImageCache.shared[request]
                         )
                     }
                 }

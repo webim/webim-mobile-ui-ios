@@ -79,6 +79,15 @@ extension ChatViewController {
         return button
     }
     
+    static func createMessageDateFormatter() -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.formatterBehavior = .behavior10_4
+        dateFormatter.locale = .current
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .none
+        return dateFormatter
+    }
+    
     func setupNavigationBar() {
         navigationBarUpdater.set(navigationController: navigationController)
         navigationBarUpdater.set(delegate: self)
@@ -103,8 +112,7 @@ extension ChatViewController {
     
     func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(functionTap))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        chatTableView.addGestureRecognizer(tap)
     }
     
     func setupTestView() {
@@ -119,10 +127,8 @@ extension ChatViewController {
     }
 
     func configureToolbarView() {
-        self.toolbarView.messageView.delegate = self
-
-        self.toolbarBackgroundView.addSubview(toolbarView)
-        self.toolbarView.setup()
+        toolbarView.messageView.delegate = self
+        toolbarView.loadXibViewSetup()
     }
     
     func setupTitleView() {
@@ -173,13 +179,28 @@ extension ChatViewController {
     
     func setupScrollButton() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(scrollToUnreadMessage))
+
         view.addSubview(scrollButtonView)
         scrollButtonView.initialSetup()
-        scrollButtonView.setScrollButtonBackgroundImage(scrollButtonImage, state: .normal)
-        scrollButtonView.add(tapGesture: tapGesture)
         scrollButtonView.setScrollButtonViewState(.hidden)
-        setupScrollButtonViewConstraints()
+        scrollButtonView.add(tapGesture: tapGesture)
+
+        let scrollButtonPadding: CGFloat = 22
+        scrollButtonView.snp.makeConstraints { make in
+            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(scrollButtonPadding)
+            make.bottom.equalToSuperview().inset(toolbarView.frame.height + scrollButtonPadding)
+            make.height.equalTo(scrollButtonView.snp.width)
+            make.width.equalTo(46)
+        }
     }
+    
+    func setupTableViewDataSource() {
+        dataSource = UITableViewDiffableDataSource(tableView: chatTableView, cellProvider: { tableView, indexPath, _ in
+            self.updatedCellGeneration(for: indexPath, tableView: tableView)
+        })
+        chatTableView.dataSource = dataSource
+    }
+    
 
     private func setupScrollButtonViewConstraints() {
         scrollButtonView.snp.makeConstraints { make in
@@ -187,7 +208,7 @@ extension ChatViewController {
             make.trailing.equalToSuperview().inset(scrollButtonPadding)
             make.bottom.equalToSuperview().inset(scrollButtonPadding)
             make.height.equalTo(scrollButtonView.snp.width)
-            make.width.equalTo(34)
+            make.width.equalTo(24)
         }
     }
     
@@ -207,10 +228,10 @@ extension ChatViewController {
         )
     }
     
-    func setupChatTableView() {
-        if #available(iOS 13.0, *) {
-            chatTableView.automaticallyAdjustsScrollIndicatorInsets = false
-        }
+    func setupTableView() {
+        let initialSafeAreaInset: CGFloat = 34
+        //chatTableView.refreshControl = defaultRefreshControl()
+        chatTableView.contentInset.bottom = toolbarView.bounds.height + initialSafeAreaInset
     }
 
     func setupServerSideSettingsManager() {

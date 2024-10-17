@@ -34,55 +34,60 @@ enum WMQuoteViewMode {
 }
 
 protocol WMQuoteViewDelegate: AnyObject {
-    func cleanTextView()
+    func removeQuoteEditBar()
 }
 
 class WMQuoteView: UIView, URLSessionDelegate {
-    @IBOutlet var quoteView: UIView!
-    @IBOutlet var quoteMessageText: UILabel!
-    @IBOutlet var quoteAuthorName: UILabel!
-    @IBOutlet var quoteImageView: UIImageView!
-    @IBOutlet var quoteLine: UIView!
-    @IBOutlet var senderAndMessageView: UIStackView!
-    @IBOutlet var fileDownloadIndicator: CircleProgressIndicator!
-    @IBOutlet var downloadStatusLabel: UILabel!
-
-    @IBOutlet var heightConstraint: NSLayoutConstraint!
-
-    @IBOutlet var leftImageConstraint: NSLayoutConstraint?
-    @IBOutlet var rightImageConstraint: NSLayoutConstraint?
-    
     var fileSize: Int64 = 0
     var fileURL: URL?
     var originText: String?
-    var previousHeight: CGFloat = 0.0
+    
     var quoteConfig: WMHelperInputViewConfig?
     var editBarConfig: WMHelperInputViewConfig?
-
+    
+    weak var quoteViewDelegate: WMQuoteViewDelegate?
     weak var delegate: WMDialogCellDelegate?
-
-    private var mode = WMQuoteViewMode.quote
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if previousHeight != bounds.height {
-            previousHeight = bounds.height
-        }
-    }
-
-    func quoteViewWillRemove() {
-        previousHeight = .zero
+    
+    @IBOutlet private var quoteView: UIView!
+    @IBOutlet var quoteImageView: UIImageView!
+    @IBOutlet private var quoteMessageText: UILabel!
+    @IBOutlet private var quoteAuthorName: UILabel!
+    @IBOutlet private var quoteLine: UIView!
+    @IBOutlet private var fileStatus: UIButton!
+    
+    @IBOutlet private var leftMessageToLineConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftAuthorToLineConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftMessageToImageConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftAuthorToImageConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftImageToLineConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftMessageToFileConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftAuthorToFileConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftFileToLineConstraint: NSLayoutConstraint!
+    @IBOutlet private var aspectFileStatusConstraint: NSLayoutConstraint!
+    @IBOutlet private var heightConstraint: NSLayoutConstraint!
+    
+    var currentMessage: String {
+        return quoteMessageText.text ?? ""
     }
     
-    func currentMessage() -> String {
-        return originText ?? ""
-    }
-    
-    func currentMode() -> WMQuoteViewMode {
+    var currentMode: WMQuoteViewMode {
         return mode
     }
     
-    func addQuoteEditBarForMessage(_ message: Message, delegate: WMDialogCellDelegate) {
+    private var mode = WMQuoteViewMode.quote
+    
+    override var intrinsicContentSize: CGSize {
+        return sizeThatFits(bounds.size)
+    }
+    
+    @IBAction private func removeQuoteEditBar(_ sender: Any) {
+        if mode == .edit {
+            self.delegate?.cleanTextView()
+        }
+        quoteViewDelegate?.removeQuoteEditBar()
+    }
+    
+    func addEditBarForMessage(_ message: Message, delegate: WMDialogCellDelegate) {
         mode = WMQuoteViewMode.edit
         self.delegate = delegate
         self.setupTextQuoteMessage(quoteText: message.getText(), quoteAuthor: String.unwarpOrEmpty(message.getSenderName()), fromOperator: message.isOperatorType())
@@ -106,54 +111,60 @@ class WMQuoteView: UIView, URLSessionDelegate {
         }
         adjustConfig(for: mode)
     }
-
+    
     func setup(_ quoteText: String, _ quoteAuthor: String, _ fromOperator: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.senderAndMessageView.translatesAutoresizingMaskIntoConstraints = false
         self.originText = quoteText
         self.quoteMessageText.text = originText?.oneLineString()
         self.quoteAuthorName.text = fromOperator ? quoteAuthor : "You".localized
-        self.quoteView.layer.cornerRadius = 10
-        if #available(iOS 11.0, *) {
-            self.quoteView.layer.maskedCorners = [ .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        quoteView.layer.cornerRadius = 10
+        quoteView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        
+        switch mode {
+        case .quote:
+            quoteAuthorName.text = quoteAuthor
+        case .edit:
+            quoteAuthorName.text = "Edit Message".localized
         }
     }
     
     func setupTextQuoteMessage(quoteText: String, quoteAuthor: String, fromOperator: Bool) {
-        self.setup(quoteText, quoteAuthor, fromOperator)
-        self.quoteImageView.isHidden = true
-        self.quoteImageView.removeConstraints(quoteImageView.constraints)
-        if !WMLocaleManager.isRightOrientationLocale() {
-            self.senderAndMessageView.leftAnchor.constraint(equalTo: self.quoteLine.rightAnchor, constant: 12.0).isActive = true
-        } else {
-            self.senderAndMessageView.rightAnchor.constraint(equalTo: self.quoteLine.leftAnchor, constant: -12.0).isActive = true
-        }
+        setup(quoteText, quoteAuthor, fromOperator)
+        quoteImageView.isHidden = true
+        fileStatus.isHidden = true
+        
+        NSLayoutConstraint.deactivate(getConstraintForImageQuote())
+        NSLayoutConstraint.deactivate(getConstraintForFileQuote())
+        NSLayoutConstraint.activate(getConstraintForTextQuote())
     }
     
     func setupImageQuoteMessage(quoteAuthor: String, url: URL, fileInfo: FileInfo, fromOperator: Bool) {
-        self.setup("Image".localized, quoteAuthor, fromOperator)
-        self.quoteImageView.isHidden = false
-        DispatchQueue.main.async {
-            self.updateQuoteImageViewConstraints()
-        }
-        self.quoteImageView.accessibilityIdentifier = url.absoluteString
+        setup("Image".localized, quoteAuthor, fromOperator)
+        fileStatus.isHidden = true
+        quoteImageView.isHidden = false
+        quoteImageView.accessibilityIdentifier = url.absoluteString
         let request = ImageRequest(url: url)
-        if let imageContainer = ImageCache.shared[ImageCacheKey(request: request)] {
-            self.quoteImageView.image = imageContainer.image
+        NSLayoutConstraint.deactivate(getConstraintForFileQuote())
+        NSLayoutConstraint.deactivate(getConstraintForTextQuote())
+        NSLayoutConstraint.activate(getConstraintForImageQuote())
+        
+        if let imageContainer = ImageCache.shared[request] {
+            self.quoteImageView.image = imageContainer
         } else {
-            WMFileDownloadManager.shared.subscribeForImage(url: url, progressListener: self)
+            requestImage(with: url)
         }
     }
     
     func setupFileQuoteMessage(quoteText: String, quoteAuthor: String, url: URL, fileInfo: FileInfo, quoteState: AttachmentState, openFileDelegate: WMDialogCellDelegate, fromOperator: Bool) {
-        self.setup(quoteText, quoteAuthor, fromOperator)
-        self.quoteImageView.isHidden = false
-        DispatchQueue.main.async {
-            self.updateQuoteImageViewConstraints()
-        }
-        self.fileURL = url
-        self.fileSize = fileInfo.getSize() ?? 0
-        self.quoteImageView.image = .loadImageFromWidget(named: "FileDownloadButton")
+        setup(quoteText, quoteAuthor, fromOperator)
+        quoteImageView.isHidden = true
+        fileStatus.isHidden = false
+        fileURL = url
+        fileSize = fileInfo.getSize() ?? 0
+        
+        NSLayoutConstraint.deactivate(getConstraintForTextQuote())
+        NSLayoutConstraint.deactivate(getConstraintForImageQuote())
+        NSLayoutConstraint.activate(getConstraintForFileQuote())
     }
     
     override func loadXibViewSetup() {
@@ -162,28 +173,6 @@ class WMQuoteView: UIView, URLSessionDelegate {
         layer.addSublayer(topBorder)
     }
     
-    @IBAction func removeQuoteEditBar() {
-        if mode == .edit {
-            self.delegate?.cleanTextView()
-        }
-        self.quoteViewWillRemove()
-        self.removeFromSuperview()
-    }
-
-    private func updateQuoteImageViewConstraints() {
-        if !WMLocaleManager.isRightOrientationLocale() {
-            quoteMessageText.leftAnchor.constraint(equalTo: self.quoteImageView.rightAnchor, constant: 10.0).isActive = true
-            quoteAuthorName.leftAnchor.constraint(equalTo: self.quoteImageView.rightAnchor, constant: 10.0).isActive = true
-            quoteImageView.leftAnchor.constraint(equalTo: self.quoteLine.rightAnchor, constant: 8.0).isActive = true
-            quoteImageView.heightAnchor.constraint(equalTo: self.quoteImageView.widthAnchor).isActive = true
-        } else {
-            quoteMessageText.rightAnchor.constraint(equalTo: self.quoteImageView.leftAnchor, constant: -10.0).isActive = true
-            quoteAuthorName.rightAnchor.constraint(equalTo: self.quoteImageView.leftAnchor, constant: -10.0).isActive = true
-            quoteImageView.rightAnchor.constraint(equalTo: self.quoteLine.leftAnchor, constant: -8.0).isActive = true
-            quoteImageView.heightAnchor.constraint(equalTo: self.quoteImageView.widthAnchor).isActive = true
-        }
-    }
-
     private func adjustConfig(for mode: WMQuoteViewMode) {
         var config: WMHelperInputViewConfig?
         switch mode {
@@ -192,48 +181,48 @@ class WMQuoteView: UIView, URLSessionDelegate {
         case .edit:
             config = editBarConfig
         }
-
+        
         guard let config = config else {
             adjustDefaultConfig()
             return
         }
-
+        
         if let backgroundColor = config.backgroundColor {
             self.backgroundColor = backgroundColor
         }
-
+        
         if let quoteViewBackgroundColor = config.quoteViewBackgroundColor {
             self.quoteView.backgroundColor = quoteViewBackgroundColor
         }
-
+        
         if let quoteTextColor = config.quoteTextColor {
             quoteMessageText.textColor = quoteTextColor
         }
-
+        
         if let authorTextColor = config.authorTextColor {
             quoteAuthorName.textColor = authorTextColor
         }
-
+        
         if let quoteTextFont = config.quoteTextFont {
             quoteMessageText.font = quoteTextFont
         }
-
+        
         if let authorTextFont = config.authorTextFont {
             quoteAuthorName.font = authorTextFont
         }
-
+        
         if let quoteLineColor = config.quoteLineColor {
             quoteLine.backgroundColor = quoteLineColor
         }
-
+        
         if let height = config.height {
             heightConstraint.constant = height
         }
         
-//        leftImageConstraint.constant = 8
-//        rightImageConstraint.constant = 10
+        //        leftImageConstraint.constant = 8
+        //        rightImageConstraint.constant = 10
     }
-
+    
     private func adjustDefaultConfig() {
         quoteView.backgroundColor = .white
         backgroundColor = .white
@@ -242,16 +231,47 @@ class WMQuoteView: UIView, URLSessionDelegate {
         quoteMessageText.font = .systemFont(ofSize: 12, weight: .regular)
         quoteAuthorName.font = .systemFont(ofSize: 14, weight: .bold)
         quoteLine.backgroundColor = UIColor(red: 0.08, green: 0.67, blue: 0.82, alpha: 1.00)
-        heightConstraint.constant = 71
+    }
+    
+    private func getConstraintForTextQuote() -> [NSLayoutConstraint] {
+        return [
+            leftMessageToLineConstraint,
+            leftAuthorToLineConstraint
+        ]
+    }
+    
+    private func getConstraintForImageQuote() -> [NSLayoutConstraint] {
+        return [
+            leftMessageToImageConstraint,
+            leftAuthorToImageConstraint,
+            leftImageToLineConstraint
+        ]
+    }
+    
+    private func getConstraintForFileQuote() -> [NSLayoutConstraint] {
+        return [
+            leftMessageToFileConstraint,
+            leftAuthorToFileConstraint,
+            leftFileToLineConstraint,
+            aspectFileStatusConstraint
+        ]
+    }
+    
+    private func requestImage(with url: URL) {
+        let request = ImageRequest(url: url)
+        Nuke.ImagePipeline.shared.loadImage(with: url, completion:  { [weak self] _ in
+            guard let self = self else { return }
+            self.quoteImageView.image = ImageCache.shared[request]
+        })
     }
 }
 
 extension WMQuoteView: WMFileDownloadProgressListener {
-    func progressChanged(url: URL, progress: Float, image: Nuke.ImageContainer?, error: Error?) {
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
         guard error == nil else {
             quoteImageView.image = fileDownloadButtonImage
             return
         }
-        quoteImageView.image = image?.image ?? .loadImageFromWidget(named: "placeholder")
+        quoteImageView.image = image ?? .loadImageFromWidget(named: "placeholder")
     }
 }

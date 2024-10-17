@@ -34,7 +34,8 @@ class WMInfoCell: WMMessageTableCell {
         super.setMessage(message: message)
         let _ = self.messageTextView.setTextWithReferences(
             message.getText(),
-            alignment: .center
+            alignment: .center,
+            linkColor: config?.linkColor
         )
     }
     

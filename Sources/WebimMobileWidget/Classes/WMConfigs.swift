@@ -47,6 +47,7 @@ public class WMChatViewControllerConfig: WMViewControllerConfig {
     var openFromNotification: Bool?
     var requestMessagesCount: Int?
     var refreshControlAttributedTitle: NSAttributedString?
+    var refreshControlTintColor: UIColor?
     var visitorMessageBackgroundColor: UIColor?
     var visitorCellsConfig: WMCellsConfig?
     var operatorCellsConfig: WMCellsConfig?
@@ -85,6 +86,12 @@ public class WMAbstractCellConfig {
     var subtitleAttributes: [NSAttributedString.Key : Any]?
     var strokeWidth: CGFloat?
     var strokeColor: UIColor?
+    var linkColor: UIColor?
+    var timeColor: UIColor?
+    var messageSendingIndicatorColor: UIColor?
+    var messageUnreadIcon: UIImage?
+    var messageReadIcon: UIImage?
+    
     
     init() { }
     
@@ -96,6 +103,11 @@ public class WMAbstractCellConfig {
         subtitleAttributes = cellConfig.subtitleAttributes
         strokeWidth = cellConfig.strokeWidth
         strokeColor = cellConfig.strokeColor
+        linkColor = cellConfig.linkColor
+        timeColor = cellConfig.timeColor
+        messageSendingIndicatorColor = cellConfig.messageSendingIndicatorColor
+        messageUnreadIcon = cellConfig.messageUnreadIcon
+        messageReadIcon = cellConfig.messageReadIcon
     }
 }
 
@@ -141,8 +153,10 @@ public class WMToolbarConfig {
     var inactiveSendButtonImage: UIImage?
     var addAttachmentImage: UIImage?
     var placeholderText: String?
+    var placeholderColor: UIColor?
     var textViewFont: UIFont?
     var textViewStrokeWidth: CGFloat?
+    var textViewTextColor: UIColor?
     var emptyTextViewStrokeColor: UIColor?
     var filledTextViewStrokeColor: UIColor?
     var textViewCornerRadius: CGFloat?

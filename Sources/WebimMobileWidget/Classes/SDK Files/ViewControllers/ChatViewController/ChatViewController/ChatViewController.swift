@@ -43,7 +43,6 @@ class ChatViewController: UIViewController {
     lazy var webimServerSideSettingsManager = WebimServerSideSettingsManager()
     lazy var messageCounter = MessageCounter(delegate: self)
     lazy var keyboardNotificationManager = WMKeyboardManager()
-    lazy var scrollQueueManager = ScrollQueueManager()
     lazy var filePicker = FilePicker(presentationController: self, delegate: self)
     lazy var alertDialogHandler = AlertController(delegate: self)
 
@@ -67,13 +66,14 @@ class ChatViewController: UIViewController {
     var selectedMessage: Message?
     var showSearchResult = false
     var canReloadRows = false
-    var scrollToBottom = false
     var alreadyRatedOperators = [String: Bool]()
+    var dataSource: UITableViewDiffableDataSource<Int, String>!
+    var delayedScrollLink: String?
     weak var cellWithSelection: WMMessageTableCell?
+    lazy var dateFormatter = ChatViewController.createMessageDateFormatter()
     
     // MARK: - Outletls
     @IBOutlet var chatTableView: UITableView!
-    @IBOutlet var toolbarBackgroundView: WMToolbarBackgroundView!
     @IBOutlet var toolbarView: WMToolbarView!
 
     // MARK: - Constants
@@ -92,7 +92,7 @@ class ChatViewController: UIViewController {
     
     // Bottom bar
     override var inputAccessoryView: UIView? {
-        return presentedViewController?.isBeingDismissed != false ? toolbarBackgroundView : nil
+        presentedViewController?.isBeingDismissed != false ? toolbarView : nil
     }
     
     override var canBecomeFirstResponder: Bool {
@@ -109,6 +109,7 @@ class ChatViewController: UIViewController {
         setupNavigationBar()
         configureNetworkErrorView()
         configureThanksView()
+        self.setupTableViewDataSource()
         configureToolbarView()
         setupScrollButton()
         setupAlreadyRatedOperators()
@@ -116,20 +117,17 @@ class ChatViewController: UIViewController {
         addTapGesture()
 
         setupRefreshControl()
-        setupChatTableView()
-
         if true {
             setupTestView()
         }
         subscribeOnKeyboardNotifications()
         configureKeyboardNotificationManager()
         setupServerSideSettingsManager()
-        
+        setupTableView()
         // Config parameters
         adjustConfig()
-        
         // Nuke animated images
-        // ImagePipeline.Configuration._isAnimatedImageDataEnabled = true
+        ImagePipeline.Configuration.isAnimatedImageDataEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -193,17 +191,14 @@ class ChatViewController: UIViewController {
 
     @objc
     func scrollToUnreadMessage() {
-        scrollQueueManager.perform(kind: .scrollTableView(animated: true)) { [weak self] in
-            guard let self = self else { return }
-            let lastReadMessageIndexPath = IndexPath(row: self.messageCounter.lastReadMessageIndex, section: 0)
-            let firstUnreadMessageIndexPath = IndexPath(row: self.messageCounter.firstUnreadMessageIndex(), section: 0)
-            if self.messageCounter.hasNewMessages() && lastReadMessageIndexPath != self.lastVisibleCellIndexPath() {
-                self.chatTableView.scrollToRowSafe(at: firstUnreadMessageIndexPath,
-                                              at: .bottom,
-                                              animated: true)
-            } else {
-                self.scrollToBottomInMainQueue(animated: true)
-            }
+        let lastReadMessageIndexPath = IndexPath(row: self.messageCounter.lastReadMessageIndex, section: 0)
+        let firstUnreadMessageIndexPath = IndexPath(row: self.messageCounter.firstUnreadMessageIndex(), section: 0)
+        if self.messageCounter.hasNewMessages() && lastReadMessageIndexPath != self.lastVisibleCellIndexPath() {
+            self.chatTableView.scrollToRowSafe(at: firstUnreadMessageIndexPath,
+                                               at: .bottom,
+                                               animated: true)
+        } else {
+            self.scrollToBottom(animated: true)
         }
     }
 
@@ -214,21 +209,59 @@ class ChatViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
                 self?.messageCounter.increaseLastReadMessageIndex(with: messages.count)
+                
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self?.reloadTableWithNewData()
-                self?.chatTableView.layoutIfNeeded()
-                if self?.scrollToBottom == true {
-                    self?.scrollToBottom(animated: false)
-                    self?.scrollToBottom = false
-                } else {
-                    //self?.chatTableView?.scrollToRowSafe(at: IndexPath(row: messages.count, section: 0), at: .middle, animated: false)
-                }
-
+                self?.updateThreadListAndReloadTable()
                 self?.chatTableView.refreshControl?.endRefreshing()
             }
         }
+    }
+    
+    func scrollToDelayedLink(_ link: String, animated: Bool) {
+        guard let row = self.messages().firstIndex(where: { $0.getID() == link}) else {
+            return
+        }
+
+        self.chatTableView.scrollToRowSafe(
+            at: IndexPath(row: row, section: 0),
+            at: .bottom,
+            animated: animated
+        )
+        self.delayedScrollLink = nil
+    }
+
+    func scrollToBottom(animated: Bool) {
+        guard let lastMessage = messages().last else { return }
+        let lastMessageIndexPath = index(for: lastMessage) ?? IndexPath()
+        let currentContentOffset = chatTableView.contentOffset.y
+        let maxContentOffset = chatTableView.contentSize.height - view.bounds.height
+        let contentOffsetDelta = maxContentOffset - currentContentOffset
+
+        if contentOffsetDelta >= view.bounds.height || !animated {
+            self.chatTableView.scrollToRowSafe(
+                at: lastMessageIndexPath,
+                at: .bottom,
+                animated: animated
+            )
+        } else {
+            // This implementation required for smooth scrolling experience.
+            UIView.animate(
+                withDuration: 0.3,
+                delay: .zero,
+                options: .curveEaseOut,
+                animations: { [weak self] in
+                    self?.chatTableView.scrollToRowSafe(
+                        at: lastMessageIndexPath,
+                        at: .bottom,
+                        animated: false
+                    )
+                }
+            )
+        }
+        WebimServiceController.currentSession.setChatRead()
+        print("scrollToBottom animated \(animated)")
     }
 
     @objc
@@ -255,24 +288,6 @@ class ChatViewController: UIViewController {
             completionHandler: self
         )
     }
-
-
-    func scrollToBottom(animated: Bool) {
-        scrollQueueManager.perform(kind: .scrollTableView(animated: animated)) { [weak self] in
-            self?.scrollToBottomInMainQueue(animated: animated)
-        }
-    }
-
-
-    func scrollToTop(animated: Bool) {
-        if messages().isEmpty {
-            return
-        }
-
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.chatTableView?.scrollToRowSafe(at: indexPath, at: .top, animated: animated)
-    }
-
 
     func clearTextViewSelection() {
         guard let cellWithSelection = cellWithSelection else { return }
@@ -371,10 +386,8 @@ class ChatViewController: UIViewController {
     }
 
     func reloadTableWithNewData() {
-        scrollQueueManager.perform(kind: .reloadTableView) {
-            self.chatTableView?.reloadData()
-            self.canReloadRows = true
-        }
+        self.chatTableView?.reloadData()
+        self.canReloadRows = true
     }
 
     func updateOperatorInfo(operator: Operator?, state: ChatState) {
@@ -428,6 +441,10 @@ class ChatViewController: UIViewController {
 
         if let attributedTitle = chatConfig?.refreshControlAttributedTitle {
             chatTableView.refreshControl?.attributedTitle = attributedTitle
+        }
+        
+        if let refreshControlTintColor = chatConfig?.refreshControlTintColor {
+            chatTableView.refreshControl?.tintColor = refreshControlTintColor
         }
     }
 
@@ -535,13 +552,6 @@ class ChatViewController: UIViewController {
         )
     }
 
-    func scrollToBottomInMainQueue(animated: Bool) {
-        guard !self.messages().isEmpty else { return }
-        let row = (self.chatTableView.numberOfRows(inSection: 0)) - 1
-        let bottomMessageIndex = IndexPath(row: row, section: 0)
-        self.chatTableView?.scrollToRowSafe(at: bottomMessageIndex, at: .bottom, animated: animated)
-    }
-
     private func shouldShowOperatorInfo(forMessageNumber index: Int) -> Bool {
         guard chatMessages[index].isOperatorType() else { return false }
         guard index + 1 < chatMessages.count else { return true }
@@ -572,14 +582,15 @@ class ChatViewController: UIViewController {
         DispatchQueue.main.async {
             WebimServiceController.currentSession.getLastMessages { [weak self] messages in
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
-                self?.reloadTableWithNewData()
-                self?.scrollToBottom(animated: false)
                 if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
-                    self?.scrollToBottom = true
                     self?.requestMessages()
                 }
                 self?.becomeFirstResponder()
             }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.updateThreadListAndReloadTable()
+            self.scrollToBottom(animated: true)
         }
     }
 
@@ -595,19 +606,19 @@ class ChatViewController: UIViewController {
         imageDownloadIndicator.isHidden = true
         imageDownloadIndicator.translatesAutoresizingMaskIntoConstraints = false
 
-        //let loadingOptions = ImageLoadingOptions(placeholder: UIImage(),transition: .fadeIn(duration: 0.5))
-        let defaultRequestOptions = ImageRequest.Options()
+        let loadingOptions = ImageLoadingOptions(placeholder: UIImage(),transition: .fadeIn(duration: 0.5))
+        let defaultRequestOptions = ImageRequestOptions()
         let imageRequest = ImageRequest(
             url: avatarURL,
-            processors: [ImageProcessors.Circle()],
+            processors: [ImageProcessor.Circle()],
             priority: .normal,
             options: defaultRequestOptions
         )
 
-        ImagePipeline.shared.loadImage(
+        Nuke.loadImage(
             with: imageRequest,
-            //options: loadingOptions,
-            //into: self.titleViewOperatorAvatarImageView,
+            options: loadingOptions,
+            into: self.titleViewOperatorAvatarImageView,
             progress: { _, completed, total in
                 DispatchQueue.global(qos: .userInteractive).async {
                     let progress = Float(completed) / Float(total)
@@ -679,28 +690,21 @@ extension ChatViewController: UIScrollViewDelegate {
         updateScrollButtonView()
     }
 
-    func recountChatTableFrame(keyboardHeight: CGFloat) -> CGRect {
-        let offset = max(keyboardHeight, self.toolbarView.frame.height )
-        let height = self.view.frame.height - self.chatTableView.frame.origin.y - offset
-        var newFrame = self.chatTableView.frame
-        newFrame.size.height = height
-        return newFrame
-    }
-
-    func recountTableSize() {
-        let newFrame = recountChatTableFrame(keyboardHeight: 0)
-        self.chatTableView.frame = newFrame
-        var scrollButtonFrame = self.scrollButtonView.frame
-        scrollButtonFrame.origin.y = newFrame.size.height - 50
-        self.scrollButtonView.frame = scrollButtonFrame
-        self.view.setNeedsDisplay()
-        self.view.setNeedsLayout()
-    }
-
     func isLastCellVisible() -> Bool {
-        guard let lastVisibleCell = chatTableView.visibleCells.last else { return false }
-        let lastIndexPath = chatTableView.indexPath(for: lastVisibleCell)
-        return lastIndexPath?.row == chatMessages.count - 1
+        var visibleTableViewBounds = chatTableView.bounds
+        visibleTableViewBounds.size.height -= chatTableView.contentInset.bottom - view.safeAreaInsets.bottom
+        let systemVisibleCells = chatTableView.visibleCells
+        let lastVisibleCell = systemVisibleCells
+            .filter { cell in
+                let cellFrame = cell.convert(cell.bounds, to: chatTableView)
+                return cellFrame.intersects(visibleTableViewBounds)
+            }
+            .last
+
+        guard let lastVisibleCell = lastVisibleCell,
+              let actuallyLastIndexPath = messages().last else { return false }
+        let lastVisibleIndexPath = chatTableView.indexPath(for: lastVisibleCell)
+        return lastVisibleIndexPath == index(for: actuallyLastIndexPath)
     }
 
     func lastVisibleCellIndexPath() -> IndexPath? {
@@ -750,24 +754,25 @@ extension ChatViewController: ChatTestViewDelegate {
 }
 
 extension ChatViewController: WMNewMessageViewDelegate {
+    
     func inputTextChanged() {
         WebimServiceController.currentSession.setVisitorTyping(draft: self.toolbarView.messageView.getMessage())
     }
     
     func sendMessage() {
         let messageText = self.toolbarView.messageView.getMessage()
+        toolbarView.messageView.setMessageText("")
         guard !messageText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-        
-        if self.toolbarView.quoteBarIsVisible() {
-            if self.toolbarView.quoteView.currentMode() == .edit {
+        if self.toolbarView.isQuoteViewVisible() {
+            hideQuoteView()
+            if self.toolbarView.quoteView.currentMode == .edit {
                 if messageText.trimmingCharacters(in: .whitespacesAndNewlines) !=
-                    self.toolbarView.quoteView.currentMessage().trimmingCharacters(in: .whitespacesAndNewlines) {
+                    self.toolbarView.quoteView.currentMessage.trimmingCharacters(in: .whitespacesAndNewlines) {
                     self.editMessage(messageText)
                 }
             } else {
                 self.replyToMessage(messageText)
             }
-            self.toolbarView.removeQuoteEditBar()
         } else {
             self.sendMessage(messageText)
         }
@@ -800,8 +805,8 @@ extension ChatViewController: MessageCounterDelegate {
         completionHandler?(messages().count - 1)
     }
 
-    func updateLastReadMessageIndex(completionHandler: ((Int) -> ())?) {
-        completionHandler?(lastVisibleCellIndexPath()?.row ?? 0)
+    func updateLastReadMessageIndex(newValue: Int, completionHandler: ((Int) -> ())?) {
+        completionHandler?(messages().count - 1 - newValue)
     }
 }
 

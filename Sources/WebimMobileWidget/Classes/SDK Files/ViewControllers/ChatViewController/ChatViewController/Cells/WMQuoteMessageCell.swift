@@ -57,7 +57,8 @@ class WMQuoteMessageCell: WMMessageTableCell {
             message.getText(),
             textColor:  textColor,
             textFont: textFont,
-            alignment: .left
+            alignment: .left,
+            linkColor: config?.linkColor
         )
     }
         

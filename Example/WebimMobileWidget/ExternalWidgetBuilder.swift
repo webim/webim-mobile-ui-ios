@@ -27,8 +27,8 @@
 import Cosmos
 import WebimMobileSDK
 import Foundation
-import WebimMobileWidget
 import UIKit
+import WebimMobileWidget
 
 final class ExternalWidgetBuilder {
     

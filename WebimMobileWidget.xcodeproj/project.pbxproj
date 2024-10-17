@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		114450BF2BE19F47003C1427 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 114450BE2BE19F47003C1427 /* PrivacyInfo.xcprivacy */; };
+		119B80592BE19A8F009381B7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 119B80582BE19A8F009381B7 /* PrivacyInfo.xcprivacy */; };
 		BE435EF1297FD00C00B946A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE435D70297FD00B00B946A9 /* README.md */; };
 		BE435EF2297FD00C00B946A9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = BE435D71297FD00B00B946A9 /* Cartfile */; };
 		BE435EFD297FD00C00B946A9 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE435D8C297FD00B00B946A9 /* Package.swift */; };
@@ -42,10 +42,7 @@
 		CCD84A0D2A73E45F005CDE5A /* MessageCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B72A73E45F005CDE5A /* MessageCounter.swift */; };
 		CCD84A0E2A73E45F005CDE5A /* WMDownloadFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B82A73E45F005CDE5A /* WMDownloadFileManager.swift */; };
 		CCD84A0F2A73E45F005CDE5A /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848B92A73E45F005CDE5A /* AlertController.swift */; };
-		CCD84A102A73E45F005CDE5A /* WebimLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */; };
 		CCD84A112A73E45F005CDE5A /* WebimServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */; };
-		CCD84A122A73E45F005CDE5A /* KeyboardNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BC2A73E45F005CDE5A /* KeyboardNotificationManager.swift */; };
-		CCD84A132A73E45F005CDE5A /* ScrollQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */; };
 		CCD84A142A73E45F005CDE5A /* WebimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BE2A73E45F005CDE5A /* WebimService.swift */; };
 		CCD84A152A73E45F005CDE5A /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848BF2A73E45F005CDE5A /* FilePicker.swift */; };
 		CCD84A162A73E45F005CDE5A /* WebimServerSideSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD848C02A73E45F005CDE5A /* WebimServerSideSettingsManager.swift */; };
@@ -161,7 +158,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		114450BE2BE19F47003C1427 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		119B80582BE19A8F009381B7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		906C70FE2B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WMLogsViewController.strings; sourceTree = "<group>"; };
 		906C70FF2B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WMFileViewController.strings; sourceTree = "<group>"; };
 		906C71002B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SurveyCommentViewController.strings; sourceTree = "<group>"; };
@@ -457,10 +454,7 @@
 		CCD848B72A73E45F005CDE5A /* MessageCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCounter.swift; sourceTree = "<group>"; };
 		CCD848B82A73E45F005CDE5A /* WMDownloadFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMDownloadFileManager.swift; sourceTree = "<group>"; };
 		CCD848B92A73E45F005CDE5A /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimLogManager.swift; sourceTree = "<group>"; };
 		CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimServiceController.swift; sourceTree = "<group>"; };
-		CCD848BC2A73E45F005CDE5A /* KeyboardNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationManager.swift; sourceTree = "<group>"; };
-		CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollQueueManager.swift; sourceTree = "<group>"; };
 		CCD848BE2A73E45F005CDE5A /* WebimService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimService.swift; sourceTree = "<group>"; };
 		CCD848BF2A73E45F005CDE5A /* FilePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePicker.swift; sourceTree = "<group>"; };
 		CCD848C02A73E45F005CDE5A /* WebimServerSideSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebimServerSideSettingsManager.swift; sourceTree = "<group>"; };
@@ -612,7 +606,7 @@
 		CCD848942A73E45F005CDE5A /* WebimMobileWidget */ = {
 			isa = PBXGroup;
 			children = (
-				114450BE2BE19F47003C1427 /* PrivacyInfo.xcprivacy */,
+				119B80582BE19A8F009381B7 /* PrivacyInfo.xcprivacy */,
 				CCD848952A73E45F005CDE5A /* Classes */,
 				CCD849312A73E45F005CDE5A /* Assets */,
 			);
@@ -715,10 +709,7 @@
 				CCD848B72A73E45F005CDE5A /* MessageCounter.swift */,
 				CCD848B82A73E45F005CDE5A /* WMDownloadFileManager.swift */,
 				CCD848B92A73E45F005CDE5A /* AlertController.swift */,
-				CCD848BA2A73E45F005CDE5A /* WebimLogManager.swift */,
 				CCD848BB2A73E45F005CDE5A /* WebimServiceController.swift */,
-				CCD848BC2A73E45F005CDE5A /* KeyboardNotificationManager.swift */,
-				CCD848BD2A73E45F005CDE5A /* ScrollQueueManager.swift */,
 				CCD848BE2A73E45F005CDE5A /* WebimService.swift */,
 				CCD848BF2A73E45F005CDE5A /* FilePicker.swift */,
 				CCD848C02A73E45F005CDE5A /* WebimServerSideSettingsManager.swift */,
@@ -1403,7 +1394,7 @@
 				CCD84A972A73E45F005CDE5A /* WMNewMessageView.xib in Resources */,
 				CCD84A7F2A73E45F005CDE5A /* WMVisitorQuoteFileCell.xib in Resources */,
 				CCD84A922A73E45F005CDE5A /* ChatViewController.xib in Resources */,
-				114450BF2BE19F47003C1427 /* PrivacyInfo.xcprivacy in Resources */,
+				119B80592BE19A8F009381B7 /* PrivacyInfo.xcprivacy in Resources */,
 				CCD84A832A73E45F005CDE5A /* WMInfoCell.xib in Resources */,
 				CCD84A8E2A73E45F005CDE5A /* WMOperatorQuoteMessageCell.xib in Resources */,
 				CCD84A8F2A73E45F005CDE5A /* WMOperatorQuoteFileCell.xib in Resources */,
@@ -1458,7 +1449,6 @@
 				CCD84A522A73E45F005CDE5A /* ChatViewController+Surveys.swift in Sources */,
 				CCD84A0D2A73E45F005CDE5A /* MessageCounter.swift in Sources */,
 				CCD84A1F2A73E45F005CDE5A /* NSRange.swift in Sources */,
-				CCD84A132A73E45F005CDE5A /* ScrollQueueManager.swift in Sources */,
 				CCD84A242A73E45F005CDE5A /* UITextView.swift in Sources */,
 				CCD84A582A73E45F005CDE5A /* WMThanksAlertView.swift in Sources */,
 				CCD84A312A73E45F005CDE5A /* SurveyTableViewCell.swift in Sources */,
@@ -1475,7 +1465,6 @@
 				CCD84A3C2A73E45F005CDE5A /* WMQuoteMessageCell.swift in Sources */,
 				CCD84A022A73E45F005CDE5A /* WMConfigs.swift in Sources */,
 				CCD84A592A73E45F005CDE5A /* ChatTestView.swift in Sources */,
-				CCD84A122A73E45F005CDE5A /* KeyboardNotificationManager.swift in Sources */,
 				CCD84A442A73E45F005CDE5A /* WMQuoteImageCell.swift in Sources */,
 				CCD84A602A73E45F005CDE5A /* WMProtocols.swift in Sources */,
 				CCD84A572A73E45F005CDE5A /* WMQuoteView.swift in Sources */,
@@ -1538,7 +1527,6 @@
 				CCD84A3B2A73E45F005CDE5A /* WMBotButtonsTableViewCell.swift in Sources */,
 				CCD84A5F2A73E45F005CDE5A /* PopupActionsTableViewCell.swift in Sources */,
 				CCD84A302A73E45F005CDE5A /* WMFileViewController.swift in Sources */,
-				CCD84A102A73E45F005CDE5A /* WebimLogManager.swift in Sources */,
 				CCD84A412A73E45F005CDE5A /* WMVisitorQuoteImageCell.swift in Sources */,
 				CCD84A0C2A73E45F005CDE5A /* NavigationBarUpdater.swift in Sources */,
 				CCD84A2F2A73E45F005CDE5A /* WMLogsViewController.swift in Sources */,

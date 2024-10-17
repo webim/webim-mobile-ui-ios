@@ -27,36 +27,7 @@
 import UIKit
 import WebimMobileSDK
 
-extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
-    // MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int {
-        if !messages().isEmpty {
-            tableView.backgroundView = nil
-            return 1
-        } else {
-            let chatConfig = chatConfig as? WMChatViewControllerConfig
-            tableView.emptyTableView(
-                message: chatConfig?.emptyChatTitle?.localized ?? "Send first message to start chat.".localized
-            )
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages().count
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        
-        guard indexPath.row < messages().count else { return UITableViewCell() }
-        let message = messages()[indexPath.row]
-        
-        return updatedCellGeneration(message)
-        
-    }
+extension ChatViewController: UITableViewDelegate {
     
     @available(iOS 11.0, *)
     func tableView(
@@ -149,8 +120,25 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         self.reloadTableWithNewData()
     }
     
-    func updatedCellGeneration(_ message: Message) -> UITableViewCell {
-        
+    func index(for message: Message) -> IndexPath? {
+        if let row = self.chatMessages.lastIndex(where: { $0.getID() == message.getID() }) {
+                return IndexPath(row: row, section: 0)
+            }
+        return nil
+    }
+
+    func message(for indexPath: IndexPath) -> Message? {
+        if indexPath.row >= messages().count {
+            return nil
+        }
+        return messages()[indexPath.row]
+    }
+    
+    func updatedCellGeneration(for indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
+        guard let message = message(for: indexPath) else {
+            let cell = self.messageCellWithType(WMNilTableViewCell.self, message: nil)
+            return cell
+        }
         var isImage = false
         var isFile = false
         
@@ -228,12 +216,14 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         return self.messageCellWithType(WMInfoCell.self, message: message)
     }
     
-    func messageCellWithType<T: WMMessageTableCell>(_ type: T.Type, message: Message) -> T {
+    func messageCellWithType<T: WMMessageTableCell>(_ type: T.Type, message: Message?) -> T {
         let cell = self.chatTableView.dequeueReusableCellWithType(type)
         cell.delegate = self
-        setConfig(for: cell, message: message)
+        if let message = message {
+            setConfig(for: cell, message: message)
+            cell.setMessage(message: message)
+        }
         _ = cell.initialSetup()
-        cell.setMessage(message: message)
         cell.applyConfig()
         cell.delegate = self
         return cell
@@ -266,7 +256,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 
         if message.isInfoType() {
             cell.config = chatConfig?.infoCellConfig
-        } else if message.isSystemType() {
+        } else if message.isBotType() {
             cell.config = chatConfig?.botButtonsConfig
         }
     }

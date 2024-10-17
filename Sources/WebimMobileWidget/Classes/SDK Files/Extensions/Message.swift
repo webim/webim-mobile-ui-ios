@@ -51,6 +51,9 @@ extension Message {
     
     public func isInfoType() -> Bool {
         return self.getType() == .info
+            || self.getType() == .contactInformationRequest
+            || self.getType() == .operatorBusy
+            || self.getType() == .actionRequest
     }
     
     public func canBeCopied() -> Bool {
@@ -66,6 +69,10 @@ extension Message {
     func isText() -> Bool {
         return self.getType() == .operatorMessage
             || self.getType() == .visitorMessage
+    }
+    
+    func isBotType() -> Bool {
+        return self.getType() == .keyboard
     }
     
 }

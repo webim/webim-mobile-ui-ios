@@ -233,6 +233,86 @@ public class WMAbstractCellConfigBuilder {
         cellConfig.strokeColor = strokeColor
         return self
     }
+    
+    /**
+     Sets cell time color.
+     - parameter timeColor:
+     Cell time color.
+     - returns:
+     `WMAbstractCellConfigBuilder` object with time color set.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(timeColor: UIColor) -> Self {
+        cellConfig.timeColor = timeColor
+        return self
+    }
+    
+    /**
+     Sets cell link color.
+     - parameter linkColor:
+     Cell link color.
+     - returns:
+     `WMAbstractCellConfigBuilder` object with link color set.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(linkColor: UIColor) -> Self {
+        cellConfig.linkColor = linkColor
+        return self
+    }
+    
+    /**
+     Sets cell message sending indicator color..
+     - parameter messageSendingIndicatorColor:
+     Cell message sending indicator color.
+     - returns:
+     `WMAbstractCellConfigBuilder` object with message sending indicator color.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(messageSendingIndicatorColor: UIColor) -> Self {
+        cellConfig.messageSendingIndicatorColor = messageSendingIndicatorColor
+        return self
+    }
+    
+    /**
+     Sets cell message unread icon.
+     - parameter messageUnreadIcon:
+     Cell message unread icon.
+     - returns:
+     `WMAbstractCellConfigBuilder` object with message unread icon.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(messageUnreadIcon: UIImage) -> Self {
+        cellConfig.messageUnreadIcon = messageUnreadIcon
+        return self
+    }
+    
+    /**
+     Sets cell message read icon.
+     - parameter messageReadIcon:
+     Cell message read icon.
+     - returns:
+     `WMAbstractCellConfigBuilder` object with message read icon.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(messageReadIcon: UIImage) -> Self {
+        cellConfig.messageReadIcon = messageReadIcon
+        return self
+    }
 
 }
 

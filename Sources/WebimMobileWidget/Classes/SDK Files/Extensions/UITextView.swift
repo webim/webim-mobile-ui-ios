@@ -133,7 +133,8 @@ extension UITextView {
         _ originalText: String,
         textColor: UIColor? = nil,
         textFont: UIFont? = nil,
-        alignment: NSTextAlignment
+        alignment: NSTextAlignment,
+        linkColor: UIColor? = nil
     ) -> Bool {
         
         let paragraph = NSMutableParagraphStyle()
@@ -171,6 +172,9 @@ extension UITextView {
             if let url = String.openableUrlFromLink("\(link)") {
                 let linkRange = text.nsRange(from: range)
                 attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: url, range: linkRange)
+                if let color = linkColor {
+                    attributedOriginalText.addAttribute(.foregroundColor, value: color, range: linkRange)
+                }
             }
         }
         

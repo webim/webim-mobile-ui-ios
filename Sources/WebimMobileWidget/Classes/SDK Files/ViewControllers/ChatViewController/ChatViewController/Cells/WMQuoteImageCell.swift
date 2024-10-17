@@ -26,7 +26,6 @@
 
 import UIKit
 import WebimMobileSDK
-import Nuke
 
 class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     
@@ -37,7 +36,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     
     @IBOutlet var quoteImage: UIImageView!
     var url: URL?
-    var animatedImage: ImageContainer?
+    var animatedImage: UIImage?
 
     override func setMessage(message: Message) {
         super.setMessage(message: message)
@@ -50,7 +49,10 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
             WMFileDownloadManager.shared.subscribeForImage(url: url, progressListener: self)
         }
         let textColor = message.isVisitorType() ? quoteImageVisitorMessageTextColor : quoteImageOperatorMessageTextColor
-        let _ = self.messageTextView.setTextWithReferences(message.getText(), textColor: textColor, alignment: .left)
+        let _ = self.messageTextView.setTextWithReferences(message.getText(),
+                                                           textColor: textColor,
+                                                           alignment: .left,
+                                                           linkColor: config?.linkColor)
         for recognizer in messageTextView.gestureRecognizers ?? [] {
             if recognizer.isKind(of: UIPanGestureRecognizer.self) {
                 recognizer.isEnabled = false
@@ -58,7 +60,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
         }
     }
     
-    func progressChanged(url: URL, progress: Float, image: ImageContainer?, error: Error?) {
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
         if url != self.url {
             return
         }
@@ -67,7 +69,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
             return
         }
         if let image = image {
-            self.quoteImage.image = image.image
+            self.quoteImage.image = image
             self.animatedImage = image
         } else {
             self.quoteImage.image = placeholderImage
@@ -75,7 +77,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     }
     
     @objc func imageViewTapped() {
-        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? (self.quoteImage.image != nil  ? ImageContainer(image: self.quoteImage.image!) : nil), url: self.url)
+        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? self.quoteImage.image, url: self.url)
     }
 
     override func initialSetup() -> Bool {

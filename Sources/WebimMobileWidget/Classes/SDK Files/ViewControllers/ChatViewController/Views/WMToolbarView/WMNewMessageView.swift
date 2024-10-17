@@ -39,24 +39,27 @@ class WMNewMessageView: UIView {
     static var maxInputTextViewHeight: CGFloat = 90
     static var initialInputTextViewHeight: CGFloat = 36
 
-    @IBOutlet var sendButton: UIButton!
-    @IBOutlet var fileButton: UIButton!
-    @IBOutlet var messagePlaceholder: UILabel!
-    @IBOutlet var messageText: UITextView!
-
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var messageText: UITextView!
+    @IBOutlet weak var messagePlaceholder: UILabel!
+    @IBOutlet weak var fileButton: UIButton!
+    
     @IBOutlet private var inputTextFieldConstraint: NSLayoutConstraint!
-
+    @IBOutlet private var textViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private var textViewTopConstraint: NSLayoutConstraint!
+    
     weak var delegate: WMNewMessageViewDelegate?
 
     var emptyTextViewStrokeColor = emptyBackgroundViewBorderColour
     var filledTextViewStrokeColor = filledBackgroundViewBorderColour
+    var placeholderTextColor = textInputViewPlaceholderLabelTextColour
+    var textViewTextColor = newMessageTextColor
 
     override func loadXibViewSetup() {
         messageText.layer.cornerRadius = 17
         messageText.layer.borderWidth = 1
         messageText.layer.borderColor = filledBackgroundViewBorderColour.cgColor
         messageText.isScrollEnabled = true
-        messageText.textColor = newMessageTextColor
         let isRightOrientation = WMLocaleManager.isRightOrientationLocale()
         messageText.textContainerInset.left = isRightOrientation ? 45 : 10
         messageText.textContainerInset.right = isRightOrientation ? 10 : 45
@@ -77,7 +80,7 @@ class WMNewMessageView: UIView {
         recountViewHeight()
     }
 
-    @IBAction func sendMessage() {
+    @IBAction func sendMessage(_ sender: Any) {
         self.delegate?.sendMessage()
     }
 
@@ -95,6 +98,10 @@ class WMNewMessageView: UIView {
     
     func becomeMessageViewFirstResponder() {
         messageText.becomeFirstResponder()
+    }
+    
+    func heightDelta() -> CGFloat {
+        inputTextFieldConstraint.constant - WMNewMessageView.initialInputTextViewHeight
     }
     
     func getMessage() -> String {
@@ -148,6 +155,8 @@ class WMNewMessageView: UIView {
     func adjustConfig() {
         recountViewHeight()
         showHidePlaceholder(in: messageText)
+        messagePlaceholder.textColor = placeholderTextColor
+        messageText.textColor = textViewTextColor
     }
     
     private func setupTopBorderLayer() {
@@ -204,8 +213,9 @@ extension WMNewMessageView: UITextViewDelegate {
     
     func showHidePlaceholder(in textView: UITextView) {
         let check = textView.hasText && !textView.text.isEmpty
-        messageText.layer.borderColor = (check ? filledTextViewStrokeColor : emptyTextViewStrokeColor).cgColor
+        let checkButton = check && !textView.text.trimmingCharacters(in: .whitespaces).isEmpty
+        messageText.layer.borderColor = (checkButton ? filledTextViewStrokeColor : emptyTextViewStrokeColor).cgColor
         messagePlaceholder.isHidden = check
-        sendButton.isEnabled = check
+        sendButton.isEnabled = checkButton
     }
 }

@@ -1,6 +1,6 @@
 //
 //  String.swift
-//  WMOperatorMessageTableViewCell.swift
+//  WMVisitorMessageCell.swift
 //  Webim.Ru
 //
 //  Created by User on 25.08.2020.
@@ -92,6 +92,7 @@ class WMVisitorMessageCell: WMMessageTableCell {
             message.getText(),
             textColor: textColor,
             textFont: textFont,
-            alignment: .left)
+            alignment: .left,
+            linkColor: config?.linkColor)
     }
 }

@@ -27,7 +27,6 @@
 import UIKit
 import WebimMobileSDK
 import UIKit
-import Nuke
 import FLAnimatedImage
 
 class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
@@ -46,7 +45,7 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
     private var url: URL?
     private var imageInfo: ImageInfo?
     private var currentAspectRaito: CGFloat = -1
-    private var animatedImage: ImageContainer?
+    private var animatedImage: UIImage?
 
 
     // MARK: Mehtods
@@ -102,10 +101,10 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
 
     // Common Methods
     @objc func imageViewTapped() {
-        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? (self.imagePreview.image != nil  ? ImageContainer(image: self.imagePreview.image!) : nil), url: self.url)
+        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? self.imagePreview.image, url: self.url)
     }
     
-    func progressChanged(url: URL, progress: Float, image: ImageContainer?, error: Error?) {
+    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?) {
         if url != self.url { return }
         guard error == nil else {
             WMFileDownloadManager.shared.addDamagedImageMessage(id: message.getID())
@@ -116,8 +115,8 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
             handleProgress(progress)
             return
         }
-        self.imagePreview.image = image.image
-        if let data = image.data {
+        self.imagePreview.image = image
+        if let data = image.animatedImageData {
             self.imagePreview.animatedImage = FLAnimatedImage(gifData: data)
             self.imagePreview.startAnimating()
             self.animatedImage = image
