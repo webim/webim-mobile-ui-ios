@@ -26,7 +26,7 @@
 
 import UIKit
 import WebimMobileSDK
-import UIKit
+import Nuke
 import FLAnimatedImage
 
 class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
