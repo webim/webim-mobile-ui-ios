@@ -96,13 +96,11 @@ class WMToolbarView: UIView {
     }
 
     func adjustConfig() {
-        if let sendButtonImage = config?.sendButtonImage {
-            messageView.sendButton.setImage(sendButtonImage, for: .normal)
-        }
+        let sendButtonImage = config?.sendButtonImage ?? sendButtonImage
+        messageView.sendButton.setImage(sendButtonImage, for: .normal)
         
-        if let inactiveSendButtonImage = config?.inactiveSendButtonImage {
-            messageView.sendButton.setImage(inactiveSendButtonImage, for: .disabled)
-        }
+        let inactiveSendButtonImage = config?.inactiveSendButtonImage ?? sendInactiveButtonImage
+        messageView.sendButton.setImage(inactiveSendButtonImage, for: .disabled)
 
         if let addAttachmentImage = config?.addAttachmentImage {
             messageView.fileButton.setImage(addAttachmentImage, for: .normal)

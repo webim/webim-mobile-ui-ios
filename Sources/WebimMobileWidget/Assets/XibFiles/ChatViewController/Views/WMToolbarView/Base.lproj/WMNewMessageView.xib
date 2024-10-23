@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,9 @@
                                 <constraint firstAttribute="width" secondItem="002-08-bmV" secondAttribute="height" multiplier="1:1" id="8yy-CV-qim"/>
                                 <constraint firstAttribute="width" constant="22" id="egK-xz-W1X"/>
                             </constraints>
-                            <state key="normal" image="ShowTemplatesButtonImage"/>
+                            <state key="normal" image="ShowTemplatesButtonImage">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26"/>
+                            </state>
                             <connections>
                                 <action selector="sendFile:" destination="FTu-R9-7m7" eventType="touchUpInside" id="A7b-Sy-Oik"/>
                             </connections>
@@ -63,13 +65,15 @@
                                 <constraint firstItem="kqZ-Fk-gPi" firstAttribute="top" secondItem="sLC-Bh-NGh" secondAttribute="top" id="wZP-ui-LsL"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DJ-YL-DVO">
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DJ-YL-DVO">
                             <rect key="frame" x="319" y="25" width="26" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="8DJ-YL-DVO" secondAttribute="height" multiplier="1:1" id="UdL-2h-wH6"/>
                                 <constraint firstAttribute="width" constant="26" id="ebI-B0-ZXT"/>
                             </constraints>
-                            <state key="normal" image="sendMessageActive"/>
+                            <state key="normal" image="sendMessageActive">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26"/>
+                            </state>
                             <state key="disabled" image="sendMessage"/>
                             <connections>
                                 <action selector="sendMessage:" destination="FTu-R9-7m7" eventType="touchUpInside" id="pbe-l7-dV7"/>

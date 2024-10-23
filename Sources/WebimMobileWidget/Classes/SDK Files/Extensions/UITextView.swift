@@ -186,6 +186,9 @@ extension UITextView {
             if let url = hyperLink.link {
                 let linkRange = text.nsRange(from: range)
                 attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: url, range: linkRange)
+                if let color = linkColor {
+                    attributedOriginalText.addAttribute(.foregroundColor, value: color, range: linkRange)
+                }
             }
         }
         linkTextAttributes = [.foregroundColor: linkColor]

@@ -190,7 +190,7 @@ extension ChatViewController {
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(scrollButtonPadding)
             make.bottom.equalToSuperview().inset(toolbarView.frame.height + scrollButtonPadding)
             make.height.equalTo(scrollButtonView.snp.width)
-            make.width.equalTo(46)
+            make.width.equalTo(34)
         }
     }
     

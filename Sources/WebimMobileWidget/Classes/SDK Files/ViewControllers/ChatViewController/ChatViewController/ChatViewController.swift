@@ -435,9 +435,8 @@ class ChatViewController: UIViewController {
 
         let chatConfig = chatConfig as? WMChatViewControllerConfig
 
-        if let scrollButtonImage = chatConfig?.scrollButtonImage {
-            scrollButtonView.setScrollButtonBackgroundImage(scrollButtonImage, state: .normal)
-        }
+        let scrollImage = chatConfig?.scrollButtonImage ?? scrollButtonImage
+        scrollButtonView.setScrollButtonBackgroundImage(scrollImage, state: .normal)
 
         if let attributedTitle = chatConfig?.refreshControlAttributedTitle {
             chatTableView.refreshControl?.attributedTitle = attributedTitle

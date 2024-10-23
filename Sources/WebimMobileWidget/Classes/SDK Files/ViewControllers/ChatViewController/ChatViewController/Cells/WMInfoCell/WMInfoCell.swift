@@ -32,8 +32,13 @@ class WMInfoCell: WMMessageTableCell {
     
     override func setMessage(message: Message) {
         super.setMessage(message: message)
+        let textColor = config?.titleAttributes?[.foregroundColor] as? UIColor ?? infoMessageCellTextColor
+        let textFont = config?.titleAttributes?[.font] as? UIFont ?? messageTextView.notNilFont()
+        
         let _ = self.messageTextView.setTextWithReferences(
             message.getText(),
+            textColor: textColor,
+            textFont: textFont,
             alignment: .center,
             linkColor: config?.linkColor
         )
@@ -42,12 +47,6 @@ class WMInfoCell: WMMessageTableCell {
     override func applyConfig() {
 
         guard let config = config else { return }
-        if let attributes = config.titleAttributes {
-            messageTextView.attributedText = NSAttributedString(
-                string: messageTextView?.text ?? "",
-                attributes: attributes
-            )
-        }
 
         if let backgroundColor = config.backgroundColor {
             messageTextView?.backgroundColor = backgroundColor
