@@ -102,9 +102,8 @@ class WMToolbarView: UIView {
         let inactiveSendButtonImage = config?.inactiveSendButtonImage ?? sendInactiveButtonImage
         messageView.sendButton.setImage(inactiveSendButtonImage, for: .disabled)
 
-        if let addAttachmentImage = config?.addAttachmentImage {
-            messageView.fileButton.setImage(addAttachmentImage, for: .normal)
-        }
+        let addAttachmentImage = config?.addAttachmentImage ?? addAttachmentImage
+        messageView.fileButton.setImage(addAttachmentImage, for: .normal)
 
         if let placeholderText = config?.placeholderText {
             messageView.messagePlaceholder.text = placeholderText

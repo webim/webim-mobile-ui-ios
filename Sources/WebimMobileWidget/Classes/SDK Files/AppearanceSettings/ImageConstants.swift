@@ -66,3 +66,4 @@ let placeholderImage: UIImage! = .loadImageFromWidget(named: "placeholder")
 // WMToolbarView.swift
 let sendInactiveButtonImage: UIImage! = .loadImageFromWidget(named: "sendButton")
 let sendButtonImage: UIImage! = .loadImageFromWidget(named: "SendMessageButton")
+let addAttachmentImage: UIImage! = .loadImageFromWidget(named: "AttachmentButton")

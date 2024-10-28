@@ -59,6 +59,10 @@ class WMInfoCell: WMMessageTableCell {
                 sharpCorner(view: messageView, visitor: message.isVisitorType(), radius: cornerRadius)
             }
         }
+
+        if let timeColor = config.timeColor {
+            time?.textColor = timeColor
+        }
         
         if let strokeColor = config.strokeColor {
             messageTextView?.layer.borderColor = strokeColor.cgColor
