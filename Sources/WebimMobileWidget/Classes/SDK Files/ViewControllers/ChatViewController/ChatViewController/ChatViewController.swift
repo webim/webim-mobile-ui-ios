@@ -160,7 +160,8 @@ class ChatViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        if navigationController == nil {
+        let lastController = navigationController?.viewControllers.last
+        if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false {
             WebimServiceController.shared.stopSession()
         }
     }
