@@ -802,12 +802,12 @@ final class WebimService {
                 
                 switch imageExtension {
                 case "jpg", "jpeg":
-                    guard let unwrappedData = imageToSend.jpegData(compressionQuality: 1.0)
+                    guard let unwrappedData = compress(image: imageToSend)
                     else { return }
                     imageData = unwrappedData
                     
                 case "heic", "heif":
-                    guard let unwrappedData = imageToSend.jpegData(compressionQuality: 0.5)
+                    guard let unwrappedData = compress(image: imageToSend)
                     else { return }
                     imageData = unwrappedData
                     
@@ -824,7 +824,7 @@ final class WebimService {
                     imageData = unwrappedData
                 }
             } else {
-                guard let unwrappedData = imageToSend.jpegData(compressionQuality: 1.0)
+                guard let unwrappedData = compress(image: imageToSend)
                 else { return }
                 imageData = unwrappedData
                 imageName = "photo.jpeg"
@@ -841,6 +841,17 @@ final class WebimService {
             }
         }
         
+    }
+    
+    private func compress(image: UIImage) -> Data? {
+        for compressionQuality in [1.0, 0.75, 0.5, 0.25] as [CGFloat] {
+            let jpegData = image.jpegData(compressionQuality: compressionQuality)
+            let size = jpegData?.count ?? 0
+            if size <= 10 * 1024 * 1024 {
+                return jpegData
+            }
+        }
+        return image.jpegData(compressionQuality: 0.0)
     }
     
     private func editMessage(

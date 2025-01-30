@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		114450BD2BE19DC4003C1427 /* WebimMobileWidget in Frameworks */ = {isa = PBXBuildFile; productRef = 114450BC2BE19DC4003C1427 /* WebimMobileWidget */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -53,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				114450BD2BE19DC4003C1427 /* WebimMobileWidget in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +177,6 @@
 			);
 			name = WebimMobileWidget_Example;
 			packageProductDependencies = (
-				114450BC2BE19DC4003C1427 /* WebimMobileWidget */,
 			);
 			productName = WebimWidget;
 			productReference = 607FACD01AFB9204008FA782 /* WebimMobileWidget_Example.app */;
@@ -235,7 +232,6 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
-				114450BB2BE19DC4003C1427 /* XCRemoteSwiftPackageReference "webim-mobile-ui-ios" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -553,25 +549,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		114450BB2BE19DC4003C1427 /* XCRemoteSwiftPackageReference "webim-mobile-ui-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/nikita/Documents/webim-mobile-ui-ios";
-			requirement = {
-				branch = release_1_2_0;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		114450BC2BE19DC4003C1427 /* WebimMobileWidget */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 114450BB2BE19DC4003C1427 /* XCRemoteSwiftPackageReference "webim-mobile-ui-ios" */;
-			productName = WebimMobileWidget;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

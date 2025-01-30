@@ -358,19 +358,44 @@ extension FilePicker: PHPickerViewControllerDelegate {
     @available(iOS 14, *)
     public func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         var images: [ImageToSend] = []
+        var files: [FileToSend] = []
         for result in results {
-            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-                guard error == nil else {
-                    DispatchQueue.main.async {
-                        self?.alertDialogHandler.showFileLoadingFailureDialog()
+            if result.itemProvider.hasItemConformingToTypeIdentifier(UTType.movie.identifier) {
+                result.itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { [weak self] url, error in
+                    guard error == nil else {
+                        DispatchQueue.main.async {
+                            self?.alertDialogHandler.showFileLoadingFailureDialog()
+                        }
+                        return
                     }
-                    return
+                    if let url = url {
+                        do {
+                            let data = try Data(contentsOf: url)
+                            
+                            files.append(FileToSend(file: data, url: url))
+                            guard files.count + images.count == results.count else { return }
+                            DispatchQueue.main.async {
+                                self?.delegate?.didSelect(images: images)
+                                self?.delegate?.didSelect(files: files)
+                            }
+                        } catch { }
+                    }
                 }
-                guard let image = image as? UIImage else { return }
-                images.append(ImageToSend(image: image, url: nil))
-                guard images.count == results.count else { return }
-                DispatchQueue.main.async {
-                    self?.delegate?.didSelect(images: images)
+            } else {
+                result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                    guard error == nil else {
+                        DispatchQueue.main.async {
+                            self?.alertDialogHandler.showFileLoadingFailureDialog()
+                        }
+                        return
+                    }
+                    guard let image = image as? UIImage else { return }
+                    images.append(ImageToSend(image: image, url: nil))
+                    guard images.count + files.count == results.count else { return }
+                    DispatchQueue.main.async {
+                        self?.delegate?.didSelect(images: images)
+                        self?.delegate?.didSelect(files: files)
+                    }
                 }
             }
         }

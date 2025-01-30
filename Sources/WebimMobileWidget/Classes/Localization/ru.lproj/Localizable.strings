@@ -189,7 +189,7 @@
 //ChatViewController+CompletionHandler.swift
 "Send keyboard request unknown error" = "Неизвестная ошибка при отправке запроса клавиатуры";
 //WMQuoteFileCell.swift
-"Sending" = "Sending";
+"Sending" = "Отправка";
 //ChatViewController+CompletionHandler.swift
 "Sending files in body is not supported" = "Отправляемый файл не был получен";
 //ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
