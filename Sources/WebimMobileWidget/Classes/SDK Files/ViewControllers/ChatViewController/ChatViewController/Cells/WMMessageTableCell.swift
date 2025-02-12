@@ -26,10 +26,11 @@
 
 import UIKit
 import WebimMobileSDK
+import Nuke
 
 protocol WMDialogCellDelegate: AnyObject {
     func quoteMessageTapped(message: Message?)
-    func imageViewTapped(message: Message, image: UIImage?, url: URL?)
+    func imageViewTapped(message: Message, image: ImageContainer?, url: URL?)
     func openFile(message: Message?, url: URL?)
     func longPressAction(cell: UITableViewCell, message: Message)
     func cleanTextView()

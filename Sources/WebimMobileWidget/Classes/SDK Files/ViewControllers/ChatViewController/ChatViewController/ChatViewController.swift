@@ -126,8 +126,6 @@ class ChatViewController: UIViewController {
         setupTableView()
         // Config parameters
         adjustConfig()
-        // Nuke animated images
-        ImagePipeline.Configuration.isAnimatedImageDataEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -581,16 +579,16 @@ class ChatViewController: UIViewController {
         
         DispatchQueue.main.async {
             WebimServiceController.currentSession.getLastMessages { [weak self] messages in
-                self?.chatMessages.insert(contentsOf: messages, at: 0)
+                guard let self = self else { return }
+                
+                self.chatMessages.insert(contentsOf: messages, at: 0)
                 if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
-                    self?.requestMessages()
+                    self.requestMessages()
                 }
-                self?.becomeFirstResponder()
+                self.becomeFirstResponder()
+                self.updateThreadListAndReloadTable()
+                self.scrollToBottom(animated: true)
             }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.updateThreadListAndReloadTable()
-            self.scrollToBottom(animated: true)
         }
     }
 
@@ -606,19 +604,16 @@ class ChatViewController: UIViewController {
         imageDownloadIndicator.isHidden = true
         imageDownloadIndicator.translatesAutoresizingMaskIntoConstraints = false
 
-        let loadingOptions = ImageLoadingOptions(placeholder: UIImage(),transition: .fadeIn(duration: 0.5))
-        let defaultRequestOptions = ImageRequestOptions()
+        let defaultRequestOptions = ImageRequest.Options()
         let imageRequest = ImageRequest(
             url: avatarURL,
-            processors: [ImageProcessor.Circle()],
+            processors: [ImageProcessors.Circle()],
             priority: .normal,
             options: defaultRequestOptions
         )
 
-        Nuke.loadImage(
+        ImagePipeline.shared.loadImage(
             with: imageRequest,
-            options: loadingOptions,
-            into: self.titleViewOperatorAvatarImageView,
             progress: { _, completed, total in
                 DispatchQueue.global(qos: .userInteractive).async {
                     let progress = Float(completed) / Float(total)

@@ -28,7 +28,7 @@ import UIKit
 import Nuke
 
 protocol WMFileDownloadProgressListener: AnyObject {
-    func progressChanged(url: URL, progress: Float, image: UIImage?, error: Error?)
+    func progressChanged(url: URL, progress: Float, image: ImageContainer?, error: Error?)
 }
 
 typealias DownloadListenerContainer = WMWeakReferenseContainer<WMFileDownloadProgressListener>
@@ -58,7 +58,7 @@ class WMFileDownloadManager: NSObject {
         listeners[url] = listeners[url]?.filter { $0.getValue() != nil && $0.getValue() !== listener }
     }
     
-    func sendProgressChangedEventFor(url: URL, progress: Float, image: UIImage?, error: Error?) {
+    func sendProgressChangedEventFor(url: URL, progress: Float, image: ImageContainer?, error: Error?) {
         for listenerContainer in listeners[url] ?? [] {
             listenerContainer.getValue()?.progressChanged(url: url, progress: progress, image: image, error: error)
         }
@@ -74,7 +74,7 @@ class WMFileDownloadManager: NSObject {
     func subscribeForImage(url: URL, progressListener: WMFileDownloadProgressListener) {
         WidgetAppDelegate.shared.checkMainThread()
         let request = ImageRequest(url: url)
-        if let imageContainer = ImageCache.shared[request] {
+        if let imageContainer = ImageCache.shared[ImageCacheKey(request: request)] {
             progressListener.progressChanged(url: url, progress: 1, image: imageContainer, error: nil)
         } else {
             self.addProgressListener(url: url, listener: progressListener)
@@ -82,7 +82,7 @@ class WMFileDownloadManager: NSObject {
             progressListener.progressChanged(url: url, progress: progressDictionary[url] ?? 0, image: nil, error: nil)
 
             Nuke.ImagePipeline.shared.loadImage(
-                with: url,
+                with: ImageRequest(url: url),
                 progress: { _, completed, total in
                     var progress = Float(1.0)
                     if total != 0 {
@@ -92,13 +92,13 @@ class WMFileDownloadManager: NSObject {
                     self.progressDictionary[url] = progress
                     self.sendProgressChangedEventFor(url: url, progress: progress, image: nil, error: nil)
                 },
-                completion: { result in
+                completion: { result -> Void in
                     WidgetAppDelegate.shared.checkMainThread()
                     do {
                         let _ = try result.get()
-                        self.sendProgressChangedEventFor(url: url, progress: 1, image: ImageCache.shared[request], error: nil)
+                        self.sendProgressChangedEventFor(url: url, progress: 1, image: ImageCache.shared[ImageCacheKey(request: request)], error: nil)
                     } catch {
-                        self.sendProgressChangedEventFor(url: url, progress: 0, image: ImageCache.shared[request], error: error)
+                        self.sendProgressChangedEventFor(url: url, progress: 0, image: ImageCache.shared[ImageCacheKey(request: request)], error: error)
                     }
                 }
             )

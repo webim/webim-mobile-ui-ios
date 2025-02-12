@@ -1,1 +1,6 @@
 github "webim/webim-client-sdk-ios" == 3.42.0
+github "webim/webim-mobile-keyboard-ios" == 1.0.3
+github "evgenyneu/Cosmos" ~> 25.0
+github "SnapKit/SnapKit" ~> 5.7.1
+github "Flipboard/FLAnimatedImage" ~> 1.0.17
+github "kean/Nuke" ~> 12.0
