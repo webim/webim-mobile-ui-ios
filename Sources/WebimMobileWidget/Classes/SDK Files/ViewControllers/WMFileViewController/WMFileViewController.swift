@@ -24,8 +24,8 @@
 //  SOFTWARE.
 //
 
+@preconcurrency import WebKit
 import UIKit
-import WebKit
 import SnapKit
 import CloudKit
 import CoreServices

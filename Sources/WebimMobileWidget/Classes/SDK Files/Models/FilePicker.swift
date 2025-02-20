@@ -346,7 +346,7 @@ extension FilePicker: UIImagePickerControllerDelegate {
             return self.pickerControllerImage(picker)
         }
         
-        guard let imageURL = info[.referenceURL] as? URL else {
+        guard let imageURL = info[.imageURL] as? URL else {
             return self.pickerControllerImage(picker, didSelect: [ImageToSend(image: image, url: nil)])
         }
         
@@ -405,7 +405,7 @@ extension FilePicker: PHPickerViewControllerDelegate {
     }
 }
 
-extension FilePicker: UIDocumentMenuDelegate, UIDocumentPickerDelegate {
+extension FilePicker: UIDocumentPickerDelegate {
     public func documentPicker(_ picker: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         var files: [FileToSend] = []
         for url in urls {
@@ -418,15 +418,6 @@ extension FilePicker: UIDocumentMenuDelegate, UIDocumentPickerDelegate {
                 alertDialogHandler.showFileLoadingFailureDialog()
             }
         }
-    }
-    
-    public func documentMenu(
-        _ documentMenu: UIDocumentMenuViewController,
-        didPickDocumentPicker documentPicker: UIDocumentPickerViewController
-    ) {
-        // TODO: Check what for this method is responsible
-        documentPicker.delegate = self
-        self.presentationController?.present(documentPicker, animated: true)
     }
         
     public func documentPickerWasCancelled(_ picker: UIDocumentPickerViewController) {

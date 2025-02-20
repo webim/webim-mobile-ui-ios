@@ -587,7 +587,9 @@ class ChatViewController: UIViewController {
                 }
                 self.becomeFirstResponder()
                 self.updateThreadListAndReloadTable()
-                self.scrollToBottom(animated: true)
+                DispatchQueue.main.async {
+                    self.scrollToBottom(animated: false)
+                }
             }
         }
     }
