@@ -64,9 +64,7 @@ extension ChatViewController: WMDialogCellDelegate {
         let vc = WMFileViewController.loadViewControllerFromXib()
         vc.config = fileViewControllerConfig
         vc.fileDestinationURL = url
-        if navigationController?.viewControllers.last?.isChatViewController == true {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func cleanTextView() {
