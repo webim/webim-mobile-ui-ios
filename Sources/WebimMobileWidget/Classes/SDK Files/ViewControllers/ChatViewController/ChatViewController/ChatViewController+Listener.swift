@@ -32,94 +32,105 @@ extension ChatViewController: MessageListener {
     // MARK: - Methods
     
     func added(message newMessage: Message, after previousMessage: Message?) {
-        var inserted = false
-        if let previousMessage = previousMessage {
-            for (index, message) in self.chatMessages.enumerated() {
-                if previousMessage.isEqual(to: message) {
-                    self.chatMessages.insert(newMessage, at: index + 1)
-                    inserted = true
-                    break
+        chatMessagesQueue.async(flags: .barrier) {
+            var inserted = false
+            if !self.chatMessages.contains(where: { $0.getID() == newMessage.getID() }) {
+                if let previousMessage = previousMessage {
+                    for (index, message) in self.chatMessages.enumerated() {
+                        if previousMessage.isEqual(to: message) {
+                            self.chatMessages.insert(newMessage, at: index + 1)
+                            inserted = true
+                            break
+                        }
+                    }
+                }
+                
+                if !inserted {
+                    self.chatMessages.append(newMessage)
                 }
             }
-        }
-        
-        if !inserted {
-            self.chatMessages.append(newMessage)
-        }
-        
-        let currentId = newMessage.getID()
-        
-        DispatchQueue.main.async {
-            var snapshot = self.dataSource.snapshot()
-            if snapshot.numberOfSections == 0 {
-                snapshot.appendSections([0])
-            }
             
-            if snapshot.itemIdentifiers.contains(currentId) {
-                snapshot.reloadItems([currentId])
-            } else {
-                snapshot.appendItems([currentId], toSection: 0)
-            }
+            let currentId = newMessage.getID()
             
-            self.dataSource.apply(snapshot, animatingDifferences: false) {
-                guard newMessage.isVisitorType() || self.isLastCellVisible() else { return }
-                self.scrollToBottom(animated: true)
-            }
-            
-            if let chatConfig = self.chatConfig as? WMChatViewControllerConfig,
-               chatConfig.showScrollButtonCounter != false {
-                self.messageCounter.set(lastMessageIndex: self.chatMessages.count - 1)
+            DispatchQueue.main.async {
+                var snapshot = self.dataSource.snapshot()
+                if snapshot.numberOfSections == 0 {
+                    snapshot.appendSections([0])
+                }
+                
+                if snapshot.itemIdentifiers.contains(currentId) {
+                    snapshot.reloadItems([currentId])
+                } else {
+                    snapshot.appendItems([currentId], toSection: 0)
+                }
+                
+                self.dataSource.apply(snapshot, animatingDifferences: false) {
+                    guard newMessage.isVisitorType() || self.isLastCellVisible() else { return }
+                    self.scrollToBottom(animated: true)
+                }
+                
+                if let chatConfig = self.chatConfig as? WMChatViewControllerConfig,
+                   chatConfig.showScrollButtonCounter != false {
+                    self.messageCounter.set(lastMessageIndex: self.chatMessages.count - 1)
+                }
             }
         }
     }
     
     func removed(message: Message) {
-        DispatchQueue.main.async {
+        chatMessagesQueue.async(flags: .barrier) {
             var snapshot = self.dataSource.snapshot()
             
             if let index = self.chatMessages.firstIndex(where: { $0.getID() == message.getID() }) {
                 self.chatMessages.remove(at: index)
             }
-            
-            if snapshot.numberOfSections > 0 {
-                snapshot.deleteItems([message.getID()])
-                self.dataSource.apply(snapshot, animatingDifferences: true)
+            DispatchQueue.main.async {
+                if snapshot.numberOfSections > 0 {
+                    snapshot.deleteItems([message.getID()])
+                    self.dataSource.apply(snapshot, animatingDifferences: true)
+                }
             }
         }
     }
     
     func removedAllMessages() {
-        DispatchQueue.main.async {
+        chatMessagesQueue.async(flags: .barrier) {
+            
             self.chatMessages.removeAll()
-            self.reloadTableWithNewData()
+            
+            DispatchQueue.main.async {
+                self.reloadTableWithNewData()
+            }
         }
     }
     
     func changed(message oldVersion: Message, to newVersion: Message) {
-        DispatchQueue.main.async {
+        chatMessagesQueue.async(flags: .barrier) {
             let id = oldVersion.getID()
             
             guard let index = self.chatMessages.firstIndex(where: { $0.getID() == id }) else { return }
             
             self.chatMessages[index] = newVersion
             
-            var snapshot = self.dataSource.snapshot()
-            
-            if snapshot.numberOfSections > 0 {
-                if snapshot.itemIdentifiers.contains(id) {
-                    snapshot.reloadItems([id])
-                } else {
-                    snapshot.appendItems([newVersion.getID()], toSection: 0)
-                }
+            DispatchQueue.main.async {
+                var snapshot = self.dataSource.snapshot()
                 
-                self.dataSource.apply(snapshot, animatingDifferences: false) {
-                    guard let delayedScrollLink = self.delayedScrollLink,
-                          delayedScrollLink == id else {
-                        guard newVersion.isVisitorType() || self.isLastCellVisible() else { return }
-                        self.scrollToBottom(animated: true)
-                        return
+                if snapshot.numberOfSections > 0 {
+                    if snapshot.itemIdentifiers.contains(id) {
+                        snapshot.reloadItems([id])
+                    } else {
+                        snapshot.appendItems([newVersion.getID()], toSection: 0)
                     }
-                    self.scrollToDelayedLink(delayedScrollLink, animated: true)
+                    
+                    self.dataSource.apply(snapshot, animatingDifferences: false) {
+                        guard let delayedScrollLink = self.delayedScrollLink,
+                              delayedScrollLink == id else {
+                            guard newVersion.isVisitorType() && oldVersion.getText() == newVersion.getText() || self.isLastCellVisible() else { return }
+                            self.scrollToBottom(animated: true)
+                            return
+                        }
+                        self.scrollToDelayedLink(delayedScrollLink, animated: true)
+                    }
                 }
             }
         }

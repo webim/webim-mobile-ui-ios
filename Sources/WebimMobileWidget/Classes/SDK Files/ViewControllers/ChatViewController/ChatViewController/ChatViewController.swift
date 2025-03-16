@@ -90,6 +90,8 @@ class ChatViewController: UIViewController {
     lazy var connectionErrorView = ConnectionErrorView.loadXibView()
     lazy var chatTestView = ChatTestView.loadXibView()
     
+    let chatMessagesQueue = DispatchQueue(label: "ru.webim.chatMessagesQueue", attributes: .concurrent)
+    
     // Bottom bar
     override var inputAccessoryView: UIView? {
         presentedViewController?.isBeingDismissed != false ? toolbarView : nil
@@ -161,6 +163,7 @@ class ChatViewController: UIViewController {
         let lastController = navigationController?.viewControllers.last
         if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false {
             WebimServiceController.shared.stopSession()
+            dataSource = nil
         }
     }
     
@@ -173,6 +176,7 @@ class ChatViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+        unsubscribeFromKeyboardNotifications()
     }
     
     // MARK: - Methods
@@ -205,7 +209,7 @@ class ChatViewController: UIViewController {
     func requestMessages() {
         let chatConfig = chatConfig as? WMChatViewControllerConfig
         WebimServiceController.currentSession.getNextMessages(messagesCount: chatConfig?.requestMessagesCount) { [weak self] messages in
-            DispatchQueue.main.async {
+            self?.chatMessagesQueue.async(flags: .barrier) {
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
                 self?.messageCounter.increaseLastReadMessageIndex(with: messages.count)
                 
@@ -577,19 +581,18 @@ class ChatViewController: UIViewController {
         WebimServiceController.shared.departmentListHandlerDelegate = self
         WebimServiceController.shared.fatalErrorHandlerDelegate = self
         
-        DispatchQueue.main.async {
-            WebimServiceController.currentSession.getLastMessages { [weak self] messages in
-                guard let self = self else { return }
-                
+        WebimServiceController.currentSession.getLastMessages { [weak self] messages in
+            guard let self = self else { return }
+            self.chatMessagesQueue.async(flags: .barrier) {
                 self.chatMessages.insert(contentsOf: messages, at: 0)
                 if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
                     self.requestMessages()
                 }
+            }
+            DispatchQueue.main.async {
                 self.becomeFirstResponder()
                 self.updateThreadListAndReloadTable()
-                DispatchQueue.main.async {
-                    self.scrollToBottom(animated: false)
-                }
+                self.scrollToBottom(animated: true)
             }
         }
     }

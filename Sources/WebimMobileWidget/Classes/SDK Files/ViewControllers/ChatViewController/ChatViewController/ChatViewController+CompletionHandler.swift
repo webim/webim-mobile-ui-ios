@@ -193,7 +193,7 @@ extension ChatViewController: SendFileCompletionHandler,
             title: title,
             action: { [weak self] in
                 guard let self = self else { return }
-                DispatchQueue.main.async {
+                self.chatMessagesQueue.async(flags: .barrier) {
                     for (index, message) in self.chatMessages.enumerated() {
                         if message.getID() == messageID {
                             self.chatMessages.remove(at: index)

@@ -144,7 +144,7 @@ extension ChatViewController {
     }
 
     private func sendRandomImage() {
-        let image = UIImage(named: "AppIcon")
+        let image = UIImage(named: "DefaultAvatar")
         let data = image!.jpegData(compressionQuality: 1.0)
         
         WebimServiceController.currentSession.send(

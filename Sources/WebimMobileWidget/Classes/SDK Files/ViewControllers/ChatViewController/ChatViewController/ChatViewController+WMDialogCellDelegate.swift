@@ -64,7 +64,7 @@ extension ChatViewController: WMDialogCellDelegate {
         let vc = WMFileViewController.loadViewControllerFromXib()
         vc.config = fileViewControllerConfig
         vc.fileDestinationURL = url
-        if navigationController?.viewControllers.last?.isChatViewController == true {
+        if navigationController?.viewControllers.last?.isFileViewController != true {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -143,11 +143,19 @@ extension ChatViewController {
         if snapshot.numberOfSections == 0 {
             snapshot.appendSections([0])
         }
+        
         let messagesIdentifiers = messages().map{ $0.getID() }
-        guard !messagesIdentifiers.isEmpty else {
+        var uniqueIdentifiers: [String] = []
+        for id in messagesIdentifiers {
+            if !uniqueIdentifiers.contains(id) {
+                uniqueIdentifiers.append(id)
+            }
+        }
+        guard !uniqueIdentifiers.isEmpty else {
             return
         }
-        snapshot.appendItems(messagesIdentifiers, toSection: 0)
+    
+        snapshot.appendItems(uniqueIdentifiers, toSection: 0)
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences, completion: completionHandler)
     }
 }
