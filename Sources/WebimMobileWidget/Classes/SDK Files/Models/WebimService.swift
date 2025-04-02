@@ -101,11 +101,13 @@ final class WebimService {
     // MARK: - Methods
     func createSession() {
         
-        let deviceToken: String? = WMKeychainWrapper.standard.string(forKey: WMKeychainWrapper.deviceTokenKey)
         guard let sessionConfig = sessionBuilder else { return }
         let sessionBuilder = sessionConfig
             .set(fatalErrorHandler: self)
-            .set(deviceToken: deviceToken)
+            .set(notFatalErrorHandler: self)
+        if let deviceToken = WMKeychainWrapper.standard.string(forKey: WMKeychainWrapper.deviceTokenKey) {
+            _ = sessionBuilder.set(deviceToken: deviceToken)
+        }
         
         sessionBuilder.build(
             onSuccess: { [weak self] webimSession in

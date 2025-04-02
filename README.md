@@ -7,7 +7,7 @@ This library provide simple chat integration, that based on [WebimMobileSDK](htt
 
 ### CocoaPods
 ```
-pod WebimMobileWidget
+pod 'WebimMobileWidget'
 ```
 
 ### SPM
@@ -18,7 +18,7 @@ pod WebimMobileWidget
 ### Carthage
 Add following line to your **Cartfile**:
 ```
-github "webim/webim-mobile-ui-ios" ~> 1.3.10
+github "webim/webim-mobile-ui-ios" ~> 1.3.12
 ```
 
 
