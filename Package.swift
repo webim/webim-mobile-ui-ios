@@ -14,7 +14,7 @@ let package = Package(
             targets: ["WebimMobileWidget"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/webim/webim-client-sdk-ios.git", exact: "3.42.0"),
+        .package(name: "WebimMobileSDK", path: "../webim-client-sdk-ios"),
         .package(url: "https://github.com/kean/Nuke.git", from: "12.0.0"),
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "25.0.1"),
         .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.7.1"),
@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "WebimMobileWidget",
             dependencies: [
-                .product(name: "WebimMobileSDK", package: "webim-client-sdk-ios"),
+                .byName(name: "WebimMobileSDK"),
                 .product(name: "Nuke", package: "Nuke"),
                 .product(name: "Cosmos", package: "Cosmos"),
                 .product(name: "SnapKit", package: "SnapKit"),

@@ -68,7 +68,6 @@ extension ChatViewController: SendFileCompletionHandler,
             
             self.alertOnFailure(
                 with: message,
-                id: messageID,
                 title: "File sending failed".localized
             )
         }
@@ -187,17 +186,18 @@ extension ChatViewController: SendFileCompletionHandler,
         }
     }
     
-    func alertOnFailure(with message: String, id messageID: String, title: String) {
+    func alertOnFailure(with message: String, id messageID: String? = nil, title: String) {
         alertDialogHandler.showSendFailureDialog(
             withMessage: message,
             title: title,
             action: { [weak self] in
                 guard let self = self else { return }
+                guard let messageID = messageID else { return }
                 self.chatMessagesQueue.async(flags: .barrier) {
                     for (index, message) in self.chatMessages.enumerated() {
                         if message.getID() == messageID {
                             self.chatMessages.remove(at: index)
-                            self.chatTableView?.reloadData()
+                            self.updateThreadListAndReloadTable()
                             return
                         }
                     }

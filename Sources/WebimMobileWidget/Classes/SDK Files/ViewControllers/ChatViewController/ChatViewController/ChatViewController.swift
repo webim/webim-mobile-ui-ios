@@ -151,6 +151,7 @@ class ChatViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        updateNavigationBar(true)
         navigationBarUpdater.set(canUpdate: false)
         WMTestManager.testDialogModeEnabled = false
         updateTestModeState()
@@ -161,6 +162,11 @@ class ChatViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         let lastController = navigationController?.viewControllers.last
+        if let presentedVC = presentedViewController as? UIImagePickerController {
+            if presentedVC.sourceType == .camera {
+                return
+            }
+        }
         if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false {
             WebimServiceController.shared.stopSession()
             dataSource = nil
@@ -236,6 +242,7 @@ class ChatViewController: UIViewController {
     }
 
     func scrollToBottom(animated: Bool) {
+        guard UIApplication.shared.applicationState == .active else { return }
         guard let lastMessage = messages().last else { return }
         let lastMessageIndexPath = index(for: lastMessage) ?? IndexPath()
         let currentContentOffset = chatTableView.contentOffset.y
@@ -306,10 +313,6 @@ class ChatViewController: UIViewController {
         } else if let name = WebimServiceController.currentSession.getCurrentOperator()?.getName() {
             titleView.state = .operatorDefined(name: name)
         }
-    }
-
-    func scrollTableView(_ sender: UIButton) {
-        self.scrollToBottom(animated: true)
     }
 
     func setConnectionStatus(connected: Bool) {
@@ -386,11 +389,6 @@ class ChatViewController: UIViewController {
             message: messageToReact,
             completionHandler: self
         )
-    }
-
-    func reloadTableWithNewData() {
-        self.chatTableView?.reloadData()
-        self.canReloadRows = true
     }
 
     func updateOperatorInfo(operator: Operator?, state: ChatState) {
@@ -585,8 +583,10 @@ class ChatViewController: UIViewController {
             guard let self = self else { return }
             self.chatMessagesQueue.async(flags: .barrier) {
                 self.chatMessages.insert(contentsOf: messages, at: 0)
-                if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
-                    self.requestMessages()
+                DispatchQueue.main.async {
+                    if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
+                        self.requestMessages()
+                    }
                 }
             }
             DispatchQueue.main.async {
@@ -665,6 +665,9 @@ class ChatViewController: UIViewController {
         messageCounter.set(lastReadMessageIndex: lastVisibleCellIndexPath()?.row ?? 0)
         let state: ScrollButtonViewState = messageCounter.hasNewMessages() && chatConfig?.showScrollButtonCounter != false ?
             .newMessage : isLastCellVisible() || chatMessages.isEmpty ? .hidden : .visible
+        if state == .hidden {
+            WebimServiceController.currentSession.setChatRead()
+        }
         scrollButtonView.setScrollButtonViewState(state)
     }
 }
@@ -733,6 +736,17 @@ extension ChatViewController: FilePickerDelegate {
 }
 
 extension ChatViewController: ChatTestViewDelegate {
+    func getConfig() -> WebimServerSideSettingsManager? {
+        return webimServerSideSettingsManager
+    }
+    
+    func sendResolution(answer: Int) {
+        if let operatorID = currentOperatorId() {
+            WebimServiceController.currentSession.sendResolution(withID: operatorID, answer: answer, completionHandler: self)
+        } else {
+            onFailure(error: SendResolutionError.operatorNotInChat)
+        }
+    }
     
     func getSearchMessageText() -> String {
         let searchText = self.toolbarView.messageView.getMessage()
@@ -792,13 +806,24 @@ extension ChatViewController: MessageCounterDelegate {
         if newMessageCount > 0 && !isLastCellVisible() && chatConfig?.showScrollButtonCounter != false {
             state = .newMessage
             scrollButtonView.setNewMessageCount(newMessageCount)
+            setLastVisibleMessageRead()
         } else if newMessageCount >= 0 && !isLastCellVisible() {
             state = .visible
+            setLastVisibleMessageRead()
         } else {
             state = .hidden
             WebimServiceController.currentSession.setChatRead()
         }
         scrollButtonView.setScrollButtonViewState(state)
+    }
+    
+    private func setLastVisibleMessageRead() {
+        let messages = messages()
+        if let lastVisibleCellIndex = lastVisibleCellIndexPath()?.row,
+            lastVisibleCellIndex < messages.count,
+            lastVisibleCellIndex > 0 {
+            WebimServiceController.currentSession.setChatRead(message: messages[lastVisibleCellIndex - 1])
+        }
     }
 
     func updateLastMessageIndex(completionHandler: ((Int) -> ())?) {

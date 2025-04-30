@@ -62,6 +62,20 @@ class WebimServerSideSettingsManager {
         }
         return showRateOperatorButton
     }
+    
+    func getRateForm() -> String? {
+        return webimServerSideSettings?.accountConfig.rateForm
+    }
+    
+    func getRatedEntity() -> String? {
+        return webimServerSideSettings?.accountConfig.ratedEntity
+    }
+    
+    func getVisitorSegment() -> String? {
+        webimServerSideSettings?.accountConfig.visitorSegment
+    }
+    
+    
 }
 
 extension WebimServerSideSettingsManager: ServerSideSettingsCompletionHandler {

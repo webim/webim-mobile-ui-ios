@@ -52,10 +52,10 @@ class WMSurveyViewController: UIViewController {
     func closeViewController() {
         self.transparentBackgroundView?.alpha = 0
         dismiss(animated: true, completion: nil)
-        self.delegate?.surveyViewControllerClosed()
     }
     
     @IBAction func close(_ sender: Any?) {
+        self.delegate?.surveyViewControllerClosed()
         self.closeViewController()
     }
     

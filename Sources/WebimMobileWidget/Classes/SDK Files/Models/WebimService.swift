@@ -25,7 +25,6 @@
 //
 
 import Foundation
-import UIKit
 import WebimMobileSDK
 
 final class WebimService {
@@ -266,6 +265,18 @@ final class WebimService {
             )
         } catch {
             self.printError(error: error, message: "Send survey answer")
+        }
+    }
+    
+    func closeSurvey() {
+        do {
+            if messageStream == nil {
+                setMessageStream()
+            }
+            
+            try messageStream?.closeSurvey(completionHandler: nil)
+        } catch {
+            self.printError(error: error, message: "Close survey")
         }
     }
     
@@ -532,11 +543,9 @@ final class WebimService {
         }
     }
     
-    func rateOperator(
-        withID operatorID: String,
-        byRating rating: Int,
-        completionHandler: RateOperatorCompletionHandler?
-    ) {
+    func rateOperator(withID operatorID: String,
+                      byRating rating: Int,
+                      completionHandler: RateOperatorCompletionHandler?) {
         do {
             if messageStream == nil {
                 setMessageStream()
@@ -549,6 +558,22 @@ final class WebimService {
             )
         } catch {
             self.printError(error: error, message: "Rate operator")
+        }
+    }
+    
+    func sendResolution(withID operatorID: String,
+                        answer: Int,
+                        completionHandler: SendResolutionCompletionHandler?) {
+        do {
+            if messageStream == nil {
+                setMessageStream()
+            }
+            
+            try messageStream?.sendResolutionSurvey(id: operatorID,
+                                                    answer: answer,
+                                                    completionHandler: completionHandler)
+        } catch {
+            self.printError(error: error, message: "Send resolution survey")
         }
     }
     
@@ -595,13 +620,17 @@ final class WebimService {
         }
     }
     
-    func setChatRead() {
+    func setChatRead(message: Message? = nil) {
         do {
             if messageStream == nil {
                 setMessageStream()
             }
             
-            try messageStream?.setChatRead()
+            if let message = message {
+                try messageStream?.setChatRead(before: message)
+            } else {
+                try messageStream?.setChatRead()
+            }
         } catch {
             print("Read chat failed with unknown error: \(error.localizedDescription)")
         }
@@ -805,12 +834,12 @@ final class WebimService {
                 
                 switch imageExtension {
                 case "jpg", "jpeg":
-                    guard let unwrappedData = compress(image: imageToSend)
+                    guard let unwrappedData = imageToSend.jpegData(compressionQuality: 1.0)
                     else { return }
                     imageData = unwrappedData
                     
                 case "heic", "heif":
-                    guard let unwrappedData = compress(image: imageToSend)
+                    guard let unwrappedData = imageToSend.jpegData(compressionQuality: 0.5)
                     else { return }
                     imageData = unwrappedData
                     
@@ -827,7 +856,7 @@ final class WebimService {
                     imageData = unwrappedData
                 }
             } else {
-                guard let unwrappedData = compress(image: imageToSend)
+                guard let unwrappedData = imageToSend.jpegData(compressionQuality: 1.0)
                 else { return }
                 imageData = unwrappedData
                 imageName = "photo.jpeg"
@@ -844,17 +873,6 @@ final class WebimService {
             }
         }
         
-    }
-    
-    private func compress(image: UIImage) -> Data? {
-        for compressionQuality in [1.0, 0.75, 0.5, 0.25] as [CGFloat] {
-            let jpegData = image.jpegData(compressionQuality: compressionQuality)
-            let size = jpegData?.count ?? 0
-            if size <= 10 * 1024 * 1024 {
-                return jpegData
-            }
-        }
-        return image.jpegData(compressionQuality: 0.0)
     }
     
     private func editMessage(
@@ -944,6 +962,7 @@ extension WebimService: FatalErrorHandler {
             
         case .unknown:
             print("An unknown error occured: \(error.getErrorString()).")
+            fatalErrorHandlerDelegate?.showErrorDialog(withMessage: error.getErrorString())
             
         case .visitorBanned:
             print("Visitor with provided visitor fields is banned by an operator.")
@@ -953,6 +972,9 @@ extension WebimService: FatalErrorHandler {
             // Assuming to check visitor field generating.
             print("Wrong CRC passed with visitor fields.")
             
+        case .initializationFailed:
+            print("Session initialization failed.")
+            fatalErrorHandlerDelegate?.showErrorDialog(withMessage: "Session initialization failed.".localized)
         }
     }
     

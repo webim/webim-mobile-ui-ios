@@ -99,7 +99,7 @@ extension ChatViewController: MessageListener {
             self.chatMessages.removeAll()
             
             DispatchQueue.main.async {
-                self.reloadTableWithNewData()
+                self.updateThreadListAndReloadTable()
             }
         }
     }
@@ -125,7 +125,7 @@ extension ChatViewController: MessageListener {
                     self.dataSource.apply(snapshot, animatingDifferences: false) {
                         guard let delayedScrollLink = self.delayedScrollLink,
                               delayedScrollLink == id else {
-                            guard newVersion.isVisitorType() && oldVersion.getText() == newVersion.getText() || self.isLastCellVisible() else { return }
+                            guard self.isLastCellVisible() else { return }
                             self.scrollToBottom(animated: true)
                             return
                         }

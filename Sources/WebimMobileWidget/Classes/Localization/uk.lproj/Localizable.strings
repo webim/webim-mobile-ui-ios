@@ -224,6 +224,8 @@
 "Your feedback will help us become better." = "Ваш відгук допоможе нам стати кращими.";
 //WebimService.swift
 "Your visitor account is in the black list." = "Ваш обліковий запис відвідувача знаходиться у чорному списку.";
+//WebimSerivce.swift
+"Session initialization failed." = "Помилка ініціалізації сеансу.";
 //SurveyCommentViewController.xib
 "comment" = "коментар";
 //WMMessageTableCell.swift
@@ -231,6 +233,6 @@
 //ChatViewController+Listener.swift
 "typing" = "печатання";
 //LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2022 Webim.ru Inc. All rights reserved." = "© 2022 Webim.ru Inc. All rights reserved.";
+"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift
 "You" = "Ви";

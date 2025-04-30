@@ -224,6 +224,8 @@
 "Your feedback will help us become better." = "Tu opinión nos ayudará a mejorar.";
 //WebimService.swift
 "Your visitor account is in the black list." = "Tu cuenta de visitante está en la lista negra.";
+//WebimSerivce.swift
+"Session initialization failed." = "La inicialización de la sesión falló.";
 //SurveyCommentViewController.xib
 "comment" = "comentario";
 //WMMessageTableCell.swift
@@ -231,6 +233,6 @@
 //ChatViewController+Listener.swift
 "typing" = "escribiendo";
 //LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2022 Webim.ru Inc. All rights reserved." = "© 2022 Webim.ru Inc. Todos los derechos reservados.";
+"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. Todos los derechos reservados.";
 //WMQuoteView.swift
 "You" = "Tú";

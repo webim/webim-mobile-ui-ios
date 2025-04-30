@@ -82,6 +82,21 @@ public class WMToolbarConfigBuilder {
         return self
     }
     
+    /**
+     Sets edit button image.
+     - parameter editButtonImage:
+     Edit button image.
+     - returns:
+     `WMToolbarConfigBuilder` object with edit button image set.
+     - author:
+     Anna Frolova
+     - copyright:
+     2025 Webim
+     */
+    public func set(editButtonImage: UIImage) -> WMToolbarConfigBuilder {
+        toolbar.editButtonImage = editButtonImage
+        return self
+    }
 
     /**
      Sets attachment image.

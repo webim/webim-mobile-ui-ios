@@ -70,17 +70,7 @@ class RateStarsViewController: WMSurveyViewController {
         } else {
             self.rateOperatorDelegate?.rateOperator(operatorID: self.operatorId, rating: rating)
         }
-        self.close(nil)
-    }
-    
-    @objc
-    override func closeViewController() {
-        UIView.animate(withDuration: 0.3) {
-            self.view.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true, completion: nil)
-            self.delegate?.surveyViewControllerClosed()
-        }
+        self.closeViewController()
     }
 
     private func adjustConfig() {

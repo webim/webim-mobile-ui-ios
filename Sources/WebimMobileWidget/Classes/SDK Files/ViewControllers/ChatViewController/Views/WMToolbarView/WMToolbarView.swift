@@ -37,7 +37,9 @@ class WMToolbarView: UIView {
     var heightConstraint: NSLayoutConstraint?
     var quoteViewTopConstraint: NSLayoutConstraint?
     private var quoteViewBottomConstraint: Constraint!
-
+    private var editButtonUIImage: UIImage = editButtonImage
+    private var sendButtonUIImage: UIImage = sendButtonImage
+    
     private var quoteViewVisible: Bool = false {
         didSet {
             self.invalidateIntrinsicContentSize()
@@ -96,7 +98,7 @@ class WMToolbarView: UIView {
     }
 
     func adjustConfig() {
-        let sendButtonImage = config?.sendButtonImage ?? sendButtonImage
+        sendButtonUIImage = config?.sendButtonImage ?? sendButtonImage
         messageView.sendButton.setImage(sendButtonImage, for: .normal)
         
         let inactiveSendButtonImage = config?.inactiveSendButtonImage ?? sendInactiveButtonImage
@@ -104,6 +106,8 @@ class WMToolbarView: UIView {
 
         let addAttachmentImage = config?.addAttachmentImage ?? addAttachmentImage
         messageView.fileButton.setImage(addAttachmentImage, for: .normal)
+        
+        editButtonUIImage = config?.editButtonImage ?? editButtonImage
 
         if let placeholderText = config?.placeholderText {
             messageView.messagePlaceholder.text = placeholderText
@@ -157,12 +161,17 @@ class WMToolbarView: UIView {
         quoteViewVisible
     }
     
+    func setupSendButton(isEdit: Bool) {
+        let sendButtonImage = isEdit ? editButtonUIImage : sendButtonUIImage
+        messageView.sendButton.setImage(sendButtonImage, for: .normal)
+    }
+    
     func addEditBarForMessage(_ message: Message?, delegate: WMDialogCellDelegate) {
         guard let message = message else {
             removeQuoteEditBar()
             return
         }
-
+        setupSendButton(isEdit: true)
         quoteView.addEditBarForMessage(message, delegate: delegate)
         messageView.setMessageText(message.getText())
         animateAddQuoteEditBar()
@@ -215,6 +224,7 @@ extension WMToolbarView: WMQuoteViewDelegate {
         }
 
         DispatchQueue.main.async {
+            self.setupSendButton(isEdit: false)
             self.quoteViewVisible = false
         }
     }

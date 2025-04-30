@@ -151,6 +151,7 @@ public class WMPopupActionCellConfig: WMAbstractCellConfig {
 public class WMToolbarConfig {
     var sendButtonImage: UIImage?
     var inactiveSendButtonImage: UIImage?
+    var editButtonImage: UIImage?
     var addAttachmentImage: UIImage?
     var placeholderText: String?
     var placeholderColor: UIColor?

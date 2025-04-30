@@ -111,7 +111,7 @@
 //ChatViewController+CompletionHandler.swift
 "MaxFilesCountExceeded" = "Files count per message limit exceeded";
 //ChatViewController+CompletionHandler.swift
-"MaxMessageLengthExceeded" = "Max message lenght exceeded";
+"MaxMessageLengthExceeded" = "Max message length exceeded";
 //ChatViewController+CompletionHandler.swift
 "Message deleting failed" = "Message deleting failed";
 //ChatViewController+CompletionHandler.swift
@@ -232,6 +232,8 @@
 "Your feedback will help us become better." = "Your feedback will help us become better.";
 //WebimService.swift
 "Your visitor account is in the black list." = "Your visitor account is in the black list.";
+//WebimSerivce.swift
+"Session initialization failed." = "Session initialization failed.";
 //SurveyCommentViewController.xib
 "comment" = "comment";
 //WMMessageTableCell.swift
@@ -239,6 +241,6 @@
 //ChatViewController+Listener.swift
 "typing" = "typing";
 //LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2022 Webim.ru Inc. All rights reserved." = "© 2022 Webim.ru Inc. All rights reserved.";
+"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift
 "You" = "You";

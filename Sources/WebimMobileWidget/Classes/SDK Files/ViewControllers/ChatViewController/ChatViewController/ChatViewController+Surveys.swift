@@ -32,14 +32,20 @@ extension ChatViewController: SurveyListener {
     
     func on(survey: Survey) {
         surveyCounter = 0
+        let currentQuestion = survey.getCurrentQuestionInfo()
         for form in survey.getConfig().getDescriptor().getForms() {
-            surveyCounter += form.getQuestions().count
+            if form.getID() > currentQuestion.getFormID() {
+                surveyCounter += form.getQuestions().count
+            }
+            if form.getID() == currentQuestion.getFormID() {
+                surveyCounter += (form.getQuestions().count - currentQuestion.getQuestionID())
+            }
         }
     }
     
     func on(nextQuestion: SurveyQuestion) {
         DispatchQueue.main.async {
-            if self.rateStarsViewController != nil {
+            if self.rateStarsViewController != nil && self.rateStarsViewController?.isSurvey != true {
                 self.delayedSurvayQuestion = nextQuestion
                 return
             }
@@ -60,10 +66,10 @@ extension ChatViewController: SurveyListener {
     }
     
     func onSurveyCancelled() {
-        surveyCounter = -1
-        self.surveyCommentViewController?.close(nil)
-        self.rateStarsViewController?.close(nil)
-        self.surveyRadioButtonViewController?.close(nil)
+        surveyCounter = 0
+        self.surveyCommentViewController?.closeViewController()
+        self.rateStarsViewController?.closeViewController()
+        self.surveyRadioButtonViewController?.closeViewController()
         
         self.rateStarsViewController = nil
         self.surveyRadioButtonViewController = nil
@@ -185,18 +191,15 @@ extension ChatViewController: RateStarsViewControllerDelegate, WMSurveyViewContr
     }
     
     func surveyViewControllerClosed() {
-        self.rateStarsViewController = nil
-        if let delayedQuestion = self.delayedSurvayQuestion {
-            self.on(nextQuestion: delayedQuestion)
-        }
+        WebimServiceController.currentSession.closeSurvey()
     }
 }
 
 // MARK: - WEBIM: CompletionHandlers
-extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCompletionHandler {
+extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCompletionHandler, SendResolutionCompletionHandler {
     
     func onSuccess() {
-        if self.delayedSurvayQuestion == nil || self.surveyCounter == 0 {
+        if self.delayedSurvayQuestion == nil && self.surveyCounter == 0 {
             self.thanksView.showAlert()
             if surveyCounter == 0 {
                 surveyCounter = -1
@@ -224,6 +227,43 @@ extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCom
                 message = "This agent not in the current chat".localized
             case .noteIsTooLong:
                 message = "Note for rate is too long".localized
+            case .rateDisabled:
+                message = "Rate is disabled".localized
+            case .operatorNotInChat:
+                message = "No operator for rate in chat".localized
+            case .rateValueIncorrect:
+                message = "Incorrect rate value".localized
+            case .unknown:
+                message = "Rate operator error".localized
+            }
+            
+            self.alertDialogHandler.showDialog(
+                withMessage: message,
+                title: "Operator rating failed".localized
+            )
+        }
+    }
+    
+    func onFailure(error: SendResolutionError) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.41) {
+            var message = String()
+            switch error {
+            case .noChat:
+                message = "There is no current agent to rate".localized
+            case .rateDisabled:
+                message = "Rate is disabled".localized
+            case .operatorNotInChat:
+                message = "No operator for rate in chat".localized
+            case .resolutionSurveyValueIncorrect:
+                message = "Incorrect resolution survey value".localized
+            case .unknown:
+                message = "Send resolution error".localized
+            case .rateFormMismatch:
+                message = "rateFormMismatch error".localized
+            case .visitorSegmentMismatch:
+                message = "visitorSegmentMismatch error".localized
+            case .ratedEntityMismatch:
+                message = "ratedEntityMismatch error".localized
             }
             
             self.alertDialogHandler.showDialog(

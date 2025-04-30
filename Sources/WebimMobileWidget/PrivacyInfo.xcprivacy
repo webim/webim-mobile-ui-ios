@@ -7,6 +7,7 @@
 	<key>NSPrivacyTracking</key>
 	<false/>
 	<key>NSPrivacyAccessedAPITypes</key>
-	<array/>
+	<array>
+	</array>
 </dict>
 </plist>

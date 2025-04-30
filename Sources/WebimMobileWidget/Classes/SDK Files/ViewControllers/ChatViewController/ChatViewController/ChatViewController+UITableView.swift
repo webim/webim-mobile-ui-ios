@@ -117,7 +117,7 @@ extension ChatViewController: UITableViewDelegate {
             self.showSearchResult = false
         }
         
-        self.reloadTableWithNewData()
+        self.updateThreadListAndReloadTable()
     }
     
     func index(for message: Message) -> IndexPath? {

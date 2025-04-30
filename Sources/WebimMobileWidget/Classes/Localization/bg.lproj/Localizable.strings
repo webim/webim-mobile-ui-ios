@@ -223,7 +223,9 @@
 //WMThanksAlertView.xib
 "Your feedback will help us become better." = "Вашият отзив ще ни помогне да станем по-добри.";
 //WebimService.swift
-"Your visitor account is in the black list." = "Вашият акаунт на посетител е в черния списък.";
+"Your visitor account is in the black list." = "Неуспешна инициализация на сесията.";
+//WebimSerivce.swift
+"Session initialization failed." = "Session initialization failed.";
 //SurveyCommentViewController.xib
 "comment" = "коментар";
 //WMMessageTableCell.swift
@@ -231,6 +233,6 @@
 //ChatViewController+Listener.swift
 "typing" = "пише";
 //LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2022 Webim.ru Inc. All rights reserved." = "© 2022 Webim.ru Inc. Всички права запазени.";
+"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. Всички права запазени.";
 //WMQuoteView.swift
 "You" = "Вие";

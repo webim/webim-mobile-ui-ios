@@ -38,10 +38,13 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     @IBOutlet var quoteImage: UIImageView!
     var url: URL?
     var animatedImage: ImageContainer?
+    var isDownload = false
 
     override func setMessage(message: Message) {
         super.setMessage(message: message)
         self.quoteImage.image = placeholderImage
+        self.animatedImage = nil
+        self.isDownload = false
         self.quoteMessageText.text = "Image".localized
         self.quoteAuthorName.text = message.getQuote()?.getSenderName()
         
@@ -72,13 +75,16 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
         if let image = image {
             self.quoteImage.image = image.image
             self.animatedImage = image
+            self.isDownload = true
         } else {
             self.quoteImage.image = placeholderImage
         }
     }
     
     @objc func imageViewTapped() {
-        self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? (self.quoteImage.image != nil  ? ImageContainer(image: self.quoteImage.image!) : nil), url: self.url)
+        if isDownload {
+            self.delegate?.imageViewTapped(message: self.message, image: self.animatedImage ?? (self.quoteImage.image != nil  ? ImageContainer(image: self.quoteImage.image!) : nil), url: self.url)
+        }
     }
 
     override func initialSetup() -> Bool {
