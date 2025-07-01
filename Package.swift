@@ -14,7 +14,7 @@ let package = Package(
             targets: ["WebimMobileWidget"]),
     ],
     dependencies: [
-        .package(name: "WebimMobileSDK", path: "../webim-client-sdk-ios"),
+        .package(url: "https://github.com/webim/webim-client-sdk-ios.git", exact: "3.42.1"),
         .package(url: "https://github.com/kean/Nuke.git", from: "12.0.0"),
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "25.0.1"),
         .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.7.1"),

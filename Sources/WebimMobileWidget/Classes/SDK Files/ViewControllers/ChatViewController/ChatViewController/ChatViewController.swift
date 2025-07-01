@@ -32,11 +32,11 @@ import WebimKeyboard
 
 class ChatViewController: UIViewController {
 
-
     // MARK: Config
     var chatConfig: WMViewControllerConfig?
     var imageViewControllerConfig: WMViewControllerConfig?
     var fileViewControllerConfig: WMViewControllerConfig?
+    var processingPersonalDataUrl: String?
 
     // MARK: Models
     lazy var navigationBarUpdater = NavigationBarUpdater()
@@ -167,7 +167,7 @@ class ChatViewController: UIViewController {
                 return
             }
         }
-        if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false {
+        if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false && lastController?.isProcessingPersonalData == false {
             WebimServiceController.shared.stopSession()
             dataSource = nil
         }
@@ -419,6 +419,15 @@ class ChatViewController: UIViewController {
         return differenceBetweenDates.day != 0
     }
     
+    func checkAgreement() {
+        if webimServerSideSettingsManager.showProcessingPersonalDataCheckbox() {
+            let vc = ProcessingPersonalData.loadViewControllerFromXib()
+            vc.agreementUrlString = webimServerSideSettingsManager.getProcessingPersonalDataUrl() ?? processingPersonalDataUrl ?? "https://webim.ru/doc/agreement/"
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     // MARK: - Private methods
     private func adjustConfig() {
         adjustChatConfig()
@@ -573,6 +582,7 @@ class ChatViewController: UIViewController {
         WebimServiceController.currentSession.set(currentOperatorChangeListener: self)
         WebimServiceController.currentSession.set(chatStateListener: self)
         WebimServiceController.currentSession.set(surveyListener: self)
+        WebimServiceController.currentSession.set(visitSessionStateListener: self)
         WebimServiceController.currentSession.set(unreadByVisitorMessageCountChangeListener: messageCounter)
         
         WebimServiceController.shared.notFatalErrorHandler = self

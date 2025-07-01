@@ -238,3 +238,11 @@
 "© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. כל הזכויות שמורות.";
 //WMQuoteView.swift
 "You" = "אתה";
+//ProcessingPersonalData.swift
+"Agreement link" = "הסכמה לעיבוד נתונים אישיים";
+//ProcessingPersonalData.swift
+"Agreement Title" = "כדי להתחיל בצ'אט, עליך לקבל את הסכמה לעיבוד נתונים אישיים";
+//ProcessingPersonalData.swift
+"Agreement" = "סימון התיבה означает את/ה מסכים/ה";
+//ProcessingPersonalData.swift
+"Start chat" = "התחל צ'אט";

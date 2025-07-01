@@ -254,6 +254,7 @@ extension ChatViewController: ServerSideSettingsCompletionHandler {
     
     func onSuccess(webimServerSideSettings: WebimServerSideSettings) {
         webimServerSideSettingsManager.onSuccess(webimServerSideSettings: webimServerSideSettings)
+        
         if webimServerSideSettingsManager.isRateOperatorEnabled() && webimServerSideSettingsManager.showRateOperatorButton() {
             let gestureRecognizer = UITapGestureRecognizer(
                 target: self,
@@ -263,6 +264,9 @@ extension ChatViewController: ServerSideSettingsCompletionHandler {
             navigationItem.titleView?.addGestureRecognizer(gestureRecognizer)
             
             navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        if WebimServiceController.currentSession.getVisitSessionState() == .firstQuestion {
+            checkAgreement()
         }
     }
     

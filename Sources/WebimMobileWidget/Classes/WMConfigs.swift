@@ -51,7 +51,7 @@ public class WMChatViewControllerConfig: WMViewControllerConfig {
     var visitorMessageBackgroundColor: UIColor?
     var visitorCellsConfig: WMCellsConfig?
     var operatorCellsConfig: WMCellsConfig?
-    var botButtonsConfig: WMAbstractCellConfig?
+    var botButtonsConfig: WMBotCellConfig?
     var toolbarConfig: WMToolbarConfig?
     var networkErrorViewConfig: WMNetworkErrorViewConfig?
     var popupActionControllerConfig: WMPopupActionControllerConfig?
@@ -132,6 +132,15 @@ public class WMFileCellConfig: WMAbstractCellConfig {
         case upload
         case error
     }
+}
+
+public class WMBotCellConfig: WMAbstractCellConfig {
+    var buttonActiveBackgroundColor: UIColor?
+    var buttonChoosenBackgroundColor: UIColor?
+    var buttonCanceledBackgroundColor: UIColor?
+    var buttonActiveTitleColor: UIColor?
+    var buttonChoosenTitleColor: UIColor?
+    var buttonCanceledTitleColor: UIColor?
 }
 
 public class WMPopupActionControllerConfig {

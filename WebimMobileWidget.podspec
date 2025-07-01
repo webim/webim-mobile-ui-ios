@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WebimMobileWidget'
-  s.version          = '1.4.0'
+  s.version          = '1.4.1'
   s.summary          = 'Webim.ru mobile UI for client SDK iOS.'
 
   s.homepage         = 'https://webim.ru/integration/mobile-sdk/ios-sdk-howto/'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/WebimMobileWidget/Classes/**/*.{swift,strings}'
   s.resources = 'Sources/WebimMobileWidget/Assets/**/*.{xib,strings}',
   'Sources/WebimMobileWidget/Assets/WidgetImages.xcassets'
-  s.dependency 'WebimMobileSDK', '3.43.0'
+  s.dependency 'WebimMobileSDK'
   s.dependency 'WebimKeyboard'
   s.dependency 'Cosmos', '~> 19.0.3'
   s.dependency 'Nuke'

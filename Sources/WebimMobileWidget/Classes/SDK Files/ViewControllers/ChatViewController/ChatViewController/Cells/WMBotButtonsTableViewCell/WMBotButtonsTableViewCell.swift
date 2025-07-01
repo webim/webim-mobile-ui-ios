@@ -72,20 +72,12 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
     ) {
         guard let keyboard = message.getKeyboard() else { return }
         let buttonsArray = keyboard.getButtons()
-        var isActive = false
+        let isActive = keyboard.getState() == .pending
+        let config = self.config as? WMBotCellConfig
         self.time?.isHidden = true
+        self.borderView.backgroundColor = config?.backgroundColor ?? buttonsBorderBackgroundColor
         
-        switch keyboard.getState() {
-        case .pending:
-            isActive = true
-        case .canceled:
-            isActive = false
-        case .completed:
-            isActive = false
-            buttonWasSelected()
-            self.messageView?.alpha = 1
-            return
-        }
+        let selectedButtonID = keyboard.getResponse()?.getButtonID()
         
         for buttonsStack in buttonsArray {
             for button in buttonsStack {
@@ -100,13 +92,21 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
                 guard let titleLabel = uiButton.titleLabel else {
                     continue
                 }
-                if isActive {
+                if buttonID == selectedButtonID {
                     // set default buttons
-                    uiButton.backgroundColor = buttonDefaultBackgroundColour
-                    uiButton.tintColor = buttonDefaultTitleColour
+                    uiButton.backgroundColor = config?.buttonChoosenBackgroundColor ?? buttonChoosenBackgroundColor
+                    uiButton.tintColor = config?.buttonChoosenTitleColor ?? buttonChoosenTitleColor
                 } else {
-                    uiButton.backgroundColor = buttonCanceledBackgroundColour
-                    uiButton.tintColor = buttonCanceledTitleColour
+                    uiButton.backgroundColor = isActive
+                    ? config?.buttonActiveBackgroundColor ?? buttonNotChoosenBackgroundColor
+                    : config?.buttonCanceledBackgroundColor ?? buttonNotChoosenBackgroundColor
+                    uiButton.tintColor = isActive
+                    ? config?.buttonActiveTitleColor ?? buttonActiveTitleColor
+                    : config?.buttonCanceledTitleColor ?? buttonCanceledTitleColor
+                }
+                if let roundCorners = config?.roundCorners,
+                   let radius = config?.cornerRadius {
+                    uiButton.roundCorners(roundCorners, radius: radius)
                 }
                 
                 if let subtitleAttributes = config?.subtitleAttributes {
@@ -126,7 +126,7 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
                     make.width.lessThanOrEqualToSuperview().inset(10)
                 }
                 
-                uiButton.layer.borderWidth = config?.strokeWidth ?? 1
+                uiButton.layer.borderWidth = config?.strokeWidth ?? 0
                 uiButton.layer.borderColor = config?.strokeColor?.cgColor ?? buttonBorderColor.cgColor
                 uiButton.clipsToBounds = true
                 uiButton.translatesAutoresizingMaskIntoConstraints = false
@@ -143,6 +143,7 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
                 buttonsVerticalStack.addArrangedSubview(uiButton)
                 uiButton.snp.remakeConstraints { make in
                     make.trailing.equalToSuperview()
+                    make.leading.equalToSuperview()
                 }
                 buttonsVerticalStack.sizeToFit()
             }

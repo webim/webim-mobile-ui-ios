@@ -29,7 +29,7 @@ import UIKit
 
 // MARK: - Colours
 fileprivate let CLEAR = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-fileprivate let WHITE = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+fileprivate let WHITE = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 fileprivate let BLACK = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 fileprivate let LIGHT_GREY = #colorLiteral(red: 0.8823529412, green: 0.8901960784, blue: 0.9176470588, alpha: 1)
 fileprivate let GREY = #colorLiteral(red: 0.4901960784, green: 0.4980392157, blue: 0.5843137255, alpha: 1)
@@ -83,13 +83,13 @@ let dateLabelColour = GREY
 let timeLabelColour = GREY
 let messageStatusIndicatorColour = WEBIM_DARK_PUPRLE.cgColor
 let documentFileStatusPercentageIndicatorColour = WEBIM_CYAN.cgColor
-let buttonDefaultBackgroundColour = WHITE
-let buttonChoosenBackgroundColour = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
-let buttonCanceledBackgroundColour = WHITE
-let buttonDefaultTitleColour = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
-let buttonChoosenTitleColour = WHITE
-let buttonCanceledTitleColour = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
+let buttonNotChoosenBackgroundColor = WHITE
+let buttonChoosenBackgroundColor = #colorLiteral(red: 0.08396101971, green: 0.6745521426, blue: 0.8230951428, alpha: 1)
+let buttonActiveTitleColor = #colorLiteral(red: 0.08396101971, green: 0.6745521426, blue: 0.8230951428, alpha: 1)
+let buttonChoosenTitleColor = WHITE
+let buttonCanceledTitleColor = #colorLiteral(red: 0.8823529412, green: 0.8901960784, blue: 0.9176470588, alpha: 1)
 let buttonBorderColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
+let buttonsBorderBackgroundColor = #colorLiteral(red: 0.8745098039, green: 0.8862745098, blue: 0.9137254902, alpha: 1)
 
 // RateStarsViewController.swift
 let cosmosViewFilledColour = WEBIM_CYAN

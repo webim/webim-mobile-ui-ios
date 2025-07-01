@@ -44,7 +44,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     var refreshControlTintColor: UIColor?
     var visitorCellsConfig: WMCellsConfig?
     var operatorCellsConfig: WMCellsConfig?
-    var botButtonsConfig: WMAbstractCellConfig?
+    var botButtonsConfig: WMBotCellConfig?
     var toolbarConfig: WMToolbarConfig?
     var networkErrorViewConfig: WMNetworkErrorViewConfig?
     var popupActionControllerConfig: WMPopupActionControllerConfig?
@@ -244,7 +244,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      - copyright:
      2023 Webim
      */
-    public func set(botButtonsConfig: WMAbstractCellConfig) -> Self {
+    public func set(botButtonsConfig: WMBotCellConfig) -> Self {
         self.botButtonsConfig = botButtonsConfig
         return self
     }

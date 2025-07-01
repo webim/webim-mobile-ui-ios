@@ -73,6 +73,10 @@ final class WebimService {
         return webimSession?.getStream().getChatState() ?? .unknown
     }
     
+    func getVisitSessionState() -> VisitSessionState {
+        return webimSession?.getStream().getVisitSessionState() ?? .unknown
+    }
+    
     func createTestUserData() -> String {
         // !!!secretString MUST NOT be used in real application!!!
         let secretString = "64f7099e123231123123123121"
@@ -683,6 +687,13 @@ final class WebimService {
             setMessageStream()
         }
         messageStream?.set(chatStateListener: chatStateListener)
+    }
+    
+    func set(visitSessionStateListener: VisitSessionStateListener) {
+        if messageStream == nil {
+            setMessageStream()
+        }
+        messageStream?.set(visitSessionStateListener: visitSessionStateListener)
     }
     
     func sendKeyboardRequest(

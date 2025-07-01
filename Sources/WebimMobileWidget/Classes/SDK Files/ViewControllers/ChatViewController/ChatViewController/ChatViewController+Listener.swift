@@ -161,7 +161,8 @@ extension ChatViewController: CurrentOperatorChangeListener {
 // MARK: - WEBIM: ChatStateLisneter
 extension ChatViewController: ChatStateListener {
     func changed(state previousState: ChatState, to newState: ChatState) {
-        if (newState == .closedByVisitor || newState == .closedByOperator ) && (WebimServiceController.currentSession.sessionState() == .chatting || WebimServiceController.currentSession.sessionState() == .queue) {
+        let currentSessionState = WebimServiceController.currentSession.sessionState()
+        if (newState == .closedByVisitor || newState == .closedByOperator) && (currentSessionState == .chatting || currentSessionState == .queue || currentSessionState == .chattingWithRobot) {
             
             if let currentId = currentOperatorId(), alreadyRatedOperators[currentId] != true && webimServerSideSettingsManager.isRateOperatorEnabled() {
                 showRateOperatorDialog(operatorId: currentOperatorId())
@@ -169,5 +170,13 @@ extension ChatViewController: ChatStateListener {
         }
         
         updateOperatorInfo(operator: WebimServiceController.currentSession.getCurrentOperator(), state: newState)
+    }
+}
+
+extension ChatViewController: VisitSessionStateListener {
+    func changed(state previousState: VisitSessionState, to newState: VisitSessionState) {
+        if newState == .firstQuestion {
+            checkAgreement()
+        }
     }
 }

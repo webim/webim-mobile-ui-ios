@@ -244,3 +244,11 @@
 "© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift
 "You" = "You";
+//ProcessingPersonalData.swift
+"Agreement link" = "Consent to the processing of personal data";
+//ProcessingPersonalData.swift
+"Agreement Title" = "To start the chat, you need to accept the Consent to the processing of personal data.";
+//ProcessingPersonalData.swift
+"Agreement" = "By checking the box, you accept";
+//ProcessingPersonalData.swift
+"Start chat" = "Start chat";

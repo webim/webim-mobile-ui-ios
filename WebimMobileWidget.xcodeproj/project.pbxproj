@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		119B80592BE19A8F009381B7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 119B80582BE19A8F009381B7 /* PrivacyInfo.xcprivacy */; };
+		90521C9B2DD61CF3009AFD2F /* ProcessingPersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90521C992DD61CF3009AFD2F /* ProcessingPersonalData.swift */; };
+		90521C9E2DD61D0A009AFD2F /* ProcessingPersonalData.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90521C9C2DD61D0A009AFD2F /* ProcessingPersonalData.xib */; };
+		90521CA22DD75744009AFD2F /* ChatViewController+WMKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90521CA12DD75744009AFD2F /* ChatViewController+WMKeyboard.swift */; };
+		90E316442DD778EB00390B96 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E316432DD778EB00390B96 /* CheckboxButton.swift */; };
 		BE435EF1297FD00C00B946A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE435D70297FD00B00B946A9 /* README.md */; };
 		BE435EF2297FD00C00B946A9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = BE435D71297FD00B00B946A9 /* Cartfile */; };
 		BE435EFD297FD00C00B946A9 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE435D8C297FD00B00B946A9 /* Package.swift */; };
@@ -257,6 +261,9 @@
 		115A27EC2D7660540069BC00 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/WMImageViewController.strings; sourceTree = "<group>"; };
 		115A27ED2D7660540069BC00 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		119B80582BE19A8F009381B7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		90521C992DD61CF3009AFD2F /* ProcessingPersonalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingPersonalData.swift; sourceTree = "<group>"; };
+		90521C9C2DD61D0A009AFD2F /* ProcessingPersonalData.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcessingPersonalData.xib; sourceTree = "<group>"; };
+		90521CA12DD75744009AFD2F /* ChatViewController+WMKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+WMKeyboard.swift"; sourceTree = "<group>"; };
 		906C70FE2B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WMLogsViewController.strings; sourceTree = "<group>"; };
 		906C70FF2B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WMFileViewController.strings; sourceTree = "<group>"; };
 		906C71002B09051B008FB611 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SurveyCommentViewController.strings; sourceTree = "<group>"; };
@@ -517,6 +524,7 @@
 		906C720F2B090D48008FB611 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/ChatTitleView.strings; sourceTree = "<group>"; };
 		906C72102B090D48008FB611 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/WMImageViewController.strings; sourceTree = "<group>"; };
 		906C72112B090D48008FB611 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		90E316432DD778EB00390B96 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		BE435D70297FD00B00B946A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE435D71297FD00B00B946A9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		BE435D8C297FD00B00B946A9 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -679,6 +687,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90521C9A2DD61CF3009AFD2F /* ProcessingPersonalData */ = {
+			isa = PBXGroup;
+			children = (
+				90521C992DD61CF3009AFD2F /* ProcessingPersonalData.swift */,
+			);
+			path = ProcessingPersonalData;
+			sourceTree = "<group>";
+		};
+		90521C9D2DD61D0A009AFD2F /* ProcessingPersonalData */ = {
+			isa = PBXGroup;
+			children = (
+				90521C9C2DD61D0A009AFD2F /* ProcessingPersonalData.xib */,
+			);
+			path = ProcessingPersonalData;
+			sourceTree = "<group>";
+		};
 		BEB26A0B29547455003F19C7 = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +841,7 @@
 		CCD848C12A73E45F005CDE5A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				90E316432DD778EB00390B96 /* CheckboxButton.swift */,
 				CCD848C22A73E45F005CDE5A /* UIView.swift */,
 				CCD848C32A73E45F005CDE5A /* UIStackView.swift */,
 				CCD848C42A73E45F005CDE5A /* CollectionUtils.swift */,
@@ -853,6 +878,7 @@
 		CCD848DA2A73E45F005CDE5A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				90521C9A2DD61CF3009AFD2F /* ProcessingPersonalData */,
 				CCD848DB2A73E45F005CDE5A /* WMSaveView */,
 				CCD848DD2A73E45F005CDE5A /* WMLogsViewController */,
 				CCD848DF2A73E45F005CDE5A /* WMFileViewController */,
@@ -913,6 +939,7 @@
 		CCD848E92A73E45F005CDE5A /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				90521CA12DD75744009AFD2F /* ChatViewController+WMKeyboard.swift */,
 				CCD848EA2A73E45F005CDE5A /* ChatViewController.swift */,
 				CCD848EB2A73E45F005CDE5A /* Cells */,
 				CCD8490E2A73E45F005CDE5A /* ChatViewController+Listener.swift */,
@@ -1158,6 +1185,7 @@
 		CCD849322A73E45F005CDE5A /* XibFiles */ = {
 			isa = PBXGroup;
 			children = (
+				90521C9D2DD61D0A009AFD2F /* ProcessingPersonalData */,
 				CCD849332A73E45F005CDE5A /* WMSaveView */,
 				CCD849392A73E45F005CDE5A /* WMLogsViewController */,
 				CCD8493F2A73E45F005CDE5A /* WMFileViewController */,
@@ -1520,6 +1548,7 @@
 				CCD84A962A73E45F005CDE5A /* WMToolbarView.xib in Resources */,
 				CCD84A9B2A73E45F005CDE5A /* WMThanksAlertView.xib in Resources */,
 				CCD84A742A73E45F005CDE5A /* WMNilTableViewCell.xib in Resources */,
+				90521C9E2DD61D0A009AFD2F /* ProcessingPersonalData.xib in Resources */,
 				CCD84AA02A73E45F005CDE5A /* ScrollButtonView.xib in Resources */,
 				CCD84A642A73E45F005CDE5A /* WMSaveView.xib in Resources */,
 				BE435FAC297FD00C00B946A9 /* LICENSE in Resources */,
@@ -1541,11 +1570,13 @@
 			files = (
 				CCD84A352A73E45F005CDE5A /* WMSurveyViewController.swift in Sources */,
 				CCD84A342A73E45F005CDE5A /* TextViewWithPlaceholder.swift in Sources */,
+				90521C9B2DD61CF3009AFD2F /* ProcessingPersonalData.swift in Sources */,
 				CCD84A112A73E45F005CDE5A /* WebimServiceController.swift in Sources */,
 				CCD84A462A73E45F005CDE5A /* WMMessageTableCell.swift in Sources */,
 				CCD84A5D2A73E45F005CDE5A /* WMImageViewController.swift in Sources */,
 				CCD84A3A2A73E45F005CDE5A /* WMImageTableViewCell.swift in Sources */,
 				CCD84A522A73E45F005CDE5A /* ChatViewController+Surveys.swift in Sources */,
+				90521CA22DD75744009AFD2F /* ChatViewController+WMKeyboard.swift in Sources */,
 				CCD84A0D2A73E45F005CDE5A /* MessageCounter.swift in Sources */,
 				CCD84A1F2A73E45F005CDE5A /* NSRange.swift in Sources */,
 				CCD84A242A73E45F005CDE5A /* UITextView.swift in Sources */,
@@ -1615,6 +1646,7 @@
 				CCD84A062A73E45F005CDE5A /* CustomUIImage.swift in Sources */,
 				CCD849FC2A73E45F005CDE5A /* WMFileNavigationBarConfigBuilder.swift in Sources */,
 				CCD84A332A73E45F005CDE5A /* SurveyRadioButtonViewController.swift in Sources */,
+				90E316442DD778EB00390B96 /* CheckboxButton.swift in Sources */,
 				CCD84A082A73E45F005CDE5A /* CircleProgressIndicator.swift in Sources */,
 				CCD84A562A73E45F005CDE5A /* WMNewMessageView.swift in Sources */,
 				CCD84A4C2A73E45F005CDE5A /* WMOperatorQuoteImageCell.swift in Sources */,

@@ -1,4 +1,4 @@
-github "webim/webim-client-sdk-ios" == 3.42.0
+github "webim/webim-client-sdk-ios" == 3.42.1
 github "webim/webim-mobile-keyboard-ios" == 1.0.3
 github "evgenyneu/Cosmos" ~> 25.0
 github "SnapKit/SnapKit" ~> 5.7.1

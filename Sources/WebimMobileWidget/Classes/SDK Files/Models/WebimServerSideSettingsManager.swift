@@ -28,20 +28,20 @@ import Foundation
 import WebimMobileSDK
 
 class WebimServerSideSettingsManager {
-
+    
     private var webimServerSideSettings: WebimServerSideSettings?
-
+    
     func getServerSideSettings(_ completionHandler: ServerSideSettingsCompletionHandler) {
         WebimServiceController.currentSession.getServerSideSettings(completionHandler: completionHandler)
     }
-
+    
     func isGlobalReplyEnabled() -> Bool {
         guard let isGlobalReplyEnabled = webimServerSideSettings?.accountConfig.webAndMobileQuoting else {
             return false
         }
         return isGlobalReplyEnabled
     }
-
+    
     func isMessageEditEnabled() -> Bool {
         guard let isMessageEditEnabled = webimServerSideSettings?.accountConfig.visitorMessageEditing else {
             return false
@@ -75,6 +75,13 @@ class WebimServerSideSettingsManager {
         webimServerSideSettings?.accountConfig.visitorSegment
     }
     
+    func getProcessingPersonalDataUrl() -> String? {
+        webimServerSideSettings?.accountConfig.processingPersonalDataUrl
+    }
+    
+    func showProcessingPersonalDataCheckbox() -> Bool {
+        webimServerSideSettings?.accountConfig.showProcessingPersonalDataCheckbox ?? false
+    }
     
 }
 

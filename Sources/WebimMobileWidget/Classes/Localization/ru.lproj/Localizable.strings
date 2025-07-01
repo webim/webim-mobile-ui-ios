@@ -238,3 +238,11 @@
 "© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift
 "You" = "Вы";
+//ProcessingPersonalData.swift
+"Agreement link" = "Согласие на обработку персональных данных";
+//ProcessingPersonalData.swift
+"Agreement Title" = "Чтобы начать чат, вам нужно принять Согласие на обработку персональных данных";
+//ProcessingPersonalData.swift
+"Agreement" = "Нажимая галочку, вы принимаете";
+//ProcessingPersonalData.swift
+"Start chat" = "Начать чат";

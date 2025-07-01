@@ -512,3 +512,135 @@ public class WMFileCellConfigBuilder: WMAbstractCellConfigBuilder {
         return self
     }
 }
+
+/**
+ Bot cell config.
+ - author:
+ Nikita Kaberov
+ - copyright:
+ 2025 Webim
+ */
+public class WMBotCellConfigBuilder: WMAbstractCellConfigBuilder {
+    var buttonActiveBackgroundColor: UIColor?
+    var buttonChoosenBackgroundColor: UIColor?
+    var buttonCanceledBackgroundColor: UIColor?
+    var buttonActiveTitleColor: UIColor?
+    var buttonChoosenTitleColor: UIColor?
+    var buttonCanceledTitleColor: UIColor?
+    
+    /**
+     Builds new `WMBotCellConfig` object.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public override func build() -> WMBotCellConfig {
+        let cellConfig = WMBotCellConfig(cellConfig: cellConfig)
+        
+        cellConfig.buttonActiveBackgroundColor = buttonActiveBackgroundColor
+        cellConfig.buttonChoosenBackgroundColor = buttonChoosenBackgroundColor
+        cellConfig.buttonCanceledBackgroundColor = buttonCanceledBackgroundColor
+        cellConfig.buttonActiveTitleColor = buttonActiveTitleColor
+        cellConfig.buttonChoosenTitleColor = buttonChoosenTitleColor
+        cellConfig.buttonCanceledTitleColor = buttonCanceledTitleColor
+        
+        return cellConfig
+    }
+    
+    /**
+     Sets background color for active button.
+     - parameter buttonActiveBackgroundColor:
+     Color.
+     - returns:
+     `WMBotCellConfigBuilder` object with background color for active button set.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public func set(buttonActiveBackgroundColor: UIColor) -> Self {
+        self.buttonActiveBackgroundColor = buttonActiveBackgroundColor
+        return self
+    }
+    
+    /**
+     Sets background color for choosen button.
+     - parameter buttonChoosenBackgroundColor:
+     Color.
+     - returns:
+     `WMBotCellConfigBuilder` object with background color for choosen button set.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public func set(buttonChoosenBackgroundColor: UIColor) -> Self {
+        self.buttonChoosenBackgroundColor = buttonChoosenBackgroundColor
+        return self
+    }
+    
+    /**
+     Sets background color for canceled button.
+     - parameter buttonCanceledBackgroundColor:
+     Color.
+     - returns:
+     `WMBotCellConfigBuilder` object with background color for canceled button set.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public func set(buttonCanceledBackgroundColor: UIColor) -> Self {
+        self.buttonCanceledBackgroundColor = buttonCanceledBackgroundColor
+        return self
+    }
+    
+    /**
+     Sets title color for active button.
+     - parameter buttonActiveTitleColor:
+     Color.
+     - returns:
+     `WMBotCellConfigBuilder` object with title color for active button set.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public func set(buttonActiveTitleColor: UIColor) -> Self {
+        self.buttonActiveTitleColor = buttonActiveTitleColor
+        return self
+    }
+    
+    /**
+     Sets title color for choosen button.
+     - parameter buttonChoosenTitleColor:
+     Color.
+     - returns:
+     `WMBotCellConfigBuilder` object with title color for choosen button set.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public func set(buttonChoosenTitleColor: UIColor) -> Self {
+        self.buttonChoosenTitleColor = buttonChoosenTitleColor
+        return self
+    }
+    
+    /**
+     Sets title color for canceled button.
+     - parameter buttonCacneledTitleColor:
+     Color.
+     - returns:
+     `WMBotCellConfigBuilder` object with title color for canceled button set.
+     - author:
+     Nikita Kaberov
+     - copyright:
+     2025 Webim
+     */
+    public func set(buttonCanceledTitleColor: UIColor) -> Self {
+        self.buttonCanceledTitleColor = buttonCanceledTitleColor
+        return self
+    }
+}
