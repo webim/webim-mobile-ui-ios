@@ -301,7 +301,7 @@ final class ExternalWidgetBuilder {
             .font : UIFont.systemFont(ofSize: 13, weight: .regular),
             .foregroundColor : botMessageTextColour
         ]
-        let botButtonCellConfig = WMAbstractCellConfigBuilder()
+        let botButtonCellConfig = WMBotCellConfigBuilder()
             .set(backgroundColor: botMessageBubbleColour)
             .set(roundCorners: [.layerMinXMinYCorner,
                                 .layerMaxXMinYCorner,

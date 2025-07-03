@@ -161,37 +161,14 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
         buttonsVerticalStack.sizeToFit()
     }
     
-    private func buttonWasSelected() {
-        guard let keyboard = message.getKeyboard() else { return }
-        self.emptyTheCell()
-        let buttonsArray = keyboard.getButtons()
-        let response = keyboard.getResponse()
-        for buttonsStack in buttonsArray {
-            for button in buttonsStack {
-                if button.getID() == response?.getButtonID() {
-                    messageTextView.text = button.getText()
-                    let timeString = WMMessageTableCell.timeFormatter.string(from: message.getTime())
-                    self.time?.text = timeString
-                }
-            }
-        }
-        self.sharpCorner(view: messageView, visitor: true)
-        self.messageTextView.sizeToFit()
-        self.messageView?.sizeToFit()
-        self.borderView.sizeToFit()
-        self.messageView?.isHidden = false
-        self.time?.isHidden = false
-        self.buttonView.isHidden = true
-    }
-    
     @objc
     private func sendButton(sender: UIButton) {
         let messageID = message.getID()
         guard let title = sender.titleLabel?.text,
               let id = sender.accessibilityIdentifier
         else { return }
-        sender.backgroundColor = buttonChoosenBackgroundColour
-        sender.tintColor = buttonChoosenTitleColour
+        sender.backgroundColor = buttonChoosenBackgroundColor
+        sender.tintColor = buttonChoosenTitleColor
         print("Buttton \(title) with tag\\ID \(id) of message \(messageID) was tapped!")
         let buttonInfoDictionary = [
             "Message": messageID,
@@ -204,8 +181,6 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
                        animations: { [weak self] in
             self?.messageView?.alpha = 1
             self?.buttonView.alpha = 0
-        }, completion: { (finished: Bool) in
-            self.buttonWasSelected()
-        })
+        }, completion: nil)
     }
 }
