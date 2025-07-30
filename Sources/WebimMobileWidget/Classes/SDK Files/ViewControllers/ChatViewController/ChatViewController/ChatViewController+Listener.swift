@@ -65,7 +65,7 @@ extension ChatViewController: MessageListener {
                 }
                 
                 self.dataSource.apply(snapshot, animatingDifferences: false) {
-                    guard newMessage.isVisitorType() || self.isLastCellVisible() else { return }
+                    guard newMessage.isVisitorType() || newMessage.isBotType() ||  self.isLastCellVisible() else { return }
                     self.scrollToBottom(animated: true)
                 }
                 

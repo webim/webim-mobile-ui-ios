@@ -169,6 +169,7 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
         else { return }
         sender.backgroundColor = buttonChoosenBackgroundColor
         sender.tintColor = buttonChoosenTitleColor
+        sender.alpha = 0.5
         print("Buttton \(title) with tag\\ID \(id) of message \(messageID) was tapped!")
         let buttonInfoDictionary = [
             "Message": messageID,
@@ -176,11 +177,5 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
             "ButtonTitle": title
         ]
         sendKeyboardRequest(keyboardRequest: buttonInfoDictionary)
-        
-        UIView.animate(withDuration: 1,
-                       animations: { [weak self] in
-            self?.messageView?.alpha = 1
-            self?.buttonView.alpha = 0
-        }, completion: nil)
     }
 }
