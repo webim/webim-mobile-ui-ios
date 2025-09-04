@@ -122,7 +122,6 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
                 /// button text insets
                 titleLabel.snp.remakeConstraints { make in
                     make.top.equalToSuperview().inset(10)
-                    make.height.greaterThanOrEqualTo(18)
                     make.width.lessThanOrEqualToSuperview().inset(10)
                 }
                 

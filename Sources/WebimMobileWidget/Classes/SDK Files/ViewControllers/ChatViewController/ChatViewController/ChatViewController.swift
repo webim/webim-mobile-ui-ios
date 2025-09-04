@@ -212,18 +212,22 @@ class ChatViewController: UIViewController {
     }
 
     @objc
-    func requestMessages() {
+    func refreshMessages() {
+        requestMessages()
+    }
+    
+    func requestMessages(_ completionHandler: (() -> Void)? = nil) {
         let chatConfig = chatConfig as? WMChatViewControllerConfig
         WebimServiceController.currentSession.getNextMessages(messagesCount: chatConfig?.requestMessagesCount) { [weak self] messages in
             self?.chatMessagesQueue.async(flags: .barrier) {
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
                 self?.messageCounter.increaseLastReadMessageIndex(with: messages.count)
-                
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.updateThreadListAndReloadTable()
                 self?.chatTableView.refreshControl?.endRefreshing()
+                completionHandler?()
             }
         }
     }
@@ -594,16 +598,19 @@ class ChatViewController: UIViewController {
             self.chatMessagesQueue.async(flags: .barrier) {
                 self.chatMessages.insert(contentsOf: messages, at: 0)
                 DispatchQueue.main.async {
-                    if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
-                        self.requestMessages()
+                    self.becomeFirstResponder()
+                    if messages.count < 50 {
+                        self.requestMessages { [weak self] in
+                            self?.scrollToBottom(animated: true)
+                        }
+                    } else {
+                        self.updateThreadListAndReloadTable { [weak self] in
+                            self?.scrollToBottom(animated: true)
+                        }
                     }
                 }
             }
-            DispatchQueue.main.async {
-                self.becomeFirstResponder()
-                self.updateThreadListAndReloadTable()
-                self.scrollToBottom(animated: true)
-            }
+            
         }
     }
 

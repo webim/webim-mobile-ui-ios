@@ -219,7 +219,7 @@ extension ChatViewController {
         let attributes = [NSAttributedString.Key.foregroundColor: refreshControlTextColour]
         refreshControl.addTarget(
             self,
-            action: #selector(requestMessages),
+            action: #selector(refreshMessages),
             for: .valueChanged
         )
         refreshControl.attributedTitle = NSAttributedString(
