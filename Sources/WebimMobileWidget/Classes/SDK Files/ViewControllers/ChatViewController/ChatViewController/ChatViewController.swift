@@ -74,6 +74,7 @@ class ChatViewController: UIViewController {
     
     // MARK: - Outletls
     @IBOutlet var chatTableView: UITableView!
+    @IBOutlet var chatLoading: UIActivityIndicatorView!
     @IBOutlet var toolbarView: WMToolbarView!
 
     // MARK: - Constants
@@ -132,21 +133,14 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        chatTableView.isHidden = true
+        chatTableView.alpha = 0.0
+        chatLoading.startAnimating()
         updateOperatorInfo(operator: WebimServiceController.currentSession.getCurrentOperator(),
                            state: WebimServiceController.currentSession.sessionState())
         navigationBarUpdater.set(canUpdate: true)
         updateNavigationBar(WidgetAppDelegate.shared.isApplicationConnected)
         showDepartmensIfNeeded()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let chatConfig = chatConfig as? WMChatViewControllerConfig
-        if chatConfig?.openFromNotification == true {
-            scrollToUnreadMessage()
-            chatConfig?.openFromNotification?.toggle()
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -157,6 +151,7 @@ class ChatViewController: UIViewController {
         updateTestModeState()
         WMKeychainWrapper.standard.setDictionary(
             alreadyRatedOperators, forKey: keychainKeyRatedOperators)
+        chatTableView.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -198,17 +193,23 @@ class ChatViewController: UIViewController {
         }
     }
 
-    @objc
-    func scrollToUnreadMessage() {
+    func scrollToUnread(showChat: Bool) {
         let lastReadMessageIndexPath = IndexPath(row: self.messageCounter.lastReadMessageIndex, section: 0)
         let firstUnreadMessageIndexPath = IndexPath(row: self.messageCounter.firstUnreadMessageIndex(), section: 0)
         if self.messageCounter.hasNewMessages() && lastReadMessageIndexPath != self.lastVisibleCellIndexPath() {
             self.chatTableView.scrollToRowSafe(at: firstUnreadMessageIndexPath,
                                                at: .bottom,
-                                               animated: true)
+                                               animated: true) {
+                self.showChat(show: showChat)
+            }
         } else {
-            self.scrollToBottom(animated: true)
+            self.scrollToBottom(animated: true, showChat: showChat)
         }
+    }
+    
+    @objc
+    func scrollToUnreadMessage() {
+        self.scrollToUnread(showChat: false)
     }
 
     @objc
@@ -245,7 +246,7 @@ class ChatViewController: UIViewController {
         self.delayedScrollLink = nil
     }
 
-    func scrollToBottom(animated: Bool) {
+    func scrollToBottom(animated: Bool, showChat: Bool? = nil) {
         guard UIApplication.shared.applicationState == .active else { return }
         guard let lastMessage = messages().last else { return }
         let lastMessageIndexPath = index(for: lastMessage) ?? IndexPath()
@@ -258,7 +259,9 @@ class ChatViewController: UIViewController {
                 at: lastMessageIndexPath,
                 at: .bottom,
                 animated: animated
-            )
+            ) {
+                self.showChat(show: showChat)
+            }
         } else {
             // This implementation required for smooth scrolling experience.
             UIView.animate(
@@ -271,11 +274,32 @@ class ChatViewController: UIViewController {
                         at: .bottom,
                         animated: false
                     )
+                },
+                completion: { _ in
+                    self.showChat(show: showChat)
                 }
             )
         }
-        WebimServiceController.currentSession.setChatRead()
+        DispatchQueue.main.async {
+            WebimServiceController.currentSession.setChatRead()
+        }
         print("scrollToBottom animated \(animated)")
+    }
+    
+    private func showChat(show: Bool? = false) {
+        if show == true {
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 1.0,
+                options: .curveEaseInOut,
+                animations: { [weak self] in
+                    self?.chatTableView.alpha = 1.0
+                    self?.chatTableView.isHidden = false
+                },
+                completion: { _ in
+                    self.chatLoading.stopAnimating()
+                })
+        }
     }
 
     @objc
@@ -445,6 +469,7 @@ class ChatViewController: UIViewController {
     private func adjustChatConfig() {
         if let chatBackgroundColor = chatConfig?.backgroundColor {
             chatTableView.backgroundColor = chatBackgroundColor
+            view.backgroundColor = chatBackgroundColor
         }
 
         let chatConfig = chatConfig as? WMChatViewControllerConfig
@@ -458,6 +483,10 @@ class ChatViewController: UIViewController {
         
         if let refreshControlTintColor = chatConfig?.refreshControlTintColor {
             chatTableView.refreshControl?.tintColor = refreshControlTintColor
+        }
+        
+        if let chatLoadingTintColor = chatConfig?.loadMessagesTintColor {
+            chatLoading.color = chatLoadingTintColor
         }
     }
 
@@ -599,19 +628,30 @@ class ChatViewController: UIViewController {
                 self.chatMessages.insert(contentsOf: messages, at: 0)
                 DispatchQueue.main.async {
                     self.becomeFirstResponder()
-                    if messages.count < 50 {
+                    if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
                         self.requestMessages { [weak self] in
-                            self?.scrollToBottom(animated: true)
+                            self?.scrollAfterLoadingMessages()
                         }
                     } else {
                         self.updateThreadListAndReloadTable { [weak self] in
-                            self?.scrollToBottom(animated: true)
+                            self?.scrollAfterLoadingMessages()
                         }
                     }
                 }
             }
             
         }
+    }
+    
+    private func scrollAfterLoadingMessages() {
+        let chatConfig = chatConfig as? WMChatViewControllerConfig
+        if chatConfig?.openFromNotification == true {
+            scrollToUnread(showChat: true)
+            chatConfig?.openFromNotification?.toggle()
+        } else {
+            scrollToBottom(animated: true, showChat: true)
+        }
+                
     }
 
     private func updateOperatorAvatar(_ avatarURL: URL?) {

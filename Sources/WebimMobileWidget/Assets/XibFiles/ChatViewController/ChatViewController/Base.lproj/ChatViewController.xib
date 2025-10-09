@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="WebimMobileWidget">
             <connections>
+                <outlet property="chatLoading" destination="liB-4e-bju" id="1uj-tw-YfV"/>
                 <outlet property="chatTableView" destination="L9l-B5-lc6" id="4R6-GU-Mz4"/>
                 <outlet property="toolbarView" destination="v6I-BI-kMJ" id="2BV-Jw-ehD"/>
                 <outlet property="view" destination="gLr-BP-doy" id="1N8-3T-osl"/>
@@ -18,26 +18,35 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="gLr-BP-doy">
-            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" keyboardDismissMode="interactive" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-B5-lc6">
-                    <rect key="frame" x="0.0" y="47" width="428" height="845"/>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" keyboardDismissMode="interactive" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-B5-lc6">
+                    <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="5OI-9C-ByV"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="liB-4e-bju">
+                    <rect key="frame" x="195" y="458.66666666666669" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="eSh-BQ-5nz"/>
+                        <constraint firstAttribute="width" constant="40" id="zWL-i5-pfn"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="K4M-0g-Bp0"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="L9l-B5-lc6" firstAttribute="top" secondItem="K4M-0g-Bp0" secondAttribute="top" id="8fh-QN-BhF"/>
+                <constraint firstItem="liB-4e-bju" firstAttribute="centerY" secondItem="L9l-B5-lc6" secondAttribute="centerY" id="BIm-9O-ojY"/>
                 <constraint firstItem="L9l-B5-lc6" firstAttribute="leading" secondItem="K4M-0g-Bp0" secondAttribute="leading" id="YBd-Oe-XcU"/>
+                <constraint firstItem="liB-4e-bju" firstAttribute="centerX" secondItem="L9l-B5-lc6" secondAttribute="centerX" id="Zqg-KG-X4z"/>
                 <constraint firstItem="K4M-0g-Bp0" firstAttribute="trailing" secondItem="L9l-B5-lc6" secondAttribute="trailing" id="asT-2K-mZp"/>
                 <constraint firstItem="K4M-0g-Bp0" firstAttribute="bottom" secondItem="L9l-B5-lc6" secondAttribute="bottom" id="oCv-Oa-hWi"/>
             </constraints>
-            <point key="canvasLocation" x="-600" y="-710.15118790496763"/>
+            <point key="canvasLocation" x="-600" y="-710.72961373390558"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="v6I-BI-kMJ" customClass="WMToolbarView" customModule="WebimMobileWidget">
             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>

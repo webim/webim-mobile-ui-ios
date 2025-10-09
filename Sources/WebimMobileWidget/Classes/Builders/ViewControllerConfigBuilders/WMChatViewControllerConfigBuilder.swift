@@ -53,6 +53,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     var surveyViewConfig: WMSurveyViewConfig?
     var infoCellConfig: WMAbstractCellConfig?
     var emptyChatTitle: String?
+    var loadMessagesTintColor: UIColor?
 
     /**
      - returns:
@@ -81,6 +82,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
         chatConfig.surveyViewConfig = surveyViewConfig
         chatConfig.infoCellConfig = infoCellConfig
         chatConfig.emptyChatTitle = emptyChatTitle
+        chatConfig.loadMessagesTintColor = loadMessagesTintColor
         return chatConfig
     }
     
@@ -114,7 +116,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      - copyright:
      2023 Webim
      */
-    public func set(showScrollButtonView: Bool) -> Self {
+    public func set(showScrollButtonView: Bool?) -> Self {
         self.showScrollButtonView = showScrollButtonView
         return self
     }
@@ -163,7 +165,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      - copyright:
      2023 Webim
      */
-    public func set(requestMessagesCount: Int) -> Self {
+    public func set(requestMessagesCount: Int?) -> Self {
         self.requestMessagesCount = requestMessagesCount
         return self
     }
@@ -179,7 +181,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      - copyright:
      2023 Webim
      */
-    public func set(refreshControlAttributedTitle: NSAttributedString) -> Self {
+    public func set(refreshControlAttributedTitle: NSAttributedString?) -> Self {
         self.refreshControlAttributedTitle = refreshControlAttributedTitle
         return self
     }
@@ -187,7 +189,7 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     /**
      Sets refresh control tint color.
      - parameter refreshControlColor:
-     Title.
+     Color.
      - returns:
      `WMChatViewControllerConfigBuilder` object with refresh control tint color.
      - author:
@@ -379,6 +381,22 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      */
     public func set(emptyChatTitle: String) -> Self {
         self.emptyChatTitle = emptyChatTitle
+        return self
+    }
+    
+    /**
+     Sets load messages activity indicator tint color.
+     - parameter loadMessagesTintColor:
+     Color.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with load messages tint color.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+    */
+    public func set(loadMessagesTintColor: UIColor) -> Self {
+        self.loadMessagesTintColor = loadMessagesTintColor
         return self
     }
 }

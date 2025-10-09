@@ -51,16 +51,27 @@ extension UITableView {
         return nil
     }
     
-    func scrollToRowSafe(at indexPath: IndexPath, at scrollPosition: UITableView.ScrollPosition, animated: Bool) {
-        guard indexPath.count == 2  else {
+    func scrollToRowSafe(at indexPath: IndexPath,
+                         at scrollPosition: UITableView.ScrollPosition,
+                         animated: Bool,
+                         completion: (() -> Void)? = nil) {
+        guard indexPath.count == 2,
+                indexPath.section >= 0,
+                indexPath.section < self.numberOfSections,
+                indexPath.row >= 0,
+                indexPath.row < self.numberOfRows(inSection: indexPath.section) else {
+            completion?()
             return
         }
-        if  indexPath.section >= 0 &&
-            indexPath.row >= 0 &&
-            self.numberOfSections > indexPath.section &&
-            self.numberOfRows(inSection: indexPath.section) > indexPath.row &&
-                self.safeNumberOfRows(inSection: indexPath.section) ?? 0 > indexPath.row {
-            self.scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
+                
+        if animated {
+            CATransaction.begin()
+            CATransaction.setCompletionBlock(completion)
+            self.scrollToRow(at: indexPath, at: scrollPosition, animated: true)
+            CATransaction.commit()
+        } else {
+            self.scrollToRow(at: indexPath, at: scrollPosition, animated: false)
+            completion?()
         }
     }
 }

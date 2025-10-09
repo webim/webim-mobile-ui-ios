@@ -60,6 +60,7 @@ public class WMChatViewControllerConfig: WMViewControllerConfig {
     var surveyViewConfig: WMSurveyViewConfig?
     var infoCellConfig: WMAbstractCellConfig?
     var emptyChatTitle: String?
+    var loadMessagesTintColor: UIColor?
 }
 
 public class WMImageViewControllerConfig: WMViewControllerConfig {
