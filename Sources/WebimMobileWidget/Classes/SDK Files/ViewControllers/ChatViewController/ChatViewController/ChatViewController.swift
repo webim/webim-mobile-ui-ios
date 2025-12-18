@@ -248,7 +248,10 @@ class ChatViewController: UIViewController {
 
     func scrollToBottom(animated: Bool, showChat: Bool? = nil) {
         guard UIApplication.shared.applicationState == .active else { return }
-        guard let lastMessage = messages().last else { return }
+        guard let lastMessage = messages().last else {
+            self.showChat(show: showChat)
+            return
+        }
         let lastMessageIndexPath = index(for: lastMessage) ?? IndexPath()
         let currentContentOffset = chatTableView.contentOffset.y
         let maxContentOffset = chatTableView.contentSize.height - view.bounds.height
