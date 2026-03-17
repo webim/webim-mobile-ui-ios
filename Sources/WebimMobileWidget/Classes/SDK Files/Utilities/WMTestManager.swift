@@ -32,10 +32,12 @@ enum WMTestDialogAction {
     case editMessage
     case deleteMessage
     case replyToMessage
+    case replyToOperatorMessage
     case sendTyping
     case sendRandomImage
     case sendRandomFile
     case reactToMessage
+    case rateOperator
     case noActinon
 }
 
@@ -59,10 +61,12 @@ class WMTestManager: NSObject {
         testDialogActionsArray += Array(repeating: WMTestDialogAction.editMessage, count: 10)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.deleteMessage, count: 5)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.replyToMessage, count: 10)
+        testDialogActionsArray += Array(repeating: WMTestDialogAction.replyToOperatorMessage, count: 2)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.sendTyping, count: 2)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.sendRandomImage, count: 3)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.sendRandomFile, count: 3)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.reactToMessage, count: 2)
+        testDialogActionsArray.append(WMTestDialogAction.rateOperator)
         testDialogActionsArray += Array(repeating: WMTestDialogAction.noActinon, count: 10)
         return testDialogActionsArray
     }
@@ -97,6 +101,14 @@ extension ChatViewController {
                         repliedMessage: message,
                         completion: { }
                     )
+                case .replyToOperatorMessage:
+                    if let message = self.randomOperatorMessage() {
+                        WebimServiceController.currentSession.reply(
+                            message: self.randomMessageText(),
+                            repliedMessage: message,
+                            completion: { }
+                        )
+                    }
                 case .sendTyping:
                     WebimServiceController.currentSession.setVisitorTyping(draft: "setVisitorTyping text")
                 case .sendRandomImage:
@@ -105,6 +117,12 @@ extension ChatViewController {
                     self.sendRandomFile()
                 case .reactToMessage:
                     break
+                case .rateOperator:
+                    if let operatorID = WebimServiceController.currentSession.getCurrentOperator()?.getID() {
+                        WebimServiceController.currentSession.rateOperator(withID: operatorID,
+                                                                           byRating: 5,
+                                                                           completionHandler: self)
+                    }
                 case .noActinon:
                     break
                 default:
@@ -168,6 +186,22 @@ extension ChatViewController {
             WMTestManager.testTimer?.invalidate()
         }
     }
+    
+    func showExtraText(text: String) {
+        let alertController = UIAlertController(
+            title: "Extra Text",
+            message: text,
+            preferredStyle: .alert
+        )
+        
+        let alertAction = UIAlertAction(
+            title: "Ok".localized,
+            style: .cancel)
+        
+        alertController.addAction(alertAction)
+        
+        self.present(alertController, animated: true)
+    }
 
     private func randomMessageText() -> String {
         let date = Date()
@@ -178,5 +212,9 @@ extension ChatViewController {
 
     private func randomMessage() -> Message? {
         return self.messages().randomElement()
+    }
+    
+    private func randomOperatorMessage() -> Message? {
+        return self.messages().filter { $0.isOperatorType() }.randomElement()
     }
 }

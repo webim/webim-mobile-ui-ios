@@ -34,9 +34,12 @@ class WMInfoCell: WMMessageTableCell {
         super.setMessage(message: message)
         let textColor = config?.titleAttributes?[.foregroundColor] as? UIColor ?? infoMessageCellTextColor
         let textFont = config?.titleAttributes?[.font] as? UIFont ?? messageTextView.notNilFont()
-        
+        var text = message.getText()
+        if message.getType() == .contacts {
+            text = "VisitorContacts".localized + mergeContacts(text: message.getText(), visitorFields: visitorFields)
+        }
         let _ = self.messageTextView.setTextWithReferences(
-            message.getText(),
+            text,
             textColor: textColor,
             textFont: textFont,
             alignment: .center,
@@ -77,4 +80,29 @@ class WMInfoCell: WMMessageTableCell {
         let setup = super.initialSetup()
         return setup
     }
+    
+    func mergeContacts(text: String, visitorFields: [String: String?]?) -> String {
+        var mergeContacts = ""
+        if let newData = jsonToDictionary(jsonString: text) {
+            for newKey in newData {
+                let label = (visitorFields?[newKey.key] ?? newKey.key.localized) ?? ""
+                mergeContacts +=  "\n" + label + ": " + newKey.value
+            }
+        }
+        return mergeContacts
+    }
+    
+    func jsonToDictionary(jsonString: String) -> [String: String]? {
+        if let data = jsonString.data(using: .utf8) {
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
+                    return json
+                }
+            } catch {
+            }
+        }
+        return nil
+    }
+
+
 }

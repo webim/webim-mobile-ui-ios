@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Hisob";
+//WebimService.swift
+"AccountBlocked" = "Seans yaratish uchun foydalaniladigan hisob bloklangan. Iltimos, Webim qo‘llab-quvvatlash xizmatiga murojaat qiling yoki boshqasidan foydalaning.";
+//ChatTestView.swift
+"Additional information" = "Qo'shimcha ma'lumot";
+//ChatTestView.swift
+"Agent title" = "Agent nomi";
+//UIAlertHandler.swift
+"Alert account name" = "Webim hisobi nomi yoki toʻliq server manzili (masalan, \"demo\" yoki \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Kamera";
+//FilePicker.swift
+"Camera is not available" = "Kamera mavjud emas";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Bekor qilish";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Chat mavjud emas";
+//UIAlertHandler.swift
+"Chat finished." = "Suhbat tugadi.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Fikr juda uzun";
+//UIAlertHandler.swift
+"Choose department" = "Bo'limni tanlang";
+//StringConstants.swift
+"Copy" = "Nusxalash";
+//StringConstants.swift
+"Delete" = "Oʻchirish";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Xabarni o'chirish noma'lum xato";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Serverda xabarlarni o'chirish o'chirilgan";
+//StringConstants.swift
+"Edit" = "Tahrirlash";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Xabarni tahrirlash noma'lum xato";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Xabarni tahrirlash bo‘sh";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Serverda xabarlarni tahrirlash o'chirilgan";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Fikringizni kiriting";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "So‘rovnoma javobini yuborib bo‘lmadi";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Fayl yuklanmadi: tashrif buyuruvchi tizimga kirmagan";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Koʻproq xabarlar olinmoqda...";
+//FilePicker.swift
+"File" = "Fayl";
+//WMFileTableViewCell.swift
+"File is being sent" = "Fayl yuborilmoqda";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Fayl juda katta";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Fayl juda kichik";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Fayl yuklash soʻrovi bekor qilindi";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Fayl yuborilmadi";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Fayl turi qo'llab-quvvatlanmaydi";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Fayllarni yuborish taqiqlanadi";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Fayl yuborishda noma'lum xato";
+//UIAlertHandler.swift
+"Go to Settings" = "Sozlamalarga o‘ting";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Rasm";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Noto'g'ri radio qiymati";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Noto'g'ri yulduzcha qiymati";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "So‘rovnoma identifikatori noto‘g‘ri";
+//UIAlertHandler.swift
+"InvalidSettings" = "Yaroqsiz hisob sozlamalari";
+//UIAlertHandler.swift
+"LoadError" = "Yuklash xatosi";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Boshqa fayl yuklashga harakat qiling";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Har bir xabar uchun fayllar soni chegaradan oshib ketdi";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Maksimal xabar uzunligi oshib ketdi";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Xabarni oʻchirib boʻlmadi";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Xabarni tahrirlash amalga oshmadi";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Xabar topilmadi";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Xabar tashrifchiga tegishli emas";
+//FilePicker.swift
+"Need camera access" = "Kameraga kirish kerak";
+//FilePicker.swift
+"Need photo access" = "Ilova rasmlar kutubxonangizga kirishi kerak. Iltimos, qurilmangiz sozlamalari > Maxfiylik > Rasmlar-ga o‘ting va ON holatiga o‘rnating";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Agent yo'q";
+//UIAlertHandler.swift
+"No agents available" = "Hech qanday agent mavjud emas";
+//ChatViewController+Surveys.swift
+"No current survey" = "Joriy so'rov yo'q";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Narx uchun eslatma juda uzun";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Ilova sozlamalarini oching";
+//UIAlertHandler.swift
+"Operator Info" = "Agent haqida ma'lumot";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Agentni baholash mumkin emas";
+//AdditionalKeys.swift
+"P.CR" = "Agent kontakt maʼlumotlaringizni soʻradi.";
+//AdditionalKeys.swift
+"P.OA" = "Sizning so'rovingiz bo'yicha agent %@ tayinlangan.";
+//AdditionalKeys.swift
+"P.OF" = "%@ fayl yubordi %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ xabar yozgan: %@";
+//AdditionalKeys.swift
+"P.RO" = "Agentni baholang.";
+//FilePicker.swift
+"Photo Library" = "Foto kutubxonasi";
+//FilePicker.swift
+"Please Allow Access" = "Iltimos, kirishga ruxsat bering";
+//ChatViewController+Surveys.swift
+"Question not found" = "Savol topilmadi";
+//StringConstants.swift
+"Reply" = "Javob bering";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Bu soʻrov uchun javob yaratib boʻlmaydi";
+//UIAlertHandler.swift
+"Save error" = "Saqlash xatosi";
+//UIAlertHandler.swift
+"SaveError" = "Saqlash xatosi";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Qurilmada tasvirlarni saqlashga ruxsat yo'q. Ilova sozlamalarida kirishga ruxsat bering.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Qurilmada fayllarni saqlashga ruxsat yo'q. Ilova sozlamalarida kirishga ruxsat bering.";
+//UIAlertHandler.swift
+"Saved!" = "Saqlandi!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Klaviatura so‘rovini yuborish amalga oshmadi";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Klaviatura soʻrovini yuborish nomaʼlum xato";
+//WMQuoteFileCell.swift
+"Sending" = "Yuborilmoqda";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Fayllarni tanada yuborish qo'llab-quvvatlanmaydi";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Seans yaratilmadi";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Sozlamalar";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Soʻrov oʻchirilgan";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Tasvir rasmlaringizga saqlandi";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Baholash uchun agent yo'q.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Bu agent joriy chatda emas";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Noma'lum xato";
+//WMFileTableViewCell.swift
+"Uploading file" = "Fayl yuklanmoqda";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Chatga suratlarni yuborishingiz uchun Webimga kamerangizga kirish uchun ruxsat kerak.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "So‘rovdagi tugma identifikatori noto‘g‘ri";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "So'rovda noto'g'ri xabar identifikatori";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Xabar turi noto'g'ri (matn emas)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Sizning tashrif buyuruvchi hisobingiz qora ro'yxatda.";
+//WebimSerivce.swift
+"Session initialization failed." = "Seans ishga tushirilmadi.";
+//WMMessageTableCell.swift
+"edited" = "tahrirlangan";
+//WMQuoteView.swift
+"You" = "Siz";
+"name" = "Ism";
+"email" = "E-mail";
+"phone" = "Telefon";
+"first_custom_field" = "Maxsus maydon 1";
+"second_custom_field" = "Maxsus maydon 2";
+"third_custom_field" = "Maxsus maydon 3";
+"VisitorContacts" = "Siz aloqa ma'lumotlaringizni taqdim etdingiz.";
+"Continue" = "Davom etish";
+"Live chat agent" = "Jonli chat vakili";
+"Offline request" = "Oflayn so'rov";
+"First message label" = "Suhbatni boshlash uchun aloqa ma'lumotlaringizni va savolingizni kiriting.";
+"Offline message label" = "Afsuski, hozirda mavjud operatorlar yo'q. Iltimos, keyinroq qayta urinib ko'ring yoki savolingizni qoldiring. Belgilangan manzil bo'yicha Siz bilan bog'lanamiz.";
+"Message" = "Xabar";
+"Attach file" = "Fayl biriktirish";
+"agreement_part1" = "Men";
+"agreement_part2" = "shaxsiy ma'lumotlarni qayta ishlashga";
+"agreement_part3" = "roziman va";
+"agreement_part4" = "Maxfiylik siyosati";
+"Optional" = "(shart emas)";
+"Save" = "Saqlash";
+"Contact information" = "Aloqa ma'lumotlari";

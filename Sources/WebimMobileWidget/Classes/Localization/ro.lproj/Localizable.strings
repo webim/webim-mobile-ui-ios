@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Cont";
+//WebimService.swift
+"AccountBlocked" = "Contul care este folosit pentru a crea sesiunea este blocat. Vă rugăm să contactați asistența Webim sau să utilizați altul.";
+//ChatTestView.swift
+"Additional information" = "Informații suplimentare";
+//ChatTestView.swift
+"Agent title" = "Titlul de agent";
+//UIAlertHandler.swift
+"Alert account name" = "Numele contului Webim sau adresa completă a serverului (de exemplu, \"demo\" sau \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Camera";
+//FilePicker.swift
+"Camera is not available" = "Camera nu este disponibilă";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Anulează";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Chatul nu există";
+//UIAlertHandler.swift
+"Chat finished." = "Chat terminat.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Comentariul este prea lung";
+//UIAlertHandler.swift
+"Choose department" = "Alegeți departamentul";
+//StringConstants.swift
+"Copy" = "Copie";
+//StringConstants.swift
+"Delete" = "Ștergeți";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Ștergeți mesajul de eroare necunoscută";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Ștergerea mesajelor este dezactivată pe server";
+//StringConstants.swift
+"Edit" = "Editați";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Eroare necunoscută de editare a mesajului";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Mesajul de editare este gol";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Editarea mesajelor este dezactivată pe server";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Introduceți comentariul dvs";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Nu s-a trimis răspunsul la sondaj";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Nu s-a putut încărca fișierul: vizitatorul nu este autentificat";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Se preiau mai multe mesaje...";
+//FilePicker.swift
+"File" = "Fişier";
+//WMFileTableViewCell.swift
+"File is being sent" = "Fișierul este trimis";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Fișierul este prea mare";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Fișierul este prea mic";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Solicitarea de încărcare a fișierului a fost anulată";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Trimiterea fișierului a eșuat";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Tipul de fișier nu este acceptat";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Trimiterea fișierelor nu este permisă";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Eroare necunoscută la trimiterea fișierului";
+//UIAlertHandler.swift
+"Go to Settings" = "Accesați Setări";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Imagine";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Valoare radio incorectă";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Valoare incorectă a stelelor";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "ID sondaj incorect";
+//UIAlertHandler.swift
+"InvalidSettings" = "Setări nevalide ale contului";
+//UIAlertHandler.swift
+"LoadError" = "Eroare de încărcare";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Încercați să încărcați un alt fișier";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Numărul de fișiere pentru fiecare mesaj a fost depășit";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Lungimea maximă a mesajului a fost depășită";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Ștergerea mesajului a eșuat";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Editarea mesajului a eșuat";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Mesajul nu a fost găsit";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Mesajul nu este deținut de vizitator";
+//FilePicker.swift
+"Need camera access" = "Aveți nevoie de acces la cameră";
+//FilePicker.swift
+"Need photo access" = "Aplicația necesită acces la biblioteca dvs. de fotografii. Accesați setările dispozitivului dvs. > Confidențialitate > Fotografii și setați pe ON";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Nici un agent";
+//UIAlertHandler.swift
+"No agents available" = "Nu există agenți disponibili";
+//ChatViewController+Surveys.swift
+"No current survey" = "Niciun sondaj curent";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Nota pentru tarif este prea lungă";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Deschideți setările aplicației";
+//UIAlertHandler.swift
+"Operator Info" = "Informații despre agent";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Agentul nu poate fi evaluat";
+//AdditionalKeys.swift
+"P.CR" = "Un agent a solicitat datele dvs. de contact.";
+//AdditionalKeys.swift
+"P.OA" = "Agentul %@ a fost alocat solicitării dvs.";
+//AdditionalKeys.swift
+"P.OF" = "%@ a trimis un fișier: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ a scris un mesaj: %@";
+//AdditionalKeys.swift
+"P.RO" = "Evaluează agentul.";
+//FilePicker.swift
+"Photo Library" = "Biblioteca foto";
+//FilePicker.swift
+"Please Allow Access" = "Vă rugăm să permiteți accesul";
+//ChatViewController+Surveys.swift
+"Question not found" = "Întrebare nu a fost găsită";
+//StringConstants.swift
+"Reply" = "Răspunde";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Răspunsul nu poate fi creat pentru această solicitare";
+//UIAlertHandler.swift
+"Save error" = "Eroare de salvare";
+//UIAlertHandler.swift
+"SaveError" = "Eroare de salvare";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Nu există acces pentru a salva imagini pe dispozitiv. Acordați acces în setările aplicației.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Nu există acces pentru a salva fișiere pe dispozitiv. Acordați acces în setările aplicației.";
+//UIAlertHandler.swift
+"Saved!" = "Salvat!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Trimiterea cererii de la tastatură a eșuat";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Trimiteți cererea de tastatură eroare necunoscută";
+//WMQuoteFileCell.swift
+"Sending" = "Trimiterea";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Trimiterea fișierelor în corp nu este acceptată";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Crearea sesiunii a eșuat";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Setări";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Sondaj dezactivat";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Imaginea a fost salvată în fotografiile dvs";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Nu există niciun agent care să evalueze.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Acest agent nu este în chatul curent";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Eroare necunoscută";
+//WMFileTableViewCell.swift
+"Uploading file" = "Încărcarea fișierului";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Webim are nevoie de permisiunea de a vă accesa camera, astfel încât să puteți trimite fotografii la chat.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "ID-ul butonului greșit în cerere";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "ID mesaj greșit în cerere";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Tip greșit de mesaj (nu text)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Contul dvs. de vizitator este în lista neagră.";
+//WebimSerivce.swift
+"Session initialization failed." = "Inițializarea sesiunii a eșuat.";
+//WMMessageTableCell.swift
+"edited" = "editat";
+//WMQuoteView.swift
+"You" = "Tu";
+"name" = "Nume";
+"email" = "E-mail";
+"phone" = "Telefon";
+"first_custom_field" = "Câmpul personalizat 1";
+"second_custom_field" = "Câmpul personalizat 2";
+"third_custom_field" = "Câmpul personalizat 3";
+"VisitorContacts" = "Ai trimis detaliile tale de contact.";
+"Continue" = "Continuă";
+"Live chat agent" = "Agent chat live";
+"Offline request" = "Cerere offline";
+"First message label" = "Pentru a începe conversația chat scrie numele și adresează întrebarea.";
+"Offline message label" = "Ne pare rău, niciun operator nu este disponibil momentan. Poți pune întrebarea mai jos.";
+"Message" = "Mesaj";
+"Attach file" = "Adaugă un fişier";
+"agreement_part1" = "Consimt la";
+"agreement_part2" = "prelucrarea datelor personale";
+"agreement_part3" = "și am luat la cunoștință";
+"agreement_part4" = "Politica de confidențialitate";
+"Optional" = "(opțional)";
+"Save" = "Salvează";
+"Contact information" = "Date de contact";

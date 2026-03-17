@@ -26,11 +26,13 @@
 
 import UIKit
 import Nuke
+import SVGKit
 import MobileCoreServices
 import WebimMobileSDK
 import WebimKeyboard
 
 class ChatViewController: UIViewController {
+
 
     // MARK: Config
     var chatConfig: WMViewControllerConfig?
@@ -43,7 +45,8 @@ class ChatViewController: UIViewController {
     lazy var webimServerSideSettingsManager = WebimServerSideSettingsManager()
     lazy var messageCounter = MessageCounter(delegate: self)
     lazy var keyboardNotificationManager = WMKeyboardManager()
-    lazy var filePicker = FilePicker(presentationController: self, delegate: self)
+    lazy var filePicker = FilePicker(presentationController: self,
+                                     delegate: self)
     lazy var alertDialogHandler = AlertController(delegate: self)
 
     // MARK: Helper Properties
@@ -59,6 +62,7 @@ class ChatViewController: UIViewController {
     var rateStarsViewController: RateStarsViewController?
     var surveyCommentViewController: SurveyCommentViewController?
     var surveyRadioButtonViewController: SurveyRadioButtonViewController?
+    var contactsViewController: ContactsViewController?
 
     // States
     var surveyCounter = -1
@@ -66,9 +70,12 @@ class ChatViewController: UIViewController {
     var selectedMessage: Message?
     var showSearchResult = false
     var canReloadRows = false
-    var alreadyRatedOperators = [String: Bool]()
     var dataSource: UITableViewDiffableDataSource<Int, String>!
     var delayedScrollLink: String?
+    var showFirstQuestionView = true
+    var showContactsView = true
+    var lastKeyboardHeight = 346.0
+    let scrollButtonPadding: CGFloat = 22
     weak var cellWithSelection: WMMessageTableCell?
     lazy var dateFormatter = ChatViewController.createMessageDateFormatter()
     
@@ -76,9 +83,6 @@ class ChatViewController: UIViewController {
     @IBOutlet var chatTableView: UITableView!
     @IBOutlet var chatLoading: UIActivityIndicatorView!
     @IBOutlet var toolbarView: WMToolbarView!
-
-    // MARK: - Constants
-    lazy var keychainKeyRatedOperators = "alreadyRatedOperators"
 
     // MARK: - Subviews
     // Scroll button
@@ -92,6 +96,7 @@ class ChatViewController: UIViewController {
     lazy var chatTestView = ChatTestView.loadXibView()
     
     let chatMessagesQueue = DispatchQueue(label: "ru.webim.chatMessagesQueue", attributes: .concurrent)
+    let uiUpdateQueue = DispatchQueue(label: "ru.webim.UIUpdate")
     
     // Bottom bar
     override var inputAccessoryView: UIView? {
@@ -109,16 +114,19 @@ class ChatViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLoadingView()
+        let chatConfig = chatConfig as? WMChatViewControllerConfig
+        WebimServiceController.shared.reloadSession(forceOnline: chatConfig?.forceOnline)
+        
         setupNavigationBar()
         configureNetworkErrorView()
         configureThanksView()
         self.setupTableViewDataSource()
         configureToolbarView()
-        setupScrollButton()
-        setupAlreadyRatedOperators()
         setupWebimSession()
         addTapGesture()
-
+        setupScrollButton()
+        setupTableView()
         setupRefreshControl()
         if true {
             setupTestView()
@@ -126,32 +134,25 @@ class ChatViewController: UIViewController {
         subscribeOnKeyboardNotifications()
         configureKeyboardNotificationManager()
         setupServerSideSettingsManager()
-        setupTableView()
         // Config parameters
         adjustConfig()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        chatTableView.isHidden = true
-        chatTableView.alpha = 0.0
-        chatLoading.startAnimating()
         updateOperatorInfo(operator: WebimServiceController.currentSession.getCurrentOperator(),
                            state: WebimServiceController.currentSession.sessionState())
         navigationBarUpdater.set(canUpdate: true)
         updateNavigationBar(WidgetAppDelegate.shared.isApplicationConnected)
         showDepartmensIfNeeded()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         updateNavigationBar(true)
         navigationBarUpdater.set(canUpdate: false)
         WMTestManager.testDialogModeEnabled = false
         updateTestModeState()
-        WMKeychainWrapper.standard.setDictionary(
-            alreadyRatedOperators, forKey: keychainKeyRatedOperators)
-        chatTableView.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -162,7 +163,7 @@ class ChatViewController: UIViewController {
                 return
             }
         }
-        if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false && lastController?.isProcessingPersonalData == false {
+        if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false && lastController?.isFirstQuestionViewController == false {
             WebimServiceController.shared.stopSession()
             dataSource = nil
         }
@@ -173,6 +174,11 @@ class ChatViewController: UIViewController {
         DispatchQueue.main.async {
             self.toolbarView.messageView.recountViewHeight()
         }
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        updateScrollButton()
     }
     
     deinit {
@@ -188,7 +194,7 @@ class ChatViewController: UIViewController {
 
     @objc
     func titleViewTapAction(_ sender: UITapGestureRecognizer) {
-        if titleView.state != .unknown && titleView.state != .operatorIndefined {
+        if titleView.state != .unknown && titleView.state != .operatorIndefined && webimServerSideSettingsManager.getRateOperatorByClickOnAvatar() {
             self.showRateOperatorDialog()
         }
     }
@@ -223,12 +229,11 @@ class ChatViewController: UIViewController {
             self?.chatMessagesQueue.async(flags: .barrier) {
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
                 self?.messageCounter.increaseLastReadMessageIndex(with: messages.count)
+                self?.updateThreadListAndReloadTable(completionHandler)
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self?.updateThreadListAndReloadTable()
                 self?.chatTableView.refreshControl?.endRefreshing()
-                completionHandler?()
             }
         }
     }
@@ -290,18 +295,20 @@ class ChatViewController: UIViewController {
     }
     
     private func showChat(show: Bool? = false) {
-        if show == true {
-            UIView.animate(
-                withDuration: 0.3,
-                delay: 1.0,
-                options: .curveEaseInOut,
-                animations: { [weak self] in
-                    self?.chatTableView.alpha = 1.0
-                    self?.chatTableView.isHidden = false
-                },
-                completion: { _ in
-                    self.chatLoading.stopAnimating()
-                })
+        DispatchQueue.main.async {
+            if show == true {
+                UIView.animate(
+                    withDuration: 0.3,
+                    delay: 1.0,
+                    options: .curveEaseInOut,
+                    animations: { [weak self] in
+                        self?.chatTableView.alpha = 1.0
+                        self?.chatTableView.isHidden = false
+                    },
+                    completion: { _ in
+                        self.chatLoading.stopAnimating()
+                    })
+            }
         }
     }
 
@@ -450,13 +457,15 @@ class ChatViewController: UIViewController {
         return differenceBetweenDates.day != 0
     }
     
-    func checkAgreement() {
-        if webimServerSideSettingsManager.showProcessingPersonalDataCheckbox() {
-            let vc = ProcessingPersonalData.loadViewControllerFromXib()
-            vc.agreementUrlString = webimServerSideSettingsManager.getProcessingPersonalDataUrl() ?? processingPersonalDataUrl ?? "https://webim.ru/doc/agreement/"
-            
-            navigationController?.pushViewController(vc, animated: true)
+    func showFirstQuestion(state: VisitSessionState) {
+        guard let lastController = navigationController?.viewControllers.last, !lastController.isFirstQuestionViewController else {
+            return
         }
+        let vc = FirstQuestionViewController.loadViewControllerFromXib()
+        vc.webimServerSideSettingsManager = webimServerSideSettingsManager
+        vc.delegate = self
+        vc.viewType = state == .offlineMessage ? .offlineMode : .firstQuestion
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Private methods
@@ -480,6 +489,14 @@ class ChatViewController: UIViewController {
         let scrollImage = chatConfig?.scrollButtonImage ?? scrollButtonImage
         scrollButtonView.setScrollButtonBackgroundImage(scrollImage, state: .normal)
 
+        if let showFirstQuestionView = chatConfig?.showFirstQuestionView {
+            self.showFirstQuestionView = showFirstQuestionView
+        }
+        
+        if let showContactsView = chatConfig?.showContactsView {
+            self.showContactsView = showContactsView
+        }
+        
         if let attributedTitle = chatConfig?.refreshControlAttributedTitle {
             chatTableView.refreshControl?.attributedTitle = attributedTitle
         }
@@ -590,6 +607,7 @@ class ChatViewController: UIViewController {
 
     private func editMessage(_ message: String) {
         guard let messageToEdit = selectedMessage else { return }
+        delayedScrollLink = selectedMessage?.getID()
         WebimServiceController.currentSession.edit(
             message: messageToEdit,
             text: message,
@@ -620,6 +638,7 @@ class ChatViewController: UIViewController {
         WebimServiceController.currentSession.set(surveyListener: self)
         WebimServiceController.currentSession.set(visitSessionStateListener: self)
         WebimServiceController.currentSession.set(unreadByVisitorMessageCountChangeListener: messageCounter)
+        WebimServiceController.currentSession.setSessionLanguageListener(with: self)
         
         WebimServiceController.shared.notFatalErrorHandler = self
         WebimServiceController.shared.departmentListHandlerDelegate = self
@@ -641,8 +660,8 @@ class ChatViewController: UIViewController {
                         }
                     }
                 }
+               
             }
-            
         }
     }
     
@@ -654,7 +673,7 @@ class ChatViewController: UIViewController {
         } else {
             scrollToBottom(animated: true, showChat: true)
         }
-                
+            
     }
 
     private func updateOperatorAvatar(_ avatarURL: URL?) {
@@ -697,6 +716,16 @@ class ChatViewController: UIViewController {
             completion: { _ in
                 DispatchQueue.main.async {
                     imageDownloadIndicator.isHidden = true
+                    if let image = ImageCache.shared[ImageCacheKey(request: imageRequest)]?.image {
+                        self.titleViewOperatorAvatarImageView.image = image
+                    } else if let data = ImageCache.shared[ImageCacheKey(request: imageRequest)]?.data {
+                        let targetBounds = CGRect(origin: .zero, size: CGSize(width: 30, height: 30))
+                        if let svgImage = SVGKImage(data: data),
+                            let view = SVGKFastImageView(svgkImage: svgImage ?? SVGKImage()) {
+                            self.titleViewOperatorAvatarImageView.superview?.addSubview(view)
+                            view.center = self.titleViewOperatorAvatarImageView.center
+                        }
+                    }
                 }
             }
         )
@@ -750,6 +779,7 @@ extension ChatViewController: DepartmentListHandlerDelegate {
 extension ChatViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !chatTableView.isHidden else { return }
         updateScrollButtonView()
     }
 
@@ -861,6 +891,7 @@ extension ChatViewController: WMNewMessageViewDelegate {
 
 extension ChatViewController: MessageCounterDelegate {
     func changed(newMessageCount: Int) {
+        guard !chatTableView.isHidden else { return }
         var state: ScrollButtonViewState
         let chatConfig = chatConfig as? WMChatViewControllerConfig
         if newMessageCount > 0 && !isLastCellVisible() && chatConfig?.showScrollButtonCounter != false {

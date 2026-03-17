@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "खाते";
+//WebimService.swift
+"AccountBlocked" = "सत्र तयार करण्यासाठी वापरले जाणारे खाते ब्लॉक केले आहे. कृपया वेबिम सपोर्टशी संपर्क साधा किंवा दुसरे खाते वापरा.";
+//ChatTestView.swift
+"Additional information" = "अतिरिक्त माहिती";
+//ChatTestView.swift
+"Agent title" = "एजंट शीर्षक";
+//UIAlertHandler.swift
+"Alert account name" = "वेबिम खात्याचे नाव किंवा पूर्ण सर्व्हर पत्ता (उदाहरणार्थ, \"डेमो\" किंवा \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "कॅमेरा";
+//FilePicker.swift
+"Camera is not available" = "कॅमेरा उपलब्ध नाही";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "रद्द करा";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "चॅट अस्तित्वात नाही";
+//UIAlertHandler.swift
+"Chat finished." = "चॅट पूर्ण झाले";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "टिप्पणी खूप मोठी आहे";
+//UIAlertHandler.swift
+"Choose department" = "विभाग निवडा";
+//StringConstants.swift
+"Copy" = "कॉपी करा";
+//StringConstants.swift
+"Delete" = "हटवा";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "संदेश हटवा अज्ञात त्रुटी";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "सर्व्हरवर संदेश हटवणे बंद आहे";
+//StringConstants.swift
+"Edit" = "संपादन";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "संदेश संपादन अज्ञात त्रुटी";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "संदेश संपादन रिकामे आहे";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "सर्व्हरवर संदेश संपादन बंद आहे";
+//SurveyCommentViewController.swift
+"Enter your comment" = "तुमची टिप्पणी प्रविष्ट करा";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "सर्वेक्षणाचे उत्तर पाठवता आले नाही";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "फाइल अपलोड करता आले नाही: अभ्यागत लॉग इन केलेला नाही";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "अधिक संदेश मिळवत आहे";
+//FilePicker.swift
+"File" = "फाइल";
+//WMFileTableViewCell.swift
+"File is being sent" = "फाइल पाठवली जात आहे";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "फाइल खूप मोठी आहे";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "फाइल खूप लहान आहे";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "फाइल अपलोड करण्याची विनंती रद्द केली";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "फाइल पाठवता आले नाही";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "फाइल प्रकार समर्थित नाही";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "फायली पाठविण्याची परवानगी नाही";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "फाइल पाठवण्यात अज्ञात त्रुटी";
+//UIAlertHandler.swift
+"Go to Settings" = "सेटिंग्जवर जा";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "प्रतिमा";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "चुकीचे रेडिओ मूल्य";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "चुकीचे तारे मूल्य";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "चुकीचे सर्वेक्षण आयडी";
+//UIAlertHandler.swift
+"InvalidSettings" = "अवैध खाते सेटिंग्ज";
+//UIAlertHandler.swift
+"LoadError" = "लोड त्रुटी";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "दुसरी फाइल अपलोड करण्याचा प्रयत्न करा";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "प्रत्येक संदेशासाठी फायलींची संख्या मर्यादा ओलांडली";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "कमाल संदेश लांबी ओलांडली";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "संदेश हटवणे अयशस्वी झाले";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "संदेश संपादन अयशस्वी झाले";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "संदेश सापडला नाही";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "संदेश अभ्यागताच्या मालकीचा नाही";
+//FilePicker.swift
+"Need camera access" = "कॅमेरा प्रवेश आवश्यक आहे";
+//FilePicker.swift
+"Need photo access" = "अ‍ॅपला तुमच्या फोटो लायब्ररीमध्ये प्रवेश आवश्यक आहे. कृपया तुमच्या डिव्हाइसच्या सेटिंग्ज > गोपनीयता > फोटो वर जा आणि चालू वर सेट करा";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "कोणताही एजंट नाही";
+//UIAlertHandler.swift
+"No agents available" = "कोणताही एजंट उपलब्ध नाही";
+//ChatViewController+Surveys.swift
+"No current survey" = "सध्याचे सर्वेक्षण नाही";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "दरासाठी टीप खूप मोठी आहे";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "अ‍ॅप सेटिंग्ज उघडा";
+//UIAlertHandler.swift
+"Operator Info" = "एजंटबद्दल माहिती";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "एजंटला रेट करता येत नाही";
+//AdditionalKeys.swift
+"P.CR" = "एका एजंटने तुमचा संपर्क डेटा मागितला";
+//AdditionalKeys.swift
+"P.OA" = "तुमच्या विनंतीवर एजंट %@ नियुक्त करण्यात आला होता";
+//AdditionalKeys.swift
+"P.OF" = "%@ ने फाइल पाठवली: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ ने संदेश लिहिला: %@";
+//AdditionalKeys.swift
+"P.RO" = "एजंटला रेट करा";
+//FilePicker.swift
+"Photo Library" = "फोटो लायब्ररी";
+//FilePicker.swift
+"Please Allow Access" = "कृपया प्रवेश द्या";
+//ChatViewController+Surveys.swift
+"Question not found" = "प्रश्न सापडला नाही";
+//StringConstants.swift
+"Reply" = "उत्तर";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "या विनंतीसाठी प्रतिसाद तयार करता येत नाही";
+//UIAlertHandler.swift
+"Save error" = "सेव्ह एरर";
+//UIAlertHandler.swift
+"SaveError" = "सेव्ह एरर";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "डिव्हाइसवर इमेज सेव्ह करण्यासाठी अॅक्सेस नाही. अॅप्लिकेशन सेटिंग्जमध्ये अॅक्सेस द्या.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "डिव्हाइसवर फाइल्स सेव्ह करण्यासाठी अॅक्सेस नाही. अॅप्लिकेशन सेटिंग्जमध्ये अॅक्सेस द्या.";
+//UIAlertHandler.swift
+"Saved!" = "सेव्ह केले!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "कीबोर्ड रिक्वेस्ट पाठवणे अयशस्वी";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "कीबोर्ड रिक्वेस्ट पाठवणे अज्ञात एरर";
+//WMQuoteFileCell.swift
+"Sending" = "पाठवणे";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "बॉडीमध्ये फाइल्स पाठवणे समर्थित नाही";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "सेशन क्रिएशन अयशस्वी";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "सेटिंग्ज";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "सर्व्हे अक्षम केला";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "इमेज तुमच्या फोटोंमध्ये सेव्ह केली गेली आहे";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "रेट करण्यासाठी कोणताही एजंट नाही";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "हा एजंट सध्याच्या चॅटमध्ये नाही";
+//ChatViewController+Surveys.swift
+"Unknown error" = "अज्ञात एरर";
+//WMFileTableViewCell.swift
+"Uploading file" = "फाइल अपलोड करत आहे";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "वेबिमला तुमचा कॅमेरा अॅक्सेस करण्यासाठी परवानगीची आवश्यकता आहे जेणेकरून तुम्ही चॅटमध्ये फोटो पाठवू शकाल";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "रिक्वेस्टमध्ये चुकीचा बटण आयडी";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "रिक्वेस्टमध्ये चुकीचा मेसेज आयडी";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "चुकीचा मेसेज प्रकार (मजकूर नाही)";
+//WebimService.swift
+"Your visitor account is in the black list." = "तुमचे अभ्यागत खाते काळ्या यादीत आहे";
+//WebimSerivce.swift
+"Session initialization failed." = "सेशन इनिशिएलायझेशन अयशस्वी.";
+//WMMessageTableCell.swift
+"edited" = "संपादित";
+//WMQuoteView.swift
+"You" = "तुम्ही";
+"name" = "नाव";
+"email" = "ई-मेल";
+"phone" = "टेलिफोन";
+"first_custom_field" = "कस्टम फील्ड 1";
+"second_custom_field" = "कस्टम फील्ड 2";
+"third_custom_field" = "कस्टम फील्ड 3";
+"VisitorContacts" = "तुम्ही तुमची संपर्क माहिती पुरविली आहे.";
+"Continue" = "सुरू ठेवा";
+"Live chat agent" = "लाइव चॅट एजंट";
+"Offline request" = "ऑफलाइन विनंती";
+"First message label" = "संदेशाला सुरवात करण्यासाठी, कृपया, तुमचा प्रश्न आणि संपर्क माहिती लिहा.";
+"Offline message label" = "दुर्दैवाने, या क्षणी कोणताही ऑपरेटर उपलब्ध नाही. आम्हाला संपर्क करण्याचा पुन्हा प्रयत्न करा किंवा तुमचा प्रश्न सोडा. आम्ही तुम्हाला तुम्ही दिलेल्या ईमेल वर संपर्क करू.";
+"Message" = "संदेश";
+"Attach file" = "फाइल जोडा";
+"agreement_part1" = "मी";
+"agreement_part2" = "वैयक्तिक माहितीच्या प्रक्रियेस";
+"agreement_part3" = "सहमती देतो/देते आणि";
+"agreement_part4" = "गोपनीयता धोरण";
+"Optional" = "(पर्यायी)";
+"Save" = "जतन करा";
+"Contact information" = "संपर्क माहिती";

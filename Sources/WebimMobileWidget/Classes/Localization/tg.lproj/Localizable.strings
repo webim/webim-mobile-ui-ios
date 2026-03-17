@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Ҳисоб";
+//WebimService.swift
+"AccountBlocked" = "Ҳисобе, ки барои эҷоди сессия истифода мешавад, баста шудааст. Лутфан бо дастгирии Webim тамос гиред ё бо ёрии дигар истифода баред.";
+//ChatTestView.swift
+"Additional information" = "Маълумоти иловагӣ";
+//ChatTestView.swift
+"Agent title" = "Унвони агент";
+//UIAlertHandler.swift
+"Alert account name" = "Номи ҳисоби Webim ё суроғаи пурраи сервер (масалан, \"demo\" ё \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Камера";
+//FilePicker.swift
+"Camera is not available" = "Камера дастрас нест";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Бекор кардан";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Чат вуҷуд надорад";
+//UIAlertHandler.swift
+"Chat finished." = "Чат ба охир расид.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Шарҳ хеле дароз аст";
+//UIAlertHandler.swift
+"Choose department" = "Кафедраро интихоб кунед";
+//StringConstants.swift
+"Copy" = "Нусхабардорӣ";
+//StringConstants.swift
+"Delete" = "Нест кардан";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Хатои номаълуми паёмро нест кунед";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Ҳазфи паёмҳо дар сервер хомӯш карда шудааст";
+//StringConstants.swift
+"Edit" = "Таҳрир";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Таҳрири паём хатои номаълум";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Таҳрири паём холӣ аст";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Таҳрири паёмҳо дар сервер хомӯш карда шудааст";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Шарҳи худро нависед";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Фиристодани ҷавоби пурсиш";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Файл бор карда нашуд: меҳмон ворид нашудааст";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Гирифтани паёмҳои бештар...";
+//FilePicker.swift
+"File" = "Файл";
+//WMFileTableViewCell.swift
+"File is being sent" = "Файл фиристода мешавад";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Файл хеле калон аст";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Файл хеле хурд аст";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Дархости боркунии файл бекор карда шуд";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Фиристодани файл ноком шуд";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Навъи файл дастгирӣ намешавад";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Фиристодани файлҳо иҷозат дода намешавад";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Дар ирсоли файл хатои номаълум";
+//UIAlertHandler.swift
+"Go to Settings" = "Ба Танзимотҳо гузаред";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Тасвир";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Арзиши нодурусти радио";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Арзиши нодурусти ситораҳо";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "Номаи пурсиш нодуруст";
+//UIAlertHandler.swift
+"InvalidSettings" = "Танзимоти ҳисоби нодуруст";
+//UIAlertHandler.swift
+"LoadError" = "Хатогии боркунӣ";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Кӯшиш кунед, ки файли дигарро бор кунед";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Шумораи файлҳо барои як маҳдудияти паём аз ҳад зиёд";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Дарозии максималии паём зиёд шуд";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Нобудкунии паём ноком шуд";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Таҳрири паём ноком шуд";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Паём ёфт нашуд";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Паём ба меҳмонон тааллуқ надорад";
+//FilePicker.swift
+"Need camera access" = "Дастрасӣ ба камера лозим аст";
+//FilePicker.swift
+"Need photo access" = "Барнома ба китобхонаи аксҳои шумо дастрасӣ дорад. Лутфан ба танзимоти дастгоҳи худ > Махфият > Суратҳо гузаред ва ДАР БОРАИ таъин кунед";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Агент нест";
+//UIAlertHandler.swift
+"No agents available" = "Ягон агент дастрас нест";
+//ChatViewController+Surveys.swift
+"No current survey" = "Тадқиқоти ҷорӣ вуҷуд надорад";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Эзоҳ барои нарх хеле дароз аст";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Танзимоти барномаро кушоед";
+//UIAlertHandler.swift
+"Operator Info" = "Маълумот дар бораи Агент";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Агентро баҳо додан мумкин нест";
+//AdditionalKeys.swift
+"P.CR" = "Агент маълумоти тамосии шуморо дархост кард.";
+//AdditionalKeys.swift
+"P.OA" = "Агенти %@ ба дархости шумо таъин карда шуд.";
+//AdditionalKeys.swift
+"P.OF" = "%@ файл фиристод: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ паём навишт: %@";
+//AdditionalKeys.swift
+"P.RO" = "Ба агент баҳо диҳед.";
+//FilePicker.swift
+"Photo Library" = "Китобхонаи аксҳо";
+//FilePicker.swift
+"Please Allow Access" = "Лутфан ба дастрасӣ иҷозат диҳед";
+//ChatViewController+Surveys.swift
+"Question not found" = "Савол ёфт нашуд";
+//StringConstants.swift
+"Reply" = "Ҷавоб диҳед";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Ҷавоб ба ин дархост эҷод карда намешавад";
+//UIAlertHandler.swift
+"Save error" = "Хаторо захира кунед";
+//UIAlertHandler.swift
+"SaveError" = "Хаторо захира кунед";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Дастрасӣ барои захира кардани тасвирҳо дар дастгоҳ нест. Дастрасӣ дар танзимоти барнома.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Дастрасӣ барои захира кардани файлҳо дар дастгоҳ нест. Дастрасӣ дар танзимоти барнома.";
+//UIAlertHandler.swift
+"Saved!" = "Захира!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Ирсоли дархости клавиатура ноком шуд";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Ирсоли дархости клавиатура хатои номаълум";
+//WMQuoteFileCell.swift
+"Sending" = "Фиристодан";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Фиристодани файлҳо дар бадан дастгирӣ намешавад";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Эҷоди сессия ноком шуд";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Танзимот";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Тадқиқот ғайрифаъол";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Тасвир дар суратҳои шумо захира карда шуд";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Ягон агенти баҳогузорӣ вуҷуд надорад.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Ин агент дар чати ҷорӣ нест";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Хатогии номаълум";
+//WMFileTableViewCell.swift
+"Uploading file" = "Боркунии файл";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Webim барои дастрасӣ ба камераи шумо иҷозат лозим аст, то шумо метавонед аксҳоро ба сӯҳбат фиристед.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "ID тугмаи нодуруст дар дархост";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "Номаи паёми нодуруст дар дархост";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Навъи нодурусти паём (на матн)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Ҳисоби меҳмонони шумо дар рӯйхати сиёҳ аст.";
+//WebimSerivce.swift
+"Session initialization failed." = "Оғозсозии сессия ноком шуд.";
+//WMMessageTableCell.swift
+"edited" = "тагьир ёфт";
+//WMQuoteView.swift
+"You" = "Шумо";
+"name" = "Ном";
+"email" = "E-mail";
+"phone" = "Телефон";
+"first_custom_field" = "Майдони шахсии 1";
+"second_custom_field" = "Майдони шахсии 2";
+"third_custom_field" = "Майдони шахсии 3";
+"VisitorContacts" = "Шумо маълумоти тамосро нишон додед.";
+"Continue" = "Идома додан";
+"Live chat agent" = "Муовини чати зинда";
+"Offline request" = "Дархости офлайн";
+"First message label" = "Барои оғози муколама, лутфан маълумоти тамос ва саволи худро ворид кунед.";
+"Offline message label" = "Мутаассифона, дар айни замон ягон оператор дастрас нест. Лутфан баъдтар бори дигар кӯшиш кунед ё саволи худро ба мо гузоред. Мо бо Шумо бо суроғаи зикршуда тамос хоҳем гирифт.";
+"Message" = "Паём";
+"Attach file" = "Файлро замима кардан";
+"agreement_part1" = "Ман ба";
+"agreement_part2" = "коркарди маълумоти шахсӣ";
+"agreement_part3" = "розӣ ҳастам ва бо";
+"agreement_part4" = "Сиёсати Махфият";
+"Optional" = "(ҳатмӣ нест)";
+"Save" = "Захира кардан";
+"Contact information" = "Маълумоти тамос";

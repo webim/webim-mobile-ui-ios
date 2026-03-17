@@ -111,6 +111,10 @@ extension ChatViewController: WMDialogCellDelegate {
         chatTableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
+    func showExtraTextAction(message: Message) {
+        showExtraText(text: message.getData()?.getAttachment()?.getExtraText() ?? "")
+    }
+    
     private func findMessage(withID id: String) -> Message? {
         for message in chatMessages {
             if message.getID() == id {
@@ -138,24 +142,35 @@ extension ChatViewController: WMDialogCellDelegate {
 
 extension ChatViewController {
 
-    func updateThreadListAndReloadTable(animatingDifferences: Bool = false, _ completionHandler: (() -> Void)? = nil) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
-        if snapshot.numberOfSections == 0 {
-            snapshot.appendSections([0])
-        }
-        
-        let messagesIdentifiers = messages().map{ $0.getID() }
-        var uniqueIdentifiers: [String] = []
-        for id in messagesIdentifiers {
-            if !uniqueIdentifiers.contains(id) {
-                uniqueIdentifiers.append(id)
+    func updateThreadListAndReloadTable(animatingDifferences: Bool = false,
+                                        _ completionHandler: (() -> Void)? = nil) {
+        self.performUIUpdate {
+            var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
+            if snapshot.numberOfSections == 0 {
+                snapshot.appendSections([0])
             }
+            
+            let messagesIdentifiers = self.messages().map{ $0.getID() }
+            var uniqueIdentifiers: [String] = []
+            for id in messagesIdentifiers {
+                if !uniqueIdentifiers.contains(id) {
+                    uniqueIdentifiers.append(id)
+                }
+            }
+            guard !uniqueIdentifiers.isEmpty else {
+                completionHandler?()
+                return
+            }
+            
+            snapshot.appendItems(uniqueIdentifiers, toSection: 0)
+            
+            guard self.checkNeedUIUpdate() else {
+                return
+            }
+            
+            self.dataSource.apply(snapshot,
+                                  animatingDifferences: animatingDifferences,
+                                  completion: completionHandler)
         }
-        guard !uniqueIdentifiers.isEmpty else {
-            return
-        }
-    
-        snapshot.appendItems(uniqueIdentifiers, toSection: 0)
-        dataSource.apply(snapshot, animatingDifferences: animatingDifferences, completion: completionHandler)
     }
 }

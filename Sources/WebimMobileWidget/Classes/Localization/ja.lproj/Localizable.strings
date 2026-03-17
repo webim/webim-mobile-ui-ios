@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "アカウント";
+//WebimService.swift
+"AccountBlocked" = "セッションの作成に使用したアカウントがブロックされています。Webimサポートにお問い合わせいただくか、別のアカウントをご利用ください。";
+//ChatTestView.swift
+"Additional information" = "追加情報";
+//ChatTestView.swift
+"Agent title" = "エージェントの役職";
+//UIAlertHandler.swift
+"Alert account name" = "Webimアカウント名または完全なサーバーアドレス（例：\"demo\" または \"https://demo.webim.ru\"）";
+//FilePicker.swift
+"Camera" = "カメラ";
+//FilePicker.swift
+"Camera is not available" = "カメラが利用できません";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "キャンセル";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "チャットが存在しません";
+//UIAlertHandler.swift
+"Chat finished." = "チャットが終了しました。";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "コメントが長すぎます";
+//UIAlertHandler.swift
+"Choose department" = "部門を選択";
+//StringConstants.swift
+"Copy" = "コピー";
+//StringConstants.swift
+"Delete" = "削除";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "不明なメッセージ削除エラー";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "サーバーでメッセージの削除が無効になっています";
+//StringConstants.swift
+"Edit" = "編集";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "不明なメッセージ編集エラー";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "メッセージが空です";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "サーバーでメッセージの編集が無効になっています";
+//SurveyCommentViewController.swift
+"Enter your comment" = "コメントを入力してください";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "アンケートの回答を送信できませんでした";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "ファイルのアップロードに失敗しました: 訪問者がログインしていません";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "さらにメッセージを取得しています...";
+//FilePicker.swift
+"File" = "ファイル";
+//WMFileTableViewCell.swift
+"File is being sent" = "ファイルを送信中です";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "ファイルが大きすぎます";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "ファイルが小さすぎます";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "ファイルのアップロード要求がキャンセルされました";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "ファイルの送信に失敗しました";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "ファイル形式がサポートされていません";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "ファイルの送信は許可されていません";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "ファイル送信中に不明なエラーが発生しました";
+//UIAlertHandler.swift
+"Go to Settings" = "設定に移動";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "画像";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "ラジオボタンの値が正しくありません";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "星の数が正しくありません";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "アンケートIDが正しくありません";
+//UIAlertHandler.swift
+"InvalidSettings" = "アカウント設定が無効です";
+//UIAlertHandler.swift
+"LoadError" = "読み込みエラー";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "別のファイルをアップロードしてみてください";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "メッセージあたりのファイル数が制限を超えました";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "メッセージの最大長を超えました";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "メッセージの削除に失敗しました";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "メッセージの編集に失敗しました";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "メッセージが見つかりません";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "訪問者がメッセージを所有していません";
+//FilePicker.swift
+"Need camera access" = "カメラへのアクセスが必要です";
+//FilePicker.swift
+"Need photo access" = "アプリはフォトライブラリへのアクセスが必要です。デバイスの設定 > プライバシー > 写真 にアクセスし、オンに設定してください";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "エージェントがいません";
+//UIAlertHandler.swift
+"No agents available" = "利用可能なエージェントがいません";
+//ChatViewController+Surveys.swift
+"No current survey" = "現在アンケートがありません";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "評価のメモが長すぎます";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "アプリの設定を開きます";
+//UIAlertHandler.swift
+"Operator Info" = "エージェントに関する情報";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "エージェントを評価できません";
+//AdditionalKeys.swift
+"P.CR" = "エージェントがあなたの連絡先データを要求しました。";
+//AdditionalKeys.swift
+"P.OA" = "エージェント %@ があなたのリクエストに割り当てられました。";
+//AdditionalKeys.swift
+"P.OF" = "%@ がファイルを送信しました: %@";
+//AdditionalKeys.swift
+"P.OM" = "%@ がメッセージを書きました: %@";
+//AdditionalKeys.swift
+"P.RO" = "エージェントを評価してください";
+//FilePicker.swift
+"Photo Library" = "フォトライブラリ";
+//FilePicker.swift
+"Please Allow Access" = "アクセスを許可してください";
+//ChatViewController+Surveys.swift
+"Question not found" = "質問が見つかりません";
+//StringConstants.swift
+"Reply" = "返信";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "このリクエストに対する回答を作成できません";
+//UIAlertHandler.swift
+"Save error" = "保存エラー";
+//UIAlertHandler.swift
+"SaveError" = "保存エラー";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "デバイスに画像を保存する権限がありません。アプリケーション設定でアクセスを許可してください。";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "デバイスにファイルを保存する権限がありません。アプリケーション設定でアクセスを許可してください。";
+//UIAlertHandler.swift
+"Saved!" = "保存済み!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "キーボード送信リクエストに失敗しました";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "キーボード送信リクエストで不明なエラーが発生しました";
+//WMQuoteFileCell.swift
+"Sending" = "送信中";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "本文でのファイル送信はサポートされていません";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "セッションの作成に失敗しました";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "設定";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "アンケートが無効です";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "画像が写真に保存されました";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "評価するエージェントがいません";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "このエージェントは現在チャットに参加していません";
+//ChatViewController+Surveys.swift
+"Unknown error" = "不明なエラー";
+//WMFileTableViewCell.swift
+"Uploading file" = "ファイルをアップロードしています";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "写真をチャットに送信するには、Webim にカメラへのアクセスを許可する必要があります";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "リクエスト内のボタン ID が間違っています";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "リクエスト内のメッセージ ID が間違っています";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "メッセージの種類が間違っています (テキストではありません)";
+//WebimService.swift
+"Your visitor account is in the black list." = "訪問者アカウントがブラックリストに登録されています";
+//WebimSerivce.swift
+"Session initialization failed." = "セッションの初期化に失敗しました";
+//WMMessageTableCell.swift
+"edited" = "編集済み";
+//WMQuoteView.swift
+"You" = "あなた";
+"name" = "名前";
+"email" = "電子メール";
+"phone" = "電話番号";
+"first_custom_field" = "カスタムフィールド1";
+"second_custom_field" = "カスタムフィールド2";
+"third_custom_field" = "カスタムフィールド3";
+"VisitorContacts" = "連絡先情報を提供しました。";
+"Continue" = "続ける";
+"Live chat agent" = "ライブチャット担当者";
+"Offline request" = "オフラインリクエスト";
+"First message label" = "ダイアログを開始するには、連絡先情報と質問を入力してください。";
+"Offline message label" = "残念ながら、現在、利用可能なオペレーターはいません。後でもう一度試すか、質問を残してください。指定のアドレスにご連絡いたします。";
+"Message" = "メッセージ";
+"Attach file" = "ファイルを添付します";
+"agreement_part1" = "私は";
+"agreement_part2" = "個人データの処理";
+"agreement_part3" = "に同意し、";
+"agreement_part4" = "プライバシーポリシー";
+"Optional" = "(必要はありません)";
+"Save" = "保存";
+"Contact information" = "連絡先情報";

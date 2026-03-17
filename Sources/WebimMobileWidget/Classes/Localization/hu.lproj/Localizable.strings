@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Számla";
+//WebimService.swift
+"AccountBlocked" = "A munkamenet létrehozásához használt fiók blokkolva van. Kérjük, lépjen kapcsolatba a Webim ügyfélszolgálatával, vagy használjon másikat.";
+//ChatTestView.swift
+"Additional information" = "További információk";
+//ChatTestView.swift
+"Agent title" = "Ügynöki beosztás";
+//UIAlertHandler.swift
+"Alert account name" = "Webim-fiók neve vagy teljes szervercíme (például \"demo\" vagy \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Kamera";
+//FilePicker.swift
+"Camera is not available" = "A fényképezőgép nem elérhető";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Mégse";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "A chat nem létezik";
+//UIAlertHandler.swift
+"Chat finished." = "A csevegés befejeződött.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "A megjegyzés túl hosszú";
+//UIAlertHandler.swift
+"Choose department" = "Válassza ki az osztályt";
+//StringConstants.swift
+"Copy" = "Másolás";
+//StringConstants.swift
+"Delete" = "Törlés";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Ismeretlen hibaüzenet törlése";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Az üzenetek törlése ki van kapcsolva a szerveren";
+//StringConstants.swift
+"Edit" = "Szerkesztés";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Üzenet szerkesztése ismeretlen hiba";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "A szerkesztési üzenet üres";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Az üzenetek szerkesztése ki van kapcsolva a szerveren";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Írja be megjegyzését";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Nem sikerült elküldeni a felmérésre adott választ";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Nem sikerült feltölteni a fájlt: a látogató nincs bejelentkezve";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "További üzenetek lekérése...";
+//FilePicker.swift
+"File" = "Fájl";
+//WMFileTableViewCell.swift
+"File is being sent" = "A fájl küldése folyamatban van";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "A fájl túl nagy";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "A fájl túl kicsi";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Fájlfeltöltési kérés törölve";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "A fájlküldés sikertelen";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "A fájltípus nem támogatott";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Fájlok küldése nem engedélyezett";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Ismeretlen hiba a fájl küldésekor";
+//UIAlertHandler.swift
+"Go to Settings" = "Lépjen a Beállítások menübe";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Kép";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Hibás rádióérték";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Helytelen csillagérték";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "Helytelen felmérési azonosító";
+//UIAlertHandler.swift
+"InvalidSettings" = "Érvénytelen fiókbeállítások";
+//UIAlertHandler.swift
+"LoadError" = "Betöltési hiba";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Próbáljon meg másik fájlt feltölteni";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Az üzenetenkénti fájlok száma túllépve";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Az üzenet maximális hossza túllépve";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Az üzenet törlése nem sikerült";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Az üzenet szerkesztése nem sikerült";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Az üzenet nem található";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Az üzenet nem a látogató tulajdona";
+//FilePicker.swift
+"Need camera access" = "Kamera-hozzáférés szükséges";
+//FilePicker.swift
+"Need photo access" = "Az alkalmazásnak hozzá kell férnie a fotókönyvtárához. Nyissa meg az eszköz beállításai > Adatvédelem > Fényképek menüpontját, és állítsa BE állásba";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Nincs ügynök";
+//UIAlertHandler.swift
+"No agents available" = "Nem állnak rendelkezésre ügynökök";
+//ChatViewController+Surveys.swift
+"No current survey" = "Jelenleg nincs felmérés";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Az árfolyamra vonatkozó megjegyzés túl hosszú";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Nyissa meg az alkalmazás beállításait";
+//UIAlertHandler.swift
+"Operator Info" = "Információ az ügynökről";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Az ügynök nem minősíthető";
+//AdditionalKeys.swift
+"P.CR" = "Egy ügynök elkérte az Ön elérhetőségi adatait.";
+//AdditionalKeys.swift
+"P.OA" = "%@ ügynök hozzá lett rendelve a kéréséhez.";
+//AdditionalKeys.swift
+"P.OF" = "%@ fájlt küldött: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ írt egy üzenetet: %@";
+//AdditionalKeys.swift
+"P.RO" = "Értékelje az ügynököt.";
+//FilePicker.swift
+"Photo Library" = "Fényképtár";
+//FilePicker.swift
+"Please Allow Access" = "Engedélyezze a hozzáférést";
+//ChatViewController+Surveys.swift
+"Question not found" = "A kérdés nem található";
+//StringConstants.swift
+"Reply" = "Válasz";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Erre a kérésre nem lehet választ adni";
+//UIAlertHandler.swift
+"Save error" = "Hiba mentése";
+//UIAlertHandler.swift
+"SaveError" = "Hiba mentése";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Nincs hozzáférés a képek mentéséhez az eszközön. Adjon hozzáférést az alkalmazás beállításaiban.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Nincs hozzáférés a fájlok mentéséhez az eszközön. Adjon hozzáférést az alkalmazás beállításaiban.";
+//UIAlertHandler.swift
+"Saved!" = "Mentve!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Nem sikerült elküldeni a billentyűzetkérést";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Billentyűzetkérés küldése ismeretlen hiba";
+//WMQuoteFileCell.swift
+"Sending" = "Küldés";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "A fájlok törzsben történő küldése nem támogatott";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "A munkamenet létrehozása nem sikerült";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Beállítások";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Felmérés letiltva";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "A képet elmentette a fotói közé";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Nincs értékelhető ügynök.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Ez az ügynök nincs az aktuális csevegésben";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Ismeretlen hiba";
+//WMFileTableViewCell.swift
+"Uploading file" = "Fájl feltöltése";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "A Webim engedélyre van szüksége a kamerához való hozzáféréshez, hogy fényképeket küldhessen csevegésre.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "Hibás gombazonosító a kérésben";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "Hibás üzenetazonosító a kérésben";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Rossz típusú üzenet (nem szöveg))";
+//WebimService.swift
+"Your visitor account is in the black list." = "Látogatói fiókja szerepel a feketelistán.";
+//WebimSerivce.swift
+"Session initialization failed." = "A munkamenet inicializálása nem sikerült.";
+//WMMessageTableCell.swift
+"edited" = "szerkesztve";
+//WMQuoteView.swift
+"You" = "Te";
+"name" = "A neved";
+"email" = "E-mail";
+"phone" = "Telefonszám";
+"first_custom_field" = "1. egyéni mező";
+"second_custom_field" = "2. egyéni mező";
+"third_custom_field" = "3. egyéni mező";
+"VisitorContacts" = "Elküldted az elérhetőségedet.";
+"Continue" = "Folytatás";
+"Live chat agent" = "Élő chat ügynök";
+"Offline request" = "Offline kérés";
+"First message label" = "A csevegés elkezdéséhez kérjük, add meg a neved és a kérdésedet.";
+"Offline message label" = "Sajnáljuk, jelenleg egyik operátor sem érhető el.  A kérdésedet megadhatod alább.";
+"Message" = "Üzenet";
+"Attach file" = "Fájl hozzáadása";
+"agreement_part1" = "Hozzájárulok a";
+"agreement_part2" = "személyes adatok feldolgozásához";
+"agreement_part3" = "és megismerkedtem az";
+"agreement_part4" = "Adatvédelmi Szabályzattal";
+"Optional" = "(opcionális)";
+"Save" = "Mentés";
+"Contact information" = "Elérhetőség";

@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Λογαριασμός";
+//WebimService.swift
+"AccountBlocked" = "Ο λογαριασμός που χρησιμοποιείται για τη δημιουργία συνεδρίας είναι αποκλεισμένος. Επικοινωνήστε με την υποστήριξη του Webim ή χρησιμοποιήστε άλλη.";
+//ChatTestView.swift
+"Additional information" = "Πρόσθετες πληροφορίες";
+//ChatTestView.swift
+"Agent title" = "Τίτλος πράκτορα";
+//UIAlertHandler.swift
+"Alert account name" = "Όνομα λογαριασμού Webim ή πλήρης διεύθυνση διακομιστή (για παράδειγμα, \"demo\" ή \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Κάμερα";
+//FilePicker.swift
+"Camera is not available" = "Η κάμερα δεν είναι διαθέσιμη";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Ακύρωση";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Η συνομιλία δεν υπάρχει";
+//UIAlertHandler.swift
+"Chat finished." = "Η συνομιλία ολοκληρώθηκε.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Το σχόλιο είναι πολύ μεγάλο";
+//UIAlertHandler.swift
+"Choose department" = "Επιλέξτε τμήμα";
+//StringConstants.swift
+"Copy" = "Αντιγραφή";
+//StringConstants.swift
+"Delete" = "Διαγραφή";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Διαγραφή άγνωστου σφάλματος μηνύματος";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Η διαγραφή μηνυμάτων είναι απενεργοποιημένη στον διακομιστή";
+//StringConstants.swift
+"Edit" = "Επεξεργασία";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Επεξεργασία μηνύματος άγνωστου σφάλματος";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Η επεξεργασία του μηνύματος είναι κενή";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Η επεξεργασία μηνυμάτων είναι απενεργοποιημένη στον διακομιστή";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Πληκτρολογήστε το σχόλιό σας";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Απέτυχε η αποστολή της απάντησης στην έρευνα";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Απέτυχε η μεταφόρτωση του αρχείου: ο επισκέπτης δεν είναι συνδεδεμένος";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Λήψη περισσότερων μηνυμάτων...";
+//FilePicker.swift
+"File" = "Αρχείο";
+//WMFileTableViewCell.swift
+"File is being sent" = "Το αρχείο αποστέλλεται";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Το αρχείο είναι πολύ μεγάλο";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Το αρχείο είναι πολύ μικρό";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Το αίτημα μεταφόρτωσης αρχείου ακυρώθηκε";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Η αποστολή του αρχείου απέτυχε";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Ο τύπος αρχείου δεν υποστηρίζεται";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Δεν επιτρέπεται η αποστολή αρχείων";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Το αρχείο στέλνει άγνωστο σφάλμα";
+//UIAlertHandler.swift
+"Go to Settings" = "Μεταβείτε στις Ρυθμίσεις";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Εικόνα";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Λανθασμένη τιμή ραδιοφώνου";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Λανθασμένη τιμή αστεριών";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "Λανθασμένο αναγνωριστικό έρευνας";
+//UIAlertHandler.swift
+"InvalidSettings" = "Μη έγκυρες ρυθμίσεις λογαριασμού";
+//UIAlertHandler.swift
+"LoadError" = "Σφάλμα φόρτωσης";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Δοκιμάστε να ανεβάσετε άλλο αρχείο";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Υπέρβαση του ορίου αριθμού αρχείων ανά μήνυμα";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Υπέρβαση του μέγιστου μήκους μηνύματος";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Η διαγραφή του μηνύματος απέτυχε";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Η επεξεργασία του μηνύματος απέτυχε";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Το μήνυμα δεν βρέθηκε";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Το μήνυμα δεν ανήκει στον επισκέπτη";
+//FilePicker.swift
+"Need camera access" = "Χρειάζεστε πρόσβαση στην κάμερα";
+//FilePicker.swift
+"Need photo access" = "Η εφαρμογή χρειάζεται πρόσβαση στη βιβλιοθήκη φωτογραφιών σας. Μεταβείτε στις ρυθμίσεις της συσκευής σας > Απόρρητο > Φωτογραφίες και ορίστε το σε ON";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Κανένας πράκτορας";
+//UIAlertHandler.swift
+"No agents available" = "Δεν υπάρχουν διαθέσιμοι πράκτορες";
+//ChatViewController+Surveys.swift
+"No current survey" = "Δεν υπάρχει τρέχουσα έρευνα";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Η σημείωση για το ποσοστό είναι πολύ μεγάλη";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Ανοίξτε τις ρυθμίσεις της εφαρμογής";
+//UIAlertHandler.swift
+"Operator Info" = "Πληροφορίες για τον Πράκτορα";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Ο πράκτορας δεν μπορεί να αξιολογηθεί";
+//AdditionalKeys.swift
+"P.CR" = "Ένας πράκτορας ζήτησε τα στοιχεία επικοινωνίας σας.";
+//AdditionalKeys.swift
+"P.OA" = "Ο πράκτορας %@ ανατέθηκε στο αίτημά σας.";
+//AdditionalKeys.swift
+"P.OF" = "%@ έστειλε ένα αρχείο: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ έγραψε ένα μήνυμα: %@";
+//AdditionalKeys.swift
+"P.RO" = "Βαθμολογήστε τον πράκτορα.";
+//FilePicker.swift
+"Photo Library" = "Βιβλιοθήκη φωτογραφιών";
+//FilePicker.swift
+"Please Allow Access" = "Επιτρέψτε την πρόσβαση";
+//ChatViewController+Surveys.swift
+"Question not found" = "Η ερώτηση δεν βρέθηκε";
+//StringConstants.swift
+"Reply" = "Απάντηση";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Δεν είναι δυνατή η δημιουργία απάντησης για αυτό το αίτημα";
+//UIAlertHandler.swift
+"Save error" = "Σφάλμα αποθήκευσης";
+//UIAlertHandler.swift
+"SaveError" = "Σφάλμα αποθήκευσης";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Δεν υπάρχει πρόσβαση για αποθήκευση εικόνων στη συσκευή. Παραχωρήστε πρόσβαση στις ρυθμίσεις της εφαρμογής.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Δεν υπάρχει πρόσβαση για αποθήκευση αρχείων στη συσκευή. Παραχωρήστε πρόσβαση στις ρυθμίσεις της εφαρμογής.";
+//UIAlertHandler.swift
+"Saved!" = "Αποθηκεύτηκε!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Απέτυχε το αίτημα αποστολής πληκτρολογίου";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Άγνωστο σφάλμα αποστολής αιτήματος πληκτρολογίου";
+//WMQuoteFileCell.swift
+"Sending" = "Αποστολή";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Η αποστολή αρχείων στο σώμα δεν υποστηρίζεται";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Η δημιουργία περιόδου λειτουργίας απέτυχε";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Ρυθμίσεις";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Η έρευνα απενεργοποιήθηκε";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Η εικόνα έχει αποθηκευτεί στις φωτογραφίες σας";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Δεν υπάρχει αντιπρόσωπος για αξιολόγηση.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Αυτός ο πράκτορας δεν βρίσκεται στην τρέχουσα συνομιλία";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Άγνωστο σφάλμα";
+//WMFileTableViewCell.swift
+"Uploading file" = "Φόρτωση αρχείου";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Το Webim χρειάζεται άδεια για πρόσβαση στην κάμερά σας, ώστε να μπορείτε να στέλνετε φωτογραφίες για συνομιλία.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "Λάθος αναγνωριστικό κουμπιού στο αίτημα";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "Λάθος αναγνωριστικό μηνύματος στο αίτημα";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Λάθος είδος μηνύματος (όχι κείμενο)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Ο λογαριασμός επισκέπτη σας βρίσκεται στη μαύρη λίστα.";
+//WebimSerivce.swift
+"Session initialization failed." = "Η προετοιμασία της περιόδου λειτουργίας απέτυχε.";
+//WMMessageTableCell.swift
+"edited" = "επιμελήθηκε";
+//WMQuoteView.swift
+"You" = "Εσύ";
+"name" = "Όνομα";
+"email" = "Ηλεκτρονικό ταχυδρομείο";
+"phone" = "Τηλέφωνο";
+"first_custom_field" = "Προσαρμοσμένο πεδίο 1";
+"second_custom_field" = "Προσαρμοσμένο πεδίο 2";
+"third_custom_field" = "Προσαρμοσμένο πεδίο 3";
+"VisitorContacts" = "Έχετε αποστείλει τα στοιχεία επικοινωνίας σας.";
+"Continue" = "Συνέχεια";
+"Live chat agent" = "Πράκτορας ζωντανής συνομιλίας";
+"Offline request" = "Ασύνδετη αίτηση";
+"First message label" = "Για να αρχίσετε τη συνομιλία πληκτρολογήστε το όνομά σας και την ερώτηση.";
+"Offline message label" = "Λυπούμαστε, δεν υπάρχουν διαθέσιμοι διαχειριστές αυτή τη στιγμή.Μπορείτε να αφήσετε το ερώτημά σας παρακάτω.";
+"Message" = "Μήνυμα";
+"Attach file" = "Προσθήκη αρχείου";
+"agreement_part1" = "Συναινώ στην";
+"agreement_part2" = "επεξεργασία προσωπικών δεδομένων";
+"agreement_part3" = "και έχω ενημερωθεί για την";
+"agreement_part4" = "Πολιτική Απορρήτου";
+"Optional" = "(προαιρετικό)";
+"Save" = "Αποθήκευση";
+"Contact information" = "Στοιχεία επικοινωνίας";

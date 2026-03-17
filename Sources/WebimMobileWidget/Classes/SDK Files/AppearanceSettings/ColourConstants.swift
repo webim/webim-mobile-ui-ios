@@ -114,7 +114,7 @@ let textInputViewPlaceholderLabelTextColour = GREY
 let textInputViewPlaceholderLabelBackgroundColour = CLEAR
 let wmCoral = #colorLiteral(red: 0.7882352941, green: 0.3411764706, blue: 0.2196078431, alpha: 1)
 /// MessageTextView
-let linkColor = #colorLiteral(red: 0.1977989972, green: 0.5007162094, blue: 0.9563334584, alpha: 1)
+let textLinkColor = #colorLiteral(red: 0.1977989972, green: 0.5007162094, blue: 0.9563334584, alpha: 1)
 /// WMQuoteView
 let rawQuoteViewLabelColour = GREY
 /// ScrollButtonView
@@ -195,6 +195,8 @@ let quoteImageOperatorMessageTextColor = #colorLiteral(red: 0.1529411765, green:
 // WMQuoteMessageCell
 let quoteVisitorMessageTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 let quoteOperatorMessageTextColor = #colorLiteral(red: 0.1529411765, green: 0.1647058824, blue: 0.3176470588, alpha: 1)
+let quoteVisitorMessageAuthorTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let quoteOperatorMessageAuthorTextColor = #colorLiteral(red: 0.08235294118, green: 0.6745098039, blue: 0.8235294118, alpha: 1)
 
 // WMOperatorMessageCell
 let operatorMessageCellTextColor = #colorLiteral(red: 0.1529411765, green: 0.1647058824, blue: 0.3176470588, alpha: 1)
@@ -208,3 +210,32 @@ let infoMessageCellTextColor = #colorLiteral(red: 0.3607843137, green: 0.3725490
 // WMNewMessageView
 let newMessageTextColor = #colorLiteral(red: 0.1529411765, green: 0.1647058824, blue: 0.3176470588, alpha: 1)
 let newMessageBorderColor = #colorLiteral(red: 0.7882352941, green: 0.8, blue: 0.8666666667, alpha: 0.6)
+
+//ContactsTableViewCell
+let contactsCellBackgroundTextColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
+let contactsCellActiveTextColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
+let contactsCellInactiveTextColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 0.4)
+let contactsCellPlaceholderColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 0.73)
+let contactsCellLabelColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 0.5)
+let contactsCellTextErrorColor = #colorLiteral(red: 0.9568627451, green: 0.262745098, blue: 0.2117647059, alpha: 1)
+let contactsCellInactiveBackgroundColor = #colorLiteral(red: 0.9843137255, green: 0.9843137255, blue: 0.9843137255, alpha: 1)
+let contactsCellInactiveLayerColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
+let contactsCellActiveLayerColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
+
+//ContactsViewController
+let contactsBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let contactsNavigationTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let cotactsTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let contactsAgreementTextColor = #colorLiteral(red: 0.1882352941, green: 0.2117647059, blue: 0.3568627451, alpha: 1)
+let contactsAgreementLinkColor = #colorLiteral(red: 0.1977989972, green: 0.5007162094, blue: 0.9563334584, alpha: 1)
+
+//FirstQuestionViewController
+let firstQuestionNavigationTitleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let firstQuestionFileButtonColor = #colorLiteral(red: 0.08675732464, green: 0.6737991571, blue: 0.8237424493, alpha: 1)
+let firstQuestionTitleBackgroundColor = #colorLiteral(red: 0.1529411765, green: 0.1647058824, blue: 0.3058823529, alpha: 1)
+let firstQuestionActiveSaveButtonColor = #colorLiteral(red: 0.2235294118, green: 0.2470588235, blue: 0.4196078431, alpha: 1)
+let firstQuestionInactiveSaveButtonColor = #colorLiteral(red: 0.6901960784, green: 0.6901960784, blue: 0.6901960784, alpha: 1)
+let firstQuestionSaveButtonTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let firstQuestionSaveButtonInactiveTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+let firstQuestionAgreementLinkColor = #colorLiteral(red: 0.1977989972, green: 0.5007162094, blue: 0.9563334584, alpha: 1)
+let firstQuestionAgreementTextColor = #colorLiteral(red: 0.1882352941, green: 0.2117647059, blue: 0.3568627451, alpha: 1)

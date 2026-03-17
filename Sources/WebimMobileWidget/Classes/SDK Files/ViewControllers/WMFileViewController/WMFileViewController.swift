@@ -150,7 +150,6 @@ class WMFileViewController: UIViewController, WKUIDelegate, WKNavigationDelegate
     }
     
     private func setupLoadingSubiews() {
-        loadingStatusLabel.text = "Loading File...".localized
         loadingStatusIndicator.startAnimating()
     }
     

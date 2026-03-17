@@ -45,15 +45,23 @@ extension ChatViewController: WMKeyboardRepresentable {
     func keyboardDidHide(keyboardInfo: Notification.KeyboardInfo) {
         keyboardNotificationManager.adjustKeyboardNotification(keyboardInfo, kind: .keyboardDidHide)
     }
+    
+    func keyboardWillChangeFrame(keyboardInfo: Notification.KeyboardInfo) {
+        keyboardNotificationManager.adjustKeyboardNotification(keyboardInfo, kind: .keyboardWillChangeFrame)
+    }
+    
+    func keyboardDidChangeFrame(keyboardInfo: Notification.KeyboardInfo) {
+        keyboardNotificationManager.adjustKeyboardNotification(keyboardInfo, kind: .keyboardDidChangeFrame)
+    }
 }
 
 extension ChatViewController: WMKeyboardManagerDelegate {
     var scrollViewModel: WebimKeyboard.WMScrollViewModel {
-        WMScrollViewModel(
-            toolbarViewHeight: inputAccessoryView?.bounds.height ?? 0,
-            scrollViewContentOffset: chatTableView.contentOffset.y,
-            scrollViewContentInset: chatTableView.contentInset.bottom
-        )
+        WMScrollViewModel(toolbarViewHeight: inputAccessoryView?.bounds.height ?? 0,
+                          scrollViewContentOffset: chatTableView.contentOffset.y,
+                          scrollViewContentInset: chatTableView.contentInset.bottom,
+                          safeAreaBottom: self.view.safeAreaInsets.bottom,
+                          lastKeyboardHeight: lastKeyboardHeight)
     }
     
     var presented: Bool {
@@ -71,14 +79,16 @@ extension ChatViewController: WMKeyboardManagerDelegate {
         updateScrollButtonViewConstraints(with: contentInset)
     }
     
+    func set(keyboardHeight: CGFloat) {
+        lastKeyboardHeight = keyboardHeight
+    }
+    
     func layoutIfNeeded() {
         view.layoutIfNeeded()
     }
     
     func updateScrollButtonViewConstraints(with inset: CGFloat) {
-        let commonPadding: CGFloat = 22
-        var bottomConstraint = inset + commonPadding
-        bottomConstraint = max(bottomConstraint, 90)
+        var bottomConstraint = inset + scrollButtonPadding + self.view.safeAreaInsets.bottom
         scrollButtonView.snp.updateConstraints { make in
             make.bottom.equalToSuperview().inset(bottomConstraint)
         }

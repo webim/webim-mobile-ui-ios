@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "帳戶";
+//WebimService.swift
+"AccountBlocked" = "用於建立會話的帳戶被封鎖。請聯絡 Webim 支援或使用其他支援。";
+//ChatTestView.swift
+"Additional information" = "補充訊息";
+//ChatTestView.swift
+"Agent title" = "代理人職稱";
+//UIAlertHandler.swift
+"Alert account name" = "Webim 帳戶名稱或完整伺服器位址（例如，「demo」或「https://demo.webim.ru」）";
+//FilePicker.swift
+"Camera" = "相機";
+//FilePicker.swift
+"Camera is not available" = "相機不可用";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "取消";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "聊天不存在";
+//UIAlertHandler.swift
+"Chat finished." = "聊天結束";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "評論太長";
+//UIAlertHandler.swift
+"Choose department" = "選擇部門";
+//StringConstants.swift
+"Copy" = "複製";
+//StringConstants.swift
+"Delete" = "刪除";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "刪除訊息未知錯誤";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "伺服器上已關閉刪除訊息功能";
+//StringConstants.swift
+"Edit" = "編輯";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "編輯訊息未知錯誤";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "編輯訊息為空";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "伺服器上的訊息編輯功能已關閉";
+//SurveyCommentViewController.swift
+"Enter your comment" = "輸入您的評論";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "未能發送調查答案";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "上傳文件失敗：訪客未登入";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "獲取更多消息";
+//FilePicker.swift
+"File" = "文件";
+//WMFileTableViewCell.swift
+"File is being sent" = "文件正在發送";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "文件太大";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "文件太小";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "文件上傳請求已取消";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "文件發送失敗";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "文件類型不受支援";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "不允許發送文件";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "文件發送未知錯誤";
+//UIAlertHandler.swift
+"Go to Settings" = "進入'設定'";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "影像";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "無線電值不正確";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "錯誤的星級";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "調查ID不正確";
+//UIAlertHandler.swift
+"InvalidSettings" = "無效的帳戶設置";
+//UIAlertHandler.swift
+"LoadError" = "載入錯誤";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "嘗試上傳另一個文件";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "超出每個訊息的文件數限制";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "超出最大訊息長度";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "刪除訊息失敗";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "訊息編輯失敗";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "未找到訊息";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "訊息不屬於訪客";
+//FilePicker.swift
+"Need camera access" = "需要攝影機存取權限";
+//FilePicker.swift
+"Need photo access" = "應用程式需要存取您的照片庫。請前往您裝置的設定 > 隱私權 > 照片，然後將其設定為開啟";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "無經紀人";
+//UIAlertHandler.swift
+"No agents available" = "沒有可用的代理";
+//ChatViewController+Surveys.swift
+"No current survey" = "目前沒有調查";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "費率註太長";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "開啟應用程式設定";
+//UIAlertHandler.swift
+"Operator Info" = "代理資訊";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "代理無法評級";
+//AdditionalKeys.swift
+"P.CR" = "代理請求您的聯絡資料";
+//AdditionalKeys.swift
+"P.OA" = "代理 %@ 已被指派處理您的請求";
+//AdditionalKeys.swift
+"P.OF" = "%@ 發送了一個文件: %@";
+//AdditionalKeys.swift
+"P.OM" = "%@ 寫了一封訊息: %@";
+//AdditionalKeys.swift
+"P.RO" = "給經紀人評分";
+//FilePicker.swift
+"Photo Library" = "照片庫";
+//FilePicker.swift
+"Please Allow Access" = "請允許訪問";
+//ChatViewController+Surveys.swift
+"Question not found" = "問題未找到";
+//StringConstants.swift
+"Reply" = "回复";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "無法為該請求建立回應";
+//UIAlertHandler.swift
+"Save error" = "保存錯誤";
+//UIAlertHandler.swift
+"SaveError" = "保存錯誤";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "無法在裝置上儲存影像。在應用程式設定中授予存取權限。";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "無法存取裝置上的儲存檔案。在應用程式設定中授予存取權限。";
+//UIAlertHandler.swift
+"Saved!" = "已保存";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "發送鍵盤請求失敗";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "發送鍵盤請求未知錯誤";
+//WMQuoteFileCell.swift
+"Sending" = "發送";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "不支援在正文中傳送文件";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "會話建立失敗";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "設定";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "調查已停用";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "影像已儲存到您的照片中";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "沒有代理可供評級";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "該代理程式不在目前聊天中";
+//ChatViewController+Surveys.swift
+"Unknown error" = "未知錯誤";
+//WMFileTableViewCell.swift
+"Uploading file" = "上傳文件";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Webim 需要存取您的相機的權限，以便您可以發送照片進行聊天";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "請求中的按鈕 ID 錯誤";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "請求中的消息ID錯誤";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "錯誤訊息類型（非文字）";
+//WebimService.swift
+"Your visitor account is in the black list." = "您的訪客帳號已列入黑名單";
+//WebimSerivce.swift
+"Session initialization failed." = "會話初始化失敗";
+//WMMessageTableCell.swift
+"edited" = "編輯";
+//WMQuoteView.swift
+"You" = "你";
+"name" = "您的名字";
+"email" = "电子邮箱";
+"phone" = "您的电话";
+"first_custom_field" = "C自定义字段 1";
+"second_custom_field" = "自定义字段 2";
+"third_custom_field" = "自定义字段 3";
+"VisitorContacts" = "您已提供联系方式";
+"Continue" = "继续";
+"Live chat agent" = "在线聊天客服";
+"Offline request" = "离线请求";
+"First message label" = "请您输入您的联系方式和您想要提交的问题";
+"Offline message label" = "很抱歉，客服专员繁忙。请您稍后再试或者留下您的联系方式，我们会尽快与您联系.";
+"Message" = "信息";
+"Attach file" = "上传文件";
+"agreement_part1" = "我同意";
+"agreement_part2" = "处理个人数据";
+"agreement_part3" = "并已阅读";
+"agreement_part4" = "隐私政策";
+"Optional" = "(可选)";
+"Save" = "保存";
+"Contact information" = "联系信息";

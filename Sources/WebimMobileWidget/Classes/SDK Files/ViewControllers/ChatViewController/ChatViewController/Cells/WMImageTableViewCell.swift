@@ -73,6 +73,8 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
     }
 
     override func applyConfig() {
+        super.applyConfig()
+        
         if let cornerRadius = config?.cornerRadius {
             if let roundCorners = config?.roundCorners {
                 messageView?.roundCorners(roundCorners, radius: cornerRadius)
@@ -173,5 +175,11 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         self.imagePreview?.gestureRecognizers = nil
         self.imagePreview?.addGestureRecognizer(gesture)
+        if WMTestManager.testModeEnabled() && message.getData()?.getAttachment()?.getExtraText() != nil {
+            let longPressPopupGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(showExtraText))
+            longPressPopupGestureRecognizer.minimumPressDuration = 0.2
+            longPressPopupGestureRecognizer.cancelsTouchesInView = false
+            self.imagePreview?.addGestureRecognizer(longPressPopupGestureRecognizer)
+        }
     }
 }

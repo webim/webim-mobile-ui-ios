@@ -5,11 +5,6 @@ This library provide simple chat integration, that based on [WebimMobileSDK](htt
 
 ## Installation
 
-### CocoaPods
-```
-pod WebimMobileWidget
-```
-
 ### SPM
 1. Select File > Swift Packages > Add Package Dependency. Enter `https://github.com/webim/webim-mobile-ui-ios` in the "Choose Package Repository" dialog.
 2. In the next page, specify the version resolving rule as "Up to Next Major" with the latest `webim-mobile-ui-ios` release.
@@ -18,7 +13,7 @@ pod WebimMobileWidget
 ### Carthage
 Add following line to your **Cartfile**:
 ```
-github "webim/webim-mobile-ui-ios" ~> 1.4.6
+github "webim/webim-mobile-ui-ios" ~> 2.0.0
 ```
 
 

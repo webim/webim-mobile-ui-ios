@@ -1,27 +1,3 @@
-//ScrollButtonView.xib
-"0" = "0";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"25%" = "25%";
-//WMStartViewController.xib
-"99" = "99";
-//WMQuoteView.xib
-"<?>Autor" = "<?>Autor";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"<?>Description" = "<?>Description";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"<?>File name.pdf" = "<?>File name.pdf";
-//WMBotButtonsTableViewCell.xib,WMInfoCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMQuoteView.xib,WMVisitorMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Message" = "<?>Message";
-//WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Name " = "<?>Name ";
-//WMOperatorFileCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib
-"<?>Operator name" = "<?>Operator name";
-//WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Quote Message" = "<?>Quote Message";
-//WMBotButtonsTableViewCell.xib,WMInfoCell.xib,WMOperatorFileCell.xib,WMOperatorImageCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorFileCell.xib,WMVisitorImageCell.xib,WMVisitorMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Time" = "<?>Time";
-//SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib,SurveyTableViewCell.xib
-"<this text will be replaced>" = "<this text will be replaced>";
 //UIAlertHandler.swift
 "Account" = "Compte";
 //WebimService.swift
@@ -44,8 +20,6 @@
 "Chat finished." = "Chat terminé.";
 //ChatViewController+Surveys.swift
 "Comment is too long" = "Le commentaire est trop long";
-//ConnectionErrorView.xib
-"Connection error" = "erreur de connexion";
 //UIAlertHandler.swift
 "Choose department" = "Choisir le département";
 //StringConstants.swift
@@ -64,8 +38,6 @@
 "Editing message is empty" = "Le message d'édition est vide";
 //ChatViewController+CompletionHandler.swift
 "Editing messages is turned off on the server" = "La modification des messages est désactivée sur le serveur";
-//WMNewMessageView.xib
-"Enter message" = "Saisir un message";
 //SurveyCommentViewController.swift
 "Enter your comment" = "Entrez votre commentaire";
 //ChatViewController+Surveys.swift
@@ -79,7 +51,7 @@
 //WMFileTableViewCell.swift
 "File is being sent" = "Le fichier est en cours d'envoi";
 //ChatViewController+CompletionHandler.swift
-"File is too large." = "Le fichier est trop volumineux.";
+"File is too large" = "Le fichier est trop volumineux";
 //ChatViewController+CompletionHandler.swift
 "File is too small" = "Le fichier est trop petit";
 //ChatViewController+CompletionHandler.swift
@@ -88,6 +60,8 @@
 "File sending failed" = "L'envoi du fichier a échoué";
 //ChatViewController+CompletionHandler.swift
 "File type is not supported" = "Le type de fichier n'est pas pris en charge";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "L'envoi de fichiers n'est pas autorisé";
 //ChatViewController+CompletionHandler.swift
 "File sending unknown error" = "Erreur inconnue lors de l'envoi du fichier";
 //UIAlertHandler.swift
@@ -106,8 +80,6 @@
 "LoadError" = "Erreur de chargement";
 //UIAlertHandler.swift
 "LoadFileErrorText" = "Essayez de télécharger un autre fichier";
-//WMFileViewController.swift,WMFileViewController.xib
-"Loading File..." = "Chargement du fichier...";
 //ChatViewController+CompletionHandler.swift
 "MaxFilesCountExceeded" = "Le nombre de fichiers par limite de message est dépassé";
 //ChatViewController+CompletionHandler.swift
@@ -136,8 +108,6 @@
 "OK" = "OK";
 //ChatViewController+CompletionHandler.swift
 "Ok" = "Ok";
-//ChatViewController+Listener.swift,ChatViewController.swift
-"Online" = "Online";
 //FilePicker.swift
 "Open app settings" = "Ouvrir les paramètres de l'application";
 //UIAlertHandler.swift
@@ -158,18 +128,12 @@
 "Photo Library" = "Photothèque";
 //FilePicker.swift
 "Please Allow Access" = "Veuillez autoriser l'accès";
-//RateStarsViewController.swift,RateStarsViewController.xib
-"Please rate the overall impression of the consultation" = "Veuillez évaluer l’impression générale de la consultation.";
 //ChatViewController+Surveys.swift
 "Question not found" = "Question introuvable";
-//RateStarsViewController.xib
-"Rate Operator" = "Agent de taux";
 //StringConstants.swift
 "Reply" = "Répondre";
 //ChatViewController+CompletionHandler.swift
 "Response cannot be created for this request" = "Impossible de créer une réponse pour cette demande";
-//ChatTestView.xib
-"Run autotest" = "Exécuter un test automatique";
 //UIAlertHandler.swift
 "Save error" = "Enregistrer l'erreur";
 //UIAlertHandler.swift
@@ -180,10 +144,6 @@
 "SaveFileErrorMessage" = "Aucun accès pour enregistrer les fichiers sur l'appareil. Accordez l'accès dans les paramètres de l'application.";
 //UIAlertHandler.swift
 "Saved!" = "Sauvé !";
-//RateStarsViewController.xib,SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib
-"Send" = "Envoyer";
-//ChatViewController+UITableView.swift
-"Send first message to start chat." = "Envoyez le premier message pour démarrer la discussion.";
 //ChatViewController+CompletionHandler.swift
 "Send keyboard request failed" = "Échec de l'envoi de la demande de clavier";
 //ChatViewController+CompletionHandler.swift
@@ -198,8 +158,6 @@
 "Settings" = "Paramètres";
 //ChatViewController+Surveys.swift
 "Survey disabled" = "Enquête désactivée";
-//WMThanksAlertView.xib
-"Thanks!" = "Merci!";
 //UIAlertHandler.swift
 "The image has been saved to your photos" = "L'image a été enregistrée dans vos photos";
 //ChatViewController+Surveys.swift,UIAlertHandler.swift
@@ -210,8 +168,6 @@
 "Unknown error" = "Erreur inconnue";
 //WMFileTableViewCell.swift
 "Uploading file" = "Téléchargement du fichier";
-//ChatViewController+Setup.swift,ChatViewController.swift
-"Webim SDK App" = "Webim SDK App";
 //FilePicker.swift
 "Webim needs permission to access your camera so you can send photos to chat." = "Webim a besoin d'une autorisation pour accéder à votre caméra afin que vous puissiez envoyer des photos pour discuter.";
 //ChatViewController+CompletionHandler.swift
@@ -220,27 +176,32 @@
 "Wrong message ID in request" = "ID de message erroné dans la demande";
 //ChatViewController+CompletionHandler.swift
 "Wrong message kind (not text)" = "Type de message incorrect (pas de texte)";
-//WMThanksAlertView.xib
-"Your feedback will help us become better." = "Vos commentaires nous aideront à nous améliorer.";
 //WebimService.swift
 "Your visitor account is in the black list." = "Votre compte visiteur est dans la liste noire.";
 //WebimSerivce.swift
 "Session initialization failed." = "L'initialisation de la session a échoué.";
-//SurveyCommentViewController.xib
-"comment" = "commentaire";
 //WMMessageTableCell.swift
 "edited" = "édité";
-//ChatViewController+Listener.swift
-"typing" = "dactylographie";
-//LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift
 "You" = "Toi";
-//ProcessingPersonalData.swift
-"Agreement link" = "Consentement au traitement des données personnelles";
-//ProcessingPersonalData.swift
-"Agreement Title" = "Pour commencer le chat, vous devez accepter le Consentement au traitement des données personnelles.";
-//ProcessingPersonalData.swift
-"Agreement" = "En cochant la case, vous acceptez";
-//ProcessingPersonalData.swift
-"Start chat" = "Commencer le chat";
+"name" = "Nom";
+"email" = "Email";
+"phone" = "Téléphone";
+"first_custom_field" = "Champ personnalisé 1";
+"second_custom_field" = "Champ personnalisé 2";
+"third_custom_field" = "Champ personnalisé 3";
+"VisitorContacts" = "Vous avez envoyé vos coordonnées.";
+"Continue" = "Continuer";
+"Live chat agent" = "Agent de chat en direct";
+"Offline request" = "Demande hors ligne";
+"First message label" = "Pour commencer le chat, veuillez entrer votre nom et votre question.";
+"Offline message label" = "Désolé, il n'y a pas d'agents disponibles pour le moment. Vous pouvez laisser votre question ci-dessous.";
+"Message" = "Message";
+"Attach file" = "Joindre un fichier";
+"agreement_part1" = "Je consens au";
+"agreement_part2" = "traitement des données personnelles";
+"agreement_part3" = "et j'ai pris connaissance de la";
+"agreement_part4" = "Politique de confidentialité";
+"Optional" = "(facultatif)";
+"Save" = "Enregistrer";
+"Contact information" = "Coordonnées";

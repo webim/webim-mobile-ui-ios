@@ -47,7 +47,7 @@ extension ChatViewController: SendFileCompletionHandler,
             var message = "File sending unknown error".localized
             switch error {
             case .fileSizeExceeded:
-                message = "File is too large.".localized
+                message = "File is too large".localized
             case .fileTypeNotAllowed:
                 message = "File type is not supported".localized
             case .unknown:
@@ -64,6 +64,8 @@ extension ChatViewController: SendFileCompletionHandler,
                 message = "File upload request canceled".localized
             case .maliciousFileDetected:
                 message = "File sending unknown error".localized
+            case .uploadNotAllowed:
+                message = "Sending files is not allowed".localized
             }
             
             self.alertOnFailure(

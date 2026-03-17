@@ -107,8 +107,8 @@ class RateStarsViewController: WMSurveyViewController {
     private func setupSubviews() {
         if isSurvey {
             titleLabel.alpha = 0
+            descriptionLabel.text = descriptionText
         }
-        descriptionLabel.text = isSurvey ? descriptionText : "Please rate the overall impression of the consultation".localized
 
         disableSendButton()
         cosmosRatingView.rating = currentRating

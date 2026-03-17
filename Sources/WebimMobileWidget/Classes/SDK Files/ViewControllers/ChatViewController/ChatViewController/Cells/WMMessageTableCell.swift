@@ -39,6 +39,7 @@ protocol WMDialogCellDelegate: AnyObject {
     func canReloadRow() -> Bool
     func isCellVisible(_ cell: WMMessageTableCell) -> Bool
     func reloadCell(_ cell: UITableViewCell)
+    func showExtraTextAction(message: Message)
 }
 
 class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
@@ -47,6 +48,7 @@ class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
     private var cellWasInited = false
     var cellMessageWasInited = false
     var config: WMAbstractCellConfig?
+    var testModeEnabled: Bool = false
     
     @IBOutlet var messageView: UIView?
     
@@ -61,13 +63,14 @@ class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
     
     weak var delegate: WMDialogCellDelegate?
     var message: Message!
+    var visitorFields: [String: String?]?
     
     static let timeFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter
     }()
-    
+
     func setMessage(message: Message) {
         self.message = message
         let timeString = WMMessageTableCell.timeFormatter.string(from: message.getTime())
@@ -80,6 +83,10 @@ class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
         self.time?.text = time
         self.authorName?.text = message.getSenderName()
         self.updateStatus(sendStatus: message.getSendStatus() == .sent, readStatus: message.isReadByOperator())
+    }
+    
+    func setVisiorFields(visitorFields: [String: String?]?) {
+        self.visitorFields = visitorFields
     }
     
     func getMessage() -> Message? {
@@ -193,5 +200,9 @@ class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
     
     @objc func sendKeyboardRequest(keyboardRequest: [String: String]) {
         self.delegate?.sendKeyboardRequest(buttonInfoDictionary: keyboardRequest)
+    }
+    
+    @objc func showExtraText(sender: UILongPressGestureRecognizer) {
+        self.delegate?.showExtraTextAction(message: self.message)
     }
 }

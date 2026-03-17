@@ -31,7 +31,7 @@ import UIKit
 let loadingPlaceholderImage: UIImage! = .loadImageFromWidget(named: "ImagePlaceholder")
 let navigationBarTitleImageViewImage: UIImage! = .loadImageFromWidget(named: "LogoWebimNavigationBar_dark")
 let scrollButtonImage: UIImage! = .loadImageFromWidget(named: "SendMessageButton")?.flipImage(.vertically)
-let textInputButtonImage: UIImage! = .loadImageFromWidget(named: "SendMessageButton")?.flipImage(.vertically)
+let textInputButtonImage: UIImage! = .loadImageFromWidget(named: "SendMessageButton")
 
 // ChatTableViewController.swift
 private let privateReplyImage: UIImage! = .loadImageFromWidget(named: "ReplyCircleToTheLeft")
@@ -53,7 +53,6 @@ let deleteImage: UIImage! = .loadImageFromWidget(named: "ActionDelete")?.colour(
 let selectedSurveyPoint: UIImage! = .loadImageFromWidget(named: "selectedSurveyPoint")
 let unselectedSurveyPoint: UIImage! = .loadImageFromWidget(named: "unselectedSurveyPoint")
 
-
 // WMFileTableViewCell.swift
 let fileDownloadSuccessImage: UIImage! = .loadImageFromWidget(named: "FileDownloadSuccess")
 let fileDownloadButtonImage: UIImage! = .loadImageFromWidget(named: "FileDownloadButton")
@@ -68,3 +67,8 @@ let sendInactiveButtonImage: UIImage! = .loadImageFromWidget(named: "sendButton"
 let sendButtonImage: UIImage! = .loadImageFromWidget(named: "SendMessageButton")
 let addAttachmentImage: UIImage! = .loadImageFromWidget(named: "AttachmentButton")
 let editButtonImage: UIImage! = .loadImageFromWidget(named: "EditMessageButton")
+
+let networkError: UIImage! = .loadImageFromWidget(named: "ConnectionImage")
+let messageReadIcon: UIImage! = .loadImageFromWidget(named: "ReadByOperator")
+let messageUnreadIcon: UIImage! = .loadImageFromWidget(named: "Sent")
+let scrollButton: UIImage! = .loadImageFromWidget(named: "SendMessageButton")?.flipImage(.vertically)

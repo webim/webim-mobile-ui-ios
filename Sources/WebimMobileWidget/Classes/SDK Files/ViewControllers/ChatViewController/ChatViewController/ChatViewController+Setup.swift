@@ -94,15 +94,15 @@ extension ChatViewController {
         setupTitleView()
         setupRightBarButtonItem()
     }
+    
+    func setupLoadingView() {
+        chatTableView.isHidden = true
+        chatTableView.alpha = 0.0
+        chatLoading.startAnimating()
+    }
 
     func configureKeyboardNotificationManager() {
         keyboardNotificationManager.delegate = self
-    }
-    
-    func addDismissKeyboardGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissViewKeyboard))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
     }
 
     @objc func functionTap() {
@@ -112,6 +112,7 @@ extension ChatViewController {
     
     func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(functionTap))
+        tap.cancelsTouchesInView = false
         chatTableView.addGestureRecognizer(tap)
     }
     
@@ -184,11 +185,16 @@ extension ChatViewController {
         scrollButtonView.initialSetup()
         scrollButtonView.setScrollButtonViewState(.hidden)
         scrollButtonView.add(tapGesture: tapGesture)
-
-        let scrollButtonPadding: CGFloat = 22
-        scrollButtonView.snp.makeConstraints { make in
+        
+        updateScrollButton()
+    }
+    
+    func updateScrollButton() {
+        let bottomInset = toolbarView.bounds.height + scrollButtonPadding + self.view.safeAreaInsets.bottom
+        
+        scrollButtonView.snp.remakeConstraints { make in
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(scrollButtonPadding)
-            make.bottom.equalToSuperview().inset(toolbarView.frame.height + scrollButtonPadding)
+            make.bottom.equalToSuperview().inset(bottomInset)
             make.height.equalTo(scrollButtonView.snp.width)
             make.width.equalTo(34)
         }
@@ -201,15 +207,10 @@ extension ChatViewController {
         chatTableView.dataSource = dataSource
     }
     
-
-    private func setupScrollButtonViewConstraints() {
-        scrollButtonView.snp.makeConstraints { make in
-            let scrollButtonPadding: CGFloat = 22
-            make.trailing.equalToSuperview().inset(scrollButtonPadding)
-            make.bottom.equalToSuperview().inset(scrollButtonPadding)
-            make.height.equalTo(scrollButtonView.snp.width)
-            make.width.equalTo(24)
-        }
+    func setupTableView() {
+        let contentInset = toolbarView.bounds.height
+        chatTableView.contentInset.bottom = contentInset
+        chatTableView.verticalScrollIndicatorInsets.bottom = contentInset
     }
     
     func setupRefreshControl() {
@@ -227,34 +228,23 @@ extension ChatViewController {
             attributes: attributes
         )
     }
-    
-    func setupTableView() {
-        let initialSafeAreaInset: CGFloat = 34
-        //chatTableView.refreshControl = defaultRefreshControl()
-        chatTableView.contentInset.bottom = toolbarView.bounds.height + initialSafeAreaInset
-    }
 
     func setupServerSideSettingsManager() {
-        webimServerSideSettingsManager.getServerSideSettings(self)
-    }
 
-    func setupAlreadyRatedOperators() {
-        guard let alreadyRatedOperatorsDictionary = WMKeychainWrapper.standard.dictionary(
-            forKey: keychainKeyRatedOperators) as? [String: Bool] else {
-            return
-        }
-        alreadyRatedOperators = alreadyRatedOperatorsDictionary
+        webimServerSideSettingsManager.getServerSideSettings(self)
     }
 }
 
 
 extension ChatViewController: ServerSideSettingsCompletionHandler {
     func onFailure() {
+        DispatchQueue.main.async {
+            self.toolbarView.messageView.fileButton.isHidden = false
+        }
     }
     
-    func onSuccess(webimServerSideSettings: WebimServerSideSettings) {
+    func onSuccess(webimServerSideSettings: ServerSettings) {
         webimServerSideSettingsManager.onSuccess(webimServerSideSettings: webimServerSideSettings)
-        
         if webimServerSideSettingsManager.isRateOperatorEnabled() && webimServerSideSettingsManager.showRateOperatorButton() {
             let gestureRecognizer = UITapGestureRecognizer(
                 target: self,
@@ -265,9 +255,8 @@ extension ChatViewController: ServerSideSettingsCompletionHandler {
             
             navigationItem.rightBarButtonItem?.isEnabled = true
         }
-        if WebimServiceController.currentSession.getVisitSessionState() == .firstQuestion {
-            checkAgreement()
+        DispatchQueue.main.async {
+            self.toolbarView.messageView.fileButton.isHidden = !self.webimServerSideSettingsManager.getShowSendFileMenu()
         }
     }
-    
 }

@@ -1,27 +1,3 @@
-//ScrollButtonView.xib
-"0" = "0";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"25%" = "25%";
-//WMStartViewController.xib
-"99" = "99";
-//WMQuoteView.xib
-"<?>Autor" = "<?>Autor";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"<?>Description" = "<?>Description";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"<?>File name.pdf" = "<?>File name.pdf";
-//WMBotButtonsTableViewCell.xib,WMInfoCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMQuoteView.xib,WMVisitorMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Message" = "<?>Message";
-//WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Name " = "<?>Name ";
-//WMOperatorFileCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib
-"<?>Operator name" = "<?>Operator name";
-//WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Quote Message" = "<?>Quote Message";
-//WMBotButtonsTableViewCell.xib,WMInfoCell.xib,WMOperatorFileCell.xib,WMOperatorImageCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorFileCell.xib,WMVisitorImageCell.xib,WMVisitorMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Time" = "<?>Time";
-//SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib,SurveyTableViewCell.xib
-"<this text will be replaced>" = "<this text will be replaced>";
 //UIAlertHandler.swift
 "Account" = "חשבון";
 //WebimService.swift
@@ -44,8 +20,6 @@
 "Chat finished." = "הצ'אט הסתיים";
 //ChatViewController+Surveys.swift
 "Comment is too long" = "ההערה ארוכה מדי";
-//ConnectionErrorView.xib
-"Connection error" = "שגיאת חיבור";
 //UIAlertHandler.swift
 "Choose department" = "בחר מחלקה";
 //StringConstants.swift
@@ -64,8 +38,6 @@
 "Editing message is empty" = "עריכת הודעה ריקה";
 //ChatViewController+CompletionHandler.swift
 "Editing messages is turned off on the server" = "עריכת הודעות מנוטרלת בשרת";
-//WMNewMessageView.xib
-"Enter message" = "הזן הודעה";
 //SurveyCommentViewController.swift
 "Enter your comment" = "הזן את ההערה שלך";
 //ChatViewController+Surveys.swift
@@ -79,7 +51,7 @@
 //WMFileTableViewCell.swift
 "File is being sent" = "הקובץ נשלח";
 //ChatViewController+CompletionHandler.swift
-"File is too large." = "הקובץ גדול מדי.";
+"File is too large" = "הקובץ גדול מדי";
 //ChatViewController+CompletionHandler.swift
 "File is too small" = "הקובץ קטן מדי";
 //ChatViewController+CompletionHandler.swift
@@ -89,11 +61,11 @@
 //ChatViewController+CompletionHandler.swift
 "File type is not supported" = "סוג הקובץ אינו נתמך";
 //ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "שליחת קבצים אסורה";
+//ChatViewController+CompletionHandler.swift
 "File sending unknown error" = "שגיאה לא ידועה בשליחת הקובץ";
 //UIAlertHandler.swift
 "Go to Settings" = "עבור להגדרות";
-//WMSettingsViewController.xib
-"If you are registered in Webim service you can use your own account name and location." = "אם נרשמת בשירות Webim תוכל להשתמש בשם החשבון שלך ובמיקומך.";
 //WMQuoteImageCell.swift,WMQuoteView.swift
 "Image" = "תמונה";
 //ChatViewController+Surveys.swift
@@ -108,8 +80,6 @@
 "LoadError" = "שגיאת טעינה";
 //UIAlertHandler.swift
 "LoadFileErrorText" = "נא לנסות להעלות קובץ אחר";
-//WMFileViewController.swift,WMFileViewController.xib
-"Loading File..." = "מעלה את הקובץ...";
 //ChatViewController+CompletionHandler.swift
 "MaxFilesCountExceeded" = "חריגה ממגבלת מס' הקבצים להודעה";
 //ChatViewController+CompletionHandler.swift
@@ -138,8 +108,6 @@
 "OK" = "אישור";
 //ChatViewController+CompletionHandler.swift
 "Ok" = "אישור";
-//ChatViewController+Listener.swift,ChatViewController.swift
-"Online" = "מחובר";
 //FilePicker.swift
 "Open app settings" = "פתח הגדרות אפליקציה";
 //UIAlertHandler.swift
@@ -160,18 +128,12 @@
 "Photo Library" = "ספריית תמונות";
 //FilePicker.swift
 "Please Allow Access" = "נא לאשר גישה";
-//RateStarsViewController.swift,RateStarsViewController.xib
-"Please rate the overall impression of the consultation" = "נא לדרג את הרושם הכללי של הייעוץ.";
 //ChatViewController+Surveys.swift
 "Question not found" = "השאלה לא נמצאה";
-//RateStarsViewController.xib
-"Rate Operator" = "דרג את הסוכן";
 //StringConstants.swift
 "Reply" = "השב";
 //ChatViewController+CompletionHandler.swift
 "Response cannot be created for this request" = "לא ניתן ליצור תשובה עבור בקשה זו";
-//ChatTestView.xib
-"Run autotest" = "הרץ בדיקה אוטומטית";
 //UIAlertHandler.swift
 "Save error" = "שגיאת שמירה";
 //UIAlertHandler.swift
@@ -182,10 +144,6 @@
 "SaveFileErrorMessage" = "אין גישה לשמירת קבצים במכשיר. יש לאשר גישה בהגדרות האפליקציה.";
 //UIAlertHandler.swift
 "Saved!" = "נשמר!";
-//RateStarsViewController.xib,SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib
-"Send" = "שלח";
-//ChatViewController+UITableView.swift
-"Send first message to start chat." = "שלח הודעה ראשונה כדי להתחיל בשיחה.";
 //ChatViewController+CompletionHandler.swift
 "Send keyboard request failed" = "נכשל בבקשת מקלדת שנשלחה";
 //ChatViewController+CompletionHandler.swift
@@ -200,8 +158,6 @@
 "Settings" = "הגדרות";
 //ChatViewController+Surveys.swift
 "Survey disabled" = "הסקר מנוטרל";
-//WMThanksAlertView.xib
-"Thanks!" = "תודה!";
 //UIAlertHandler.swift
 "The image has been saved to your photos" = "התמונה נשמרה באלבומי התמונות שלך";
 //ChatViewController+Surveys.swift,UIAlertHandler.swift
@@ -212,8 +168,6 @@
 "Unknown error" = "שגיאה לא ידועה";
 //WMFileTableViewCell.swift
 "Uploading file" = "מעלה קובץ";
-//ChatViewController+Setup.swift,ChatViewController.swift
-"Webim SDK App" = "Webim SDK App";
 //FilePicker.swift
 "Webim needs permission to access your camera so you can send photos to chat." = "Webim זקוק להרשאה לגישה למצלמה שלך כדי שתוכל לשלוח תמונות בצ'אט.";
 //ChatViewController+CompletionHandler.swift
@@ -222,27 +176,32 @@
 "Wrong message ID in request" = "זיהוי הודעה שגוי בבקשה";
 //ChatViewController+CompletionHandler.swift
 "Wrong message kind (not text)" = "הסוג של הודעה שגוי (לא טקסט)";
-//WMThanksAlertView.xib
-"Your feedback will help us become better." = "המשוב שלך יעזור לנו להתפתח ולשפר.";
 //WebimService.swift
 "Your visitor account is in the black list." = "חשבון המבקר שלך נמצא ברשימת השחור.";
 //WebimSerivce.swift
 "Session initialization failed." = "אתחול ההפעלה נכשל.";
-//SurveyCommentViewController.xib
-"comment" = "תגובה";
 //WMMessageTableCell.swift
 "edited" = "עריכה";
-//ChatViewController+Listener.swift
-"typing" = "מקליד";
-//LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. כל הזכויות שמורות.";
 //WMQuoteView.swift
 "You" = "אתה";
-//ProcessingPersonalData.swift
-"Agreement link" = "הסכמה לעיבוד נתונים אישיים";
-//ProcessingPersonalData.swift
-"Agreement Title" = "כדי להתחיל בצ'אט, עליך לקבל את הסכמה לעיבוד נתונים אישיים";
-//ProcessingPersonalData.swift
-"Agreement" = "סימון התיבה означает את/ה מסכים/ה";
-//ProcessingPersonalData.swift
-"Start chat" = "התחל צ'אט";
+"name" = "שם";
+"email" = "דואייל";
+"phone" = "טלפון";
+"first_custom_field" = "שדה מותאם אישית 1";
+"second_custom_field" = "שדה מותאם אישית 2";
+"third_custom_field" = "שדה מותאם אישית 3";
+"VisitorContacts" = "אתה הזנת פרטים ליצירת קשר.";
+"Continue" = "המשך";
+"Live chat agent" = "נציג צ'אט חי";
+"Offline request" = "בקשה לא מקוונת";
+"First message label" = "כדי להתחיל את הצ'אט אנא הזן את הפרטים ואת השאלה שלך.";
+"Offline message label" = "לצערנו, כרגע אין אף מפעיל פנוי. אנא נסה שוב מאוחר יותר או תשאיר לנו את שאלתך ודרך ליצור איתך קשר, ואנו נחזור אליך בהקדם האפשרי.";
+"Message" = "הודעה";
+"Attach file" = "לְצַרֵף";
+"agreement_part1" = "אני מסכים/מסכימה";
+"agreement_part2" = "לעיבוד נתונים אישיים";
+"agreement_part3" = "וקראתי את";
+"agreement_part4" = "מדיניות הפרטיות";
+"Optional" = "(לא חייב)";
+"Save" = "שמור";
+"Contact information" = "פרטי יצירת קשר";

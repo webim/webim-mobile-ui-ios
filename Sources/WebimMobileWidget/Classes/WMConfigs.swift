@@ -58,9 +58,14 @@ public class WMChatViewControllerConfig: WMViewControllerConfig {
     var quoteViewConfig: WMHelperInputViewConfig?
     var editBarConfig: WMHelperInputViewConfig?
     var surveyViewConfig: WMSurveyViewConfig?
+    var contactsViewConfig: WMContactsViewConfig?
+    var firstQuestionConfig: WMFirstQuestionViewConfig?
     var infoCellConfig: WMAbstractCellConfig?
     var emptyChatTitle: String?
+    var forceOnline: Bool?
     var loadMessagesTintColor: UIColor?
+    var showContactsView: Bool = true
+    var showFirstQuestionView: Bool = true
 }
 
 public class WMImageViewControllerConfig: WMViewControllerConfig {
@@ -92,7 +97,6 @@ public class WMAbstractCellConfig {
     var messageSendingIndicatorColor: UIColor?
     var messageUnreadIcon: UIImage?
     var messageReadIcon: UIImage?
-    
     
     init() { }
     
@@ -206,6 +210,60 @@ public class WMSurveyViewConfig {
     var buttonColor: UIColor?
     var buttonCornerRadius: CGFloat?
     var changeRateEnabled: Bool?
+}
+
+// MARK: WMContactsViewConfig
+public class WMContactsViewConfig {
+    var title: NSAttributedString?
+    var saveButtonTitle: String?
+    var saveButtonColor: UIColor?
+    var inactiveSaveButtonColor: UIColor?
+    var backgroundColor: UIColor?
+    var closeButtonImage: UIImage?
+    var cellLabelColor: UIColor?
+    var cellLabelFont: UIFont?
+    var cellNameColor: UIColor?
+    var cellNameFont: UIFont?
+    var cellErrorColor: UIColor?
+    var cellInactiveColor: UIColor?
+    var cellBackgroundColor: UIColor?
+    var cellInactiveBackgroundColor: UIColor?
+    var cellActiveLayerColor: UIColor?
+    var cellInactiveLayerColor: UIColor?
+    var agreementTextColor: UIColor?
+    var agreementLinkColor: UIColor?
+    
+    init() { }
+    
+    init(contactsConfig: WMContactsViewConfig) {
+        title = contactsConfig.title
+        saveButtonTitle = contactsConfig.saveButtonTitle
+        saveButtonColor = contactsConfig.saveButtonColor
+        inactiveSaveButtonColor = contactsConfig.inactiveSaveButtonColor
+        backgroundColor = contactsConfig.backgroundColor
+        closeButtonImage = contactsConfig.closeButtonImage
+        cellLabelColor = contactsConfig.cellLabelColor
+        cellLabelFont = contactsConfig.cellLabelFont
+        cellNameColor = contactsConfig.cellNameColor
+        cellNameFont = contactsConfig.cellNameFont
+        cellErrorColor = contactsConfig.cellErrorColor
+        cellInactiveColor = contactsConfig.cellInactiveColor
+        cellBackgroundColor = contactsConfig.cellBackgroundColor
+        cellInactiveBackgroundColor = contactsConfig.cellInactiveBackgroundColor
+        cellActiveLayerColor = contactsConfig.cellActiveLayerColor
+        cellInactiveLayerColor = contactsConfig.cellInactiveLayerColor
+    }
+}
+
+// MARK: WMFirstQuestionViewConfig
+public class WMFirstQuestionViewConfig: WMContactsViewConfig{
+    var uploadFileImage: UIImage?
+    var fileImage: UIImage?
+    var navigationTitleColor: UIColor?
+    var fileButtonColor: UIColor?
+    var titleBackgroundColor: UIColor?
+    var saveButtonInactiveTitleColor: UIColor?
+    var saveButtonTitleColor: UIColor?
 }
 
 // MARK: NavigationBarConfigs

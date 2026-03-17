@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Эсеп";
+//WebimService.swift
+"AccountBlocked" = "Сеанс түзүү үчүн колдонулган каттоо эсеби бөгөттөлгөн. Сураныч, Webim колдоо бөлүмүнө кайрылыңыз же башкасын колдонуңуз.";
+//ChatTestView.swift
+"Additional information" = "Кошумча маалымат";
+//ChatTestView.swift
+"Agent title" = "Агенттин наамы";
+//UIAlertHandler.swift
+"Alert account name" = "Webim аккаунтунун аталышы же толук сервер дареги (мисалы, \"demo\" же \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Камера";
+//FilePicker.swift
+"Camera is not available" = "Камера жеткиликтүү эмес";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Жокко чыгаруу";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Чат жок";
+//UIAlertHandler.swift
+"Chat finished." = "Чат бүттү.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Комментарий өтө узун";
+//UIAlertHandler.swift
+"Choose department" = "Бөлүмдү тандоо";
+//StringConstants.swift
+"Copy" = "Көчүрмө";
+//StringConstants.swift
+"Delete" = "Жоюу";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Билдирүүнү жок кылуу белгисиз ката";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Серверде билдирүүлөрдү өчүрүү өчүрүлгөн";
+//StringConstants.swift
+"Edit" = "Түзөтүү";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Кабарды түзөтүү белгисиз ката";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Кабарды түзөтүү бош";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Кабарларды түзөтүү серверде өчүрүлгөн";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Комментарийиңизди жазыңыз";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Сурамжылоого жооп жөнөтүлгөн жок";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Файл жүктөлгөн жок: конок кирген эмес";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Көбүрөөк билдирүүлөр алынууда...";
+//FilePicker.swift
+"File" = "Файл";
+//WMFileTableViewCell.swift
+"File is being sent" = "Файл жөнөтүлүүдө";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Файл өтө чоң";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Файл өтө кичинекей";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Файлды жүктөө өтүнүчү жокко чыгарылды";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Файл жөнөтүлбөй калды";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Файлдын түрү колдоого алынбайт";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Файлдарды жөнөтүүгө жол берилбейт";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Файлды жөнөтүүдө белгисиз ката";
+//UIAlertHandler.swift
+"Go to Settings" = "Орнотууларга өтүңүз";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Сүрөт";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Радионун туура эмес мааниси";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Жылдыздардын туура эмес мааниси";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "Сурамжылоо ID туура эмес";
+//UIAlertHandler.swift
+"InvalidSettings" = "Эсептин туура эмес орнотуулары";
+//UIAlertHandler.swift
+"LoadError" = "Жүктөө катасы";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Башка файлды жүктөп көрүңүз";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Бир билдирүүнүн чегинен ашкан файлдардын саны";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Билдирүүнүн максималдуу узундугу ашып кетти";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Кабарды өчүрүү ишке ашкан жок";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Кабарды түзөтүү ишке ашкан жок";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Кабар табылган жок";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Кабар келүүчүгө таандык эмес";
+//FilePicker.swift
+"Need camera access" = "Камерага кирүү керек";
+//FilePicker.swift
+"Need photo access" = "Колдонмого сиздин сүрөт китепканаңызга кирүү мүмкүнчүлүгү керек. Сураныч, түзмөгүңүздүн жөндөөлөрүнө > Купуялык > Сүрөттөрүнө өтүп, КҮЙҮК кылып коюңуз";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Агент жок";
+//UIAlertHandler.swift
+"No agents available" = "Жеткиликтүү агенттер жок";
+//ChatViewController+Surveys.swift
+"No current survey" = "Учурдагы изилдөөлөр жок";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Баа үчүн эскертүү өтө узун";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Колдонмонун орнотууларын ачыңыз";
+//UIAlertHandler.swift
+"Operator Info" = "Агент жөнүндө маалымат";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Агентке баа берүү мүмкүн эмес";
+//AdditionalKeys.swift
+"P.CR" = "Агент сиздин байланыш маалыматыңызды сурады.";
+//AdditionalKeys.swift
+"P.OA" = "Сиздин өтүнүчүңүзгө %@ агенти дайындалды.";
+//AdditionalKeys.swift
+"P.OF" = "%@ файл жөнөттү: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ билдирүү жазган: %@";
+//AdditionalKeys.swift
+"P.RO" = "Агентти баалоо.";
+//FilePicker.swift
+"Photo Library" = "Сүрөт китепканасы";
+//FilePicker.swift
+"Please Allow Access" = "Кирүүгө уруксат бериңиз";
+//ChatViewController+Surveys.swift
+"Question not found" = "Суроо табылган жок";
+//StringConstants.swift
+"Reply" = "Жооп берүү";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Бул суроо-талапка жооп түзүү мүмкүн эмес";
+//UIAlertHandler.swift
+"Save error" = "Сактоо ката";
+//UIAlertHandler.swift
+"SaveError" = "Сактоо ката";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Түзмөктө сүрөттөрдү сактоо мүмкүнчүлүгү жок. Колдонмонун жөндөөлөрүнөн кирүү мүмкүнчүлүгүн бериңиз.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Аспапта файлдарды сактоо мүмкүнчүлүгү жок. Колдонмонун жөндөөлөрүнөн кирүү мүмкүнчүлүгүн бериңиз.";
+//UIAlertHandler.swift
+"Saved!" = "Сакталган!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Баскычтоп өтүнүчүн жөнөтүү ишке ашкан жок";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Клавиатура суроо-талабын жөнөтүү белгисиз ката";
+//WMQuoteFileCell.swift
+"Sending" = "Жөнөтүү";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Денеде файлдарды жөнөтүү колдоого алынбайт";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Сеанс түзүлбөй калды";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Орнотуулар";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Сурамжылоо өчүрүлгөн";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Сүрөт сиздин сүрөттөрүңүзгө сакталды";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Баалоочу агент жок.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Бул агент учурдагы чатта жок";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Белгисиз ката";
+//WMFileTableViewCell.swift
+"Uploading file" = "Жүктөө файлы";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Чатка сүрөттөрдү жөнөтүү үчүн Webimге камераңызды колдонууга уруксат керек.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "Сурамда туура эмес баскыч ID";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "Сурамда туура эмес билдирүү ID";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Туура эмес билдирүү түрү (текст эмес)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Сиздин келүүчү аккаунтуңуз кара тизмеде.";
+//WebimSerivce.swift
+"Session initialization failed." = "Сеанс инициализациясы ишке ашкан жок.";
+//WMMessageTableCell.swift
+"edited" = "редакцияланган";
+//WMQuoteView.swift
+"You" = "Сен";
+"name" = "Аты-жөнү";
+"email" = "E-mail";
+"phone" = "Телефону";
+"first_custom_field" = "Ыйындык бөлөм 1";
+"second_custom_field" = "Ыйындык бөлөм 2";
+"third_custom_field" = "Ыйындык бөлөм 3";
+"VisitorContacts" = "Сиз байланыш маалыматын бердиңиз.";
+"Continue" = "Улантуу";
+"Live chat agent" = "Түз эфир чат кызматкери";
+"Offline request" = "Офлайн суроо";
+"First message label" = "Диалогду баштоо үчүн байланыш маалыматыңызды жана сурооңузду киргизиңиз.";
+"Offline message label" = "Тилекке каршы, учурда жеткиликтүү операторлор жок. Сураныч, кийинчерээк кайрылыңыз же бизге сурооңузду калтырыңыз. Биз сиз менен көрсөтүлгөн дарек аркылуу байланышабыз.";
+"Message" = "Билдирүү";
+"Attach file" = "Файлды тиркөө";
+"agreement_part1" = "Мен";
+"agreement_part2" = "жеке маалыматтарды иштетүүгө";
+"agreement_part3" = "макулмун жана";
+"agreement_part4" = "Купиялык саясаты";
+"Optional" = "(зарыл эмес)";
+"Save" = "Сактоо";
+"Contact information" = "Байланыш маалыматы";

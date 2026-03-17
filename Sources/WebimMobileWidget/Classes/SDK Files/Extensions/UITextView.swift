@@ -129,13 +129,11 @@ extension UITextView {
         return font
     }
     
-    func setTextWithReferences(
-        _ originalText: String,
-        textColor: UIColor? = nil,
-        textFont: UIFont? = nil,
-        alignment: NSTextAlignment,
-        linkColor: UIColor? = nil
-    ) -> Bool {
+    func setTextWithReferences(_ originalText: String,
+                               textColor: UIColor? = nil,
+                               textFont: UIFont? = nil,
+                               alignment: NSTextAlignment,
+                               linkColor: UIColor? = nil) -> Bool {
         
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = alignment
@@ -172,9 +170,8 @@ extension UITextView {
             if let url = String.openableUrlFromLink("\(link)") {
                 let linkRange = text.nsRange(from: range)
                 attributedOriginalText.addAttribute(NSAttributedString.Key.link, value: url, range: linkRange)
-                if let color = linkColor {
-                    attributedOriginalText.addAttribute(.foregroundColor, value: color, range: linkRange)
-                }
+                let color = linkColor ?? textLinkColor
+                attributedOriginalText.addAttribute(.foregroundColor, value: color, range: linkRange)
             }
         }
         

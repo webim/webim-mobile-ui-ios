@@ -29,65 +29,101 @@ import WebimMobileSDK
 
 class WebimServerSideSettingsManager {
     
-    private var webimServerSideSettings: WebimServerSideSettings?
+    private var webimServerSideSettings: ServerSettings?
+    private var accountConfig: AccountConfig?
+    private var chatConfig: ChatConfig?
+    private var resources: ResourcesConfig?
     
     func getServerSideSettings(_ completionHandler: ServerSideSettingsCompletionHandler) {
         WebimServiceController.currentSession.getServerSideSettings(completionHandler: completionHandler)
     }
     
     func isGlobalReplyEnabled() -> Bool {
-        guard let isGlobalReplyEnabled = webimServerSideSettings?.accountConfig.webAndMobileQuoting else {
+        guard let isGlobalReplyEnabled = accountConfig?.getWebAndMobileQuoting() else {
             return false
         }
         return isGlobalReplyEnabled
     }
     
     func isMessageEditEnabled() -> Bool {
-        guard let isMessageEditEnabled = webimServerSideSettings?.accountConfig.visitorMessageEditing else {
+        guard let isMessageEditEnabled = accountConfig?.getVisitorMessageEditing() else {
             return false
         }
         return isMessageEditEnabled
     }
     
     func isRateOperatorEnabled() -> Bool {
-        guard let isRateOperatorEnabled = webimServerSideSettings?.accountConfig.rateOperator else {
+        guard let isRateOperatorEnabled = accountConfig?.getAllowedRateOperator() else {
             return true
         }
         return isRateOperatorEnabled
     }
     
     func showRateOperatorButton() -> Bool {
-        guard let showRateOperatorButton = webimServerSideSettings?.accountConfig.showRateOperator else {
+        guard let showRateOperatorButton = accountConfig?.getShowRateOperator() else {
             return true
         }
         return showRateOperatorButton
     }
     
+    func getVisiorFieldsSettings() -> ContactsSettings? {
+        return chatConfig?.getVisitorFields()
+    }
+    
+    func getVisiorFieldsLables() -> [String: String?]? {
+        return chatConfig?.getVisitorFieldLabels()
+    }
+    
+    func getResources() -> ResourcesConfig? {
+        return resources
+    }
+
     func getRateForm() -> String? {
-        return webimServerSideSettings?.accountConfig.rateForm
+        return accountConfig?.getRateForm()
     }
     
     func getRatedEntity() -> String? {
-        return webimServerSideSettings?.accountConfig.ratedEntity
+        return accountConfig?.getRatedEntity()
     }
     
     func getVisitorSegment() -> String? {
-        webimServerSideSettings?.accountConfig.visitorSegment
+        accountConfig?.getVisitorSegment()
     }
     
     func getProcessingPersonalDataUrl() -> String? {
-        webimServerSideSettings?.accountConfig.processingPersonalDataUrl
+        accountConfig?.getProcessingPersonalDataUrl()
     }
     
     func showProcessingPersonalDataCheckbox() -> Bool {
-        webimServerSideSettings?.accountConfig.showProcessingPersonalDataCheckbox ?? false
+        accountConfig?.getShowProcessingPersonalDataCheckbox() ?? true
     }
     
+    func getRawAccountConfig() -> [String: Any]? {
+        accountConfig?.getRawAccountConfig()
+    }
+    
+    func getShowSendFileMenu() -> Bool {
+        accountConfig?.getVisitorUploadFile() ?? true
+    }
+    
+    func getRateOperatorByClickOnAvatar() -> Bool {
+        accountConfig?.getRateOperatorByClickOnAvatar() ?? true
+    }
+    
+    func getMessagesTranslatorEnadled() -> Bool {
+        accountConfig?.getMessagesTranslator() ?? false
+    }
+    
+    func getPrivacyPolicyUrl() -> String? {
+        accountConfig?.getPrivacyPolicyUrl()
+    }
 }
 
 extension WebimServerSideSettingsManager: ServerSideSettingsCompletionHandler {
-    func onSuccess(webimServerSideSettings: WebimServerSideSettings) {
-        self.webimServerSideSettings = webimServerSideSettings
+    func onSuccess(webimServerSideSettings: ServerSettings) {
+        self.accountConfig = webimServerSideSettings.getAccountConfig()
+        self.resources = webimServerSideSettings.getResources()
+        self.chatConfig = webimServerSideSettings.getChatConfig()
     }
 
     func onFailure() {

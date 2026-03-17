@@ -44,16 +44,45 @@ open class FilePicker: NSObject {
     
     // MARK: - Private properties
     private let imagePickerController: UIImagePickerController
-    private let documentPickerController: UIDocumentPickerViewController
+    private var documentPickerController: UIDocumentPickerViewController = UIDocumentPickerViewController(
+        documentTypes: [
+            String(kUTTypeJPEG),
+            String(kUTTypeRTF),
+            String(kUTTypeGIF),
+            String(kUTTypePlainText),
+            String(kUTTypePDF),
+            String(kUTTypeMP3),
+            String(kUTTypeMPEG4),
+            String(kUTTypeData),
+            String(kUTTypeArchive)
+        ],
+        in: .import
+    )
     private let alertDialogHandler: AlertController
     
     private weak var presentationController: UIViewController?
     private weak var delegate: FilePickerDelegate?
     
+    private var allowsMultipleSelection: Bool = true
+    
     // MARK: - Methods
     public init(presentationController: UIViewController,
-                delegate: FilePickerDelegate) {
+                delegate: FilePickerDelegate,
+                allowsMultipleSelection: Bool = true) {
         self.imagePickerController = UIImagePickerController()
+        self.alertDialogHandler = AlertController(delegate: presentationController)
+        super.init()
+        self.allowsMultipleSelection = allowsMultipleSelection
+        self.dropDocumentPickerController()
+        self.presentationController = presentationController
+        self.delegate = delegate
+    
+        self.imagePickerController.delegate = self
+        self.imagePickerController.allowsEditing = false
+        self.imagePickerController.mediaTypes = ["public.image"]
+    }
+    
+    private func dropDocumentPickerController() {
         self.documentPickerController = UIDocumentPickerViewController(
             documentTypes: [
                 String(kUTTypeJPEG),
@@ -68,24 +97,12 @@ open class FilePicker: NSObject {
             ],
             in: .import
         )
-        self.alertDialogHandler = AlertController(delegate: presentationController)
-        
-        super.init()
-        
-        self.presentationController = presentationController
-        self.delegate = delegate
-        
-        self.imagePickerController.delegate = self
-        self.imagePickerController.allowsEditing = false
-        self.imagePickerController.mediaTypes = ["public.image"]
-
         self.documentPickerController.delegate = self
-        if #available(iOS 11.0, *) {
-            self.documentPickerController.allowsMultipleSelection = true
-        }
+        self.documentPickerController.allowsMultipleSelection = allowsMultipleSelection
     }
     
     func showSendFileMenu(from sourceView: UIView) {
+        self.dropDocumentPickerController()
         let fileMenuSheet = CompletableAlertController(
             title: nil,
             message: nil,
@@ -188,11 +205,9 @@ open class FilePicker: NSObject {
                 self.showImagePicker()
             }
         } else {
-            let ac = CompletableAlertController(
-                title: "Please Allow Access".localized,
-                message: "Need photo access".localized,
-                preferredStyle: .alert
-            )
+            let ac = CompletableAlertController(title: "Please Allow Access".localized,
+                                                message: "Need photo access".localized,
+                                                preferredStyle: .alert)
             let okAction = UIAlertAction(
                 title: "OK".localized,
                 style: .cancel
@@ -205,11 +220,9 @@ open class FilePicker: NSObject {
     }
 
     private func showAlertForPhotoAccess() {
-        let ac = CompletableAlertController(
-            title: "Please Allow Access".localized,
-            message: "Need photo access".localized,
-            preferredStyle: .alert
-        )
+        let ac = CompletableAlertController(title: "Please Allow Access".localized,
+                                            message: "Need photo access".localized,
+                                            preferredStyle: .alert)
         guard let settingsAppURL = URL(string: UIApplication.openSettingsURLString) else { return }
         let showAppSettingsAction = UIAlertAction(
             title: "Settings".localized,
@@ -248,14 +261,16 @@ open class FilePicker: NSObject {
     }
     
     // MARK: - Private methods
-    private func pickerControllerImage(_ controller: UIImagePickerController, didSelect images: [ImageToSend] = []) {
+    private func pickerControllerImage(_ controller: UIImagePickerController,
+                                       didSelect images: [ImageToSend] = []) {
         self.delegate?.didSelect(images: images)
         DispatchQueue.main.async {
             controller.dismiss(animated: true)
         }
     }
     
-    private func pickerControllerDocument(_ controller: UIDocumentPickerViewController, didSelect files: [FileToSend] = []) {
+    private func pickerControllerDocument(_ controller: UIDocumentPickerViewController,
+                                          didSelect files: [FileToSend] = []) {
         self.delegate?.didSelect(files: files)
         DispatchQueue.main.async {
             controller.dismiss(animated: true)
@@ -329,7 +344,7 @@ open class FilePicker: NSObject {
     @available(iOS 14, *)
     private func producePickerViewController() -> PHPickerViewController {
         var pickerConfig = PHPickerConfiguration(photoLibrary: .shared())
-        pickerConfig.selectionLimit = 10
+        pickerConfig.selectionLimit = allowsMultipleSelection ? 10 : 1
         let picker = PHPickerViewController(configuration: pickerConfig)
         picker.delegate = self
         return picker

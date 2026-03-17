@@ -277,7 +277,7 @@ public class WMToolbarConfigBuilder {
     /**
      Sets  input view color.
      - parameter inputViewColor:
-     Text view max height.
+     Input view color.
      - returns:
      `WMToolbarConfigBuilder` object with  input view color set.
      - author:

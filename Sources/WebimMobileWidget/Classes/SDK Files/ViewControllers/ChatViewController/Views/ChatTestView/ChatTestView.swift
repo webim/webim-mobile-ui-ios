@@ -116,12 +116,10 @@ class ChatTestView: UIView {
         }
         
         let configString = """
-        rate_form: \(config.getRateForm())
-        rated_entity: \(config.getRatedEntity())
-        visitor_segment: \(config.getVisitorSegment())
+        \(config.getRawAccountConfig())
         """
         
-        let alert = UIAlertController(title: "Настройки конфига столото",
+        let alert = UIAlertController(title: "Настройки конфига",
                                       message: configString,
                                       preferredStyle: .alert)
         let cancelAction = UIAlertAction(

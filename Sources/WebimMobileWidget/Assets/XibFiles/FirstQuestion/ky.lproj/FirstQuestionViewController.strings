@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2Ut-iM-QqQ"; */
+"2Ut-iM-QqQ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Для начала диалога"; ObjectID = "3sN-iD-Zwo"; */
+"3sN-iD-Zwo.text" = "Для начала диалога";
+
+/* Class = "UILabel"; text = "26кб"; ObjectID = "5fo-Bf-K63"; */
+"5fo-Bf-K63.text" = "26кб";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "KjG-Eq-8Bo"; */
+"KjG-Eq-8Bo.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KjG-Eq-8Bo"; */
+"KjG-Eq-8Bo.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Онлайн консультант"; ObjectID = "OY9-LY-5a3"; */
+"OY9-LY-5a3.title" = "Онлайн консультант";
+
+/* Class = "UILabel"; text = "Соглашение"; ObjectID = "bAX-cj-0H1"; */
+"bAX-cj-0H1.text" = "Соглашение";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g5w-DU-gpz"; */
+"g5w-DU-gpz.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "file.png"; ObjectID = "gDG-ls-z7r"; */
+"gDG-ls-z7r.text" = "file.png";
+
+/* Class = "UIButton"; configuration.title = "   Добавить файл"; ObjectID = "smt-dC-Tu1"; */
+"smt-dC-Tu1.configuration.title" = "   Добавить файл";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "smt-dC-Tu1"; */
+"smt-dC-Tu1.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Продолжить"; ObjectID = "xFw-L0-uux"; */
+"xFw-L0-uux.configuration.title" = "Продолжить";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xFw-L0-uux"; */
+"xFw-L0-uux.normalTitle" = "Button";

@@ -135,4 +135,5 @@ public class WMWidgetBuilder {
         chatViewController.processingPersonalDataUrl = processingPersonalDataUrl
         return self
     }
+
 }

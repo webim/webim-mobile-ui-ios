@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" reuseIdentifier="VisitorFieldsCell" id="86V-4P-C7F" userLabel="Contacts Table View cell" customClass="VisitorFieldsCell" customModule="WebimMobileWidget">
+            <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" id="bpX-uH-j74">
+                <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fG0-Xc-6TO">
+                        <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.41960784313725491" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                    </textView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFi-Me-TN4">
+                        <rect key="frame" x="16" y="5" width="252" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.22352941179999999" green="0.2470588235" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VFi-Me-TN4" secondAttribute="trailing" constant="16" id="2BG-KX-pO2"/>
+                    <constraint firstItem="fG0-Xc-6TO" firstAttribute="top" secondItem="bpX-uH-j74" secondAttribute="top" id="7Hi-be-pdM"/>
+                    <constraint firstAttribute="bottom" secondItem="fG0-Xc-6TO" secondAttribute="bottom" id="7Id-Sc-8oe"/>
+                    <constraint firstItem="fG0-Xc-6TO" firstAttribute="leading" secondItem="bpX-uH-j74" secondAttribute="leading" id="8qF-Pb-X18"/>
+                    <constraint firstAttribute="trailing" secondItem="fG0-Xc-6TO" secondAttribute="trailing" id="NUg-M1-RNt"/>
+                    <constraint firstItem="VFi-Me-TN4" firstAttribute="leading" secondItem="bpX-uH-j74" secondAttribute="leading" constant="16" id="VSA-2X-FFl"/>
+                    <constraint firstItem="VFi-Me-TN4" firstAttribute="top" secondItem="bpX-uH-j74" secondAttribute="top" constant="5" id="bMi-6l-wVQ"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="284" height="50"/>
+            <connections>
+                <outlet property="nameLabel" destination="VFi-Me-TN4" id="q9k-he-Cau"/>
+                <outlet property="textView" destination="fG0-Xc-6TO" id="a2J-2x-at6"/>
+            </connections>
+            <point key="canvasLocation" x="-334.78260869565219" y="-6.0267857142857144"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		117147AF2DD7D0C800784BEB /* WebimMobileWidget in Frameworks */ = {isa = PBXBuildFile; productRef = 117147AE2DD7D0C800784BEB /* WebimMobileWidget */; };
+		117147B52DD7D1CD00784BEB /* WebimMobileWidget in Frameworks */ = {isa = PBXBuildFile; productRef = 117147B42DD7D1CD00784BEB /* WebimMobileWidget */; };
+		117147B82DD7D28F00784BEB /* WebimMobileWidget in Frameworks */ = {isa = PBXBuildFile; productRef = 117147B72DD7D28F00784BEB /* WebimMobileWidget */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		900796572D65F75800DAE7D8 /* WebimMobileWidget in Frameworks */ = {isa = PBXBuildFile; productRef = 900796562D65F75800DAE7D8 /* WebimMobileWidget */; };
 		BE1D5BBB297AA82800247BAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE1D5BB6297AA82800247BAB /* InfoPlist.strings */; };
 		BE68C427295AC57700B4E90E /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BEF1E21929C056AC0066400D /* ExternalWidgetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E21829C056AC0066400D /* ExternalWidgetBuilder.swift */; };
@@ -53,7 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900796572D65F75800DAE7D8 /* WebimMobileWidget in Frameworks */,
+				117147AF2DD7D0C800784BEB /* WebimMobileWidget in Frameworks */,
+				117147B82DD7D28F00784BEB /* WebimMobileWidget in Frameworks */,
+				117147B52DD7D1CD00784BEB /* WebimMobileWidget in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +71,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		117147B62DD7D28F00784BEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +85,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for WebimMobileWidget */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				117147B62DD7D28F00784BEB /* Frameworks */,
 				607FACD11AFB9204008FA782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -226,7 +238,7 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
-				900796552D65F75800DAE7D8 /* XCLocalSwiftPackageReference "../../webim-mobile-ui-ios" */,
+				117147B32DD7D1CD00784BEB /* XCLocalSwiftPackageReference "../../webim-mobile-ui-ios" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -576,15 +588,24 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		900796552D65F75800DAE7D8 /* XCLocalSwiftPackageReference "../../webim-mobile-ui-ios" */ = {
+		117147B32DD7D1CD00784BEB /* XCLocalSwiftPackageReference "../../webim-mobile-ui-ios" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../webim-mobile-ui-ios";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		900796562D65F75800DAE7D8 /* WebimMobileWidget */ = {
+		117147AE2DD7D0C800784BEB /* WebimMobileWidget */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WebimMobileWidget;
+		};
+		117147B42DD7D1CD00784BEB /* WebimMobileWidget */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WebimMobileWidget;
+		};
+		117147B72DD7D28F00784BEB /* WebimMobileWidget */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 117147B32DD7D1CD00784BEB /* XCLocalSwiftPackageReference "../../webim-mobile-ui-ios" */;
 			productName = WebimMobileWidget;
 		};
 /* End XCSwiftPackageProductDependency section */

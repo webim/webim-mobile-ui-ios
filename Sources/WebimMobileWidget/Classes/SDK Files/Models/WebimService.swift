@@ -512,18 +512,6 @@ final class WebimService {
                 || (chatState == .closedByOperator))
     }
     
-    func closeChat() {
-        do {
-            if messageStream == nil {
-                setMessageStream()
-            }
-            
-            try messageStream?.closeChat()
-        } catch {
-            self.printError(error: error, message: "Close chat")
-        }
-    }
-    
     func clearHistory() {
         do {
             if messageStream == nil {
@@ -565,6 +553,42 @@ final class WebimService {
         }
     }
     
+    func sendContacts(contacts: String,
+                      completionHandler: ContactsCompletionHandler?) {
+        do {
+            if messageStream == nil {
+                setMessageStream()
+            }
+            try messageStream?.sendContacts(
+                contacts: contacts,
+                completionHandler: completionHandler
+            )
+        } catch {
+            self.printError(error: error, message: "Send Contacts")
+        }
+    }
+    
+    func sendOfflineMessage(message: String,
+                            fields: String,
+                            file: Data?,
+                            fileName: String?,
+                            mimeType: String?,
+                            completionHandler: OfflineMessageCompletionHandler?) {
+        do {
+            if messageStream == nil {
+                setMessageStream()
+            }
+            try messageStream?.sendOfflineMessage(message: message,
+                                                  fields: fields,
+                                                  file: file,
+                                                  fileName: fileName,
+                                                  mimeType: mimeType,
+                                                  completionHandler: completionHandler)
+        } catch {
+            self.printError(error: error, message: "Send Offline Message")
+        }
+    }
+    
     func sendResolution(withID operatorID: String,
                         answer: Int,
                         completionHandler: SendResolutionCompletionHandler?) {
@@ -572,7 +596,6 @@ final class WebimService {
             if messageStream == nil {
                 setMessageStream()
             }
-            
             try messageStream?.sendResolutionSurvey(id: operatorID,
                                                     answer: answer,
                                                     completionHandler: completionHandler)
@@ -586,6 +609,23 @@ final class WebimService {
             setMessageStream()
         }
         messageStream?.set(helloMessageListener: helloMessageListener)
+    }
+    
+    func setSessionLanguageListener(with sessionLanguageListener: SessionLanguageListener) {
+        if messageStream == nil {
+            setMessageStream()
+        }
+        messageStream?.set(sessionLanguageListener: sessionLanguageListener)
+    }
+    
+    func set(forceOnline: Bool?) {
+        guard let forceOnline = forceOnline else {
+            return
+        }
+        if messageStream == nil {
+            setMessageStream()
+        }
+        messageStream?.set(forceOnline: forceOnline)
     }
     
     func setMessageTracker(withMessageListener messageListener: MessageListener) {
@@ -668,6 +708,20 @@ final class WebimService {
         return messageStream?.getCurrentOperator()
     }
     
+    func getCurrentLanguage() -> String? {
+        if messageStream == nil {
+            setMessageStream()
+        }
+        return messageStream?.getChatLanguage()
+    }
+    
+    func getVisitor() -> Visitor? {
+        if messageStream == nil {
+            setMessageStream()
+        }
+        return messageStream?.getVisitor()
+    }
+    
     func getLastRatingOfOperatorWith(id: String) -> Int {
         if messageStream == nil {
             setMessageStream()
@@ -746,6 +800,23 @@ final class WebimService {
             self.printError(error: error, message: "Start chat")
         }
     }
+    
+    func startChat(firstQuestion: String?,
+                   customFields: String?) {
+        do {
+            if messageStream == nil {
+                setMessageStream()
+            }
+            
+            try messageStream?.startChat(
+                firstQuestion: firstQuestion,
+                customFields: customFields
+            )
+        } catch {
+            self.printError(error: error, message: "Start chat with custom fields")
+        }
+    }
+    
     // MARK: Private methods
     
     private func replyMessage(
@@ -934,6 +1005,10 @@ final class WebimService {
     
     func shouldShowDepartmentSelection() -> Bool {
         return messageStream?.getVisitSessionState() == .departmentSelection || messageStream?.getVisitSessionState() == .idleAfterChat
+    }
+    
+    func shouldShowFirstQuestion() -> Bool {
+        return messageStream?.getVisitSessionState() == .firstQuestion || messageStream?.getVisitSessionState() == .offlineMessage
     }
     
     func departmentList() -> [Department]? {

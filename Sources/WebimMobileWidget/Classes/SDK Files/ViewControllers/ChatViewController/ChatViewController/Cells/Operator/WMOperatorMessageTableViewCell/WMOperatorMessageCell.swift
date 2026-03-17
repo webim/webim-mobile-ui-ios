@@ -79,7 +79,7 @@ class WMOperatorMessageCell: WMMessageTableCell {
         let textFont = config?.subtitleAttributes?[.font] as? UIFont ?? messageTextView.notNilFont()
         
         let _ = self.messageTextView.setTextWithReferences(
-            message.getText(),
+            message.getData()?.getTranslationInfo()?.getTranslatedText() ?? message.getText(),
             textColor: textColor,
             textFont: textFont,
             alignment: .left,

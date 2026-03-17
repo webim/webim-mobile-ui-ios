@@ -51,9 +51,14 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     var quoteViewConfig: WMHelperInputViewConfig?
     var editBarConfig: WMHelperInputViewConfig?
     var surveyViewConfig: WMSurveyViewConfig?
+    var contactsViewConfig: WMContactsViewConfig?
+    var firstQuestionConfig: WMFirstQuestionViewConfig?
     var infoCellConfig: WMAbstractCellConfig?
     var emptyChatTitle: String?
+    var forceOnline: Bool?
     var loadMessagesTintColor: UIColor?
+    var showContactsView: Bool = true
+    var showFirstQuestionView: Bool = true
 
     /**
      - returns:
@@ -80,9 +85,14 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
         chatConfig.quoteViewConfig = quoteViewConfig
         chatConfig.editBarConfig = editBarConfig
         chatConfig.surveyViewConfig = surveyViewConfig
+        chatConfig.contactsViewConfig = contactsViewConfig
+        chatConfig.firstQuestionConfig = firstQuestionConfig
         chatConfig.infoCellConfig = infoCellConfig
         chatConfig.emptyChatTitle = emptyChatTitle
+        chatConfig.forceOnline = forceOnline
         chatConfig.loadMessagesTintColor = loadMessagesTintColor
+        chatConfig.showContactsView = showContactsView
+        chatConfig.showFirstQuestionView = showFirstQuestionView
         return chatConfig
     }
     
@@ -152,11 +162,11 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
         self.showScrollButtonCounter = showScrollButtonCounter
         return self
     }
-
+    
     // MARK: RefreshControl
     /**
      Sets request messages count.
-     - parameter navigationBarConfig:
+     - parameter requestMessagesCount:
      Count.
      - returns:
      `WMChatViewControllerConfigBuilder` object with request messages count set.
@@ -369,6 +379,38 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     }
     
     /**
+     Sets contacts view config.
+     - parameter contactsViewConfig:
+     Contacts view config.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with contacts view config set.
+     - author:
+     Aslan Kutumbaev
+     - copyright:
+     2023 Webim
+     */
+    public func set(contactsViewConfig: WMContactsViewConfig?) -> Self {
+        self.contactsViewConfig = contactsViewConfig
+        return self
+    }
+    
+    /**
+     Sets first question  view config.
+     - parameter firstQuestionConfig:
+     First Question view config.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with first question view config set.
+     - author:
+     Aslan Kutumbaev
+     - copyright:
+     2023 Webim
+     */
+    public func set(firstQuestionConfig: WMFirstQuestionViewConfig?) -> Self {
+        self.firstQuestionConfig = firstQuestionConfig
+        return self
+    }
+    
+    /**
      Sets empty chat title.
      - parameter emptyChatTitle:
      Survey view config.
@@ -385,6 +427,22 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
     }
     
     /**
+     Sets force online chat value.
+     - parameter forceOnline:
+     Default value is true. Sets false if want offline message form.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with force online set.
+     - author:
+     Anna Frolovs
+     - copyright:
+     2025 Webim
+     */
+    public func set(forceOnline: Bool) -> Self {
+        self.forceOnline = forceOnline
+        return self
+    }
+    
+    /**
      Sets load messages activity indicator tint color.
      - parameter loadMessagesTintColor:
      Color.
@@ -394,9 +452,41 @@ public class WMChatViewControllerConfigBuilder: WMViewControllerConfigBuilder {
      Anna Frolova
      - copyright:
      2024 Webim
-    */
+     */
     public func set(loadMessagesTintColor: UIColor) -> Self {
         self.loadMessagesTintColor = loadMessagesTintColor
+        return self
+    }
+    
+    /**
+     Sets contacts view needs to show .
+     - parameter showContactsView:
+     True or false.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with info about show contacts view.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(showContactsView: Bool) -> Self {
+        self.showContactsView = showContactsView
+        return self
+    }
+    
+    /**
+     Sets first question view needs to show .
+     - parameter showFirstQuestionView:
+     True or false.
+     - returns:
+     `WMChatViewControllerConfigBuilder` object with info about show first question view.
+     - author:
+     Anna Frolova
+     - copyright:
+     2024 Webim
+     */
+    public func set(showFirstQuestionView: Bool) -> Self {
+        self.showFirstQuestionView = showFirstQuestionView
         return self
     }
 }

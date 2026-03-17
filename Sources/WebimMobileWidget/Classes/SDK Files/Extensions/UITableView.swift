@@ -56,23 +56,23 @@ extension UITableView {
                          animated: Bool,
                          completion: (() -> Void)? = nil) {
         guard indexPath.count == 2,
-                indexPath.section >= 0,
-                indexPath.section < self.numberOfSections,
-                indexPath.row >= 0,
-                indexPath.row < self.numberOfRows(inSection: indexPath.section) else {
-            completion?()
-            return
-        }
-                
-        if animated {
-            CATransaction.begin()
-            CATransaction.setCompletionBlock(completion)
-            self.scrollToRow(at: indexPath, at: scrollPosition, animated: true)
-            CATransaction.commit()
-        } else {
-            self.scrollToRow(at: indexPath, at: scrollPosition, animated: false)
-            completion?()
-        }
+                  indexPath.section >= 0,
+                  indexPath.section < self.numberOfSections,
+                  indexPath.row >= 0,
+                  indexPath.row < self.numberOfRows(inSection: indexPath.section) else {
+                completion?()
+                return
+            }
+            
+            if animated {
+                CATransaction.begin()
+                CATransaction.setCompletionBlock(completion)
+                self.scrollToRow(at: indexPath, at: scrollPosition, animated: true)
+                CATransaction.commit()
+            } else {
+                self.scrollToRow(at: indexPath, at: scrollPosition, animated: false)
+                completion?()
+            }
     }
 }
 

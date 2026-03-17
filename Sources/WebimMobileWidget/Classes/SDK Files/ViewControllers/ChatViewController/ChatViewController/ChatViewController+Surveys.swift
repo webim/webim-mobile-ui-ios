@@ -108,20 +108,15 @@ extension ChatViewController {
     func isCurrentOperatorRated() -> Bool? {
 
         if let operatorId = WebimServiceController.currentSession.getCurrentOperator()?.getID() {
-            return alreadyRatedOperators[operatorId]
+            return WebimServiceController.currentSession.getLastRatingOfOperatorWith(id: operatorId) != 0
         }
 
         for message in chatMessages.reversed() {
             if let operatorId = message.getOperatorID() {
-                return alreadyRatedOperators[operatorId]
+                return WebimServiceController.currentSession.getLastRatingOfOperatorWith(id: operatorId) != 0
             }
         }
         return nil
-    }
-    
-    func showRateStarsDialog(description: String) {
-        
-        self.showRateStars(operatorId: "", isSurvey: true, description: description)
     }
     
     private func showRateStars(operatorId: String, isSurvey: Bool, description: String) {
@@ -137,7 +132,7 @@ extension ChatViewController {
             vc.isSurvey = isSurvey
             vc.descriptionText = description
             vc.modalPresentationStyle = .overCurrentContext
-            vc.currentRating = self.alreadyRatedOperators[operatorId] != true ? 0.0 : Double(WebimServiceController.shared.currentSession().getLastRatingOfOperatorWith(id: operatorId))
+            vc.currentRating = Double(WebimServiceController.shared.currentSession().getLastRatingOfOperatorWith(id: operatorId))
             self.present(vc, animated: true) {
                 UIView.animate(withDuration: 0.3) { [weak vc] in
                     vc?.view.backgroundColor = .black.withAlphaComponent(0.5)
@@ -204,16 +199,6 @@ extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCom
             if surveyCounter == 0 {
                 surveyCounter = -1
             }
-            guard let currentOperator = WebimServiceController.currentSession.getCurrentOperator() else {
-                return
-            }
-            let sessionState = WebimServiceController.currentSession.sessionState()
-            
-            if sessionState != .closedByOperator && sessionState != .closedByVisitor {
-                alreadyRatedOperators[currentOperator.getID()] = true
-            }
-            changed(operator: WebimServiceController.currentSession.getCurrentOperator(),
-                    to: WebimServiceController.currentSession.getCurrentOperator())
         }
     }
     

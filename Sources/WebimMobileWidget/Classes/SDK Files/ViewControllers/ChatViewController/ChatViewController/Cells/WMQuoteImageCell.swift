@@ -34,6 +34,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
     
     @IBOutlet var quoteMessageText: UILabel!
     @IBOutlet var quoteAuthorName: UILabel!
+    @IBOutlet var quoteLineView: UIView!
     
     @IBOutlet var quoteImage: UIImageView!
     var url: URL?
@@ -52,7 +53,13 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
             self.url = url
             WMFileDownloadManager.shared.subscribeForImage(url: url, progressListener: self)
         }
-        let textColor = message.isVisitorType() ? quoteImageVisitorMessageTextColor : quoteImageOperatorMessageTextColor
+        let textColor = config?.subtitleAttributes?[.foregroundColor] as? UIColor ?? (message.isVisitorType() ? quoteImageVisitorMessageTextColor : quoteImageOperatorMessageTextColor)
+        let defaultAuthorColor = message.isVisitorType() ? quoteVisitorMessageAuthorTextColor : quoteOperatorMessageAuthorTextColor
+        let configTitleColor = message.isVisitorType() ? config?.subtitleAttributes?[.foregroundColor] as? UIColor : config?.titleAttributes?[.foregroundColor] as? UIColor
+        let authorColor = configTitleColor ?? defaultAuthorColor
+        self.quoteLineView.backgroundColor = authorColor
+        self.quoteMessageText.textColor = textColor
+        self.quoteAuthorName.textColor = authorColor
         let _ = self.messageTextView.setTextWithReferences(message.getText(),
                                                            textColor: textColor,
                                                            alignment: .left,

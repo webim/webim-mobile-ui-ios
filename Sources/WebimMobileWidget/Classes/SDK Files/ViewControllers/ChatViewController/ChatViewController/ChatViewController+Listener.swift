@@ -29,10 +29,23 @@ import WebimMobileSDK
 
 extension ChatViewController: MessageListener {
     
+    func performUIUpdate(_ update: @escaping () -> Void) {
+        uiUpdateQueue.async {
+            if Thread.isMainThread {
+                update()
+            } else {
+                DispatchQueue.main.sync {
+                    update()
+                }
+            }
+        }
+    }
+    
     // MARK: - Methods
     
     func added(message newMessage: Message, after previousMessage: Message?) {
         chatMessagesQueue.async(flags: .barrier) {
+            let currentId = newMessage.getID()
             var inserted = false
             if !self.chatMessages.contains(where: { $0.getID() == newMessage.getID() }) {
                 if let previousMessage = previousMessage {
@@ -50,22 +63,35 @@ extension ChatViewController: MessageListener {
                 }
             }
             
-            let currentId = newMessage.getID()
-            
-            DispatchQueue.main.async {
+            self.performUIUpdate {
                 var snapshot = self.dataSource.snapshot()
                 if snapshot.numberOfSections == 0 {
                     snapshot.appendSections([0])
                 }
                 
                 if snapshot.itemIdentifiers.contains(currentId) {
-                    snapshot.reloadItems([currentId])
+                    let sectionItems = snapshot.itemIdentifiers(inSection: 0)
+                    if let previousMessageId = previousMessage?.getID(),
+                       let currentDistance = sectionItems.firstIndex(of: currentId),
+                       let previousMessageDistance = sectionItems.firstIndex(of: previousMessageId),
+                       currentDistance + 1 == previousMessageDistance {
+                        snapshot.deleteItems([currentId])
+                        snapshot.insertItems([currentId], afterItem: previousMessageId)
+                    } else {
+                        snapshot.reloadItems([currentId])
+                    }
+                } else if let previousMessageId = previousMessage?.getID() {
+                    snapshot.insertItems([currentId], afterItem: previousMessageId)
                 } else {
                     snapshot.appendItems([currentId], toSection: 0)
                 }
+
+                guard self.checkNeedUIUpdate() else {
+                    return
+                }
                 
                 self.dataSource.apply(snapshot, animatingDifferences: false) {
-                    guard newMessage.isVisitorType() || newMessage.isBotType() ||  self.isLastCellVisible() else { return }
+                    guard newMessage.isVisitorType() || newMessage.isBotType() || self.isLastCellVisible() else { return }
                     self.scrollToBottom(animated: true)
                 }
                 
@@ -74,6 +100,10 @@ extension ChatViewController: MessageListener {
                     self.messageCounter.set(lastMessageIndex: self.chatMessages.count - 1)
                 }
             }
+        }
+        
+        if newMessage.getType() == .contactInformationRequest && showContactsView {
+            showContactViewController()
         }
     }
     
@@ -84,9 +114,12 @@ extension ChatViewController: MessageListener {
             if let index = self.chatMessages.firstIndex(where: { $0.getID() == message.getID() }) {
                 self.chatMessages.remove(at: index)
             }
-            DispatchQueue.main.async {
+            self.performUIUpdate {
                 if snapshot.numberOfSections > 0 {
                     snapshot.deleteItems([message.getID()])
+                    guard self.checkNeedUIUpdate() else {
+                        return
+                    }
                     self.dataSource.apply(snapshot, animatingDifferences: true)
                 }
             }
@@ -98,7 +131,7 @@ extension ChatViewController: MessageListener {
             
             self.chatMessages.removeAll()
             
-            DispatchQueue.main.async {
+            self.performUIUpdate {
                 self.updateThreadListAndReloadTable()
             }
         }
@@ -112,7 +145,7 @@ extension ChatViewController: MessageListener {
             
             self.chatMessages[index] = newVersion
             
-            DispatchQueue.main.async {
+            self.performUIUpdate {
                 var snapshot = self.dataSource.snapshot()
                 
                 if snapshot.numberOfSections > 0 {
@@ -120,6 +153,10 @@ extension ChatViewController: MessageListener {
                         snapshot.reloadItems([id])
                     } else {
                         snapshot.appendItems([newVersion.getID()], toSection: 0)
+                    }
+                    
+                    guard self.checkNeedUIUpdate() else {
+                        return
                     }
                     
                     self.dataSource.apply(snapshot, animatingDifferences: false) {
@@ -135,12 +172,27 @@ extension ChatViewController: MessageListener {
             }
         }
     }
+    
+    func checkNeedUIUpdate() -> Bool {
+        let lastController = navigationController?.viewControllers.last
+        if navigationController == nil || lastController?.isImageViewController == false && lastController?.isFileViewController == false && lastController?.isFirstQuestionViewController == false {
+            return self.isViewLoaded && self.view.window != nil
+        } else {
+            return true
+        }
+    }
 }
 
 // MARK: - WEBIM: HelloMessageListener
 extension ChatViewController: HelloMessageListener {
     func helloMessage(message: String) {
         print("Received Hello message: \"\(message)\"")
+    }
+}
+
+extension ChatViewController: SessionLanguageListener {
+    func changed(newLang: String?) {
+        print("Received SessionLanguageListener lang: \"\(newLang)\"")
     }
 }
 
@@ -161,10 +213,9 @@ extension ChatViewController: CurrentOperatorChangeListener {
 // MARK: - WEBIM: ChatStateLisneter
 extension ChatViewController: ChatStateListener {
     func changed(state previousState: ChatState, to newState: ChatState) {
-        let currentSessionState = WebimServiceController.currentSession.sessionState()
-        if (newState == .closedByVisitor || newState == .closedByOperator) && (currentSessionState == .chatting || currentSessionState == .queue || currentSessionState == .chattingWithRobot) {
+        if (newState == .closedByOperator) && (WebimServiceController.currentSession.sessionState() == .chatting || WebimServiceController.currentSession.sessionState() == .queue) {
             
-            if let currentId = currentOperatorId(), alreadyRatedOperators[currentId] != true && webimServerSideSettingsManager.isRateOperatorEnabled() {
+            if let currentId = currentOperatorId(), WebimServiceController.currentSession.getLastRatingOfOperatorWith(id: currentId) == 0 && webimServerSideSettingsManager.isRateOperatorEnabled() {
                 showRateOperatorDialog(operatorId: currentOperatorId())
             }
         }
@@ -175,8 +226,8 @@ extension ChatViewController: ChatStateListener {
 
 extension ChatViewController: VisitSessionStateListener {
     func changed(state previousState: VisitSessionState, to newState: VisitSessionState) {
-        if newState == .firstQuestion {
-            checkAgreement()
+        if (newState == .firstQuestion || newState == .offlineMessage) && showFirstQuestionView {
+            showFirstQuestion(state: newState)
         }
     }
 }

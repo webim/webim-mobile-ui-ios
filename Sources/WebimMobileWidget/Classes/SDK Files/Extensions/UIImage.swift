@@ -29,7 +29,9 @@ import UIKit
 extension UIImage {
 
     static func loadImageFromWidget(named: String) -> UIImage? {
-        return UIImage(named: named, in: WidgetAppDelegate.bundle, compatibleWith: nil)
+        return UIImage(named: named,
+                       in: WidgetAppDelegate.bundle,
+                       compatibleWith: nil)
     }
 
     public enum FlipOrientation {

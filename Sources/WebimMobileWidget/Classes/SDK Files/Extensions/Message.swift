@@ -54,6 +54,7 @@ extension Message {
             || self.getType() == .contactInformationRequest
             || self.getType() == .operatorBusy
             || self.getType() == .actionRequest
+            || self.getType() == .contacts
     }
     
     public func canBeCopied() -> Bool {

@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'WebimMobileWidget'
-  s.version          = '1.4.6'
+  s.version          = '2.0.0'
   s.summary          = 'Webim.ru mobile UI for client SDK iOS.'
 
-  s.homepage         = 'https://webim.ru/integration/mobile-sdk/ios-sdk-howto/'
+  s.homepage         = 'https://webim.ru/kb/mobile/sdk'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Webim.ru Ltd' => 'webimdev@gmail.com' }
   s.source           = { :git => 'https://github.com/webim/webim-mobile-ui-ios.git', :tag => s.version.to_s }

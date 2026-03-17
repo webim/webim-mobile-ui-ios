@@ -41,8 +41,8 @@ extension UIViewController {
         return self is WMFileViewController
     }
     
-    public var isProcessingPersonalData: Bool {
-        return self is ProcessingPersonalData
+    public var isFirstQuestionViewController: Bool {
+        return self is FirstQuestionViewController
     }
     
     // MARK: - Methods

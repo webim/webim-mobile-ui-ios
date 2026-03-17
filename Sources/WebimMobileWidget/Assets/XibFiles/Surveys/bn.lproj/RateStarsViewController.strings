@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Please rate the overall impression of the consultation"; ObjectID = "53s-S5-RZf"; */
+"53s-S5-RZf.text" = "পরামর্শের সামগ্রিক ধারণাটি অনুগ্রহ করে রেট করুন।";
+
+/* Class = "UILabel"; text = "Rate Operator"; ObjectID = "uhc-HQ-v5f"; */
+"uhc-HQ-v5f.text" = "রেট এজেন্ট";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "v9Q-or-LCA"; */
+"v9Q-or-LCA.normalTitle" = "পাঠান";

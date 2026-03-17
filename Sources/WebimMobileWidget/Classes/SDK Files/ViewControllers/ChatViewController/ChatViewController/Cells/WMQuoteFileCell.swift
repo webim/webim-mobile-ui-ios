@@ -32,6 +32,7 @@ class WMQuoteFileCell: FileMessage {
     
     @IBOutlet var quoteAuthorName: UILabel!
     @IBOutlet var quoteMessageText: UILabel!
+    @IBOutlet var quoteLineView: UIView!
     
     override func setMessage(message: Message) {
         super.setMessage(message: message)
@@ -45,11 +46,20 @@ class WMQuoteFileCell: FileMessage {
             self.documentDownloadTask = WMDocumentDownloadTask.documentDownloadTaskFor(url: fileURL, fileSize: fileSize, delegate: self)
         }
         self.quoteAuthorName.text = message.getQuote()?.getSenderName()
-        let textColor = message.isVisitorType() ? quoteFileVisitorMessageTextColor : quoteFileOperatorMessageTextColor
+        let textColor = config?.subtitleAttributes?[.foregroundColor] as? UIColor ?? (message.isVisitorType() ? quoteFileVisitorMessageTextColor : quoteFileOperatorMessageTextColor)
+    
         let _ = self.messageTextView.setTextWithReferences(message.getText(),
                                                            textColor: textColor,
                                                            alignment: .left,
                                                            linkColor: config?.linkColor)
+        let defaultAuthorColor = message.isVisitorType() ? quoteVisitorMessageAuthorTextColor : quoteOperatorMessageAuthorTextColor
+        let configTitleColor = message.isVisitorType() ? config?.subtitleAttributes?[.foregroundColor] as? UIColor : config?.titleAttributes?[.foregroundColor] as? UIColor
+        let authorColor = configTitleColor ?? defaultAuthorColor
+        self.quoteLineView.backgroundColor = authorColor
+        self.quoteMessageText.textColor = textColor
+        self.quoteAuthorName.textColor = authorColor
+        
+        
         self.messageTextView.isUserInteractionEnabled = true
         for recognizer in messageTextView.gestureRecognizers ?? [] {
             if recognizer.isKind(of: UIPanGestureRecognizer.self) {
@@ -88,7 +98,8 @@ class WMQuoteFileCell: FileMessage {
     ) { }
     
     private func setupFileStatusImage() {
-        let fileImageColor = message.isVisitorType() ? defaultFileImageColor : webimCyan
+        let fileColor = message.isVisitorType() ? config?.subtitleAttributes?[.foregroundColor] as? UIColor : config?.titleAttributes?[.foregroundColor] as? UIColor
+        let fileImageColor = fileColor ?? (message.isVisitorType() ? defaultFileImageColor : webimCyan)
         let fileImage = documentDownloadTask?.isFileExist() ?? false ? fileDownloadSuccessImage : fileDownloadButtonImage
         self.fileStatus.setBackgroundImage(fileImage?.colour(fileImageColor), for: .normal)
     }

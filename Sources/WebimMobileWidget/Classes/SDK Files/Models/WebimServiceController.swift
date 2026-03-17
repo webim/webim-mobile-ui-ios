@@ -39,7 +39,7 @@ class WebimServiceController {
 
     private var webimService: WebimService?
 
-    func createSession() -> WebimService {
+    func createSession(forceOnline: Bool? = nil) -> WebimService {
         
         stopSession()
         print("createSession")
@@ -48,11 +48,12 @@ class WebimServiceController {
             departmentListHandlerDelegate: self,
             notFatalErrorHandler: self
         )
-
+        
         service.set(sessionBuilder: sessionBuilder)
         service.createSession()
-        service.startSession()
         service.setMessageStream()
+        service.set(forceOnline: forceOnline)
+        service.startSession()
         
         self.webimService = service
         return service
@@ -60,6 +61,14 @@ class WebimServiceController {
     
     static var currentSession: WebimService {
         return WebimServiceController.shared.currentSession()
+    }
+    
+    func reloadSession(forceOnline: Bool?) {
+        if self.webimService != nil {
+            self.webimService?.set(forceOnline: forceOnline)
+        } else {
+            createSession(forceOnline: forceOnline)
+        }
     }
     
     func currentSession() -> WebimService {

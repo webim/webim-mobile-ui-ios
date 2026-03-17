@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "অ্যাকাউন্ট";
+//WebimService.swift
+"AccountBlocked" = "সেশন তৈরি করতে ব্যবহৃত অ্যাকাউন্টটি ব্লক করা হয়েছে। অনুগ্রহ করে ওয়েবিম সাপোর্টের সাথে যোগাযোগ করুন অথবা অন্য একটি ব্যবহার করুন।";
+//ChatTestView.swift
+"Additional information" = "অতিরিক্ত তথ্য";
+//ChatTestView.swift
+"Agent title" = "এজেন্টের নাম";
+//UIAlertHandler.swift
+"Alert account name" = "ওয়েবিম অ্যাকাউন্টের নাম বা সম্পূর্ণ সার্ভার ঠিকানা (উদাহরণস্বরূপ, \"ডেমো\" অথবা \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "ক্যামেরা";
+//FilePicker.swift
+"Camera is not available" = "ক্যামেরা উপলব্ধ নেই";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "বাতিল করুন";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "চ্যাট বিদ্যমান নেই";
+//UIAlertHandler.swift
+"Chat finished." = "চ্যাট শেষ।";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "মন্তব্যটি অনেক দীর্ঘ";
+//UIAlertHandler.swift
+"Choose department" = "বিভাগ নির্বাচন করুন";
+//StringConstants.swift
+"Copy" = "কপি করুন";
+//StringConstants.swift
+"Delete" = "মুছে ফেলুন";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "বার্তা মুছে ফেলুন অজানা ত্রুটি";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "সার্ভারে বার্তা মুছে ফেলা বন্ধ করা আছে";
+//StringConstants.swift
+"Edit" = "সম্পাদনা করুন";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "বার্তা সম্পাদনা করুন অজানা ত্রুটি";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "বার্তা সম্পাদনা করা খালি";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "সার্ভারে বার্তা সম্পাদনা করা বন্ধ করা আছে";
+//SurveyCommentViewController.swift
+"Enter your comment" = "আপনার মন্তব্য লিখুন";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "জরিপের উত্তর পাঠাতে ব্যর্থ";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "ফাইল আপলোড করতে ব্যর্থ: ভিজিটর লগ ইন করেননি";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "আরও বার্তা আনা হচ্ছে";
+//FilePicker.swift
+"File" = "ফাইল";
+//WMFileTableViewCell.swift
+"File is being sent" = "ফাইল পাঠানো হচ্ছে";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "ফাইলটি খুব বড়।";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "ফাইলটি খুব ছোট";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "ফাইল আপলোডের অনুরোধ বাতিল করা হয়েছে";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "ফাইল পাঠানো ব্যর্থ";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "ফাইলের ধরণ সমর্থিত নয়";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "ফাইল পাঠানোর অনুমতি নেই।";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "ফাইল পাঠানো অজানা ত্রুটি";
+//UIAlertHandler.swift
+"Go to Settings" = "সেটিংসে যান";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "ছবি";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "ভুল রেডিও মান";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "ভুল তারকা মান";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "ভুল জরিপ আইডি";
+//UIAlertHandler.swift
+"InvalidSettings" = "অবৈধ অ্যাকাউন্ট সেটিংস";
+//UIAlertHandler.swift
+"LoadError" = "লোড ত্রুটি";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "অন্য একটি ফাইল আপলোড করার চেষ্টা করুন";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "প্রতি বার্তায় ফাইলের সংখ্যার সীমা অতিক্রম করেছে";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "সর্বোচ্চ বার্তার দৈর্ঘ্য অতিক্রম করেছে";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "বার্তা মুছে ফেলা ব্যর্থ হয়েছে";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "বার্তা সম্পাদনা ব্যর্থ হয়েছে";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "বার্তা পাওয়া যায়নি";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "বার্তাটি দর্শনার্থীর মালিকানাধীন নয়";
+//FilePicker.swift
+"Need camera access" = "ক্যামেরা অ্যাক্সেস প্রয়োজন";
+//FilePicker.swift
+"Need photo access" = "অ্যাপটির আপনার ফটো লাইব্রেরিতে অ্যাক্সেস প্রয়োজন। অনুগ্রহ করে আপনার ডিভাইসের সেটিংস > গোপনীয়তা > ফটোতে যান এবং চালু করুন";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "কোনও এজেন্ট নেই";
+//UIAlertHandler.swift
+"No agents available" = "কোনও এজেন্ট উপলব্ধ নেই";
+//ChatViewController+Surveys.swift
+"No current survey" = "কোনও বর্তমান জরিপ নেই";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "হারের জন্য নোটটি খুব দীর্ঘ";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "অ্যাপ সেটিংস খুলুন";
+//UIAlertHandler.swift
+"Operator Info" = "এজেন্ট সম্পর্কে তথ্য";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "এজেন্টকে রেট দেওয়া যাবে না";
+//AdditionalKeys.swift
+"P.CR" = "একজন এজেন্ট আপনার যোগাযোগের তথ্য অনুরোধ করেছে।";
+//AdditionalKeys.swift
+"P.OA" = "এজেন্ট %@ আপনার অনুরোধে বরাদ্দ করা হয়েছে।";
+//AdditionalKeys.swift
+"P.OF" = "%@ একটি ফাইল পাঠিয়েছে: %@";
+//AdditionalKeys.swift
+"P.OM" = "%@ একটি বার্তা লিখেছে: %@";
+//AdditionalKeys.swift
+"P.RO" = "এজেন্টকে রেট দিন";
+//FilePicker.swift
+"Photo Library" = "ফটো লাইব্রেরি";
+//FilePicker.swift
+"Please Allow Access" = "অনুগ্রহ করে অ্যাক্সেসের অনুমতি দিন";
+//ChatViewController+Surveys.swift
+"Question not found" = "প্রশ্ন পাওয়া যায়নি";
+//StringConstants.swift
+"Reply" = "উত্তর দিন";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "এই অনুরোধের জন্য প্রতিক্রিয়া তৈরি করা যাবে না";
+//UIAlertHandler.swift
+"Save error" = "সংরক্ষণ ত্রুটি";
+//UIAlertHandler.swift
+"SaveError" = "সংরক্ষণ ত্রুটি";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "ডিভাইসে ছবি সংরক্ষণের জন্য কোনও অ্যাক্সেস নেই। অ্যাপ্লিকেশন সেটিংসে অ্যাক্সেস মঞ্জুর করুন।";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "ডিভাইসে ফাইল সংরক্ষণের জন্য কোনও অ্যাক্সেস নেই। অ্যাপ্লিকেশন সেটিংসে অ্যাক্সেস মঞ্জুর করুন।";
+//UIAlertHandler.swift
+"Saved!" = "সংরক্ষিত";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "কীবোর্ড অনুরোধ প্রেরণ ব্যর্থ";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "কীবোর্ড অনুরোধ প্রেরণ অজানা ত্রুটি";
+//WMQuoteFileCell.swift
+"Sending" = "পাঠানো হচ্ছে";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "মূল অংশে ফাইল প্রেরণ সমর্থিত নয়";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "সেশন তৈরি ব্যর্থ";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "সেটিংস";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "জরিপ অক্ষম করা হয়েছে";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "ছবিটি আপনার ফটোতে সংরক্ষণ করা হয়েছে";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "রেট দেওয়ার জন্য কোনও এজেন্ট নেই।";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "এই এজেন্টটি বর্তমান চ্যাটে নেই";
+//ChatViewController+Surveys.swift
+"Unknown error" = "অজানা ত্রুটি";
+//WMFileTableViewCell.swift
+"Uploading file" = "ফাইল আপলোড করা হচ্ছে";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "ওয়েবিমের আপনার ক্যামেরা অ্যাক্সেস করার অনুমতি প্রয়োজন যাতে আপনি চ্যাটে ছবি পাঠাতে পারেন।";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "অনুরোধে ভুল বোতাম আইডি";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "অনুরোধে ভুল বার্তা আইডি";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "ভুল বার্তার ধরণ (পাঠ্য নয়)";
+//WebimService.swift
+"Your visitor account is in the black list." = "আপনার ভিজিটর অ্যাকাউন্ট কালো তালিকায় রয়েছে।";
+//WebimSerivce.swift
+"Session initialization failed." = "সেশন শুরু করা ব্যর্থ হয়েছে।";
+//WMMessageTableCell.swift
+"edited" = "সম্পাদিত";
+//WMQuoteView.swift
+"You" = "তুমি";
+"name" = "নাম";
+"email" = "ইমেল";
+"phone" = "ফোন";
+"first_custom_field" = "কাস্টম ফিল্ড ১";
+"second_custom_field" = "কাস্টম ফিল্ড ২";
+"third_custom_field" = "কাস্টম ফিল্ড ৩";
+"VisitorContacts" = "আপনি আপনার যোগাযোগের বিবরণ প্রদান করেছেন।";
+"Continue" = "চালিয়ে যান";
+"Live chat agent" = "লাইভ চ্যাট এজেন্ট";
+"Offline request" = "অফলাইন অনুরোধ";
+"First message label" = "কথোপকথন শুরু করতে, অনুগ্রহপূর্বক, আপনি যোগাযোগের তথ্য এবং প্রশ্ন লিখুন।";
+"Offline message label" = "দুর্ভাগ্যবশত, এখন কোনো উপলব্ধ অপারেটর নেই। পরে আমাদের সাথে যোগাযোগ করার চেষ্টা করুন বা আপনার প্রশ্নটি জানান। আমরা উল্লিখিত ইমেলের মাধ্যমে আপনার সাথে যোগাযোগ করব।";
+"Message" = "বার্তা";
+"Attach file" = "ফাইলটি সংযুক্ত করুন";
+"agreement_part1" = "আমি";
+"agreement_part2" = "ব্যক্তিগত ডেটা প্রক্রিয়াকরণে";
+"agreement_part3" = "সম্মতি দিচ্ছি এবং";
+"agreement_part4" = "গোপনীয়তা নীতিটি";
+"Optional" = "(ঐচ্ছিক)";
+"Save" = "সংরক্ষণ";
+"Contact information" = "যোগাযোগের তথ্য";

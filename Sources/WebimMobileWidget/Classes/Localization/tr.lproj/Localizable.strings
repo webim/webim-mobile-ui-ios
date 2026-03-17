@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Hesap";
+//WebimService.swift
+"AccountBlocked" = "Oturum oluşturmak için kullanılan hesap engellendi. Lütfen Webim desteğiyle iletişime geçin veya başka bir hesap kullanın.";
+//ChatTestView.swift
+"Additional information" = "Ek bilgiler";
+//ChatTestView.swift
+"Agent title" = "Temsilci unvanı";
+//UIAlertHandler.swift
+"Alert account name" = "Webim hesap adı veya tam sunucu adresi (örneğin, \"demo\" veya \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Kamera";
+//FilePicker.swift
+"Camera is not available" = "Kamera kullanılamıyor";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "İptal";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Sohbet mevcut değil";
+//UIAlertHandler.swift
+"Chat finished." = "Sohbet bitti.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Yorum çok uzun";
+//UIAlertHandler.swift
+"Choose department" = "Departman seçin";
+//StringConstants.swift
+"Copy" = "Kopyala";
+//StringConstants.swift
+"Delete" = "Sil";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Bilinmeyen hata mesajını sil";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Mesajları silme sunucuda kapalı";
+//StringConstants.swift
+"Edit" = "Düzenle";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Bilinmeyen hata mesajını düzenle";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Düzenleme mesajı boş";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Mesajları düzenleme sunucuda kapalı";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Yorumunuzu girin";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Anket cevabı gönderilemedi";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Dosya yüklenemedi: ziyaretçi oturum açmamış";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Daha fazla mesaj getiriliyor...";
+//FilePicker.swift
+"File" = "Dosya";
+//WMFileTableViewCell.swift
+"File is being sent" = "Dosya gönderiliyor";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Dosya çok büyük";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Dosya çok küçük";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Dosya yükleme isteği iptal edildi";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Dosya gönderimi başarısız";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Dosya türü desteklenmiyor";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Dosya gönderimine izin verilmiyor";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Dosya gönderimi bilinmeyen hata";
+//UIAlertHandler.swift
+"Go to Settings" = "Ayarlara git";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Resim";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Yanlış radyo değeri";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Yanlış yıldız değeri";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "Yanlış anket kimliği";
+//UIAlertHandler.swift
+"InvalidSettings" = "Geçersiz Hesap Ayarları";
+//UIAlertHandler.swift
+"LoadError" = "Yükleme hatası";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Başka bir dosya yüklemeyi deneyin";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Mesaj başına dosya sayısı sınırı aşıldı";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Maksimum mesaj uzunluğu aşıldı";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Mesaj silinemedi";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Mesaj düzenleme başarısız oldu";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Mesaj bulunamadı";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Mesaj ziyaretçiye ait değil";
+//FilePicker.swift
+"Need camera access" = "Kamera erişimi gerekiyor";
+//FilePicker.swift
+"Need photo access" = "Uygulamanın fotoğraf kitaplığınıza erişmesi gerekiyor. Lütfen cihazınızın ayarlarına gidin > Gizlilik > Fotoğraflar ve AÇIK olarak ayarlayın";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Temsilci yok";
+//UIAlertHandler.swift
+"No agents available" = "Temsilci yok";
+//ChatViewController+Surveys.swift
+"No current survey" = "Mevcut anket yok";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Oran için not çok uzun";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Uygulama ayarlarını aç";
+//UIAlertHandler.swift
+"Operator Info" = "Temsilci hakkında bilgi";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Temsilci derecelendirilemiyor";
+//AdditionalKeys.swift
+"P.CR" = "Bir temsilci iletişim bilgilerinizi istedi.";
+//AdditionalKeys.swift
+"P.OA" = "Temsilci %@ isteğinize atandı.";
+//AdditionalKeys.swift
+"P.OF" = "%@ bir dosya gönderdi: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ bir mesaj yazdı: %@";
+//AdditionalKeys.swift
+"P.RO" = "Temsilciyi derecelendirin.";
+//FilePicker.swift
+"Photo Library" = "Fotoğraf Kitaplığı";
+//FilePicker.swift
+"Please Allow Access" = "Lütfen Erişime İzin Ver";
+//ChatViewController+Surveys.swift
+"Question not found" = "Soru bulunamadı";
+//StringConstants.swift
+"Reply" = "Yanıt";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Bu istek için yanıt oluşturulamıyor";
+//UIAlertHandler.swift
+"Save error" = "Kaydetme hatası";
+//UIAlertHandler.swift
+"SaveError" = "Kaydetme hatası";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Cihazda resimleri kaydetme erişimi yok. Uygulama ayarlarında erişim izni verin.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Cihazda dosyaları kaydetme erişimi yok. Uygulama ayarlarında erişim izni verin.";
+//UIAlertHandler.swift
+"Saved!" = "Kaydedildi!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Klavye isteği gönderme başarısız";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Klavye isteği gönderme bilinmeyen hata";
+//WMQuoteFileCell.swift
+"Sending" = "Gönderiliyor";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Gövdede dosya gönderme desteklenmiyor";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Oturum oluşturma başarısız";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Ayarlar";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Anket devre dışı";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Resim fotoğraflarınıza kaydedildi";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Derecelendirilecek bir aracı yok.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Bu aracı mevcut sohbette değil";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Bilinmeyen hata";
+//WMFileTableViewCell.swift
+"Uploading file" = "Dosya yükleniyor";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Webim'in kameranıza erişmek için izne ihtiyacı var, böylece sohbete fotoğraf gönderebilirsiniz.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "İstekte yanlış düğme kimliği";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "İstekte yanlış mesaj kimliği";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Yanlış mesaj türü (metin değil)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Ziyaretçi hesabınız kara listede.";
+//WebimSerivce.swift
+"Session initialization failed." = "Oturum başlatma başarısız oldu.";
+//WMMessageTableCell.swift
+"edited" = "düzenlendi";
+//WMQuoteView.swift
+"You" = "Siz";
+"name" = "İsim";
+"email" = "E-posta";
+"phone" = "Telefon";
+"first_custom_field" = "Özel alan 1";
+"second_custom_field" = "Özel alan 2";
+"third_custom_field" = "Özel alan 3";
+"VisitorContacts" = "İletişim bilgilerini gönderdin.";
+"Continue" = "Devam";
+"Live chat agent" = "Canlı sohbet temsilcisi";
+"Offline request" = "Çevrimdışı istek";
+"First message label" = "Sohbete başlamak için lütfen adını ve sorunu gir.";
+"Offline message label" = "Üzgünüz, şu anda uygun operatör yok. Sorunu aşağıda bırakabilirsin.";
+"Message" = "mesaj";
+"Attach file" = "Dosya Ekle";
+"agreement_part1" = "Kişisel verilerin";
+"agreement_part2" = "işlenmesini kabul ediyorum";
+"agreement_part3" = "ve";
+"agreement_part4" = "Gizlilik Politikası'nı";
+"Optional" = "(isteğe bağlı)";
+"Save" = "Kaydet";
+"Contact information" = "İletişim bilgileri";

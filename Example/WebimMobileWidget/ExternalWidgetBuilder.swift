@@ -117,7 +117,9 @@ final class ExternalWidgetBuilder {
             sessionBuilder = sessionBuilder.set(visitorFieldsJSONString: visitorFields)
         }
         if let webimLogger = webimLogger {
-            sessionBuilder = sessionBuilder.set(webimLogger: webimLogger, verbosityLevel: webimLoggerVerbosityLevel ?? .warning, availableLogTypes: availableLogTypes)
+            sessionBuilder = sessionBuilder.set(webimLogger: webimLogger,
+                                                verbosityLevel: webimLoggerVerbosityLevel ?? .warning,
+                                                availableLogTypes: availableLogTypes)
         }
         if let webimAlert = webimAlert {
             sessionBuilder = sessionBuilder.set(webimAlert: webimAlert)
@@ -301,7 +303,7 @@ final class ExternalWidgetBuilder {
             .font : UIFont.systemFont(ofSize: 13, weight: .regular),
             .foregroundColor : botMessageTextColour
         ]
-        let botButtonCellConfig = WMBotCellConfigBuilder()
+        let botButtonCellConfig = WMAbstractCellConfigBuilder()
             .set(backgroundColor: botMessageBubbleColour)
             .set(roundCorners: [.layerMinXMinYCorner,
                                 .layerMaxXMinYCorner,
@@ -377,8 +379,6 @@ final class ExternalWidgetBuilder {
             .build()
         let editBarConfig = quoteViewConfig
         let surveyViewConfig = WMSurveyViewConfigBuilder()
-            .set(title: rateOperatorTitle)
-            .set(subtitle: rateOperatorSubtitle)
             .set(cosmosSettings: defaultCosmosSettings())
             .set(starsViewSize: CGSize(width: 170, height: 43))
             .set(buttonTitle: rateOperatorButtonTitle)

@@ -1,0 +1,207 @@
+//UIAlertHandler.swift
+"Account" = "Akaunti";
+//WebimService.swift
+"AccountBlocked" = "Akaunti ambayo hutumiwa kuunda kipindi imezuiwa. Tafadhali wasiliana na usaidizi wa Webim au utumie nyingine.";
+//ChatTestView.swift
+"Additional information" = "Maelezo ya ziada";
+//ChatTestView.swift
+"Agent title" = "Jina la wakala";
+//UIAlertHandler.swift
+"Alert account name" = "Jina la akaunti ya Webim au anwani kamili ya seva (kwa mfano, \"demo\" au \"https://demo.webim.ru\")";
+//FilePicker.swift
+"Camera" = "Kamera";
+//FilePicker.swift
+"Camera is not available" = "Kamera haipatikani";
+//FilePicker.swift,UIAlertHandler.swift
+"Cancel" = "Ghairi";
+//ChatViewController+CompletionHandler.swift
+"Chat does not exist" = "Soga haipo";
+//UIAlertHandler.swift
+"Chat finished." = "Soga imekamilika.";
+//ChatViewController+Surveys.swift
+"Comment is too long" = "Maoni ni marefu sana";
+//UIAlertHandler.swift
+"Choose department" = "Chagua idara";
+//StringConstants.swift
+"Copy" = "Nakala";
+//StringConstants.swift
+"Delete" = "Futa";
+//ChatViewController+CompletionHandler.swift
+"Delete message unknown error" = "Futa kosa lisilojulikana la ujumbe";
+//ChatViewController+CompletionHandler.swift
+"Deleting messages is turned off on the server" = "Kufuta ujumbe kumezimwa kwenye seva";
+//StringConstants.swift
+"Edit" = "Hariri";
+//ChatViewController+CompletionHandler.swift
+"Edit message unknown error" = "Hariri ujumbe kosa lisilojulikana";
+//ChatViewController+CompletionHandler.swift
+"Editing message is empty" = "Kuhariri ujumbe ni tupu";
+//ChatViewController+CompletionHandler.swift
+"Editing messages is turned off on the server" = "Kuhariri ujumbe umezimwa kwenye seva";
+//SurveyCommentViewController.swift
+"Enter your comment" = "Andika maoni yako";
+//ChatViewController+Surveys.swift
+"Failed to send survey answer" = "Imeshindwa kutuma jibu la uchunguzi";
+//ChatViewController+CompletionHandler.swift
+"Failed to upload file: visitor is not logged in" = "Imeshindwa kupakia faili: mgeni hajaingia";
+//ChatViewController+Setup.swift
+"Fetching more messages..." = "Inaleta ujumbe zaidi...";
+//FilePicker.swift
+"File" = "Faili";
+//WMFileTableViewCell.swift
+"File is being sent" = "Faili inatumwa";
+//ChatViewController+CompletionHandler.swift
+"File is too large" = "Faili ni kubwa sana";
+//ChatViewController+CompletionHandler.swift
+"File is too small" = "Faili ni ndogo sana";
+//ChatViewController+CompletionHandler.swift
+"File upload request canceled" = "Ombi la kupakia faili limeghairiwa";
+//ChatViewController+CompletionHandler.swift
+"File sending failed" = "Utumaji faili umeshindwa";
+//ChatViewController+CompletionHandler.swift
+"File type is not supported" = "Aina ya faili haitumiki";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Kutuma faili hairuhusiwi";
+//ChatViewController+CompletionHandler.swift
+"File sending unknown error" = "Faili kutuma kosa lisilojulikana";
+//UIAlertHandler.swift
+"Go to Settings" = "Nenda kwa Mipangilio";
+//WMQuoteImageCell.swift,WMQuoteView.swift
+"Image" = "Picha";
+//ChatViewController+Surveys.swift
+"Incorrect radio value" = "Thamani ya redio isiyo sahihi";
+//ChatViewController+Surveys.swift
+"Incorrect stars value" = "Thamani ya nyota isiyo sahihi";
+//ChatViewController+Surveys.swift
+"Incorrect survey ID" = "Kitambulisho kisicho sahihi cha uchunguzi";
+//UIAlertHandler.swift
+"InvalidSettings" = "Mipangilio Batili ya Akaunti";
+//UIAlertHandler.swift
+"LoadError" = "Hitilafu ya upakiaji";
+//UIAlertHandler.swift
+"LoadFileErrorText" = "Jaribu kupakia faili nyingine";
+//ChatViewController+CompletionHandler.swift
+"MaxFilesCountExceeded" = "Idadi ya faili kwa kila kikomo cha ujumbe imepitwa";
+//ChatViewController+CompletionHandler.swift
+"MaxMessageLengthExceeded" = "Urefu wa juu zaidi wa ujumbe umepitwa";
+//ChatViewController+CompletionHandler.swift
+"Message deleting failed" = "Kufuta ujumbe kumeshindwa";
+//ChatViewController+CompletionHandler.swift
+"Message editing failed" = "Uhariri wa ujumbe umeshindwa";
+//ChatViewController+CompletionHandler.swift
+"Message not found" = "Ujumbe haujapatikana";
+//ChatViewController+CompletionHandler.swift
+"Message not owned by visitor" = "Ujumbe usiomilikiwa na mgeni";
+//FilePicker.swift
+"Need camera access" = "Inahitaji ufikiaji wa kamera";
+//FilePicker.swift
+"Need photo access" = "Programu inahitaji ufikiaji wa maktaba yako ya picha. Tafadhali nenda kwenye mipangilio ya kifaa chako > Faragha > Picha na uwashe KUWASHA";
+//ChatViewController+Setup.swift,ChatViewController.swift
+"No agent" = "Hakuna wakala";
+//UIAlertHandler.swift
+"No agents available" = "Hakuna mawakala wanaopatikana";
+//ChatViewController+Surveys.swift
+"No current survey" = "Hakuna uchunguzi wa sasa";
+//ChatViewController+Surveys.swift
+"Note for rate is too long" = "Kumbuka kwa bei ni ndefu sana";
+//FilePicker.swift,UIAlertHandler.swift
+"OK" = "OK";
+//ChatViewController+CompletionHandler.swift
+"Ok" = "Ok";
+//FilePicker.swift
+"Open app settings" = "Fungua mipangilio ya programu";
+//UIAlertHandler.swift
+"Operator Info" = "Taarifa kuhusu Wakala";
+//ChatViewController+Surveys.swift
+"Operator rating failed" = "Wakala hawezi kukadiriwa";
+//AdditionalKeys.swift
+"P.CR" = "Wakala aliomba data yako ya mawasiliano.";
+//AdditionalKeys.swift
+"P.OA" = "Wakala %@ alikabidhiwa ombi lako.";
+//AdditionalKeys.swift
+"P.OF" = "%@ alituma faili: %@.";
+//AdditionalKeys.swift
+"P.OM" = "%@ ameandika ujumbe: %@";
+//AdditionalKeys.swift
+"P.RO" = "Kadiria wakala.";
+//FilePicker.swift
+"Photo Library" = "Maktaba ya Picha";
+//FilePicker.swift
+"Please Allow Access" = "Tafadhali Ruhusu Ufikiaji";
+//ChatViewController+Surveys.swift
+"Question not found" = "Swali halijapatikana";
+//StringConstants.swift
+"Reply" = "Jibu";
+//ChatViewController+CompletionHandler.swift
+"Response cannot be created for this request" = "Jibu haliwezi kuundwa kwa ombi hili";
+//UIAlertHandler.swift
+"Save error" = "Hifadhi hitilafu";
+//UIAlertHandler.swift
+"SaveError" = "Hifadhi hitilafu";
+//UIAlertHandler.swift
+"SaveErrorMessage" = "Hakuna ufikiaji wa kuhifadhi picha kwenye kifaa. Ruhusu ufikiaji katika mipangilio ya programu.";
+//UIAlertHandler.swift
+"SaveFileErrorMessage" = "Hakuna ufikiaji wa kuhifadhi faili kwenye kifaa. Ruhusu ufikiaji katika mipangilio ya programu.";
+//UIAlertHandler.swift
+"Saved!" = "Imehifadhiwa!";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request failed" = "Ombi la kutuma kibodi halikufaulu";
+//ChatViewController+CompletionHandler.swift
+"Send keyboard request unknown error" = "Tuma ombi la kibodi hitilafu isiyojulikana";
+//WMQuoteFileCell.swift
+"Sending" = "Kutuma";
+//ChatViewController+CompletionHandler.swift
+"Sending files in body is not supported" = "Kutuma faili kwenye mwili hakukubaliwi";
+//ChatViewController+CompletionHandler.swift,UIAlertHandler.swift
+"Session creation failed" = "Uundaji wa kikao umeshindwa";
+//FilePicker.swift,WMStartViewController.xib
+"Settings" = "Mipangilio";
+//ChatViewController+Surveys.swift
+"Survey disabled" = "Utafiti umezimwa";
+//UIAlertHandler.swift
+"The image has been saved to your photos" = "Picha imehifadhiwa kwa picha zako";
+//ChatViewController+Surveys.swift,UIAlertHandler.swift
+"There is no current agent to rate" = "Hakuna wakala wa kukadiria.";
+//ChatViewController+Surveys.swift
+"This agent not in the current chat" = "Wakala huyu hayuko kwenye gumzo la sasa";
+//ChatViewController+Surveys.swift
+"Unknown error" = "Hitilafu isiyojulikana";
+//WMFileTableViewCell.swift
+"Uploading file" = "Inapakia faili";
+//FilePicker.swift
+"Webim needs permission to access your camera so you can send photos to chat." = "Webim inahitaji ruhusa ya kufikia kamera yako ili uweze kutuma picha kupiga gumzo.";
+//ChatViewController+CompletionHandler.swift
+"Wrong button ID in request" = "Kitambulisho cha kitufe kisicho sahihi katika ombi";
+//ChatViewController+CompletionHandler.swift
+"Wrong message ID in request" = "Kitambulisho cha ujumbe kisicho sahihi katika ombi";
+//ChatViewController+CompletionHandler.swift
+"Wrong message kind (not text)" = "Aina ya ujumbe mbaya (sio maandishi)";
+//WebimService.swift
+"Your visitor account is in the black list." = "Akaunti yako ya mgeni iko kwenye orodha nyeusi.";
+//WebimSerivce.swift
+"Session initialization failed." = "Uanzishaji wa kipindi umeshindwa.";
+//WMMessageTableCell.swift
+"edited" = "iliyohaririwa";
+//WMQuoteView.swift
+"You" = "Wewe";
+"name" = "Jina";
+"email" = "Barua pepe";
+"phone" = "Simu";
+"first_custom_field" = "Uwanja wa desturi 1";
+"second_custom_field" = "Uwanja wa desturi 2";
+"third_custom_field" = "Uwanja wa desturi 3";
+"VisitorContacts" = "Umetoa maelezo yako ya mawasiliano.";
+"Continue" = "Endelea";
+"Live chat agent" = "Mwenzia wa mazungumzo moja kwa moja";
+"Offline request" = "Ombi la nje ya mtandao";
+"First message label" = "Ili kuanza aina ya mazungumzo, tafadhali, maelezo ya mawasiliano na swali.";
+"Offline message label" = "Kwa bahati mbaya, hakuna opereta wanaopatikana sasa. Jaribu kuwasiliana nasi baadaye au acha swali lako. Tutawasiliana nawe kupitia barua pepe iliyotajwa.";
+"Message" = "Ujumbe";
+"Attach file" = "Ongeza fail";
+"agreement_part1" = "Nakubali";
+"agreement_part2" = "usindikaji wa data ya kibinafsi";
+"agreement_part3" = "na nimesoma";
+"agreement_part4" = "Sera ya Faragha";
+"Optional" = "(si lazima)";
+"Save" = "Hifadhi";
+"Contact information" = "Maelezo ya mawasiliano";

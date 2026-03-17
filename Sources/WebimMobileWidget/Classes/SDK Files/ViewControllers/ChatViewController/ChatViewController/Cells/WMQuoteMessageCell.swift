@@ -33,11 +33,12 @@ class WMQuoteMessageCell: WMMessageTableCell {
     @IBOutlet var quoteAuthorName: UILabel!
     
     @IBOutlet var messageTextView: UITextView!
+    @IBOutlet var quoteLineView: UIView!
     
     override func setMessage(message: Message) {
         super.setMessage(message: message)
         setupTextWithRefference()
-        self.quoteMessageText.text = message.getQuote()?.getMessageText()
+        self.quoteMessageText.text = message.getQuote()?.getTranslationInfo()?.getTranslatedText() ?? message.getQuote()?.getMessageText()
         self.quoteAuthorName.text = message.getQuote()?.getSenderName()
         
         self.messageTextView.isUserInteractionEnabled = true
@@ -50,11 +51,17 @@ class WMQuoteMessageCell: WMMessageTableCell {
     
     private func setupTextWithRefference() {
         let defaultTextColor = message.isVisitorType() ? quoteVisitorMessageTextColor : quoteOperatorMessageTextColor
+        let defaultAuthorColor = message.isVisitorType() ? quoteVisitorMessageAuthorTextColor : quoteOperatorMessageAuthorTextColor
         let textColor = config?.subtitleAttributes?[.foregroundColor] as? UIColor ?? defaultTextColor
         let textFont = config?.subtitleAttributes?[.font] as? UIFont ?? messageTextView.notNilFont()
+        let configTitleColor = message.isVisitorType() ? config?.subtitleAttributes?[.foregroundColor] as? UIColor : config?.titleAttributes?[.foregroundColor] as? UIColor
+        let authorColor = configTitleColor ?? defaultAuthorColor
+        self.quoteMessageText.textColor = textColor
+        self.quoteAuthorName.textColor = authorColor
+        self.quoteLineView.backgroundColor = authorColor
         
         let _ = self.messageTextView.setTextWithReferences(
-            message.getText(),
+            message.getData()?.getTranslationInfo()?.getTranslatedText() ?? message.getText(),
             textColor:  textColor,
             textFont: textFont,
             alignment: .left,

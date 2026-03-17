@@ -29,7 +29,6 @@ import WebimMobileSDK
 
 extension ChatViewController: UITableViewDelegate {
     
-    @available(iOS 11.0, *)
     func tableView(
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
@@ -64,7 +63,6 @@ extension ChatViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [replyAction])
     }
     
-    @available(iOS 11.0, *)
     func tableView(
         _ tableView: UITableView,
         leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
@@ -158,12 +156,15 @@ extension ChatViewController: UITableViewDelegate {
                 isFile = !isImage
             }
         }
-        if message.getType() == .info || message.getType() == .contactInformationRequest || message.getType() == .operatorBusy {
+        if message.getType() == .info || message.getType() == .contactInformationRequest || message.getType() == .operatorBusy || message.getType() == .contacts {
             return self.messageCellWithType(WMInfoCell.self, message: message)
         }
+        
+        
         if message.getType() == .keyboard {
             return self.messageCellWithType(WMBotButtonsTableViewCell.self, message: message)
         }
+        
         if message.getType() == .keyboardResponse {
             return self.messageCellWithType(WMNilTableViewCell.self, message: message)
         }
@@ -222,6 +223,9 @@ extension ChatViewController: UITableViewDelegate {
         if let message = message {
             setConfig(for: cell, message: message)
             cell.setMessage(message: message)
+            if message.getType() == .contacts {
+                cell.setVisiorFields(visitorFields: webimServerSideSettingsManager.getVisiorFieldsLables())
+            }
         }
         _ = cell.initialSetup()
         cell.applyConfig()
@@ -260,4 +264,5 @@ extension ChatViewController: UITableViewDelegate {
             cell.config = chatConfig?.botButtonsConfig
         }
     }
+    
 }

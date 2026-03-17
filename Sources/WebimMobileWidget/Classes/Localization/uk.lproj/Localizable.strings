@@ -1,27 +1,3 @@
-//ScrollButtonView.xib
-"0" = "0";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"25%" = "25%";
-//WMStartViewController.xib
-"99" = "99";
-//WMQuoteView.xib
-"<?>Autor" = "<?>Autor";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"<?>Description" = "<?>Description";
-//WMOperatorFileCell.xib,WMVisitorFileCell.xib
-"<?>File name.pdf" = "<?>File name.pdf";
-//WMBotButtonsTableViewCell.xib,WMInfoCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMQuoteView.xib,WMVisitorMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Message" = "<?>Message";
-//WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Name " = "<?>Name ";
-//WMOperatorFileCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib
-"<?>Operator name" = "<?>Operator name";
-//WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Quote Message" = "<?>Quote Message";
-//WMBotButtonsTableViewCell.xib,WMInfoCell.xib,WMOperatorFileCell.xib,WMOperatorImageCell.xib,WMOperatorMessageCell.xib,WMOperatorQuoteFileCell.xib,WMOperatorQuoteImageCell.xib,WMOperatorQuoteMessageCell.xib,WMVisitorFileCell.xib,WMVisitorImageCell.xib,WMVisitorMessageCell.xib,WMVisitorQuoteFileCell.xib,WMVisitorQuoteImageCell.xib,WMVisitorQuoteMessageCell.xib
-"<?>Time" = "<?>Time";
-//SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib,SurveyTableViewCell.xib
-"<this text will be replaced>" = "<this text will be replaced>";
 //UIAlertHandler.swift
 "Account" = "Обліковий запис";
 //WebimService.swift
@@ -44,8 +20,6 @@
 "Chat finished." = "Чат завершено.";
 //ChatViewController+Surveys.swift
 "Comment is too long" = "Коментар занадто довгий";
-//ConnectionErrorView.xib
-"Connection error" = "Помилка з'єднання";
 //UIAlertHandler.swift
 "Choose department" = "Виберіть відділ";
 //StringConstants.swift
@@ -64,8 +38,6 @@
 "Editing message is empty" = "Редагування повідомлення порожнє";
 //ChatViewController+CompletionHandler.swift
 "Editing messages is turned off on the server" = "Редагування повідомлень вимкнено на сервері";
-//WMNewMessageView.xib
-"Enter message" = "Введіть повідомлення";
 //SurveyCommentViewController.swift
 "Enter your comment" = "Введіть свій коментар";
 //ChatViewController+Surveys.swift
@@ -79,7 +51,7 @@
 //WMFileTableViewCell.swift
 "File is being sent" = "Файл надсилається";
 //ChatViewController+CompletionHandler.swift
-"File is too large." = "Файл занадто великий.";
+"File is too large" = "Файл занадто великий";
 //ChatViewController+CompletionHandler.swift
 "File is too small" = "Файл занадто малий";
 //ChatViewController+CompletionHandler.swift
@@ -88,6 +60,8 @@
 "File sending failed" = "Надсилання файлу не вдалося";
 //ChatViewController+CompletionHandler.swift
 "File type is not supported" = "Тип файлу не підтримується";
+//ChatViewController+CompletionHandler.swift
+"Sending files is not allowed" = "Надсилання файлів заборонено";
 //ChatViewController+CompletionHandler.swift
 "File sending unknown error" = "Невідома помилка надсилання файлу";
 //UIAlertHandler.swift
@@ -106,8 +80,6 @@
 "LoadError" = "Помилка завантаження";
 //UIAlertHandler.swift
 "LoadFileErrorText" = "Спробуйте завантажити інший файл";
-//WMFileViewController.swift,WMFileViewController.xib
-"Loading File..." = "Завантаження файлу...";
 //ChatViewController+CompletionHandler.swift
 "MaxFilesCountExceeded" = "Перевищено обмеження кількості файлів на повідомлення";
 //ChatViewController+CompletionHandler.swift
@@ -136,8 +108,6 @@
 "OK" = "OK";
 //ChatViewController+CompletionHandler.swift
 "Ok" = "OK";
-//ChatViewController+Listener.swift,ChatViewController.swift
-"Online" = "Онлайн";
 //FilePicker.swift
 "Open app settings" = "Відкрити налаштування додатка";
 //UIAlertHandler.swift
@@ -158,18 +128,12 @@
 "Photo Library" = "Фотобібліотека";
 //FilePicker.swift
 "Please Allow Access" = "Будь ласка, дозвольте доступ";
-//RateStarsViewController.swift,RateStarsViewController.xib
-"Please rate the overall impression of the consultation" = "Будь ласка, оцініть загальне враження від консультації.";
 //ChatViewController+Surveys.swift
 "Question not found" = "Питання не знайдено";
-//RateStarsViewController.xib
-"Rate Operator" = "Оцінити агента";
 //StringConstants.swift
 "Reply" = "Відповісти";
 //ChatViewController+CompletionHandler.swift
 "Response cannot be created for this request" = "Відповідь не може бути створена для цього запиту";
-//ChatTestView.xib
-"Run autotest" = "Запустити автотест";
 //UIAlertHandler.swift
 "Save error" = "Помилка збереження";
 //UIAlertHandler.swift
@@ -180,10 +144,6 @@
 "SaveFileErrorMessage" = "Немає доступу до збереження файлів на пристрої. Надайте доступ у налаштуваннях додатка.";
 //UIAlertHandler.swift
 "Saved!" = "Збережено!";
-//RateStarsViewController.xib,SurveyCommentViewController.xib,SurveyRadioButtonViewController.xib
-"Send" = "Надіслати";
-//ChatViewController+UITableView.swift
-"Send first message to start chat." = "Надішліть перше повідомлення, щоб почати чат.";
 //ChatViewController+CompletionHandler.swift
 "Send keyboard request failed" = "Відправка запиту клавіатури не вдалася";
 //ChatViewController+CompletionHandler.swift
@@ -198,8 +158,6 @@
 "Settings" = "Налаштування";
 //ChatViewController+Surveys.swift
 "Survey disabled" = "Опитування вимкнено";
-//WMThanksAlertView.xib
-"Thanks!" = "Дякуємо!";
 //UIAlertHandler.swift
 "The image has been saved to your photos" = "Зображення було збережено у вашому фотоальбомі.";
 //ChatViewController+Surveys.swift,UIAlertHandler.swift
@@ -210,8 +168,6 @@
 "Unknown error" = "Невідома помилка";
 //WMFileTableViewCell.swift
 "Uploading file" = "Завантаження файлу";
-//ChatViewController+Setup.swift,ChatViewController.swift
-"Webim SDK App" = "Webim SDK App";
 //FilePicker.swift
 "Webim needs permission to access your camera so you can send photos to chat." = "Webim потребує дозволу на доступ до вашої камери, щоб ви могли надсилати фотографії в чат.";
 //ChatViewController+CompletionHandler.swift
@@ -220,27 +176,32 @@
 "Wrong message ID in request" = "Неправильний ідентифікатор повідомлення в запиті";
 //ChatViewController+CompletionHandler.swift
 "Wrong message kind (not text)" = "Неправильний тип повідомлення (не текст)";
-//WMThanksAlertView.xib
-"Your feedback will help us become better." = "Ваш відгук допоможе нам стати кращими.";
 //WebimService.swift
 "Your visitor account is in the black list." = "Ваш обліковий запис відвідувача знаходиться у чорному списку.";
 //WebimSerivce.swift
 "Session initialization failed." = "Помилка ініціалізації сеансу.";
-//SurveyCommentViewController.xib
-"comment" = "коментар";
 //WMMessageTableCell.swift
 "edited" = "відредаговано";
-//ChatViewController+Listener.swift
-"typing" = "печатання";
-//LaunchScreen.storyboard,LaunchScreenController.storyboard
-"© 2025 Webim.ru Inc. All rights reserved." = "© 2025 Webim.ru Inc. All rights reserved.";
 //WMQuoteView.swift
 "You" = "Ви";
-//ProcessingPersonalData.swift
-"Agreement link" = "Згода на обробку персональних даних";
-//ProcessingPersonalData.swift
-"Agreement Title" = "Щоб розпочати чат, вам потрібно прийняти Згоду на обробку персональних даних.";
-//ProcessingPersonalData.swift
-"Agreement" = "Ставляючи галочку, ви приймаєте";
-//ProcessingPersonalData.swift
-"Start chat" = "Почати чат";
+"name" = "Ім'я";
+"email" = "Електронна пошта";
+"phone" = "Телефон";
+"first_custom_field" = "Користувацьке поле 1";
+"second_custom_field" = "Користувацьке поле 2";
+"third_custom_field" = "Користувацьке поле 3";
+"VisitorContacts" = "Ви вказали контактні дані.";
+"Continue" = "Продовжити";
+"Live chat agent" = "Оператор чату";
+"Offline request" = "Офлайн-запит";
+"First message label" = "Щоб почати діалог, введіть свої контактні дані та запитання.";
+"Offline message label" = "Зараз немає доступних операторів. Спробуйте звернутися пізніше або залиште нам своє запитання. Ми зв’яжемося з Вами за вказаною адресою.";
+"Message" = "Повідомлення";
+"Attach file" = "Долучити файл";
+"agreement_part1" = "Я даю згоду на";
+"agreement_part2" = "обробку персональних даних";
+"agreement_part3" = "та ознайомився/ознайомилась із";
+"agreement_part4" = "Політикою конфіденційності";
+"Optional" = "(необов’язково)";
+"Save" = "Зберегти";
+"Contact information" = "Контактна інформація";
