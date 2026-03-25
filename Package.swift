@@ -26,8 +26,8 @@ let package = Package(
         .target(
             name: "WebimMobileWidget",
             dependencies: [
-                .byName(name: "WebimMobileSDK"),
-                .byName(name: "WebimKeyboard"),
+                .product(name: "WebimMobileSDK", package: "webim-client-sdk-ios"),
+                .product(name: "WebimKeyboard", package: "webim-mobile-keyboard-ios"),
                 .product(name: "Nuke", package: "Nuke"),
                 .product(name: "Cosmos", package: "Cosmos"),
                 .product(name: "SnapKit", package: "SnapKit"),

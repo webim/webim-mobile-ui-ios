@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WebimMobileWidget'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Webim.ru mobile UI for client SDK iOS.'
 
   s.homepage         = 'https://webim.ru/kb/mobile/sdk'

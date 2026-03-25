@@ -13,7 +13,7 @@ This library provide simple chat integration, that based on [WebimMobileSDK](htt
 ### Carthage
 Add following line to your **Cartfile**:
 ```
-github "webim/webim-mobile-ui-ios" ~> 2.0.0
+github "webim/webim-mobile-ui-ios" ~> 2.0.1
 ```
 
 
