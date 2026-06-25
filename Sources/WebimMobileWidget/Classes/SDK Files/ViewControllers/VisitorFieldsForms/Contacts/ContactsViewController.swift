@@ -1,8 +1,5 @@
 //
-//  Untitled.swift
-//  WebimMobileWidget
-//
-//  Created by Anna Frolova on 20.09.2024.
+//  ContactsViewController.swift
 //
 
 import WebimMobileSDK

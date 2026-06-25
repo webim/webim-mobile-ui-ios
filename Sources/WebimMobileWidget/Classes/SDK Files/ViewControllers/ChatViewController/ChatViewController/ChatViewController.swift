@@ -100,7 +100,7 @@ class ChatViewController: UIViewController {
     
     // Bottom bar
     override var inputAccessoryView: UIView? {
-        presentedViewController?.isBeingDismissed != false ? toolbarView : nil
+        toolbarView
     }
     
     override var canBecomeFirstResponder: Bool {
@@ -114,10 +114,10 @@ class ChatViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        WMFileDownloadManager.drop()
         setupLoadingView()
         let chatConfig = chatConfig as? WMChatViewControllerConfig
         WebimServiceController.shared.reloadSession(forceOnline: chatConfig?.forceOnline)
-        
         setupNavigationBar()
         configureNetworkErrorView()
         configureThanksView()

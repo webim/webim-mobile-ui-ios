@@ -205,4 +205,16 @@ class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
     @objc func showExtraText(sender: UILongPressGestureRecognizer) {
         self.delegate?.showExtraTextAction(message: self.message)
     }
+    
+    @available(iOS 17, *)
+    func textView(_ textView: UITextView,
+                  menuConfigurationFor item: UITextItem,
+                  defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? {
+        switch item.content {
+        case .link:
+            return UITextItem.MenuConfiguration(preview: nil, menu: defaultMenu)
+        default:
+            return UITextItem.MenuConfiguration(menu: defaultMenu)
+        }
+    }
 }
